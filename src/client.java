@@ -3408,11 +3408,11 @@ public class client extends Applet_Sub1
         catch(Exception _ex) { }
         if(abyte0 != null)
         {
-            aCRC32_930.reset();
-            aCRC32_930.update(abyte0);
-            int i1 = (int)aCRC32_930.getValue();
-            if(i1 != j)
-                abyte0 = null;
+//            aCRC32_930.reset();
+//            aCRC32_930.update(abyte0);
+//            int i1 = (int)aCRC32_930.getValue();
+//            if(i1 != j)
+//                abyte0 = null;
         }
         if(abyte0 != null)
         {
@@ -6854,7 +6854,7 @@ public class client extends Applet_Sub1
         }
         try
         {
-            method16(533);
+//            method16(533);
             aClass44_1053 = method67(1, "title screen", "title", anIntArray1090[1], (byte)-41, 25);
             aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", 0, aClass44_1053);
             aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", 0, aClass44_1053);
