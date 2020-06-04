@@ -2,7 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.applet.Applet;
 import java.applet.AppletContext;
 import java.awt.*;
 import java.io.*;
@@ -273,7 +272,7 @@ public class client extends Applet_Sub1
             if(aClass30_Sub2_Sub4_Sub1_Sub2_1126 != null && aClass30_Sub2_Sub4_Sub1_Sub2_1126.aString1703 != null)
                 s = aClass30_Sub2_Sub4_Sub1_Sub2_1126.aString1703;
             else
-                s = Class50.method587(-45804, aString1173);
+                s = Class50.method587(-45804, enteredUsername);
             class30_sub2_sub1_sub4.method385(0, s + ":", 90, 822, 4);
             class30_sub2_sub1_sub4.method385(255, aString887 + "*", 90, 822, 6 + class30_sub2_sub1_sub4.method383(anInt1116, s + ": "));
             Class30_Sub2_Sub1.method339(77, 0, 479, 0, (byte)4);
@@ -325,7 +324,7 @@ public class client extends Applet_Sub1
         if(signlink.mainapp != null)
             return signlink.opensocket(i);
         else
-            return new Socket(InetAddress.getByName(getCodeBase().getHost()), i);
+            return new Socket(InetAddress.getByName(enteredHost), i);
     }
 
     public void method20(int i)
@@ -1124,13 +1123,13 @@ public class client extends Applet_Sub1
 
         if(class30_sub2_sub2.anInt1406 != i)
         {
-            signlink.reporterror(aString1173 + " size mismatch in getnpcpos - pos:" + class30_sub2_sub2.anInt1406 + " psize:" + i);
+            signlink.reporterror(enteredUsername + " size mismatch in getnpcpos - pos:" + class30_sub2_sub2.anInt1406 + " psize:" + i);
             throw new RuntimeException("eek");
         }
         for(int i1 = 0; i1 < anInt836; i1++)
             if(aClass30_Sub2_Sub4_Sub1_Sub1Array835[anIntArray837[i1]] == null)
             {
-                signlink.reporterror(aString1173 + " null entry in npc list - pos:" + i1 + " size:" + anInt836);
+                signlink.reporterror(enteredUsername + " null entry in npc list - pos:" + i1 + " size:" + anInt836);
                 throw new RuntimeException("eek");
             }
 
@@ -1949,9 +1948,9 @@ public class client extends Applet_Sub1
         if(!flag)
             return;
         aBoolean1157 = false;
-        anInt833 = 0;
-        aString1173 = "";
-        aString1174 = "";
+        loginPage = 0;
+        enteredUsername = "";
+        enteredPassword = "";
         method23(false);
         aClass25_946.method274(619);
         for(int i = 0; i < 4; i++)
@@ -2543,7 +2542,7 @@ public class client extends Applet_Sub1
             int j = method54((byte)-95);
             if(j != 0 && System.currentTimeMillis() - aLong824 > 0x57e40L)
             {
-                signlink.reporterror(aString1173 + " glcfb " + aLong1215 + "," + j + "," + aBoolean960 + "," + aClass14Array970[0] + "," + aClass42_Sub1_1068.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
+                signlink.reporterror(enteredUsername + " glcfb " + aLong1215 + "," + j + "," + aBoolean960 + "," + aClass14Array970[0] + "," + aClass42_Sub1_1068.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
                 aLong824 = System.currentTimeMillis();
             }
         }
@@ -3558,7 +3557,7 @@ public class client extends Applet_Sub1
         Class24 class24 = aClass24_1168;
         aBoolean1157 = false;
         anInt1038 = 0;
-        method84(aString1173, aString1174, true);
+        login(enteredUsername, enteredPassword, true);
         if(!aBoolean1157)
             method44(true);
         try
@@ -5871,19 +5870,19 @@ public class client extends Applet_Sub1
         return ((i & 0xff00ff) * l + (j & 0xff00ff) * k & 0xff00ff00) + ((i & 0xff00) * l + (j & 0xff00) * k & 0xff0000) >> 8;
     }
 
-    public void method84(String s, String s1, boolean flag)
+    public void login(String username, String password, boolean flag)
     {
-        signlink.errorname = s;
+        signlink.errorname = username;
         try
         {
             if(!flag)
             {
-                aString1266 = "";
-                aString1267 = "Connecting to server...";
+                loginWindowTextLine1 = "";
+                loginWindowTextLine2 = "Connecting to server...";
                 method135(true, false);
             }
             aClass24_1168 = new Class24(this, -978, method19(43594 + anInt958));
-            long l = Class50.method583(s);
+            long l = Class50.method583(username);
             int i = (int)(l >> 16 & 31L);
             aClass30_Sub2_Sub2_1192.anInt1406 = 0;
             aClass30_Sub2_Sub2_1192.method398(14);
@@ -5911,8 +5910,8 @@ public class client extends Applet_Sub1
                 aClass30_Sub2_Sub2_1192.method402(ai[2]);
                 aClass30_Sub2_Sub2_1192.method402(ai[3]);
                 aClass30_Sub2_Sub2_1192.method402(signlink.uid);
-                aClass30_Sub2_Sub2_1192.method405(s);
-                aClass30_Sub2_Sub2_1192.method405(s1);
+                aClass30_Sub2_Sub2_1192.method405(username);
+                aClass30_Sub2_Sub2_1192.method405(password);
                 aClass30_Sub2_Sub2_1192.method423(aBigInteger1032, aBigInteger856, (byte)0);
                 aClass30_Sub2_Sub2_847.anInt1406 = 0;
                 if(flag)
@@ -5942,7 +5941,7 @@ public class client extends Applet_Sub1
                     Thread.sleep(2000L);
                 }
                 catch(Exception _ex) { }
-                method84(s, s1, flag);
+                login(username, password, flag);
                 return;
             }
             if(k == 2)
@@ -6053,74 +6052,74 @@ public class client extends Applet_Sub1
             }
             if(k == 3)
             {
-                aString1266 = "";
-                aString1267 = "Invalid username or password.";
+                loginWindowTextLine1 = "";
+                loginWindowTextLine2 = "Invalid username or password.";
                 return;
             }
             if(k == 4)
             {
-                aString1266 = "Your account has been disabled.";
-                aString1267 = "Please check your message-centre for details.";
+                loginWindowTextLine1 = "Your account has been disabled.";
+                loginWindowTextLine2 = "Please check your message-centre for details.";
                 return;
             }
             if(k == 5)
             {
-                aString1266 = "Your account is already logged in.";
-                aString1267 = "Try again in 60 secs...";
+                loginWindowTextLine1 = "Your account is already logged in.";
+                loginWindowTextLine2 = "Try again in 60 secs...";
                 return;
             }
             if(k == 6)
             {
-                aString1266 = "RuneScape has been updated!";
-                aString1267 = "Please reload this page.";
+                loginWindowTextLine1 = "RuneScape has been updated!";
+                loginWindowTextLine2 = "Please reload this page.";
                 return;
             }
             if(k == 7)
             {
-                aString1266 = "This world is full.";
-                aString1267 = "Please use a different world.";
+                loginWindowTextLine1 = "This world is full.";
+                loginWindowTextLine2 = "Please use a different world.";
                 return;
             }
             if(k == 8)
             {
-                aString1266 = "Unable to connect.";
-                aString1267 = "Login server offline.";
+                loginWindowTextLine1 = "Unable to connect.";
+                loginWindowTextLine2 = "Login server offline.";
                 return;
             }
             if(k == 9)
             {
-                aString1266 = "Login limit exceeded.";
-                aString1267 = "Too many connections from your address.";
+                loginWindowTextLine1 = "Login limit exceeded.";
+                loginWindowTextLine2 = "Too many connections from your address.";
                 return;
             }
             if(k == 10)
             {
-                aString1266 = "Unable to connect.";
-                aString1267 = "Bad session id.";
+                loginWindowTextLine1 = "Unable to connect.";
+                loginWindowTextLine2 = "Bad session id.";
                 return;
             }
             if(k == 11)
             {
-                aString1267 = "Login server rejected session.";
-                aString1267 = "Please try again.";
+                loginWindowTextLine2 = "Login server rejected session.";
+                loginWindowTextLine2 = "Please try again.";
                 return;
             }
             if(k == 12)
             {
-                aString1266 = "You need a members account to login to this world.";
-                aString1267 = "Please subscribe, or use a different world.";
+                loginWindowTextLine1 = "You need a members account to login to this world.";
+                loginWindowTextLine2 = "Please subscribe, or use a different world.";
                 return;
             }
             if(k == 13)
             {
-                aString1266 = "Could not complete login.";
-                aString1267 = "Please try using a different world.";
+                loginWindowTextLine1 = "Could not complete login.";
+                loginWindowTextLine2 = "Please try using a different world.";
                 return;
             }
             if(k == 14)
             {
-                aString1266 = "The server is being updated.";
-                aString1267 = "Please wait 1 minute and try again.";
+                loginWindowTextLine1 = "The server is being updated.";
+                loginWindowTextLine2 = "Please wait 1 minute and try again.";
                 return;
             }
             if(k == 15)
@@ -6142,28 +6141,28 @@ public class client extends Applet_Sub1
             }
             if(k == 16)
             {
-                aString1266 = "Login attempts exceeded.";
-                aString1267 = "Please wait 1 minute and try again.";
+                loginWindowTextLine1 = "Login attempts exceeded.";
+                loginWindowTextLine2 = "Please wait 1 minute and try again.";
                 return;
             }
             if(k == 17)
             {
-                aString1266 = "You are standing in a members-only area.";
-                aString1267 = "To play on this world move to a free area first";
+                loginWindowTextLine1 = "You are standing in a members-only area.";
+                loginWindowTextLine2 = "To play on this world move to a free area first";
                 return;
             }
             if(k == 20)
             {
-                aString1266 = "Invalid loginserver requested";
-                aString1267 = "Please try using a different world.";
+                loginWindowTextLine1 = "Invalid loginserver requested";
+                loginWindowTextLine2 = "Please try using a different world.";
                 return;
             }
             if(k == 21)
             {
                 for(int k1 = aClass24_1168.method268(); k1 >= 0; k1--)
                 {
-                    aString1266 = "You have only just left another world";
-                    aString1267 = "Your profile will be transferred in: " + k1 + " seconds";
+                    loginWindowTextLine1 = "You have only just left another world";
+                    loginWindowTextLine2 = "Your profile will be transferred in: " + k1 + " seconds";
                     method135(true, false);
                     try
                     {
@@ -6172,7 +6171,7 @@ public class client extends Applet_Sub1
                     catch(Exception _ex) { }
                 }
 
-                method84(s, s1, flag);
+                login(username, password, flag);
                 return;
             }
             if(k == -1)
@@ -6187,33 +6186,34 @@ public class client extends Applet_Sub1
                         }
                         catch(Exception _ex) { }
                         anInt1038++;
-                        method84(s, s1, flag);
+                        login(username, password, flag);
                         return;
                     } else
                     {
-                        aString1266 = "No response from loginserver";
-                        aString1267 = "Please wait 1 minute and try again.";
+                        loginWindowTextLine1 = "No response from loginserver";
+                        loginWindowTextLine2 = "Please wait 1 minute and try again.";
                         return;
                     }
                 } else
                 {
-                    aString1266 = "No response from server";
-                    aString1267 = "Please try using a different world.";
+                    loginWindowTextLine1 = "No response from server";
+                    loginWindowTextLine2 = "Please try using a different world.";
                     return;
                 }
             } else
             {
                 System.out.println("response:" + k);
-                aString1266 = "Unexpected server response";
-                aString1267 = "Please try using a different world.";
+                loginWindowTextLine1 = "Unexpected server response";
+                loginWindowTextLine2 = "Please try using a different world.";
                 return;
             }
         }
         catch(IOException _ex)
         {
-            aString1266 = "";
+            loginWindowTextLine1 = "";
         }
-        aString1267 = "Error connecting to server.";
+        loginWindowTextLine1 = "Error connecting to server.";
+        loginWindowTextLine2 = "";
     }
 
     public boolean method85(int i, int j, int k, int l, int i1, int j1, int k1, 
@@ -9788,7 +9788,7 @@ public class client extends Applet_Sub1
         }
         if(j > anInt891)
         {
-            signlink.reporterror(aString1173 + " Too many players");
+            signlink.reporterror(enteredUsername + " Too many players");
             throw new RuntimeException("eek");
         }
         anInt891 = 0;
@@ -9850,7 +9850,7 @@ public class client extends Applet_Sub1
         char c1 = '\310';
         if(flag1)
             return;
-        if(anInt833 == 0)
+        if(loginPage == 0)
         {
             int i = c1 / 2 + 80;
             aClass30_Sub2_Sub1_Sub4_1270.method382(0x75a9a9, c / 2, anInt939, aClass42_Sub1_1068.aString1333, i, true);
@@ -9865,22 +9865,25 @@ public class client extends Applet_Sub1
             aClass30_Sub2_Sub1_Sub2_967.method361(l - 73, 16083, k1 - 20);
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, l, anInt939, "Existing User", k1 + 5, true);
         }
-        if(anInt833 == 2)
+        if(loginPage == 2)
         {
             int j = c1 / 2 - 40;
-            if(aString1266.length() > 0)
+            if(loginWindowTextLine1.length() > 0)
             {
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, aString1266, j - 15, true);
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, aString1267, j, true);
+                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine1, j - 15, true);
+                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j, true);
                 j += 30;
             } else
             {
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, aString1267, j - 7, true);
+                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j - 7, true);
                 j += 30;
             }
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 90, 0xffffff, "Username: " + aString1173 + ((anInt1216 == 0) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            j-= 15;
+            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 90, 0xffffff, "Host: " + enteredHost + ((loginFieldFocus == 0) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
             j += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 88, 0xffffff, "Password: " + Class50.method588(aString1174, 0) + ((anInt1216 == 1) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 90, 0xffffff, "Username: " + enteredUsername + ((loginFieldFocus == 1) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            j += 15;
+            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 88, 0xffffff, "Password: " + Class50.method588(enteredPassword, 0) + ((loginFieldFocus == 2) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
             j += 15;
             if(!flag)
             {
@@ -9893,7 +9896,7 @@ public class client extends Applet_Sub1
                 aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, i1, anInt939, "Cancel", l1 + 5, true);
             }
         }
-        if(anInt833 == 3)
+        if(loginPage == 3)
         {
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, "Create a free account", c1 / 2 - 60, true);
             int k = c1 / 2 - 35;
@@ -10305,7 +10308,7 @@ public class client extends Applet_Sub1
         }
         if(k > anInt836)
         {
-            signlink.reporterror(aString1173 + " Too many npcs");
+            signlink.reporterror(enteredUsername + " Too many npcs");
             throw new RuntimeException("eek");
         }
         anInt836 = 0;
@@ -10360,37 +10363,37 @@ public class client extends Applet_Sub1
     {
         if(!flag)
             aClass19ArrayArrayArray827 = null;
-        if(anInt833 == 0)
+        if(loginPage == 0)
         {
             int i = super.anInt10 / 2 - 80;
             int l = super.anInt11 / 2 + 20;
             l += 20;
             if(super.anInt26 == 1 && super.anInt27 >= i - 75 && super.anInt27 <= i + 75 && super.anInt28 >= l - 20 && super.anInt28 <= l + 20)
             {
-                anInt833 = 3;
-                anInt1216 = 0;
+                loginPage = 3;
+                loginFieldFocus = 0;
             }
             i = super.anInt10 / 2 + 80;
             if(super.anInt26 == 1 && super.anInt27 >= i - 75 && super.anInt27 <= i + 75 && super.anInt28 >= l - 20 && super.anInt28 <= l + 20)
             {
-                aString1266 = "";
-                aString1267 = "Enter your username & password.";
-                anInt833 = 2;
-                anInt1216 = 0;
+                loginWindowTextLine1 = "Enter your username & password.";
+                loginWindowTextLine2 = "";
+                loginPage = 2;
+                loginFieldFocus = 0;
                 return;
             }
         } else
         {
-            if(anInt833 == 2)
+            if(loginPage == 2)
             {
                 int j = super.anInt11 / 2 - 40;
                 j += 30;
                 j += 25;
                 if(super.anInt26 == 1 && super.anInt28 >= j - 15 && super.anInt28 < j)
-                    anInt1216 = 0;
+                    loginFieldFocus = 0;
                 j += 15;
                 if(super.anInt26 == 1 && super.anInt28 >= j - 15 && super.anInt28 < j)
-                    anInt1216 = 1;
+                    loginFieldFocus = 2;
                 j += 15;
                 int i1 = super.anInt10 / 2 - 80;
                 int k1 = super.anInt11 / 2 + 50;
@@ -10398,16 +10401,16 @@ public class client extends Applet_Sub1
                 if(super.anInt26 == 1 && super.anInt27 >= i1 - 75 && super.anInt27 <= i1 + 75 && super.anInt28 >= k1 - 20 && super.anInt28 <= k1 + 20)
                 {
                     anInt1038 = 0;
-                    method84(aString1173, aString1174, false);
+                    login(enteredUsername, enteredPassword, false);
                     if(aBoolean1157)
                         return;
                 }
                 i1 = super.anInt10 / 2 + 80;
                 if(super.anInt26 == 1 && super.anInt27 >= i1 - 75 && super.anInt27 <= i1 + 75 && super.anInt28 >= k1 - 20 && super.anInt28 <= k1 + 20)
                 {
-                    anInt833 = 0;
-                    aString1173 = "";
-                    aString1174 = "";
+                    loginPage = 0;
+                    enteredUsername = "";
+                    enteredPassword = "";
                 }
                 do
                 {
@@ -10423,38 +10426,56 @@ public class client extends Applet_Sub1
                         break;
                     }
 
-                    if(anInt1216 == 0)
-                    {
-                        if(l1 == 8 && aString1173.length() > 0)
-                            aString1173 = aString1173.substring(0, aString1173.length() - 1);
-                        if(l1 == 9 || l1 == 10 || l1 == 13)
-                            anInt1216 = 1;
-                        if(flag1)
-                            aString1173 += (char)l1;
-                        if(aString1173.length() > 12)
-                            aString1173 = aString1173.substring(0, 12);
-                    } else
-                    if(anInt1216 == 1)
-                    {
-                        if(l1 == 8 && aString1174.length() > 0)
-                            aString1174 = aString1174.substring(0, aString1174.length() - 1);
-                        if(l1 == 9 || l1 == 10 || l1 == 13)
-                            anInt1216 = 0;
-                        if(flag1)
-                            aString1174 += (char)l1;
-                        if(aString1174.length() > 20)
-                            aString1174 = aString1174.substring(0, 20);
+                    if (loginFieldFocus == 0) {
+                        if (l1 == 8 && enteredHost.length() > 0) {
+                            enteredHost = enteredHost.substring(0, enteredHost.length() - 1);
+                        }
+                        if (l1 == 9 || l1 == 10 || l1 == 13) {
+                            loginFieldFocus = 1;
+                        }
+                        if (flag1) {
+                            enteredHost += (char)l1;
+                        }
+                        if (enteredHost.length() > 255) {
+                            enteredHost = enteredHost.substring(0, 12);
+                        }
+                    } else if(loginFieldFocus == 1) {
+                        if (l1 == 8 && enteredUsername.length() > 0) {
+                            enteredUsername = enteredUsername.substring(0, enteredUsername.length() - 1);
+                        }
+                        if (l1 == 9 || l1 == 10 || l1 == 13) {
+                            loginFieldFocus = 2;
+                        }
+                        if (flag1) {
+                            enteredUsername += (char)l1;
+                        }
+                        if (enteredUsername.length() > 12) {
+                            enteredUsername = enteredUsername.substring(0, 12);
+                        }
+                    } else if(loginFieldFocus == 2) {
+                        if (l1 == 8 && enteredPassword.length() > 0) {
+                            enteredPassword = enteredPassword.substring(0, enteredPassword.length() - 1);
+                        }
+                        if (l1 == 9 || l1 == 10 || l1 == 13) {
+                            loginFieldFocus = 0;
+                        }
+                        if (flag1) {
+                            enteredPassword += (char)l1;
+                        }
+                        if (enteredPassword.length() > 20) {
+                            enteredPassword = enteredPassword.substring(0, 20);
+                        }
                     }
                 } while(true);
                 return;
             }
-            if(anInt833 == 3)
+            if(loginPage == 3)
             {
                 int k = super.anInt10 / 2;
                 int j1 = super.anInt11 / 2 + 50;
                 j1 += 20;
                 if(super.anInt26 == 1 && super.anInt27 >= k - 75 && super.anInt27 <= k + 75 && super.anInt28 >= j1 - 20 && super.anInt28 <= j1 + 20)
-                    anInt833 = 0;
+                    loginPage = 0;
             }
         }
     }
@@ -10572,7 +10593,7 @@ public class client extends Applet_Sub1
         for(int i1 = 0; i1 < anInt891; i1++)
             if(aClass30_Sub2_Sub4_Sub1_Sub2Array890[anIntArray892[i1]] == null)
             {
-                signlink.reporterror(aString1173 + " null entry in pl list - pos:" + i1 + " size:" + anInt891);
+                signlink.reporterror(enteredUsername + " null entry in pl list - pos:" + i1 + " size:" + anInt891);
                 throw new RuntimeException("eek");
             }
 
@@ -12092,8 +12113,9 @@ public class client extends Applet_Sub1
         aBoolean1159 = false;
         aBoolean1160 = false;
         anInt1171 = 1;
-        aString1173 = "";
-        aString1174 = "";
+        enteredHost = "127.0.0.1";
+        enteredUsername = "";
+        enteredPassword = "";
         aBoolean1176 = false;
         anInt1178 = -1;
         aClass19_1179 = new Class19(169);
@@ -12124,8 +12146,8 @@ public class client extends Applet_Sub1
         aBoolean1252 = false;
         aBoolean1255 = false;
         aBoolean1256 = false;
-        aString1266 = "";
-        aString1267 = "";
+        loginWindowTextLine1 = "";
+        loginWindowTextLine2 = "";
         aByte1274 = -13;
         anInt1276 = -1;
         aBoolean1277 = true;
@@ -12146,7 +12168,7 @@ public class client extends Applet_Sub1
     public boolean aBoolean830;
     public volatile boolean aBoolean831;
     public Socket aSocket832;
-    public int anInt833;
+    public int loginPage;
     public Class30_Sub2_Sub2 aClass30_Sub2_Sub2_834;
     public Class30_Sub2_Sub4_Sub1_Sub1 aClass30_Sub2_Sub4_Sub1_Sub1Array835[];
     public int anInt836;
@@ -12506,8 +12528,9 @@ public class client extends Applet_Sub1
     public int anInt1170;
     public int anInt1171;
     public long aLong1172;
-    public String aString1173;
-    public String aString1174;
+    public String enteredHost;
+    public String enteredUsername;
+    public String enteredPassword;
     public static int anInt1175;
     public boolean aBoolean1176;
     public final int anIntArray1177[] = {
@@ -12556,7 +12579,7 @@ public class client extends Applet_Sub1
     public int anInt1213;
     public int anIntArrayArrayArray1214[][][];
     public long aLong1215;
-    public int anInt1216;
+    public int loginFieldFocus;
     public byte aByte1217;
     public int anInt1218;
     public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array1219[];
@@ -12606,8 +12629,8 @@ public class client extends Applet_Sub1
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1_1263;
     public int anInt1264;
     public int anInt1265;
-    public String aString1266;
-    public String aString1267;
+    public String loginWindowTextLine1;
+    public String loginWindowTextLine2;
     public int anInt1268;
     public int anInt1269;
     public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_1270;
