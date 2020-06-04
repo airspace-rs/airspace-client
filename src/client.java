@@ -37,9 +37,15 @@ public class client extends Applet_Sub1
         if(i <= 0)
             aBoolean1206 = !aBoolean1206;
     }
+    
+    private static boolean connectToServer = false;
 
     public void method16(int i)
     {
+        if (!connectToServer) {
+            return;
+        }
+        
         if(i <= 0)
             anInt1218 = aClass17_1000.method246();
         int j = 5;
