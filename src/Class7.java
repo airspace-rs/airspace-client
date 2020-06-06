@@ -1201,7 +1201,7 @@ public class Class7
 	    /* empty */
 	  }
       }
-    Buffer buffer = new Buffer(is, 891);
+    Buffer buffer = new Buffer(is);
     for (int i_172_ = 0; i_172_ < 4; i_172_++)
       {
 	for (int i_173_ = 0; i_173_ < 64; i_173_++)
@@ -1240,7 +1240,7 @@ public class Class7
 	      }
 	  }
       }
-    Buffer buffer = new Buffer(is, 891);
+    Buffer buffer = new Buffer(is);
     for (int i_182_ = 0; i_182_ < 4; i_182_++)
       {
 	for (int i_183_ = 0; i_183_ < 64; i_183_++)
@@ -1345,7 +1345,7 @@ public class Class7
 			 int i_197_, int i_198_, boolean bool, int i_199_,
 			 byte[] is, int i_200_, int i_201_, int i_202_)
   {
-    Buffer buffer = new Buffer(is, 891);
+    Buffer buffer = new Buffer(is);
     int i_203_ = -1;
     if (! bool)
       aBoolean143 = ! aBoolean143;
@@ -1749,7 +1749,7 @@ public class Class7
     if (i_251_ < 6 || i_251_ > 6)
       throw new NullPointerException ();
     boolean bool = true;
-    Buffer buffer = new Buffer(is, 891);
+    Buffer buffer = new Buffer(is);
     int i_252_ = -1;
     for (;;)
       {
@@ -1800,7 +1800,7 @@ public class Class7
   {
     if (i_264_ >= 7 && i_264_ <= 7)
       {
-	Buffer buffer = new Buffer(is, 891);
+	Buffer buffer = new Buffer(is);
 	int i_265_ = -1;
 	for (;;)
 	  {

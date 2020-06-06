@@ -7,7 +7,7 @@ public class Class41
 
     public static void method546(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.method571("varp.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("varp.dat", null));
         anInt702 = 0;
         anInt700 = buffer.method410();
         if(aClass41Array701 == null)

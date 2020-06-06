@@ -9,7 +9,7 @@ public class Class37
     {
         if(i != 0)
             anInt644 = 91;
-        Buffer buffer = new Buffer(jagexArchive.method571("varbit.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("varbit.dat", null));
         anInt645 = buffer.method410();
         if(aClass37Array646 == null)
             aClass37Array646 = new Class37[anInt645];

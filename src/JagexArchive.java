@@ -22,7 +22,7 @@ public class JagexArchive
 
     public void method570(byte abyte0[], byte byte0)
     {
-        Buffer buffer = new Buffer(abyte0, 891);
+        Buffer buffer = new Buffer(abyte0);
         int i = buffer.method412();
         int j = buffer.method412();
         if(j != i)
@@ -30,7 +30,7 @@ public class JagexArchive
             byte abyte1[] = new byte[i];
             Class13.method225(abyte1, i, abyte0, j, 6);
             aByteArray726 = abyte1;
-            buffer = new Buffer(aByteArray726, 891);
+            buffer = new Buffer(aByteArray726);
             aBoolean732 = true;
         } else
         {
@@ -56,7 +56,7 @@ public class JagexArchive
 
     }
 
-    public byte[] method571(String s, byte abyte0[])
+    public byte[] getFile(String s, byte abyte0[])
     {
         int i = 0;
         s = s.toUpperCase();

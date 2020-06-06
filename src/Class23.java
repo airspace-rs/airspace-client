@@ -7,7 +7,7 @@ public class Class23
 
     public static void method264(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.method571("spotanim.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("spotanim.dat", null));
         if(i != 0)
             aBoolean401 = !aBoolean401;
         anInt402 = buffer.method410();

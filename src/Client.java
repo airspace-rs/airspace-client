@@ -55,7 +55,7 @@ public class Client extends BrowserApplet
             try
             {
                 DataInputStream datainputstream = method132("crc" + (int)(Math.random() * 99999999D) + "-" + 317);
-                Buffer buffer = new Buffer(new byte[40], 891);
+                Buffer buffer = new Buffer(new byte[40]);
                 datainputstream.readFully(buffer.data, 0, 40);
                 datainputstream.close();
                 for(int i1 = 0; i1 < 9; i1++)
@@ -133,26 +133,26 @@ public class Client extends BrowserApplet
     {
         aGraphicsBuffer_1166.method237();
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1180;
-        aClass30_Sub2_Sub1_Sub2_1198.method361(0, 16083, 0);
+        aJagexImage_1198.method361(0, 16083, 0);
         if(aBoolean1256)
         {
-            aClass30_Sub2_Sub1_Sub4_1272.method381(0, aString1121, 23693, 40, 239);
-            aClass30_Sub2_Sub1_Sub4_1272.method381(128, aString1212 + "*", 23693, 60, 239);
+            aJagexFont_1272.method381(0, aString1121, 23693, 40, 239);
+            aJagexFont_1272.method381(128, aString1212 + "*", 23693, 60, 239);
         } else
         if(anInt1225 == 1)
         {
-            aClass30_Sub2_Sub1_Sub4_1272.method381(0, "Enter amount:", 23693, 40, 239);
-            aClass30_Sub2_Sub1_Sub4_1272.method381(128, aString1004 + "*", 23693, 60, 239);
+            aJagexFont_1272.method381(0, "Enter amount:", 23693, 40, 239);
+            aJagexFont_1272.method381(128, aString1004 + "*", 23693, 60, 239);
         } else
         if(anInt1225 == 2)
         {
-            aClass30_Sub2_Sub1_Sub4_1272.method381(0, "Enter name:", 23693, 40, 239);
-            aClass30_Sub2_Sub1_Sub4_1272.method381(128, aString1004 + "*", 23693, 60, 239);
+            aJagexFont_1272.method381(0, "Enter name:", 23693, 40, 239);
+            aJagexFont_1272.method381(128, aString1004 + "*", 23693, 60, 239);
         } else
         if(aString844 != null)
         {
-            aClass30_Sub2_Sub1_Sub4_1272.method381(0, aString844, 23693, 40, 239);
-            aClass30_Sub2_Sub1_Sub4_1272.method381(128, "Click to continue", 23693, 60, 239);
+            aJagexFont_1272.method381(0, aString844, 23693, 40, 239);
+            aJagexFont_1272.method381(128, "Click to continue", 23693, 60, 239);
         } else
         if(anInt1276 != -1)
             method105(8, 0, 0, Class9.aClass9Array210[anInt1276], 0);
@@ -162,7 +162,7 @@ public class Client extends BrowserApplet
             method105(8, 0, 0, Class9.aClass9Array210[anInt1042], 0);
         } else
         {
-            Class30_Sub2_Sub1_Sub4 class30_sub2_sub1_sub4 = aClass30_Sub2_Sub1_Sub4_1271;
+            JagexFont jagexFont = aJagexFont_1271;
             int j = 0;
             Class30_Sub2_Sub1.method333(77, 0, false, 463, 0);
             for(int k = 0; k < 100; k++)
@@ -185,7 +185,7 @@ public class Client extends BrowserApplet
                     if(l == 0)
                     {
                         if(i1 > 0 && i1 < 110)
-                            class30_sub2_sub1_sub4.method385(0, aStringArray944[k], i1, 822, 4);
+                            jagexFont.method385(0, aStringArray944[k], i1, 822, 4);
                         j++;
                     }
                     if((l == 1 || l == 2) && (l == 1 || anInt1287 == 0 || anInt1287 == 1 && method109(false, s1)))
@@ -195,17 +195,17 @@ public class Client extends BrowserApplet
                             int j1 = 4;
                             if(byte0 == 1)
                             {
-                                aClass30_Sub2_Sub1_Sub2Array1219[0].method361(j1, 16083, i1 - 12);
+                                aJagexImageArray1219[0].method361(j1, 16083, i1 - 12);
                                 j1 += 14;
                             }
                             if(byte0 == 2)
                             {
-                                aClass30_Sub2_Sub1_Sub2Array1219[1].method361(j1, 16083, i1 - 12);
+                                aJagexImageArray1219[1].method361(j1, 16083, i1 - 12);
                                 j1 += 14;
                             }
-                            class30_sub2_sub1_sub4.method385(0, s1 + ":", i1, 822, j1);
-                            j1 += class30_sub2_sub1_sub4.method383(anInt1116, s1) + 8;
-                            class30_sub2_sub1_sub4.method385(255, aStringArray944[k], i1, 822, j1);
+                            jagexFont.method385(0, s1 + ":", i1, 822, j1);
+                            j1 += jagexFont.method383(anInt1116, s1) + 8;
+                            jagexFont.method385(255, aStringArray944[k], i1, 822, j1);
                         }
                         j++;
                     }
@@ -214,49 +214,49 @@ public class Client extends BrowserApplet
                         if(i1 > 0 && i1 < 110)
                         {
                             int k1 = 4;
-                            class30_sub2_sub1_sub4.method385(0, "From", i1, 822, k1);
-                            k1 += class30_sub2_sub1_sub4.method383(anInt1116, "From ");
+                            jagexFont.method385(0, "From", i1, 822, k1);
+                            k1 += jagexFont.method383(anInt1116, "From ");
                             if(byte0 == 1)
                             {
-                                aClass30_Sub2_Sub1_Sub2Array1219[0].method361(k1, 16083, i1 - 12);
+                                aJagexImageArray1219[0].method361(k1, 16083, i1 - 12);
                                 k1 += 14;
                             }
                             if(byte0 == 2)
                             {
-                                aClass30_Sub2_Sub1_Sub2Array1219[1].method361(k1, 16083, i1 - 12);
+                                aJagexImageArray1219[1].method361(k1, 16083, i1 - 12);
                                 k1 += 14;
                             }
-                            class30_sub2_sub1_sub4.method385(0, s1 + ":", i1, 822, k1);
-                            k1 += class30_sub2_sub1_sub4.method383(anInt1116, s1) + 8;
-                            class30_sub2_sub1_sub4.method385(0x800000, aStringArray944[k], i1, 822, k1);
+                            jagexFont.method385(0, s1 + ":", i1, 822, k1);
+                            k1 += jagexFont.method383(anInt1116, s1) + 8;
+                            jagexFont.method385(0x800000, aStringArray944[k], i1, 822, k1);
                         }
                         j++;
                     }
                     if(l == 4 && (anInt1248 == 0 || anInt1248 == 1 && method109(false, s1)))
                     {
                         if(i1 > 0 && i1 < 110)
-                            class30_sub2_sub1_sub4.method385(0x800080, s1 + " " + aStringArray944[k], i1, 822, 4);
+                            jagexFont.method385(0x800080, s1 + " " + aStringArray944[k], i1, 822, 4);
                         j++;
                     }
                     if(l == 5 && anInt1195 == 0 && anInt845 < 2)
                     {
                         if(i1 > 0 && i1 < 110)
-                            class30_sub2_sub1_sub4.method385(0x800000, aStringArray944[k], i1, 822, 4);
+                            jagexFont.method385(0x800000, aStringArray944[k], i1, 822, 4);
                         j++;
                     }
                     if(l == 6 && anInt1195 == 0 && anInt845 < 2)
                     {
                         if(i1 > 0 && i1 < 110)
                         {
-                            class30_sub2_sub1_sub4.method385(0, "To " + s1 + ":", i1, 822, 4);
-                            class30_sub2_sub1_sub4.method385(0x800000, aStringArray944[k], i1, 822, 12 + class30_sub2_sub1_sub4.method383(anInt1116, "To " + s1));
+                            jagexFont.method385(0, "To " + s1 + ":", i1, 822, 4);
+                            jagexFont.method385(0x800000, aStringArray944[k], i1, 822, 12 + jagexFont.method383(anInt1116, "To " + s1));
                         }
                         j++;
                     }
                     if(l == 8 && (anInt1248 == 0 || anInt1248 == 1 && method109(false, s1)))
                     {
                         if(i1 > 0 && i1 < 110)
-                            class30_sub2_sub1_sub4.method385(0x7e3200, s1 + " " + aStringArray944[k], i1, 822, 4);
+                            jagexFont.method385(0x7e3200, s1 + " " + aStringArray944[k], i1, 822, 4);
                         j++;
                     }
                 }
@@ -271,8 +271,8 @@ public class Client extends BrowserApplet
                 s = aClass30_Sub2_Sub4_Sub1_Sub2_1126.aString1703;
             else
                 s = Class50.method587(-45804, enteredUsername);
-            class30_sub2_sub1_sub4.method385(0, s + ":", 90, 822, 4);
-            class30_sub2_sub1_sub4.method385(255, aString887 + "*", 90, 822, 6 + class30_sub2_sub1_sub4.method383(anInt1116, s + ": "));
+            jagexFont.method385(0, s + ":", 90, 822, 4);
+            jagexFont.method385(255, aString887 + "*", 90, 822, 6 + jagexFont.method383(anInt1116, s + ": "));
             Class30_Sub2_Sub1.method339(77, 0, 479, 0, (byte)4);
         }
         if(aBoolean885 && anInt948 == 2)
@@ -1080,8 +1080,8 @@ public class Client extends BrowserApplet
 
     public void method30(int i, int j, int k, int l, int i1, int j1)
     {
-        aClass30_Sub2_Sub1_Sub2_1024.method361(i1, 16083, l);
-        aClass30_Sub2_Sub1_Sub2_1025.method361(i1, 16083, (l + j) - 16);
+        aJagexImage_1024.method361(i1, 16083, l);
+        aJagexImage_1025.method361(i1, 16083, (l + j) - 16);
         Class30_Sub2_Sub1.method336(j - 32, l + 16, i1, anInt1002, 16, 0);
         int k1 = ((j - 32) * j) / j1;
         if(k1 < 8)
@@ -1376,8 +1376,8 @@ public class Client extends BrowserApplet
                 method127(true, ((Class30_Sub2_Sub4_Sub1) (obj)), ((Class30_Sub2_Sub4_Sub1) (obj)).anInt1507);
                 if(anInt963 > -1 && anInt974 < anInt975)
                 {
-                    anIntArray979[anInt974] = aClass30_Sub2_Sub1_Sub4_1272.method384(((Class30_Sub2_Sub4_Sub1) (obj)).aString1506, true) / 2;
-                    anIntArray978[anInt974] = aClass30_Sub2_Sub1_Sub4_1272.anInt1497;
+                    anIntArray979[anInt974] = aJagexFont_1272.method384(((Class30_Sub2_Sub4_Sub1) (obj)).aString1506, true) / 2;
+                    anIntArray978[anInt974] = aJagexFont_1272.anInt1497;
                     anIntArray976[anInt974] = anInt963;
                     anIntArray977[anInt974] = anInt964;
                     anIntArray980[anInt974] = ((Class30_Sub2_Sub4_Sub1) (obj)).anInt1513;
@@ -1426,8 +1426,8 @@ public class Client extends BrowserApplet
                             anInt964 -= 10;
                         }
                         aClass30_Sub2_Sub1_Sub1Array987[((Class30_Sub2_Sub4_Sub1) (obj)).anIntArray1515[j1]].method348(anInt963 - 12, 16083, anInt964 - 12);
-                        aClass30_Sub2_Sub1_Sub4_1270.method381(0, String.valueOf(((Class30_Sub2_Sub4_Sub1) (obj)).anIntArray1514[j1]), 23693, anInt964 + 4, anInt963);
-                        aClass30_Sub2_Sub1_Sub4_1270.method381(0xffffff, String.valueOf(((Class30_Sub2_Sub4_Sub1) (obj)).anIntArray1514[j1]), 23693, anInt964 + 3, anInt963 - 1);
+                        aJagexFont_1270.method381(0, String.valueOf(((Class30_Sub2_Sub4_Sub1) (obj)).anIntArray1514[j1]), 23693, anInt964 + 4, anInt963);
+                        aJagexFont_1270.method381(0xffffff, String.valueOf(((Class30_Sub2_Sub4_Sub1) (obj)).anIntArray1514[j1]), 23693, anInt964 + 3, anInt963 - 1);
                     }
                 }
 
@@ -1505,31 +1505,31 @@ public class Client extends BrowserApplet
                 }
                 if(anIntArray981[k] == 0)
                 {
-                    aClass30_Sub2_Sub1_Sub4_1272.method381(0, s, 23693, anInt964 + 1, anInt963);
-                    aClass30_Sub2_Sub1_Sub4_1272.method381(i3, s, 23693, anInt964, anInt963);
+                    aJagexFont_1272.method381(0, s, 23693, anInt964 + 1, anInt963);
+                    aJagexFont_1272.method381(i3, s, 23693, anInt964, anInt963);
                 }
                 if(anIntArray981[k] == 1)
                 {
-                    aClass30_Sub2_Sub1_Sub4_1272.method386(0, true, s, anInt963, anInt1265, anInt964 + 1);
-                    aClass30_Sub2_Sub1_Sub4_1272.method386(i3, true, s, anInt963, anInt1265, anInt964);
+                    aJagexFont_1272.method386(0, true, s, anInt963, anInt1265, anInt964 + 1);
+                    aJagexFont_1272.method386(i3, true, s, anInt963, anInt1265, anInt964);
                 }
                 if(anIntArray981[k] == 2)
                 {
-                    aClass30_Sub2_Sub1_Sub4_1272.method387(anInt963, s, anInt1265, anInt964 + 1, aByte1194, 0);
-                    aClass30_Sub2_Sub1_Sub4_1272.method387(anInt963, s, anInt1265, anInt964, aByte1194, i3);
+                    aJagexFont_1272.method387(anInt963, s, anInt1265, anInt964 + 1, aByte1194, 0);
+                    aJagexFont_1272.method387(anInt963, s, anInt1265, anInt964, aByte1194, i3);
                 }
                 if(anIntArray981[k] == 3)
                 {
-                    aClass30_Sub2_Sub1_Sub4_1272.method388(150 - anIntArray982[k], s, true, anInt1265, anInt964 + 1, anInt963, 0);
-                    aClass30_Sub2_Sub1_Sub4_1272.method388(150 - anIntArray982[k], s, true, anInt1265, anInt964, anInt963, i3);
+                    aJagexFont_1272.method388(150 - anIntArray982[k], s, true, anInt1265, anInt964 + 1, anInt963, 0);
+                    aJagexFont_1272.method388(150 - anIntArray982[k], s, true, anInt1265, anInt964, anInt963, i3);
                 }
                 if(anIntArray981[k] == 4)
                 {
-                    int i4 = aClass30_Sub2_Sub1_Sub4_1272.method384(s, true);
+                    int i4 = aJagexFont_1272.method384(s, true);
                     int k4 = ((150 - anIntArray982[k]) * (i4 + 100)) / 150;
                     Class30_Sub2_Sub1.method333(334, anInt963 - 50, false, anInt963 + 50, 0);
-                    aClass30_Sub2_Sub1_Sub4_1272.method385(0, s, anInt964 + 1, 822, (anInt963 + 50) - k4);
-                    aClass30_Sub2_Sub1_Sub4_1272.method385(i3, s, anInt964, 822, (anInt963 + 50) - k4);
+                    aJagexFont_1272.method385(0, s, anInt964 + 1, 822, (anInt963 + 50) - k4);
+                    aJagexFont_1272.method385(i3, s, anInt964, 822, (anInt963 + 50) - k4);
                     Class30_Sub2_Sub1.method332(4);
                 }
                 if(anIntArray981[k] == 5)
@@ -1541,15 +1541,15 @@ public class Client extends BrowserApplet
                     else
                     if(j4 > 125)
                         l4 = j4 - 125;
-                    Class30_Sub2_Sub1.method333(anInt964 + 5, 0, false, 512, anInt964 - aClass30_Sub2_Sub1_Sub4_1272.anInt1497 - 1);
-                    aClass30_Sub2_Sub1_Sub4_1272.method381(0, s, 23693, anInt964 + 1 + l4, anInt963);
-                    aClass30_Sub2_Sub1_Sub4_1272.method381(i3, s, 23693, anInt964 + l4, anInt963);
+                    Class30_Sub2_Sub1.method333(anInt964 + 5, 0, false, 512, anInt964 - aJagexFont_1272.anInt1497 - 1);
+                    aJagexFont_1272.method381(0, s, 23693, anInt964 + 1 + l4, anInt963);
+                    aJagexFont_1272.method381(i3, s, 23693, anInt964 + l4, anInt963);
                     Class30_Sub2_Sub1.method332(4);
                 }
             } else
             {
-                aClass30_Sub2_Sub1_Sub4_1272.method381(0, s, 23693, anInt964 + 1, anInt963);
-                aClass30_Sub2_Sub1_Sub4_1272.method381(0xffff00, s, 23693, anInt964, anInt963);
+                aJagexFont_1272.method381(0, s, 23693, anInt964 + 1, anInt963);
+                aJagexFont_1272.method381(0xffff00, s, 23693, anInt964, anInt963);
             }
         }
 
@@ -1595,7 +1595,7 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1181;
         if(byte0 != -81)
             return;
-        aClass30_Sub2_Sub1_Sub2_1196.method361(0, 16083, 0);
+        aJagexImage_1196.method361(0, 16083, 0);
         if(anInt1189 != -1)
             method105(8, 0, 0, Class9.aClass9Array210[anInt1189], 0);
         else
@@ -1616,15 +1616,15 @@ public class Client extends BrowserApplet
         {
             if(Class30_Sub2_Sub1_Sub3.anIntArray1480[17] >= j)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2 = Class30_Sub2_Sub1_Sub3.aClass30_Sub2_Sub1_Sub2Array1474[17];
-                int k = class30_sub2_sub1_sub2.anInt1452 * class30_sub2_sub1_sub2.anInt1453 - 1;
-                int j1 = class30_sub2_sub1_sub2.anInt1452 * anInt945 * 2;
-                byte abyte0[] = class30_sub2_sub1_sub2.aByteArray1450;
+                JagexImage jagexImage = Class30_Sub2_Sub1_Sub3.aJagexImageArray1474[17];
+                int k = jagexImage.anInt1452 * jagexImage.anInt1453 - 1;
+                int j1 = jagexImage.anInt1452 * anInt945 * 2;
+                byte abyte0[] = jagexImage.aByteArray1450;
                 byte abyte3[] = aByteArray912;
                 for(int i2 = 0; i2 <= k; i2++)
                     abyte3[i2] = abyte0[i2 - j1 & k];
 
-                class30_sub2_sub1_sub2.aByteArray1450 = abyte3;
+                jagexImage.aByteArray1450 = abyte3;
                 aByteArray912 = abyte0;
                 Class30_Sub2_Sub1_Sub3.method370(17, -477);
                 anInt854++;
@@ -1650,7 +1650,7 @@ public class Client extends BrowserApplet
             }
             if(Class30_Sub2_Sub1_Sub3.anIntArray1480[24] >= j)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2_1 = Class30_Sub2_Sub1_Sub3.aClass30_Sub2_Sub1_Sub2Array1474[24];
+                JagexImage class30_sub2_sub1_sub2_1 = Class30_Sub2_Sub1_Sub3.aJagexImageArray1474[24];
                 int l = class30_sub2_sub1_sub2_1.anInt1452 * class30_sub2_sub1_sub2_1.anInt1453 - 1;
                 int k1 = class30_sub2_sub1_sub2_1.anInt1452 * anInt945 * 2;
                 byte abyte1[] = class30_sub2_sub1_sub2_1.aByteArray1450;
@@ -1664,7 +1664,7 @@ public class Client extends BrowserApplet
             }
             if(Class30_Sub2_Sub1_Sub3.anIntArray1480[34] >= j)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2_2 = Class30_Sub2_Sub1_Sub3.aClass30_Sub2_Sub1_Sub2Array1474[34];
+                JagexImage class30_sub2_sub1_sub2_2 = Class30_Sub2_Sub1_Sub3.aJagexImageArray1474[34];
                 int i1 = class30_sub2_sub1_sub2_2.anInt1452 * class30_sub2_sub1_sub2_2.anInt1453 - 1;
                 int l1 = class30_sub2_sub1_sub2_2.anInt1452 * anInt945 * 2;
                 byte abyte2[] = class30_sub2_sub1_sub2_2.aByteArray1450;
@@ -1821,7 +1821,7 @@ public class Client extends BrowserApplet
             return;
         Class30_Sub2_Sub1.method336(16, j + 1, i + 1, 0, k - 2, 0);
         Class30_Sub2_Sub1.method337(i + 1, k - 2, l - 19, 0, j + 18, true);
-        aClass30_Sub2_Sub1_Sub4_1272.method385(i1, "Choose Option", j + 14, 822, i + 3);
+        aJagexFont_1272.method385(i1, "Choose Option", j + 14, 822, i + 3);
         int j1 = super.anInt20;
         int k1 = super.anInt21;
         if(anInt948 == 0)
@@ -1845,7 +1845,7 @@ public class Client extends BrowserApplet
             int j2 = 0xffffff;
             if(j1 > i && j1 < i + k && k1 > i2 - 13 && k1 < i2 + 3)
                 j2 = 0xffff00;
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, i + 3, j2, aStringArray1199[l1], i2);
+            aJagexFont_1272.method389(false, true, i + 3, j2, aStringArray1199[l1], i2);
         }
 
     }
@@ -2240,7 +2240,7 @@ public class Client extends BrowserApplet
             Class46 class46_2 = Class46.method572(i5);
             if(class46_2.anInt758 != -1)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2_2 = aClass30_Sub2_Sub1_Sub2Array1060[class46_2.anInt758];
+                JagexImage class30_sub2_sub1_sub2_2 = aJagexImageArray1060[class46_2.anInt758];
                 if(class30_sub2_sub1_sub2_2 != null)
                 {
                     int i6 = (class46_2.anInt744 * 4 - class30_sub2_sub1_sub2_2.anInt1452) / 2;
@@ -2331,7 +2331,7 @@ public class Client extends BrowserApplet
             Class46 class46_1 = Class46.method572(l3);
             if(class46_1.anInt758 != -1)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2_1 = aClass30_Sub2_Sub1_Sub2Array1060[class46_1.anInt758];
+                JagexImage class30_sub2_sub1_sub2_1 = aJagexImageArray1060[class46_1.anInt758];
                 if(class30_sub2_sub1_sub2_1 != null)
                 {
                     int j5 = (class46_1.anInt744 * 4 - class30_sub2_sub1_sub2_1.anInt1452) / 2;
@@ -2368,12 +2368,12 @@ public class Client extends BrowserApplet
             Class46 class46 = Class46.method572(j2);
             if(class46.anInt758 != -1)
             {
-                Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2 = aClass30_Sub2_Sub1_Sub2Array1060[class46.anInt758];
-                if(class30_sub2_sub1_sub2 != null)
+                JagexImage jagexImage = aJagexImageArray1060[class46.anInt758];
+                if(jagexImage != null)
                 {
-                    int i4 = (class46.anInt744 * 4 - class30_sub2_sub1_sub2.anInt1452) / 2;
-                    int j4 = (class46.anInt761 * 4 - class30_sub2_sub1_sub2.anInt1453) / 2;
-                    class30_sub2_sub1_sub2.method361(48 + l * 4 + i4, 16083, 48 + (104 - i - class46.anInt761) * 4 + j4);
+                    int i4 = (class46.anInt744 * 4 - jagexImage.anInt1452) / 2;
+                    int j4 = (class46.anInt761 * 4 - jagexImage.anInt1453) / 2;
+                    jagexImage.method361(48 + l * 4 + i4, 16083, 48 + (104 - i - class46.anInt761) * 4 + j4);
                 }
             }
         }
@@ -2381,9 +2381,9 @@ public class Client extends BrowserApplet
 
     public void showLoadingScreen()
     {
-        titleBoxImage = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "titlebox", 0);
-        titleButtonImage = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "titlebutton", 0);
-        runeImages = new Class30_Sub2_Sub1_Sub2[12];
+        titleBoxImage = new JagexImage(titleScreenArchive, "titlebox", 0);
+        titleButtonImage = new JagexImage(titleScreenArchive, "titlebutton", 0);
+        runeImages = new JagexImage[12];
         int j = 0;
         try {
             j = Integer.parseInt(getParameter("fl_icon"));
@@ -2392,12 +2392,12 @@ public class Client extends BrowserApplet
         }
         if (j == 0) {
             for (int k = 0; k < 12; k++) {
-                runeImages[k] = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "runes", k);
+                runeImages[k] = new JagexImage(titleScreenArchive, "runes", k);
             }
 
         } else {
             for (int l = 0; l < 12; l++) {
-                runeImages[l] = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "runes", 12 + (l & 3));
+                runeImages[l] = new JagexImage(titleScreenArchive, "runes", 12 + (l & 3));
             }
 
         }
@@ -2451,7 +2451,7 @@ public class Client extends BrowserApplet
         anIntArray850 = new int[256];
         anIntArray1190 = new int[32768];
         anIntArray1191 = new int[32768];
-        method106(null, -135);
+        method106(null);
         anIntArray828 = new int[32768];
         anIntArray829 = new int[32768];
         drawLoadingScreen(10, "Connecting to fileserver");
@@ -2527,8 +2527,8 @@ public class Client extends BrowserApplet
         if(isLowMemory && anInt1023 == 2 && Class7.anInt131 != anInt918)
         {
             aGraphicsBuffer_1165.method237();
-            aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
-            aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
+            aJagexFont_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
+            aJagexFont_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
             aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
             anInt1023 = 1;
             aLong824 = System.currentTimeMillis();
@@ -2636,7 +2636,7 @@ public class Client extends BrowserApplet
 
     public void drawLogo()
     {
-        byte abyte0[] = titleScreenArchive.method571("title.dat", null);
+        byte abyte0[] = titleScreenArchive.getFile("title.dat", null);
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(abyte0, this);
         aGraphicsBuffer_1110.method237();
         class30_sub2_sub1_sub1.method346(0, 0, -32357);
@@ -2740,7 +2740,7 @@ public class Client extends BrowserApplet
 
                 }
             } while(class30_sub2_sub3.anInt1419 != 93 || !aClass42_Sub1_1068.method564(class30_sub2_sub3.anInt1421, -520));
-            Class7.method173((byte)-107, new Buffer(class30_sub2_sub3.aByteArray1420, 891), aClass42_Sub1_1068);
+            Class7.method173((byte)-107, new Buffer(class30_sub2_sub3.aByteArray1420), aClass42_Sub1_1068);
         } while(true);
     }
 
@@ -2779,7 +2779,7 @@ public class Client extends BrowserApplet
         {
             anInt1275 -= anIntArray1190.length;
             int i2 = (int)(Math.random() * 12D);
-            method106(runeImages[i2], -135);
+            method106(runeImages[i2]);
         }
         for(int j2 = 1; j2 < c - 1; j2++)
         {
@@ -3274,13 +3274,13 @@ public class Client extends BrowserApplet
         char c = '\u0168';
         char c1 = '\310';
         byte byte1 = 20;
-        aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, "RuneScape is loading - please wait...", 23693, c1 / 2 - 26 - byte1, c / 2);
+        aJagexFont_1272.method381(0xffffff, "RuneScape is loading - please wait...", 23693, c1 / 2 - 26 - byte1, c / 2);
         int j = c1 / 2 - 18 - byte1;
         Class30_Sub2_Sub1.method337(c / 2 - 152, 304, 34, 0x8c1111, j, true);
         Class30_Sub2_Sub1.method337(c / 2 - 151, 302, 32, 0, j + 1, true);
         Class30_Sub2_Sub1.method336(30, j + 2, c / 2 - 150, 0x8c1111, percent * 3, 0);
         Class30_Sub2_Sub1.method336(30, j + 2, (c / 2 - 150) + percent * 3, 0, 300 - percent * 3, 0);
-        aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, text, 23693, (c1 / 2 + 5) - byte1, c / 2);
+        aJagexFont_1272.method381(0xffffff, text, 23693, (c1 / 2 + 5) - byte1, c / 2);
         aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
         if(aBoolean1255)
         {
@@ -3401,10 +3401,10 @@ public class Client extends BrowserApplet
             return;
         }
         aGraphicsBuffer_1165.method237();
-        aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Connection lost", 23693, 144, 257);
-        aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Connection lost", 23693, 143, 256);
-        aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Please wait - attempting to reestablish", 23693, 159, 257);
-        aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Please wait - attempting to reestablish", 23693, 158, 256);
+        aJagexFont_1271.method381(0, "Connection lost", 23693, 144, 257);
+        aJagexFont_1271.method381(0xffffff, "Connection lost", 23693, 143, 256);
+        aJagexFont_1271.method381(0, "Please wait - attempting to reestablish", 23693, 159, 257);
+        aJagexFont_1271.method381(0xffffff, "Please wait - attempting to reestablish", 23693, 158, 256);
         while(i >= 0) 
             buffer1.writeUnsignedByte(164);
         aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
@@ -4579,23 +4579,23 @@ public class Client extends BrowserApplet
         aGraphicsBuffer_909 = null;
         aGraphicsBuffer_910 = null;
         aGraphicsBuffer_911 = null;
-        aClass30_Sub2_Sub1_Sub2_1196 = null;
-        aClass30_Sub2_Sub1_Sub2_1197 = null;
-        aClass30_Sub2_Sub1_Sub2_1198 = null;
-        aClass30_Sub2_Sub1_Sub2_1027 = null;
-        aClass30_Sub2_Sub1_Sub2_1028 = null;
-        aClass30_Sub2_Sub1_Sub2_1029 = null;
-        aClass30_Sub2_Sub1_Sub2Array947 = null;
-        aClass30_Sub2_Sub1_Sub2_1143 = null;
-        aClass30_Sub2_Sub1_Sub2_1144 = null;
-        aClass30_Sub2_Sub1_Sub2_1145 = null;
-        aClass30_Sub2_Sub1_Sub2_1146 = null;
-        aClass30_Sub2_Sub1_Sub2_1147 = null;
-        aClass30_Sub2_Sub1_Sub2_865 = null;
-        aClass30_Sub2_Sub1_Sub2_866 = null;
-        aClass30_Sub2_Sub1_Sub2_867 = null;
-        aClass30_Sub2_Sub1_Sub2_868 = null;
-        aClass30_Sub2_Sub1_Sub2_869 = null;
+        aJagexImage_1196 = null;
+        aJagexImage_1197 = null;
+        aJagexImage_1198 = null;
+        aJagexImage_1027 = null;
+        aJagexImage_1028 = null;
+        aJagexImage_1029 = null;
+        aJagexImageArray947 = null;
+        aJagexImage_1143 = null;
+        aJagexImage_1144 = null;
+        aJagexImage_1145 = null;
+        aJagexImage_1146 = null;
+        aJagexImage_1147 = null;
+        aJagexImage_865 = null;
+        aJagexImage_866 = null;
+        aJagexImage_867 = null;
+        aJagexImage_868 = null;
+        aJagexImage_869 = null;
         aClass30_Sub2_Sub1_Sub1_1122 = null;
         aClass30_Sub2_Sub1_Sub1Array987 = null;
         aClass30_Sub2_Sub1_Sub1Array1095 = null;
@@ -4605,7 +4605,7 @@ public class Client extends BrowserApplet
         aClass30_Sub2_Sub1_Sub1_1076 = null;
         aClass30_Sub2_Sub1_Sub1_1077 = null;
         aClass30_Sub2_Sub1_Sub1_1078 = null;
-        aClass30_Sub2_Sub1_Sub2Array1060 = null;
+        aJagexImageArray1060 = null;
         aClass30_Sub2_Sub1_Sub1Array1033 = null;
         anIntArrayArray929 = null;
         aClass30_Sub2_Sub4_Sub1_Sub2Array890 = null;
@@ -5404,7 +5404,7 @@ public class Client extends BrowserApplet
     {
         if(anInt1195 == 0)
             return;
-        Class30_Sub2_Sub1_Sub4 class30_sub2_sub1_sub4 = aClass30_Sub2_Sub1_Sub4_1271;
+        JagexFont jagexFont = aJagexFont_1271;
         if(byte0 != aByte1274)
             aBoolean1231 = !aBoolean1231;
         int i = 0;
@@ -5430,37 +5430,37 @@ public class Client extends BrowserApplet
                 {
                     int l = 329 - i * 13;
                     int k1 = 4;
-                    class30_sub2_sub1_sub4.method385(0, "From", l, 822, k1);
-                    class30_sub2_sub1_sub4.method385(65535, "From", l - 1, 822, k1);
-                    k1 += class30_sub2_sub1_sub4.method383(anInt1116, "From ");
+                    jagexFont.method385(0, "From", l, 822, k1);
+                    jagexFont.method385(65535, "From", l - 1, 822, k1);
+                    k1 += jagexFont.method383(anInt1116, "From ");
                     if(byte1 == 1)
                     {
-                        aClass30_Sub2_Sub1_Sub2Array1219[0].method361(k1, 16083, l - 12);
+                        aJagexImageArray1219[0].method361(k1, 16083, l - 12);
                         k1 += 14;
                     }
                     if(byte1 == 2)
                     {
-                        aClass30_Sub2_Sub1_Sub2Array1219[1].method361(k1, 16083, l - 12);
+                        aJagexImageArray1219[1].method361(k1, 16083, l - 12);
                         k1 += 14;
                     }
-                    class30_sub2_sub1_sub4.method385(0, s + ": " + aStringArray944[j], l, 822, k1);
-                    class30_sub2_sub1_sub4.method385(65535, s + ": " + aStringArray944[j], l - 1, 822, k1);
+                    jagexFont.method385(0, s + ": " + aStringArray944[j], l, 822, k1);
+                    jagexFont.method385(65535, s + ": " + aStringArray944[j], l - 1, 822, k1);
                     if(++i >= 5)
                         return;
                 }
                 if(k == 5 && anInt845 < 2)
                 {
                     int i1 = 329 - i * 13;
-                    class30_sub2_sub1_sub4.method385(0, aStringArray944[j], i1, 822, 4);
-                    class30_sub2_sub1_sub4.method385(65535, aStringArray944[j], i1 - 1, 822, 4);
+                    jagexFont.method385(0, aStringArray944[j], i1, 822, 4);
+                    jagexFont.method385(65535, aStringArray944[j], i1 - 1, 822, 4);
                     if(++i >= 5)
                         return;
                 }
                 if(k == 6 && anInt845 < 2)
                 {
                     int j1 = 329 - i * 13;
-                    class30_sub2_sub1_sub4.method385(0, "To " + s + ": " + aStringArray944[j], j1, 822, 4);
-                    class30_sub2_sub1_sub4.method385(65535, "To " + s + ": " + aStringArray944[j], j1 - 1, 822, 4);
+                    jagexFont.method385(0, "To " + s + ": " + aStringArray944[j], j1, 822, 4);
+                    jagexFont.method385(65535, "To " + s + ": " + aStringArray944[j], j1 - 1, 822, 4);
                     if(++i >= 5)
                         return;
                 }
@@ -5601,7 +5601,7 @@ public class Client extends BrowserApplet
         aGraphicsBuffer_1166 = new GraphicsBuffer(479, 96, getWindow());
         aGraphicsBuffer_1164 = new GraphicsBuffer(172, 156, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass30_Sub2_Sub1_Sub2_1197.method361(0, 16083, 0);
+        aJagexImage_1197.method361(0, 16083, 0);
         aGraphicsBuffer_1163 = new GraphicsBuffer(190, 261, getWindow());
         aGraphicsBuffer_1165 = new GraphicsBuffer(512, 334, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
@@ -6728,20 +6728,20 @@ public class Client extends BrowserApplet
             titleScreenArchive = getArchiveAtIndex(1);
 
             // Fonts?!
-            aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", titleScreenArchive);
-            aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", titleScreenArchive);
-            aClass30_Sub2_Sub1_Sub4_1272 = new Class30_Sub2_Sub1_Sub4(false, "b12_full", titleScreenArchive);
-            aClass30_Sub2_Sub1_Sub4_1273 = new Class30_Sub2_Sub1_Sub4(true, "q8_full", titleScreenArchive);
+            aJagexFont_1270 = new JagexFont(false, "p11_full", titleScreenArchive);
+            aJagexFont_1271 = new JagexFont(false, "p12_full", titleScreenArchive);
+            aJagexFont_1272 = new JagexFont(false, "b12_full", titleScreenArchive);
+            aJagexFont_1273 = new JagexFont(true, "q8_full", titleScreenArchive);
 
             drawLogo();
             showLoadingScreen();
 
-            JagexArchive jagexArchive = getArchiveAtIndex(2);
-            JagexArchive jagexArchive1 = getArchiveAtIndex(3);
-            JagexArchive jagexArchive2 = getArchiveAtIndex(4);
-            JagexArchive jagexArchive3 = getArchiveAtIndex(6);
-            JagexArchive jagexArchive4 = getArchiveAtIndex(7);
-            JagexArchive jagexArchive5 = getArchiveAtIndex(8);
+            JagexArchive configArchive = getArchiveAtIndex(2);
+            JagexArchive interfaceArchive = getArchiveAtIndex(3);
+            JagexArchive mediaArchive = getArchiveAtIndex(4);
+            JagexArchive textureArchive = getArchiveAtIndex(6);
+            JagexArchive chatArchive = getArchiveAtIndex(7);
+            JagexArchive soundsArchives = getArchiveAtIndex(8);
 
             aByteArrayArrayArray1258 = new byte[4][104][104];
             anIntArrayArrayArray1214 = new int[4][105][105];
@@ -6750,10 +6750,10 @@ public class Client extends BrowserApplet
                 aClass11Array1230[j] = new Class11(104, 104, true);
 
             aClass30_Sub2_Sub1_Sub1_1263 = new Class30_Sub2_Sub1_Sub1(512, 512);
-            JagexArchive jagexArchive_6 = getArchiveAtIndex(5);
+            JagexArchive versionsArchive = getArchiveAtIndex(5);
             drawLoadingScreen(60, "Connecting to update server");
             aClass42_Sub1_1068 = new Class42_Sub1();
-            aClass42_Sub1_1068.method551(jagexArchive_6, this);
+            aClass42_Sub1_1068.method551(versionsArchive, this);
             Class36.method528(aClass42_Sub1_1068.method557(0));
             Class30_Sub2_Sub4_Sub6.method459(aClass42_Sub1_1068.method555(79, 0), aClass42_Sub1_1068);
             if (!isLowMemory) {
@@ -6890,105 +6890,105 @@ public class Client extends BrowserApplet
 
             }
             drawLoadingScreen(80, "Unpacking media");
-            aClass30_Sub2_Sub1_Sub2_1196 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "invback", 0);
-            aClass30_Sub2_Sub1_Sub2_1198 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "chatback", 0);
-            aClass30_Sub2_Sub1_Sub2_1197 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mapback", 0);
-            aClass30_Sub2_Sub1_Sub2_1027 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backbase1", 0);
-            aClass30_Sub2_Sub1_Sub2_1028 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backbase2", 0);
-            aClass30_Sub2_Sub1_Sub2_1029 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backhmid1", 0);
+            aJagexImage_1196 = new JagexImage(mediaArchive, "invback", 0);
+            aJagexImage_1198 = new JagexImage(mediaArchive, "chatback", 0);
+            aJagexImage_1197 = new JagexImage(mediaArchive, "mapback", 0);
+            aJagexImage_1027 = new JagexImage(mediaArchive, "backbase1", 0);
+            aJagexImage_1028 = new JagexImage(mediaArchive, "backbase2", 0);
+            aJagexImage_1029 = new JagexImage(mediaArchive, "backhmid1", 0);
             for(int j3 = 0; j3 < 13; j3++)
-                aClass30_Sub2_Sub1_Sub2Array947[j3] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "sideicons", j3);
+                aJagexImageArray947[j3] = new JagexImage(mediaArchive, "sideicons", j3);
 
-            aClass30_Sub2_Sub1_Sub1_1122 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "compass", 0);
-            aClass30_Sub2_Sub1_Sub1_1001 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapedge", 0);
+            aClass30_Sub2_Sub1_Sub1_1122 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "compass", 0);
+            aClass30_Sub2_Sub1_Sub1_1001 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapedge", 0);
             aClass30_Sub2_Sub1_Sub1_1001.method345(5059);
             try
             {
                 for(int k3 = 0; k3 < 100; k3++)
-                    aClass30_Sub2_Sub1_Sub2Array1060[k3] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mapscene", k3);
+                    aJagexImageArray1060[k3] = new JagexImage(mediaArchive, "mapscene", k3);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int l3 = 0; l3 < 100; l3++)
-                    aClass30_Sub2_Sub1_Sub1Array1033[l3] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapfunction", l3);
+                    aClass30_Sub2_Sub1_Sub1Array1033[l3] = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapfunction", l3);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int i4 = 0; i4 < 20; i4++)
-                    aClass30_Sub2_Sub1_Sub1Array987[i4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "hitmarks", i4);
+                    aClass30_Sub2_Sub1_Sub1Array987[i4] = new Class30_Sub2_Sub1_Sub1(mediaArchive, "hitmarks", i4);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int j4 = 0; j4 < 20; j4++)
-                    aClass30_Sub2_Sub1_Sub1Array1095[j4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "headicons", j4);
+                    aClass30_Sub2_Sub1_Sub1Array1095[j4] = new Class30_Sub2_Sub1_Sub1(mediaArchive, "headicons", j4);
 
             }
             catch(Exception _ex) { }
-            aClass30_Sub2_Sub1_Sub1_870 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapmarker", 0);
-            aClass30_Sub2_Sub1_Sub1_871 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapmarker", 1);
+            aClass30_Sub2_Sub1_Sub1_870 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapmarker", 0);
+            aClass30_Sub2_Sub1_Sub1_871 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapmarker", 1);
             for(int k4 = 0; k4 < 8; k4++)
-                aClass30_Sub2_Sub1_Sub1Array1150[k4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "cross", k4);
+                aClass30_Sub2_Sub1_Sub1Array1150[k4] = new Class30_Sub2_Sub1_Sub1(mediaArchive, "cross", k4);
 
-            aClass30_Sub2_Sub1_Sub1_1074 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 0);
-            aClass30_Sub2_Sub1_Sub1_1075 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 1);
-            aClass30_Sub2_Sub1_Sub1_1076 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 2);
-            aClass30_Sub2_Sub1_Sub1_1077 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 3);
-            aClass30_Sub2_Sub1_Sub1_1078 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 4);
-            aClass30_Sub2_Sub1_Sub2_1024 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "scrollbar", 0);
-            aClass30_Sub2_Sub1_Sub2_1025 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "scrollbar", 1);
-            aClass30_Sub2_Sub1_Sub2_1143 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
-            aClass30_Sub2_Sub1_Sub2_1144 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
-            aClass30_Sub2_Sub1_Sub2_1145 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone3", 0);
-            aClass30_Sub2_Sub1_Sub2_1146 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
-            aClass30_Sub2_Sub1_Sub2_1146.method358(0);
-            aClass30_Sub2_Sub1_Sub2_1147 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
-            aClass30_Sub2_Sub1_Sub2_1147.method358(0);
-            aClass30_Sub2_Sub1_Sub2_865 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
-            aClass30_Sub2_Sub1_Sub2_865.method359(true);
-            aClass30_Sub2_Sub1_Sub2_866 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
-            aClass30_Sub2_Sub1_Sub2_866.method359(true);
-            aClass30_Sub2_Sub1_Sub2_867 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone3", 0);
-            aClass30_Sub2_Sub1_Sub2_867.method359(true);
-            aClass30_Sub2_Sub1_Sub2_868 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
-            aClass30_Sub2_Sub1_Sub2_868.method358(0);
-            aClass30_Sub2_Sub1_Sub2_868.method359(true);
-            aClass30_Sub2_Sub1_Sub2_869 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
-            aClass30_Sub2_Sub1_Sub2_869.method358(0);
-            aClass30_Sub2_Sub1_Sub2_869.method359(true);
+            aClass30_Sub2_Sub1_Sub1_1074 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapdots", 0);
+            aClass30_Sub2_Sub1_Sub1_1075 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapdots", 1);
+            aClass30_Sub2_Sub1_Sub1_1076 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapdots", 2);
+            aClass30_Sub2_Sub1_Sub1_1077 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapdots", 3);
+            aClass30_Sub2_Sub1_Sub1_1078 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "mapdots", 4);
+            aJagexImage_1024 = new JagexImage(mediaArchive, "scrollbar", 0);
+            aJagexImage_1025 = new JagexImage(mediaArchive, "scrollbar", 1);
+            aJagexImage_1143 = new JagexImage(mediaArchive, "redstone1", 0);
+            aJagexImage_1144 = new JagexImage(mediaArchive, "redstone2", 0);
+            aJagexImage_1145 = new JagexImage(mediaArchive, "redstone3", 0);
+            aJagexImage_1146 = new JagexImage(mediaArchive, "redstone1", 0);
+            aJagexImage_1146.method358(0);
+            aJagexImage_1147 = new JagexImage(mediaArchive, "redstone2", 0);
+            aJagexImage_1147.method358(0);
+            aJagexImage_865 = new JagexImage(mediaArchive, "redstone1", 0);
+            aJagexImage_865.method359(true);
+            aJagexImage_866 = new JagexImage(mediaArchive, "redstone2", 0);
+            aJagexImage_866.method359(true);
+            aJagexImage_867 = new JagexImage(mediaArchive, "redstone3", 0);
+            aJagexImage_867.method359(true);
+            aJagexImage_868 = new JagexImage(mediaArchive, "redstone1", 0);
+            aJagexImage_868.method358(0);
+            aJagexImage_868.method359(true);
+            aJagexImage_869 = new JagexImage(mediaArchive, "redstone2", 0);
+            aJagexImage_869.method358(0);
+            aJagexImage_869.method359(true);
             for(int l4 = 0; l4 < 2; l4++)
-                aClass30_Sub2_Sub1_Sub2Array1219[l4] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mod_icons", l4);
+                aJagexImageArray1219[l4] = new JagexImage(mediaArchive, "mod_icons", l4);
 
-            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backleft1", 0);
+            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backleft1", 0);
             aGraphicsBuffer_903 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backleft2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backleft2", 0);
             aGraphicsBuffer_904 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backright1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backright1", 0);
             aGraphicsBuffer_905 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backright2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backright2", 0);
             aGraphicsBuffer_906 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backtop1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backtop1", 0);
             aGraphicsBuffer_907 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backvmid1", 0);
             aGraphicsBuffer_908 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backvmid2", 0);
             aGraphicsBuffer_909 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid3", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backvmid3", 0);
             aGraphicsBuffer_910 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backhmid2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(mediaArchive, "backhmid2", 0);
             aGraphicsBuffer_911 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             int i5 = (int)(Math.random() * 21D) - 10;
@@ -6999,37 +6999,37 @@ public class Client extends BrowserApplet
             {
                 if(aClass30_Sub2_Sub1_Sub1Array1033[i6] != null)
                     aClass30_Sub2_Sub1_Sub1Array1033[i6].method344(i5 + l5, j5 + l5, k5 + l5, 0);
-                if(aClass30_Sub2_Sub1_Sub2Array1060[i6] != null)
-                    aClass30_Sub2_Sub1_Sub2Array1060[i6].method360(i5 + l5, j5 + l5, k5 + l5, 0);
+                if(aJagexImageArray1060[i6] != null)
+                    aJagexImageArray1060[i6].method360(i5 + l5, j5 + l5, k5 + l5, 0);
             }
 
             drawLoadingScreen(83, "Unpacking textures");
-            Class30_Sub2_Sub1_Sub3.method368(jagexArchive3, 0);
+            Class30_Sub2_Sub1_Sub3.method368(textureArchive, 0);
             Class30_Sub2_Sub1_Sub3.method372(0.80000000000000004D, aByte1200);
             Class30_Sub2_Sub1_Sub3.method367(20, true);
             drawLoadingScreen(86, "Unpacking config");
-            Class20.method257(0, jagexArchive);
-            Class46.method576(jagexArchive);
-            Class22.method260(0, jagexArchive);
-            Class8.method193(jagexArchive);
-            Class5.method162(jagexArchive);
-            Class38.method535(0, jagexArchive);
-            Class23.method264(0, jagexArchive);
-            Class41.method546(0, jagexArchive);
-            Class37.method533(0, jagexArchive);
+            Class20.method257(0, configArchive);
+            Class46.method576(configArchive);
+            Class22.method260(0, configArchive);
+            Class8.method193(configArchive);
+            Class5.method162(configArchive);
+            Class38.method535(0, configArchive);
+            Class23.method264(0, configArchive);
+            Class41.method546(0, configArchive);
+            Class37.method533(0, configArchive);
             Class8.aBoolean182 = aBoolean959;
             if(!isLowMemory)
             {
                 drawLoadingScreen(90, "Unpacking sounds");
-                byte abyte0[] = jagexArchive5.method571("sounds.dat", null);
-                Buffer buffer = new Buffer(abyte0, 891);
+                byte abyte0[] = soundsArchives.getFile("sounds.dat", null);
+                Buffer buffer = new Buffer(abyte0);
                 Class16.method240(0, buffer);
             }
             drawLoadingScreen(95, "Unpacking interfaces");
-            Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[] = {
-                aClass30_Sub2_Sub1_Sub4_1270, aClass30_Sub2_Sub1_Sub4_1271, aClass30_Sub2_Sub1_Sub4_1272, aClass30_Sub2_Sub1_Sub4_1273
+            JagexFont aclass30_sub2_sub1_sub4[] = {
+                    aJagexFont_1270, aJagexFont_1271, aJagexFont_1272, aJagexFont_1273
             };
-            Class9.method205(jagexArchive1, aclass30_sub2_sub1_sub4, (byte)-84, jagexArchive2);
+            Class9.method205(interfaceArchive, aclass30_sub2_sub1_sub4, (byte)-84, mediaArchive);
             drawLoadingScreen(100, "Preparing game engine");
             for(int j6 = 0; j6 < 33; j6++)
             {
@@ -7037,7 +7037,7 @@ public class Client extends BrowserApplet
                 int i7 = 0;
                 for(int k7 = 0; k7 < 34; k7++)
                 {
-                    if(aClass30_Sub2_Sub1_Sub2_1197.aByteArray1450[k7 + j6 * aClass30_Sub2_Sub1_Sub2_1197.anInt1452] == 0)
+                    if(aJagexImage_1197.aByteArray1450[k7 + j6 * aJagexImage_1197.anInt1452] == 0)
                     {
                         if(k6 == 999)
                             k6 = k7;
@@ -7059,7 +7059,7 @@ public class Client extends BrowserApplet
                 int l7 = 0;
                 for(int j8 = 25; j8 < 172; j8++)
                 {
-                    if(aClass30_Sub2_Sub1_Sub2_1197.aByteArray1450[j8 + l6 * aClass30_Sub2_Sub1_Sub2_1197.anInt1452] == 0 && (j8 > 34 || l6 > 34))
+                    if(aJagexImage_1197.aByteArray1450[j8 + l6 * aJagexImage_1197.anInt1452] == 0 && (j8 > 34 || l6 > 34))
                     {
                         if(j7 == 999)
                             j7 = j8;
@@ -7091,7 +7091,7 @@ public class Client extends BrowserApplet
             }
 
             Class25.method310(500, 800, 512, 334, ai, aBoolean1231);
-            Class34.method487(jagexArchive4);
+            Class34.method487(chatArchive);
             aClass48_879 = new Class48(this, anInt1096);
             newThread(aClass48_879, 10);
             Class30_Sub2_Sub4_Sub5.aClient1609 = this;
@@ -7726,75 +7726,75 @@ public class Client extends BrowserApplet
             }
             aBoolean1103 = false;
             aGraphicsBuffer_1125.method237();
-            aClass30_Sub2_Sub1_Sub2_1029.method361(0, 16083, 0);
+            aJagexImage_1029.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
                 if(anIntArray1130[anInt1221] != -1)
                 {
                     if(anInt1221 == 0)
-                        aClass30_Sub2_Sub1_Sub2_1143.method361(22, 16083, 10);
+                        aJagexImage_1143.method361(22, 16083, 10);
                     if(anInt1221 == 1)
-                        aClass30_Sub2_Sub1_Sub2_1144.method361(54, 16083, 8);
+                        aJagexImage_1144.method361(54, 16083, 8);
                     if(anInt1221 == 2)
-                        aClass30_Sub2_Sub1_Sub2_1144.method361(82, 16083, 8);
+                        aJagexImage_1144.method361(82, 16083, 8);
                     if(anInt1221 == 3)
-                        aClass30_Sub2_Sub1_Sub2_1145.method361(110, 16083, 8);
+                        aJagexImage_1145.method361(110, 16083, 8);
                     if(anInt1221 == 4)
-                        aClass30_Sub2_Sub1_Sub2_1147.method361(153, 16083, 8);
+                        aJagexImage_1147.method361(153, 16083, 8);
                     if(anInt1221 == 5)
-                        aClass30_Sub2_Sub1_Sub2_1147.method361(181, 16083, 8);
+                        aJagexImage_1147.method361(181, 16083, 8);
                     if(anInt1221 == 6)
-                        aClass30_Sub2_Sub1_Sub2_1146.method361(209, 16083, 9);
+                        aJagexImage_1146.method361(209, 16083, 9);
                 }
                 if(anIntArray1130[0] != -1 && (anInt1054 != 0 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[0].method361(29, 16083, 13);
+                    aJagexImageArray947[0].method361(29, 16083, 13);
                 if(anIntArray1130[1] != -1 && (anInt1054 != 1 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[1].method361(53, 16083, 11);
+                    aJagexImageArray947[1].method361(53, 16083, 11);
                 if(anIntArray1130[2] != -1 && (anInt1054 != 2 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[2].method361(82, 16083, 11);
+                    aJagexImageArray947[2].method361(82, 16083, 11);
                 if(anIntArray1130[3] != -1 && (anInt1054 != 3 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[3].method361(115, 16083, 12);
+                    aJagexImageArray947[3].method361(115, 16083, 12);
                 if(anIntArray1130[4] != -1 && (anInt1054 != 4 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[4].method361(153, 16083, 13);
+                    aJagexImageArray947[4].method361(153, 16083, 13);
                 if(anIntArray1130[5] != -1 && (anInt1054 != 5 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[5].method361(180, 16083, 11);
+                    aJagexImageArray947[5].method361(180, 16083, 11);
                 if(anIntArray1130[6] != -1 && (anInt1054 != 6 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[6].method361(208, 16083, 13);
+                    aJagexImageArray947[6].method361(208, 16083, 13);
             }
             aGraphicsBuffer_1125.method238(160, 23680, super.graphics, 516);
             aGraphicsBuffer_1124.method237();
-            aClass30_Sub2_Sub1_Sub2_1028.method361(0, 16083, 0);
+            aJagexImage_1028.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
                 if(anIntArray1130[anInt1221] != -1)
                 {
                     if(anInt1221 == 7)
-                        aClass30_Sub2_Sub1_Sub2_865.method361(42, 16083, 0);
+                        aJagexImage_865.method361(42, 16083, 0);
                     if(anInt1221 == 8)
-                        aClass30_Sub2_Sub1_Sub2_866.method361(74, 16083, 0);
+                        aJagexImage_866.method361(74, 16083, 0);
                     if(anInt1221 == 9)
-                        aClass30_Sub2_Sub1_Sub2_866.method361(102, 16083, 0);
+                        aJagexImage_866.method361(102, 16083, 0);
                     if(anInt1221 == 10)
-                        aClass30_Sub2_Sub1_Sub2_867.method361(130, 16083, 1);
+                        aJagexImage_867.method361(130, 16083, 1);
                     if(anInt1221 == 11)
-                        aClass30_Sub2_Sub1_Sub2_869.method361(173, 16083, 0);
+                        aJagexImage_869.method361(173, 16083, 0);
                     if(anInt1221 == 12)
-                        aClass30_Sub2_Sub1_Sub2_869.method361(201, 16083, 0);
+                        aJagexImage_869.method361(201, 16083, 0);
                     if(anInt1221 == 13)
-                        aClass30_Sub2_Sub1_Sub2_868.method361(229, 16083, 0);
+                        aJagexImage_868.method361(229, 16083, 0);
                 }
                 if(anIntArray1130[8] != -1 && (anInt1054 != 8 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[7].method361(74, 16083, 2);
+                    aJagexImageArray947[7].method361(74, 16083, 2);
                 if(anIntArray1130[9] != -1 && (anInt1054 != 9 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[8].method361(102, 16083, 3);
+                    aJagexImageArray947[8].method361(102, 16083, 3);
                 if(anIntArray1130[10] != -1 && (anInt1054 != 10 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[9].method361(137, 16083, 4);
+                    aJagexImageArray947[9].method361(137, 16083, 4);
                 if(anIntArray1130[11] != -1 && (anInt1054 != 11 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[10].method361(174, 16083, 2);
+                    aJagexImageArray947[10].method361(174, 16083, 2);
                 if(anIntArray1130[12] != -1 && (anInt1054 != 12 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[11].method361(201, 16083, 2);
+                    aJagexImageArray947[11].method361(201, 16083, 2);
                 if(anIntArray1130[13] != -1 && (anInt1054 != 13 || anInt1161 % 20 < 10))
-                    aClass30_Sub2_Sub1_Sub2Array947[12].method361(226, 16083, 2);
+                    aJagexImageArray947[12].method361(226, 16083, 2);
             }
             aGraphicsBuffer_1124.method238(466, 23680, super.graphics, 496);
             aGraphicsBuffer_1165.method237();
@@ -7803,31 +7803,31 @@ public class Client extends BrowserApplet
         {
             aBoolean1233 = false;
             aGraphicsBuffer_1123.method237();
-            aClass30_Sub2_Sub1_Sub2_1027.method361(0, 16083, 0);
-            aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 55, anInt939, "Public chat", 28, true);
+            aJagexImage_1027.method361(0, 16083, 0);
+            aJagexFont_1271.method382(0xffffff, 55, anInt939, "Public chat", 28, true);
             if(anInt1287 == 0)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(65280, 55, anInt939, "On", 41, true);
+                aJagexFont_1271.method382(65280, 55, anInt939, "On", 41, true);
             if(anInt1287 == 1)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xffff00, 55, anInt939, "Friends", 41, true);
+                aJagexFont_1271.method382(0xffff00, 55, anInt939, "Friends", 41, true);
             if(anInt1287 == 2)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xff0000, 55, anInt939, "Off", 41, true);
+                aJagexFont_1271.method382(0xff0000, 55, anInt939, "Off", 41, true);
             if(anInt1287 == 3)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(65535, 55, anInt939, "Hide", 41, true);
-            aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 184, anInt939, "Private chat", 28, true);
+                aJagexFont_1271.method382(65535, 55, anInt939, "Hide", 41, true);
+            aJagexFont_1271.method382(0xffffff, 184, anInt939, "Private chat", 28, true);
             if(anInt845 == 0)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(65280, 184, anInt939, "On", 41, true);
+                aJagexFont_1271.method382(65280, 184, anInt939, "On", 41, true);
             if(anInt845 == 1)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xffff00, 184, anInt939, "Friends", 41, true);
+                aJagexFont_1271.method382(0xffff00, 184, anInt939, "Friends", 41, true);
             if(anInt845 == 2)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xff0000, 184, anInt939, "Off", 41, true);
-            aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 324, anInt939, "Trade/compete", 28, true);
+                aJagexFont_1271.method382(0xff0000, 184, anInt939, "Off", 41, true);
+            aJagexFont_1271.method382(0xffffff, 324, anInt939, "Trade/compete", 28, true);
             if(anInt1248 == 0)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(65280, 324, anInt939, "On", 41, true);
+                aJagexFont_1271.method382(65280, 324, anInt939, "On", 41, true);
             if(anInt1248 == 1)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xffff00, 324, anInt939, "Friends", 41, true);
+                aJagexFont_1271.method382(0xffff00, 324, anInt939, "Friends", 41, true);
             if(anInt1248 == 2)
-                aClass30_Sub2_Sub1_Sub4_1271.method382(0xff0000, 324, anInt939, "Off", 41, true);
-            aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 458, anInt939, "Report abuse", 33, true);
+                aJagexFont_1271.method382(0xff0000, 324, anInt939, "Off", 41, true);
+            aJagexFont_1271.method382(0xffffff, 458, anInt939, "Report abuse", 33, true);
             aGraphicsBuffer_1123.method238(453, 23680, super.graphics, 0);
             aGraphicsBuffer_1165.method237();
         }
@@ -7993,8 +7993,8 @@ public class Client extends BrowserApplet
                                         if(class30_sub2_sub1_sub1_2.anInt1444 == 33 || class9_1.anIntArray252[i3] != 1)
                                         {
                                             int k10 = class9_1.anIntArray252[i3];
-                                            aClass30_Sub2_Sub1_Sub4_1270.method385(0, method43(-33245, k10), j6 + 10 + j7, 822, k5 + 1 + k6);
-                                            aClass30_Sub2_Sub1_Sub4_1270.method385(0xffff00, method43(-33245, k10), j6 + 9 + j7, 822, k5 + k6);
+                                            aJagexFont_1270.method385(0, method43(-33245, k10), j6 + 10 + j7, 822, k5 + 1 + k6);
+                                            aJagexFont_1270.method385(0xffff00, method43(-33245, k10), j6 + 9 + j7, 822, k5 + k6);
                                         }
                                     }
                                 }
@@ -8042,7 +8042,7 @@ public class Client extends BrowserApplet
                 } else
                 if(class9_1.anInt262 == 4)
                 {
-                    Class30_Sub2_Sub1_Sub4 class30_sub2_sub1_sub4 = class9_1.aClass30_Sub2_Sub1_Sub4_243;
+                    JagexFont jagexFont = class9_1.aJagexFont_243;
                     String s = class9_1.aString248;
                     boolean flag1 = false;
                     if(anInt1039 == class9_1.anInt250 || anInt1048 == class9_1.anInt250 || anInt1026 == class9_1.anInt250)
@@ -8073,7 +8073,7 @@ public class Client extends BrowserApplet
                         if(i4 == 49152)
                             i4 = 0xffffff;
                     }
-                    for(int l6 = l2 + class30_sub2_sub1_sub4.anInt1497; s.length() > 0; l6 += class30_sub2_sub1_sub4.anInt1497)
+                    for(int l6 = l2 + jagexFont.anInt1497; s.length() > 0; l6 += jagexFont.anInt1497)
                     {
                         if(s.indexOf("%") != -1)
                         {
@@ -8125,9 +8125,9 @@ public class Client extends BrowserApplet
                             s = "";
                         }
                         if(class9_1.aBoolean223)
-                            class30_sub2_sub1_sub4.method382(i4, k2 + class9_1.anInt220 / 2, anInt939, s1, l6, class9_1.aBoolean268);
+                            jagexFont.method382(i4, k2 + class9_1.anInt220 / 2, anInt939, s1, l6, class9_1.aBoolean268);
                         else
-                            class30_sub2_sub1_sub4.method389(false, class9_1.aBoolean268, k2, i4, s1, l6);
+                            jagexFont.method389(false, class9_1.aBoolean268, k2, i4, s1, l6);
                     }
 
                 } else
@@ -8171,7 +8171,7 @@ public class Client extends BrowserApplet
                 } else
                 if(class9_1.anInt262 == 7)
                 {
-                    Class30_Sub2_Sub1_Sub4 class30_sub2_sub1_sub4_1 = class9_1.aClass30_Sub2_Sub1_Sub4_243;
+                    JagexFont class30_sub2_sub1_sub4_1 = class9_1.aJagexFont_243;
                     int k4 = 0;
                     for(int j5 = 0; j5 < class9_1.anInt267; j5++)
                     {
@@ -8201,11 +8201,9 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub1.method333(l1, i1, false, k1, j1);
     }
 
-    public void method106(Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2, int i)
+    public void method106(JagexImage jagexImage)
     {
         int j = 256;
-        if(i >= 0)
-            buffer1.writeUnsignedByte(126);
         for(int k = 0; k < anIntArray1190.length; k++)
             anIntArray1190[k] = 0;
 
@@ -8232,16 +8230,16 @@ public class Client extends BrowserApplet
             anIntArray1191 = ai;
         }
 
-        if(class30_sub2_sub1_sub2 != null)
+        if(jagexImage != null)
         {
             int l1 = 0;
-            for(int j2 = 0; j2 < class30_sub2_sub1_sub2.anInt1453; j2++)
+            for(int j2 = 0; j2 < jagexImage.anInt1453; j2++)
             {
-                for(int l2 = 0; l2 < class30_sub2_sub1_sub2.anInt1452; l2++)
-                    if(class30_sub2_sub1_sub2.aByteArray1450[l1++] != 0)
+                for(int l2 = 0; l2 < jagexImage.anInt1452; l2++)
+                    if(jagexImage.aByteArray1450[l1++] != 0)
                     {
-                        int i3 = l2 + 16 + class30_sub2_sub1_sub2.anInt1454;
-                        int j3 = j2 + 16 + class30_sub2_sub1_sub2.anInt1455;
+                        int i3 = l2 + 16 + jagexImage.anInt1454;
+                        int j3 = j2 + 16 + jagexImage.anInt1455;
                         int k3 = i3 + (j3 << 7);
                         anIntArray1190[k3] = 0;
                     }
@@ -8380,7 +8378,7 @@ public class Client extends BrowserApplet
         {
             int j1 = buffer.method427(false);
             byte abyte0[] = new byte[j1];
-            Buffer buffer_1 = new Buffer(abyte0, 891);
+            Buffer buffer_1 = new Buffer(abyte0);
             buffer.method417(j1, aByte920, 0, abyte0);
             aBufferArray895[j] = buffer_1;
             class30_sub2_sub4_sub1_sub2.method451(0, buffer_1);
@@ -8619,14 +8617,14 @@ public class Client extends BrowserApplet
             int i1 = 0xffff00;
             if(super.anInt8 < 15)
                 i1 = 0xff0000;
-            aClass30_Sub2_Sub1_Sub4_1271.method380("Fps:" + super.anInt8, c, i1, (byte)-80, k);
+            aJagexFont_1271.method380("Fps:" + super.anInt8, c, i1, (byte)-80, k);
             k += 15;
             Runtime runtime = Runtime.getRuntime();
             int j1 = (int)((runtime.totalMemory() - runtime.freeMemory()) / 1024L);
             i1 = 0xffff00;
             if(j1 > 0x2000000 && isLowMemory)
                 i1 = 0xff0000;
-            aClass30_Sub2_Sub1_Sub4_1271.method380("Mem:" + j1 + "k", c, 0xffff00, (byte)-80, k);
+            aJagexFont_1271.method380("Mem:" + j1 + "k", c, 0xffff00, (byte)-80, k);
             k += 15;
         }
         if(anInt1104 != 0)
@@ -8635,9 +8633,9 @@ public class Client extends BrowserApplet
             int l = j / 60;
             j %= 60;
             if(j < 10)
-                aClass30_Sub2_Sub1_Sub4_1271.method385(0xffff00, "System update in: " + l + ":0" + j, 329, 822, 4);
+                aJagexFont_1271.method385(0xffff00, "System update in: " + l + ":0" + j, 329, 822, 4);
             else
-                aClass30_Sub2_Sub1_Sub4_1271.method385(0xffff00, "System update in: " + l + ":" + j, 329, 822, 4);
+                aJagexFont_1271.method385(0xffff00, "System update in: " + l + ":" + j, 329, 822, 4);
             anInt849++;
             if(anInt849 > 75)
             {
@@ -8747,11 +8745,11 @@ public class Client extends BrowserApplet
 
     public void method116(boolean flag)
     {
-        int i = aClass30_Sub2_Sub1_Sub4_1272.method383(anInt1116, "Choose Option");
+        int i = aJagexFont_1272.method383(anInt1116, "Choose Option");
         aBoolean1157 &= flag;
         for(int j = 0; j < anInt1133; j++)
         {
-            int k = aClass30_Sub2_Sub1_Sub4_1272.method383(anInt1116, aStringArray1199[j]);
+            int k = aJagexFont_1272.method383(anInt1116, aStringArray1199[j]);
             if(k > i)
                 i = k;
         }
@@ -9222,7 +9220,7 @@ public class Client extends BrowserApplet
             s = aStringArray1199[anInt1133 - 1];
         if(anInt1133 > 2)
             s = s + "@whi@ / " + (anInt1133 - 2) + " more options";
-        aClass30_Sub2_Sub1_Sub4_1272.method390(true, 4, 0xffffff, s, anInt1161 / 1000, 973, 15);
+        aJagexFont_1272.method390(true, 4, 0xffffff, s, anInt1161 / 1000, 973, 15);
         if(i != 45706)
         {
             for(int j = 1; j > 0; j++);
@@ -9236,7 +9234,7 @@ public class Client extends BrowserApplet
         aGraphicsBuffer_1164.method237();
         if(anInt1021 == 2)
         {
-            byte abyte0[] = aClass30_Sub2_Sub1_Sub2_1197.aByteArray1450;
+            byte abyte0[] = aJagexImage_1197.aByteArray1450;
             int ai[] = Class30_Sub2_Sub1.anIntArray1378;
             int k2 = abyte0.length;
             for(int i5 = 0; i5 < k2; i5++)
@@ -9434,7 +9432,7 @@ public class Client extends BrowserApplet
                     int l = 329 - i * 13;
                     if(super.anInt20 > 4 && super.anInt21 - 4 > l - 10 && super.anInt21 - 4 <= l + 3)
                     {
-                        int i1 = aClass30_Sub2_Sub1_Sub4_1271.method383(anInt1116, "From:  " + s + aStringArray944[j]) + 25;
+                        int i1 = aJagexFont_1271.method383(anInt1116, "From:  " + s + aStringArray944[j]) + 25;
                         if(i1 > 450)
                             i1 = 450;
                         if(super.anInt20 < 4 + i1)
@@ -9724,65 +9722,65 @@ public class Client extends BrowserApplet
         if(loginPage == 0)
         {
             int i = c1 / 2 + 80;
-            aClass30_Sub2_Sub1_Sub4_1270.method382(0x75a9a9, c / 2, anInt939, aClass42_Sub1_1068.aString1333, i, true);
+            aJagexFont_1270.method382(0x75a9a9, c / 2, anInt939, aClass42_Sub1_1068.aString1333, i, true);
             i = c1 / 2 - 20;
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, "Welcome to RuneScape", i, true);
+            aJagexFont_1272.method382(0xffff00, c / 2, anInt939, "Welcome to RuneScape", i, true);
             i += 30;
             int l = c / 2 - 80;
             int k1 = c1 / 2 + 20;
             titleButtonImage.method361(l - 73, 16083, k1 - 20);
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, l, anInt939, "New User", k1 + 5, true);
+            aJagexFont_1272.method382(0xffffff, l, anInt939, "New User", k1 + 5, true);
             l = c / 2 + 80;
             titleButtonImage.method361(l - 73, 16083, k1 - 20);
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, l, anInt939, "Existing User", k1 + 5, true);
+            aJagexFont_1272.method382(0xffffff, l, anInt939, "Existing User", k1 + 5, true);
         }
         if(loginPage == 2)
         {
             int j = c1 / 2 - 40;
             if(loginWindowTextLine1.length() > 0)
             {
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine1, j - 15, true);
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j, true);
+                aJagexFont_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine1, j - 15, true);
+                aJagexFont_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j, true);
                 j += 30;
             } else
             {
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j - 7, true);
+                aJagexFont_1272.method382(0xffff00, c / 2, anInt939, loginWindowTextLine2, j - 7, true);
                 j += 30;
             }
             j-= 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 90, 0xffffff, "Host: " + enteredHost + ((loginFieldFocus == 0) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            aJagexFont_1272.method389(false, true, c / 2 - 90, 0xffffff, "Host: " + enteredHost + ((loginFieldFocus == 0) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
             j += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 90, 0xffffff, "Username: " + enteredUsername + ((loginFieldFocus == 1) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            aJagexFont_1272.method389(false, true, c / 2 - 90, 0xffffff, "Username: " + enteredUsername + ((loginFieldFocus == 1) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
             j += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method389(false, true, c / 2 - 88, 0xffffff, "Password: " + Class50.method588(enteredPassword, 0) + ((loginFieldFocus == 2) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
+            aJagexFont_1272.method389(false, true, c / 2 - 88, 0xffffff, "Password: " + Class50.method588(enteredPassword, 0) + ((loginFieldFocus == 2) & (anInt1161 % 40 < 20) ? "@yel@|" : ""), j);
             j += 15;
             if(!flag)
             {
                 int i1 = c / 2 - 80;
                 int l1 = c1 / 2 + 50;
                 titleButtonImage.method361(i1 - 73, 16083, l1 - 20);
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, i1, anInt939, "Login", l1 + 5, true);
+                aJagexFont_1272.method382(0xffffff, i1, anInt939, "Login", l1 + 5, true);
                 i1 = c / 2 + 80;
                 titleButtonImage.method361(i1 - 73, 16083, l1 - 20);
-                aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, i1, anInt939, "Cancel", l1 + 5, true);
+                aJagexFont_1272.method382(0xffffff, i1, anInt939, "Cancel", l1 + 5, true);
             }
         }
         if(loginPage == 3)
         {
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffff00, c / 2, anInt939, "Create a free account", c1 / 2 - 60, true);
+            aJagexFont_1272.method382(0xffff00, c / 2, anInt939, "Create a free account", c1 / 2 - 60, true);
             int k = c1 / 2 - 35;
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, c / 2, anInt939, "To create a new account you need to", k, true);
+            aJagexFont_1272.method382(0xffffff, c / 2, anInt939, "To create a new account you need to", k, true);
             k += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, c / 2, anInt939, "go back to the main RuneScape webpage", k, true);
+            aJagexFont_1272.method382(0xffffff, c / 2, anInt939, "go back to the main RuneScape webpage", k, true);
             k += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, c / 2, anInt939, "and choose the red 'create account'", k, true);
+            aJagexFont_1272.method382(0xffffff, c / 2, anInt939, "and choose the red 'create account'", k, true);
             k += 15;
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, c / 2, anInt939, "button at the top right of that page.", k, true);
+            aJagexFont_1272.method382(0xffffff, c / 2, anInt939, "button at the top right of that page.", k, true);
             k += 15;
             int j1 = c / 2;
             int i2 = c1 / 2 + 50;
             titleButtonImage.method361(j1 - 73, 16083, i2 - 20);
-            aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, j1, anInt939, "Cancel", i2 + 5, true);
+            aJagexFont_1272.method382(0xffffff, j1, anInt939, "Cancel", i2 + 5, true);
         }
         aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
         if(aBoolean1255)
@@ -10367,7 +10365,7 @@ public class Client extends BrowserApplet
         int l1 = j * j1 - i * i1 >> 16;
         if(l > 2500)
         {
-            class30_sub2_sub1_sub1.method354(aClass30_Sub2_Sub1_Sub2_1197, false, 83 - l1 - class30_sub2_sub1_sub1.anInt1445 / 2 - 4, ((94 + k1) - class30_sub2_sub1_sub1.anInt1444 / 2) + 4);
+            class30_sub2_sub1_sub1.method354(aJagexImage_1197, false, 83 - l1 - class30_sub2_sub1_sub1.anInt1445 / 2 - 4, ((94 + k1) - class30_sub2_sub1_sub1.anInt1444 / 2) + 4);
             return;
         } else
         {
@@ -10793,8 +10791,8 @@ public class Client extends BrowserApplet
                 anInt1023 = 1;
                 aLong824 = System.currentTimeMillis();
                 aGraphicsBuffer_1165.method237();
-                aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
-                aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
+                aJagexFont_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
+                aJagexFont_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
                 aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
                 if(anInt1008 == 73)
                 {
@@ -11852,7 +11850,7 @@ public class Client extends BrowserApplet
         aClass19ArrayArrayArray827 = new Class19[4][104][104];
         aBoolean830 = true;
         aBoolean831 = false;
-        aBuffer_834 = new Buffer(new byte[5000], 891);
+        aBuffer_834 = new Buffer(new byte[5000]);
         aClass30_Sub2_Sub4_Sub1_Sub1Array835 = new Class30_Sub2_Sub4_Sub1_Sub1[16384];
         anIntArray837 = new int[16384];
         anInt838 = 9;
@@ -11898,7 +11896,7 @@ public class Client extends BrowserApplet
         anIntArray942 = new int[100];
         aStringArray943 = new String[100];
         aStringArray944 = new String[100];
-        aClass30_Sub2_Sub1_Sub2Array947 = new Class30_Sub2_Sub1_Sub2[13];
+        aJagexImageArray947 = new JagexImage[13];
         aBoolean954 = true;
         aLongArray955 = new long[200];
         anInt956 = -1;
@@ -11946,7 +11944,7 @@ public class Client extends BrowserApplet
         anIntArray1057 = new int[33];
         anInt1058 = 24869;
         aClass9_1059 = new Class9();
-        aClass30_Sub2_Sub1_Sub2Array1060 = new Class30_Sub2_Sub1_Sub2[100];
+        aJagexImageArray1060 = new JagexImage[100];
         anInt1063 = 0x4d4233;
         anIntArray1065 = new int[7];
         anIntArray1072 = new int[1000];
@@ -12003,7 +12001,7 @@ public class Client extends BrowserApplet
         aString1212 = "";
         aByte1217 = 6;
         anInt1218 = -589;
-        aClass30_Sub2_Sub1_Sub2Array1219 = new Class30_Sub2_Sub1_Sub2[2];
+        aJagexImageArray1219 = new JagexImage[2];
         anInt1221 = 3;
         aBoolean1223 = false;
         aBoolean1228 = true;
@@ -12071,11 +12069,11 @@ public class Client extends BrowserApplet
     public int anInt862;
     public int playerRights;
     public int anIntArray864[];
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_865;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_866;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_867;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_868;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_869;
+    public JagexImage aJagexImage_865;
+    public JagexImage aJagexImage_866;
+    public JagexImage aJagexImage_867;
+    public JagexImage aJagexImage_868;
+    public JagexImage aJagexImage_869;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1_870;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1_871;
     public boolean aBoolean872;
@@ -12153,7 +12151,7 @@ public class Client extends BrowserApplet
     public String aStringArray944[];
     public int anInt945;
     public Class25 aClass25_946;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array947[];
+    public JagexImage aJagexImageArray947[];
     public int anInt948;
     public int anInt949;
     public int anInt950;
@@ -12174,8 +12172,8 @@ public class Client extends BrowserApplet
     public int anIntArray965[] = {
         0xffff00, 0xff0000, 65280, 65535, 0xff00ff, 0xffffff
     };
-    public Class30_Sub2_Sub1_Sub2 titleBoxImage;
-    public Class30_Sub2_Sub1_Sub2 titleButtonImage;
+    public JagexImage titleBoxImage;
+    public JagexImage titleButtonImage;
     public int anIntArray968[];
     public int anIntArray969[];
     public JagexFileStore jagexFileStores[];
@@ -12247,12 +12245,12 @@ public class Client extends BrowserApplet
     public int anInt1021;
     public int anInt1022;
     public int anInt1023;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1024;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1025;
+    public JagexImage aJagexImage_1024;
+    public JagexImage aJagexImage_1025;
     public int anInt1026;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1027;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1028;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1029;
+    public JagexImage aJagexImage_1027;
+    public JagexImage aJagexImage_1028;
+    public JagexImage aJagexImage_1029;
     public int anIntArray1030[];
     public boolean aBoolean1031;
     public static BigInteger aBigInteger1032 = new BigInteger("00000000000000000000000");
@@ -12283,7 +12281,7 @@ public class Client extends BrowserApplet
     public int anIntArray1057[];
     public int anInt1058;
     public Class9 aClass9_1059;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array1060[];
+    public JagexImage aJagexImageArray1060[];
     public static int anInt1061;
     public int anInt1062;
     public int anInt1063;
@@ -12369,16 +12367,16 @@ public class Client extends BrowserApplet
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1Array1140[];
     public boolean aBoolean1141;
     public static int anInt1142;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1143;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1144;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1145;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1146;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1147;
+    public JagexImage aJagexImage_1143;
+    public JagexImage aJagexImage_1144;
+    public JagexImage aJagexImage_1145;
+    public JagexImage aJagexImage_1146;
+    public JagexImage aJagexImage_1147;
     public int anInt1148;
     public boolean aBoolean1149;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1Array1150[];
     public boolean aBoolean1151;
-    public Class30_Sub2_Sub1_Sub2 runeImages[];
+    public JagexImage runeImages[];
     public boolean aBoolean1153;
     public int anInt1154;
     public static int anInt1155;
@@ -12427,9 +12425,9 @@ public class Client extends BrowserApplet
     public int anInt1193;
     public byte aByte1194;
     public int anInt1195;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1196;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1197;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_1198;
+    public JagexImage aJagexImage_1196;
+    public JagexImage aJagexImage_1197;
+    public JagexImage aJagexImage_1198;
     public String aStringArray1199[];
     public static byte aByte1200 = 9;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1_1201;
@@ -12453,7 +12451,7 @@ public class Client extends BrowserApplet
     public int loginFieldFocus;
     public byte aByte1217;
     public int anInt1218;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array1219[];
+    public JagexImage aJagexImageArray1219[];
     public long aLong1220;
     public int anInt1221;
     public int anInt1222;
@@ -12504,10 +12502,10 @@ public class Client extends BrowserApplet
     public String loginWindowTextLine2;
     public int anInt1268;
     public int anInt1269;
-    public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_1270;
-    public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_1271;
-    public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_1272;
-    public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_1273;
+    public JagexFont aJagexFont_1270;
+    public JagexFont aJagexFont_1271;
+    public JagexFont aJagexFont_1272;
+    public JagexFont aJagexFont_1273;
     public byte aByte1274;
     public int anInt1275;
     public int anInt1276;

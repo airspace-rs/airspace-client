@@ -7,7 +7,7 @@ public class Class20
 
     public static void method257(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.method571("seq.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("seq.dat", null));
         anInt350 = buffer.method410();
         if(aClass20Array351 == null)
             aClass20Array351 = new Class20[anInt350];

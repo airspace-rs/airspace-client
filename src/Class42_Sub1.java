@@ -133,9 +133,9 @@ public class Class42_Sub1 extends Class42
         };
         for(int i = 0; i < 4; i++)
         {
-            byte abyte0[] = jagexArchive.method571(as[i], null);
+            byte abyte0[] = jagexArchive.getFile(as[i], null);
             int j = abyte0.length / 2;
-            Buffer buffer = new Buffer(abyte0, 891);
+            Buffer buffer = new Buffer(abyte0);
             anIntArrayArray1364[i] = new int[j];
             aByteArrayArray1342[i] = new byte[j];
             for(int l = 0; l < j; l++)
@@ -148,16 +148,16 @@ public class Class42_Sub1 extends Class42
         };
         for(int k = 0; k < 4; k++)
         {
-            byte abyte1[] = jagexArchive.method571(as1[k], null);
+            byte abyte1[] = jagexArchive.getFile(as1[k], null);
             int i1 = abyte1.length / 4;
-            Buffer buffer_1 = new Buffer(abyte1, 891);
+            Buffer buffer_1 = new Buffer(abyte1);
             anIntArrayArray1365[k] = new int[i1];
             for(int l1 = 0; l1 < i1; l1++)
                 anIntArrayArray1365[k][l1] = buffer_1.method413();
 
         }
 
-        byte abyte2[] = jagexArchive.method571("model_index", null);
+        byte abyte2[] = jagexArchive.getFile("model_index", null);
         int j1 = anIntArrayArray1364[0].length;
         aByteArray1372 = new byte[j1];
         for(int k1 = 0; k1 < j1; k1++)
@@ -166,8 +166,8 @@ public class Class42_Sub1 extends Class42
             else
                 aByteArray1372[k1] = 0;
 
-        abyte2 = jagexArchive.method571("map_index", null);
-        Buffer class30_sub2_sub2_2 = new Buffer(abyte2, 891);
+        abyte2 = jagexArchive.getFile("map_index", null);
+        Buffer class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 7;
         anIntArray1371 = new int[j1];
         anIntArray1350 = new int[j1];
@@ -181,15 +181,15 @@ public class Class42_Sub1 extends Class42
             anIntArray1356[i2] = class30_sub2_sub2_2.method408();
         }
 
-        abyte2 = jagexArchive.method571("anim_index", null);
-        class30_sub2_sub2_2 = new Buffer(abyte2, 891);
+        abyte2 = jagexArchive.getFile("anim_index", null);
+        class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 2;
         anIntArray1360 = new int[j1];
         for(int j2 = 0; j2 < j1; j2++)
             anIntArray1360[j2] = class30_sub2_sub2_2.method410();
 
-        abyte2 = jagexArchive.method571("midi_index", null);
-        class30_sub2_sub2_2 = new Buffer(abyte2, 891);
+        abyte2 = jagexArchive.getFile("midi_index", null);
+        class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length;
         anIntArray1348 = new int[j1];
         for(int k2 = 0; k2 < j1; k2++)

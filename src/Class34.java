@@ -7,10 +7,10 @@ public class Class34
 
     public static void method487(JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.method571("fragmentsenc.txt", null), 891);
-        Buffer buffer_1 = new Buffer(jagexArchive.method571("badenc.txt", null), 891);
-        Buffer class30_sub2_sub2_2 = new Buffer(jagexArchive.method571("domainenc.txt", null), 891);
-        Buffer buffer_3 = new Buffer(jagexArchive.method571("tldlist.txt", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("fragmentsenc.txt", null));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("badenc.txt", null));
+        Buffer class30_sub2_sub2_2 = new Buffer(jagexArchive.getFile("domainenc.txt", null));
+        Buffer buffer_3 = new Buffer(jagexArchive.getFile("tldlist.txt", null));
         method488(buffer, buffer_1, class30_sub2_sub2_2, buffer_3);
     }
 

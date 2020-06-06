@@ -2,16 +2,16 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-public class Class30_Sub2_Sub1_Sub2 extends Class30_Sub2_Sub1
+public class JagexImage extends Class30_Sub2_Sub1
 {
 
-    public Class30_Sub2_Sub1_Sub2(JagexArchive jagexArchive, String s, int i)
+    public JagexImage(JagexArchive jagexArchive, String s, int i)
     {
         aBoolean1447 = false;
         anInt1448 = 360;
         aByte1449 = 3;
-        Buffer buffer = new Buffer(jagexArchive.method571(s + ".dat", null), 891);
-        Buffer buffer_1 = new Buffer(jagexArchive.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
         buffer_1.pointer = buffer.method410();
         anInt1456 = buffer_1.method410();
         anInt1457 = buffer_1.method410();

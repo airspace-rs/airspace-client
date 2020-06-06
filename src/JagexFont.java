@@ -4,10 +4,10 @@
 
 import java.util.Random;
 
-public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
+public class JagexFont extends Class30_Sub2_Sub1
 {
 
-    public Class30_Sub2_Sub1_Sub4(boolean flag, String s, JagexArchive jagexArchive)
+    public JagexFont(boolean flag, String s, JagexArchive jagexArchive)
     {
         aBoolean1484 = false;
         anInt1485 = 445;
@@ -24,8 +24,8 @@ public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
         anIntArray1496 = new int[256];
         aRandom1498 = new Random();
         aBoolean1499 = false;
-        Buffer buffer = new Buffer(jagexArchive.method571(s + ".dat", null), 891);
-        Buffer buffer_1 = new Buffer(jagexArchive.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
         byte byte0 = -1;
         buffer_1.pointer = buffer.method410() + 4;
         int k = buffer_1.method408();

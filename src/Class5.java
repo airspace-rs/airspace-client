@@ -82,8 +82,8 @@ public class Class5
 
     public static void method162(JagexArchive jagexArchive)
     {
-        aBuffer_60 = new Buffer(jagexArchive.method571("npc.dat", null), 891);
-        Buffer buffer = new Buffer(jagexArchive.method571("npc.idx", null), 891);
+        aBuffer_60 = new Buffer(jagexArchive.getFile("npc.dat", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile("npc.idx", null));
         anInt62 = buffer.method410();
         anIntArray72 = new int[anInt62];
         int i = 2;

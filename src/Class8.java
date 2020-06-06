@@ -39,8 +39,8 @@ public class Class8
 
     public static void method193(JagexArchive jagexArchive)
     {
-        aBuffer_183 = new Buffer(jagexArchive.method571("obj.dat", null), 891);
-        Buffer buffer = new Buffer(jagexArchive.method571("obj.idx", null), 891);
+        aBuffer_183 = new Buffer(jagexArchive.getFile("obj.dat", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile("obj.idx", null));
         anInt203 = buffer.method410();
         anIntArray195 = new int[anInt203];
         int i = 2;

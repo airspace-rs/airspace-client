@@ -16,7 +16,7 @@ public class Class16
     public static void method240(int i, Buffer buffer)
     {
         aByteArray327 = new byte[0x6baa8];
-        aBuffer_328 = new Buffer(aByteArray327, 891);
+        aBuffer_328 = new Buffer(aByteArray327);
         if(i != 0)
             aBoolean322 = !aBoolean322;
         Class6.method166();

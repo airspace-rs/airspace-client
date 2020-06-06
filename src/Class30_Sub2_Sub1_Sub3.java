@@ -12,7 +12,7 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
         anIntArray1470 = null;
         anIntArray1471 = null;
         anIntArray1472 = null;
-        aClass30_Sub2_Sub1_Sub2Array1474 = null;
+        aJagexImageArray1474 = null;
         aBooleanArray1475 = null;
         anIntArray1476 = null;
         anIntArrayArray1478 = null;
@@ -92,11 +92,11 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
         for(int j = 0; j < 50; j++)
             try
             {
-                aClass30_Sub2_Sub1_Sub2Array1474[j] = new Class30_Sub2_Sub1_Sub2(jagexArchive, String.valueOf(j), 0);
-                if(aBoolean1461 && aClass30_Sub2_Sub1_Sub2Array1474[j].anInt1456 == 128)
-                    aClass30_Sub2_Sub1_Sub2Array1474[j].method356(false);
+                aJagexImageArray1474[j] = new JagexImage(jagexArchive, String.valueOf(j), 0);
+                if(aBoolean1461 && aJagexImageArray1474[j].anInt1456 == 128)
+                    aJagexImageArray1474[j].method356(false);
                 else
-                    aClass30_Sub2_Sub1_Sub2Array1474[j].method357(false);
+                    aJagexImageArray1474[j].method357(false);
                 anInt1473++;
             }
             catch(Exception _ex) { }
@@ -163,14 +163,14 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
             anIntArrayArray1479[k] = null;
         }
         anIntArrayArray1479[i] = ai;
-        Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2 = aClass30_Sub2_Sub1_Sub2Array1474[i];
+        JagexImage jagexImage = aJagexImageArray1474[i];
         int ai1[] = anIntArrayArray1483[i];
         if(aBoolean1461)
         {
             aBooleanArray1475[i] = false;
             for(int i1 = 0; i1 < 4096; i1++)
             {
-                int i2 = ai[i1] = ai1[class30_sub2_sub1_sub2.aByteArray1450[i1]] & 0xf8f8ff;
+                int i2 = ai[i1] = ai1[jagexImage.aByteArray1450[i1]] & 0xf8f8ff;
                 if(i2 == 0)
                     aBooleanArray1475[i] = true;
                 ai[4096 + i1] = i2 - (i2 >>> 3) & 0xf8f8ff;
@@ -180,19 +180,19 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
 
         } else
         {
-            if(class30_sub2_sub1_sub2.anInt1452 == 64)
+            if(jagexImage.anInt1452 == 64)
             {
                 for(int j1 = 0; j1 < 128; j1++)
                 {
                     for(int j2 = 0; j2 < 128; j2++)
-                        ai[j2 + (j1 << 7)] = ai1[class30_sub2_sub1_sub2.aByteArray1450[(j2 >> 1) + ((j1 >> 1) << 6)]];
+                        ai[j2 + (j1 << 7)] = ai1[jagexImage.aByteArray1450[(j2 >> 1) + ((j1 >> 1) << 6)]];
 
                 }
 
             } else
             {
                 for(int k1 = 0; k1 < 16384; k1++)
-                    ai[k1] = ai1[class30_sub2_sub1_sub2.aByteArray1450[k1]];
+                    ai[k1] = ai1[jagexImage.aByteArray1450[k1]];
 
             }
             aBooleanArray1475[i] = false;
@@ -288,9 +288,9 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
         }
 
         for(int l = 0; l < 50; l++)
-            if(aClass30_Sub2_Sub1_Sub2Array1474[l] != null)
+            if(aJagexImageArray1474[l] != null)
             {
-                int ai[] = aClass30_Sub2_Sub1_Sub2Array1474[l].anIntArray1451;
+                int ai[] = aJagexImageArray1474[l].anIntArray1451;
                 anIntArrayArray1483[l] = new int[ai.length];
                 for(int j1 = 0; j1 < ai.length; j1++)
                 {
@@ -2210,7 +2210,7 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
     public static int anIntArray1471[];
     public static int anIntArray1472[];
     public static int anInt1473;
-    public static Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array1474[] = new Class30_Sub2_Sub1_Sub2[50];
+    public static JagexImage aJagexImageArray1474[] = new JagexImage[50];
     public static boolean aBooleanArray1475[] = new boolean[50];
     public static int anIntArray1476[] = new int[50];
     public static int anInt1477;

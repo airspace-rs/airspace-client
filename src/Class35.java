@@ -116,7 +116,7 @@ public class Class35
     public static boolean aBoolean629;
     public static boolean aBoolean630 = true;
     public static char aCharArray631[] = new char[100];
-    public static Buffer aBuffer_632 = new Buffer(new byte[100], 891);
+    public static Buffer aBuffer_632 = new Buffer(new byte[100]);
     public static char aCharArray633[] = {
         ' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 
         'd', 'l', 'u', 'm', 'w', 'c', 'y', 'f', 'g', 'p', 

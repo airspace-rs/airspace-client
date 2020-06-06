@@ -7,6 +7,47 @@ import sign.signlink;
 
 public class Buffer extends Class30_Sub2
 {
+    public int anInt1389;
+    public int anInt1390;
+    public byte aByte1391;
+    public int anInt1392;
+    public int anInt1393;
+    public byte aByte1394;
+    public int anInt1395;
+    public boolean aBoolean1396;
+    public int anInt1397;
+    public byte aByte1398;
+    public byte aByte1399;
+    public byte aByte1400;
+    public boolean aBoolean1401;
+    public int anInt1402;
+    public boolean aBoolean1403;
+    public boolean aBoolean1404;
+    public byte data[];
+    public int pointer;
+    public int anInt1407;
+    public static int anIntArray1408[];
+    public static final int anIntArray1409[] = {
+            0, 1, 3, 7, 15, 31, 63, 127, 255, 511,
+            1023, 2047, 4095, 8191, 16383, 32767, 65535, 0x1ffff, 0x3ffff, 0x7ffff,
+            0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff, 0x3ffffff, 0x7ffffff, 0xfffffff, 0x1fffffff,
+            0x3fffffff, 0x7fffffff, -1
+    };
+    public IsaacCipher encryption;
+    public static Class19 aClass19_1414 = new Class19(169);
+    public static Class19 aClass19_1415 = new Class19(169);
+    public static Class19 aClass19_1416 = new Class19(169);
+    public static char aCharArray1417[] = {
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+            'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+            'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd',
+            'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+            'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+            'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7',
+            '8', '9', '+', '/'
+    };
+    public static boolean aBoolean1418;
+
     public static Buffer createNew()
     {
         // Commented because I think it's sophisticated looking junk
@@ -47,7 +88,7 @@ public class Buffer extends Class30_Sub2
         aBoolean1404 = true;
     }
 
-    public Buffer(byte abyte0[], int i)
+    public Buffer(byte[] abyte0)
     {
         anInt1389 = 891;
         anInt1390 = 9;
@@ -65,15 +106,8 @@ public class Buffer extends Class30_Sub2
         anInt1402 = -373;
         aBoolean1403 = false;
         aBoolean1404 = true;
-        if(i <= 0)
-        {
-            throw new NullPointerException();
-        } else
-        {
-            data = abyte0;
-            pointer = 0;
-            return;
-        }
+        data = abyte0;
+        pointer = 0;
     }
 
     public void method397(byte byte0, int i)
@@ -502,47 +536,6 @@ public class Buffer extends Class30_Sub2
             abyte0[k] = data[pointer++];
 
     }
-
-    public int anInt1389;
-    public int anInt1390;
-    public byte aByte1391;
-    public int anInt1392;
-    public int anInt1393;
-    public byte aByte1394;
-    public int anInt1395;
-    public boolean aBoolean1396;
-    public int anInt1397;
-    public byte aByte1398;
-    public byte aByte1399;
-    public byte aByte1400;
-    public boolean aBoolean1401;
-    public int anInt1402;
-    public boolean aBoolean1403;
-    public boolean aBoolean1404;
-    public byte data[];
-    public int pointer;
-    public int anInt1407;
-    public static int anIntArray1408[];
-    public static final int anIntArray1409[] = {
-        0, 1, 3, 7, 15, 31, 63, 127, 255, 511, 
-        1023, 2047, 4095, 8191, 16383, 32767, 65535, 0x1ffff, 0x3ffff, 0x7ffff, 
-        0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff, 0x3ffffff, 0x7ffffff, 0xfffffff, 0x1fffffff, 
-        0x3fffffff, 0x7fffffff, -1
-    };
-    public IsaacCipher encryption;
-    public static Class19 aClass19_1414 = new Class19(169);
-    public static Class19 aClass19_1415 = new Class19(169);
-    public static Class19 aClass19_1416 = new Class19(169);
-    public static char aCharArray1417[] = {
-        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
-        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
-        'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 
-        'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 
-        'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 
-        'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', 
-        '8', '9', '+', '/'
-    };
-    public static boolean aBoolean1418;
 
     static 
     {

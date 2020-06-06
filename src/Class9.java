@@ -19,10 +19,10 @@ public class Class9
         anIntArray252[j] = k;
     }
 
-    public static void method205(JagexArchive jagexArchive, Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[], byte byte0, JagexArchive jagexArchive_1)
+    public static void method205(JagexArchive jagexArchive, JagexFont aclass30_sub2_sub1_sub4[], byte byte0, JagexArchive jagexArchive_1)
     {
         aClass12_238 = new Class12(false, 50000);
-        Buffer buffer = new Buffer(jagexArchive.method571("data", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile("data", null));
         int i = -1;
         int j = buffer.method410();
         aClass9Array210 = new Class9[j];
@@ -140,7 +140,7 @@ public class Class9
                 class9.aBoolean223 = buffer.method408() == 1;
                 int k2 = buffer.method408();
                 if(aclass30_sub2_sub1_sub4 != null)
-                    class9.aClass30_Sub2_Sub1_Sub4_243 = aclass30_sub2_sub1_sub4[k2];
+                    class9.aJagexFont_243 = aclass30_sub2_sub1_sub4[k2];
                 class9.aBoolean268 = buffer.method408() == 1;
             }
             if(class9.anInt262 == 4)
@@ -206,7 +206,7 @@ public class Class9
                 class9.aBoolean223 = buffer.method408() == 1;
                 int l2 = buffer.method408();
                 if(aclass30_sub2_sub1_sub4 != null)
-                    class9.aClass30_Sub2_Sub1_Sub4_243 = aclass30_sub2_sub1_sub4[l2];
+                    class9.aJagexFont_243 = aclass30_sub2_sub1_sub4[l2];
                 class9.aBoolean268 = buffer.method408() == 1;
                 class9.anInt232 = buffer.method413();
                 class9.anInt231 = buffer.method411();
@@ -363,7 +363,7 @@ public class Class9
     public int anIntArray240[];
     public int anIntArray241[];
     public boolean aBoolean242;
-    public Class30_Sub2_Sub1_Sub4 aClass30_Sub2_Sub1_Sub4_243;
+    public JagexFont aJagexFont_243;
     public int anInt244;
     public int anIntArray245[];
     public int anInt246;

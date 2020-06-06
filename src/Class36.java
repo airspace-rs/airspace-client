@@ -16,26 +16,26 @@ public class Class36
 
     public static void method529(byte abyte0[], boolean flag)
     {
-        Buffer buffer = new Buffer(abyte0, 891);
+        Buffer buffer = new Buffer(abyte0);
         buffer.pointer = abyte0.length - 8;
         int i = buffer.method410();
         int j = buffer.method410();
         int k = buffer.method410();
         int l = buffer.method410();
         int i1 = 0;
-        Buffer buffer_1 = new Buffer(abyte0, 891);
+        Buffer buffer_1 = new Buffer(abyte0);
         buffer_1.pointer = i1;
         i1 += i + 2;
-        Buffer class30_sub2_sub2_2 = new Buffer(abyte0, 891);
+        Buffer class30_sub2_sub2_2 = new Buffer(abyte0);
         class30_sub2_sub2_2.pointer = i1;
         i1 += j;
-        Buffer buffer_3 = new Buffer(abyte0, 891);
+        Buffer buffer_3 = new Buffer(abyte0);
         buffer_3.pointer = i1;
         i1 += k;
-        Buffer buffer_4 = new Buffer(abyte0, 891);
+        Buffer buffer_4 = new Buffer(abyte0);
         buffer_4.pointer = i1;
         i1 += l;
-        Buffer buffer_5 = new Buffer(abyte0, 891);
+        Buffer buffer_5 = new Buffer(abyte0);
         buffer_5.pointer = i1;
         if(flag)
         {

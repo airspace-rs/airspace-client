@@ -47,7 +47,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             class21.anInt371 = 0;
             return;
         }
-        Buffer buffer = new Buffer(abyte0, 891);
+        Buffer buffer = new Buffer(abyte0);
         buffer.pointer = abyte0.length - 18;
         Class21 class21_1 = aClass21Array1661[j] = new Class21();
         class21_1.aByteArray368 = abyte0;
@@ -199,15 +199,15 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         if(class21.anInt383 >= 0)
             anIntArray1656 = new int[anInt1630];
         anIntArray1640 = new int[anInt1630];
-        Buffer buffer = new Buffer(class21.aByteArray368, 891);
+        Buffer buffer = new Buffer(class21.aByteArray368);
         buffer.pointer = class21.anInt372;
-        Buffer buffer_1 = new Buffer(class21.aByteArray368, 891);
+        Buffer buffer_1 = new Buffer(class21.aByteArray368);
         buffer_1.pointer = class21.anInt373;
-        Buffer class30_sub2_sub2_2 = new Buffer(class21.aByteArray368, 891);
+        Buffer class30_sub2_sub2_2 = new Buffer(class21.aByteArray368);
         class30_sub2_sub2_2.pointer = class21.anInt374;
-        Buffer buffer_3 = new Buffer(class21.aByteArray368, 891);
+        Buffer buffer_3 = new Buffer(class21.aByteArray368);
         buffer_3.pointer = class21.anInt375;
-        Buffer buffer_4 = new Buffer(class21.aByteArray368, 891);
+        Buffer buffer_4 = new Buffer(class21.aByteArray368);
         buffer_4.pointer = class21.anInt376;
         int k = 0;
         int l = 0;

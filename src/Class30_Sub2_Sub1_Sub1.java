@@ -73,8 +73,8 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         aBoolean1436 = true;
         aBoolean1437 = true;
         aBoolean1438 = false;
-        Buffer buffer = new Buffer(jagexArchive.method571(s + ".dat", null), 891);
-        Buffer buffer_1 = new Buffer(jagexArchive.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
         buffer_1.pointer = buffer.method410();
         anInt1444 = buffer_1.method410();
         anInt1445 = buffer_1.method410();
@@ -517,7 +517,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         }
     }
 
-    public void method354(Class30_Sub2_Sub1_Sub2 class30_sub2_sub1_sub2, boolean flag, int i, int j)
+    public void method354(JagexImage jagexImage, boolean flag, int i, int j)
     {
         j += anInt1442;
         i += anInt1443;
@@ -561,7 +561,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
             return;
         } else
         {
-            method355(anIntArray1439, j1, class30_sub2_sub1_sub2.aByteArray1450, i1, Class30_Sub2_Sub1.anIntArray1378, 0, aBoolean1436, k1, k, l1, l);
+            method355(anIntArray1439, j1, jagexImage.aByteArray1450, i1, Class30_Sub2_Sub1.anIntArray1378, 0, aBoolean1436, k1, k, l1, l);
             return;
         }
     }
