@@ -69,7 +69,7 @@ public class Class5
             int k = class37.anInt648;
             int l = class37.anInt649;
             int i1 = class37.anInt650;
-            int j1 = client.anIntArray1232[i1 - l];
+            int j1 = Client.anIntArray1232[i1 - l];
             j = aClient82.anIntArray971[k] >> l & j1;
         } else
         if(anInt59 != -1)
@@ -349,7 +349,7 @@ public class Class5
     public int anInt79;
     public static Class5 aClass5Array80[];
     public boolean aBoolean81;
-    public static client aClient82;
+    public static Client aClient82;
     public int anInt83;
     public boolean aBoolean84;
     public int anInt85;

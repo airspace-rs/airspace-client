@@ -4,25 +4,18 @@
 
 import java.awt.*;
 import java.awt.image.*;
-import java.io.PrintStream;
-import sign.signlink;
 
-public class Class15
-    implements ImageProducer, ImageObserver
+public class GraphicsBuffer implements ImageProducer, ImageObserver
 {
-
-    public Class15(int i, int j, Component component, int k)
+    public GraphicsBuffer(int width, int height, Component component)
     {
-        aBoolean314 = true;
-        anInt316 = i;
-        anInt317 = j;
-        anIntArray315 = new int[i * j];
+        this.width = width;
+        this.height = height;
+        pixels = new int[width * height];
         aColorModel318 = new DirectColorModel(32, 0xff0000, 65280, 255);
         anImage320 = component.createImage(this);
         method239();
         component.prepareImage(anImage320, this);
-        if(k != 0)
-            aBoolean314 = !aBoolean314;
         method239();
         component.prepareImage(anImage320, this);
         method239();
@@ -32,7 +25,7 @@ public class Class15
 
     public void method237(int i)
     {
-        Class30_Sub2_Sub1.method331(anInt317, anInt316, -293, anIntArray315);
+        Class30_Sub2_Sub1.method331(height, width, -293, pixels);
         if(i != 0)
         {
             for(int j = 1; j > 0; j++);
@@ -50,7 +43,7 @@ public class Class15
     public synchronized void addConsumer(ImageConsumer imageconsumer)
     {
         anImageConsumer319 = imageconsumer;
-        imageconsumer.setDimensions(anInt316, anInt317);
+        imageconsumer.setDimensions(width, height);
         imageconsumer.setProperties(null);
         imageconsumer.setColorModel(aColorModel318);
         imageconsumer.setHints(14);
@@ -84,7 +77,7 @@ public class Class15
             return;
         } else
         {
-            anImageConsumer319.setPixels(0, 0, anInt316, anInt317, aColorModel318, anIntArray315, 0, anInt316);
+            anImageConsumer319.setPixels(0, 0, width, height, aColorModel318, pixels, 0, width);
             anImageConsumer319.imageComplete(2);
             return;
         }
@@ -96,10 +89,9 @@ public class Class15
     }
 
     public int anInt313;
-    public boolean aBoolean314;
-    public int anIntArray315[];
-    public int anInt316;
-    public int anInt317;
+    public int pixels[];
+    public int width;
+    public int height;
     public ColorModel aColorModel318;
     public ImageConsumer anImageConsumer319;
     public Image anImage320;

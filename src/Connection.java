@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class Connection implements Runnable
 {
-    public Connection(Applet_Sub1 applet_sub1, Socket socket) throws IOException
+    public Connection(BrowserApplet browserApplet_, Socket socket) throws IOException
     {
         anInt416 = -53;
         aBoolean417 = true;
@@ -15,7 +15,7 @@ public class Connection implements Runnable
         isDisconnected = false;
         aBoolean427 = false;
         aBoolean428 = false;
-        anApplet_Sub1_423 = applet_sub1;
+        browserApplet = browserApplet_;
         this.socket = socket;
         this.socket.setSoTimeout(30000);
         this.socket.setTcpNoDelay(true);
@@ -107,7 +107,7 @@ public class Connection implements Runnable
             if(!aBoolean427)
             {
                 aBoolean427 = true;
-                anApplet_Sub1_423.method12(this, 3);
+                browserApplet.newThread(this, 3);
             }
             notify();
         }
@@ -188,7 +188,7 @@ public class Connection implements Runnable
     public OutputStream outputStream;
     public Socket socket;
     public boolean isDisconnected;
-    public Applet_Sub1 anApplet_Sub1_423;
+    public BrowserApplet browserApplet;
     public byte aByteArray424[];
     public int anInt425;
     public int anInt426;

@@ -5,48 +5,74 @@
 import java.applet.Applet;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.PrintStream;
-import sign.signlink;
 
-public class Applet_Sub1 extends Applet
-    implements Runnable, MouseListener, MouseMotionListener, KeyListener, FocusListener, WindowListener
+public class BrowserApplet extends Applet implements Runnable, MouseListener, MouseMotionListener, KeyListener, FocusListener, WindowListener
 {
+    public boolean aBoolean1;
+    public int anInt2;
+    public int anInt3;
+    public int anInt4;
+    public int anInt5;
+    public int anInt6;
+    public long aLongArray7[];
+    public int anInt8;
+    public boolean aBoolean9;
+    public int aWidth;
+    public int aHeight;
+    public Graphics graphics;
+    public GraphicsBuffer graphicsBuffer;
+    public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1Array14[];
+    public Window window;
+    public boolean aBoolean16;
+    public boolean aBoolean17;
+    public int anInt18;
+    public int anInt19;
+    public int anInt20;
+    public int anInt21;
+    public int anInt22;
+    public int anInt23;
+    public int anInt24;
+    public long aLong25;
+    public int anInt26;
+    public int anInt27;
+    public int anInt28;
+    public long aLong29;
+    public int anIntArray30[];
+    public int anIntArray31[];
+    public int anInt32;
+    public int anInt33;
+    public static int anInt34;
 
-    public void method1(int i, boolean flag, int j)
+    public void initialiseWithWindow(int width, int height)
     {
-        anInt10 = j;
-        anInt11 = i;
-        if(flag)
-        {
-            return;
-        } else
-        {
-            aFrame_Sub1_15 = new Frame_Sub1(this, anInt10, (byte)5, anInt11);
-            aGraphics12 = method11(0).getGraphics();
-            aClass15_13 = new Class15(anInt10, anInt11, method11(0), 0);
-            method12(this, 1);
-            return;
-        }
+        aWidth = width;
+        aHeight = height;
+        window = new Window(this, aWidth, aHeight);
+        graphics = getWindow().getGraphics();
+        graphicsBuffer = new GraphicsBuffer(aWidth, aHeight, getWindow());
+
+        newThread(this, 1);
     }
 
-    public void method2(int i, boolean flag, int j)
+    public void intialise(int width, int height)
     {
-        anInt10 = j;
-        anInt11 = i;
-        aGraphics12 = method11(0).getGraphics();
-        aClass15_13 = new Class15(anInt10, anInt11, method11(0), 0);
-        method12(this, 1);
-        if(!flag);
+        aWidth = width;
+        aHeight = height;
+        graphics = getWindow().getGraphics();
+        graphicsBuffer = new GraphicsBuffer(aWidth, aHeight, getWindow());
+
+        newThread(this, 1);
     }
 
     public void run()
     {
-        method11(0).addMouseListener(this);
-        method11(0).addMouseMotionListener(this);
-        method11(0).addKeyListener(this);
-        method11(0).addFocusListener(this);
-        if(aFrame_Sub1_15 != null)
-            aFrame_Sub1_15.addWindowListener(this);
+        getWindow().addMouseListener(this);
+        getWindow().addMouseMotionListener(this);
+        getWindow().addKeyListener(this);
+        getWindow().addFocusListener(this);
+        if (window != null) {
+            window.addWindowListener(this);
+        }
         method13(0, (byte)4, "Loading...");
         method6();
         int i = 0;
@@ -150,7 +176,7 @@ public class Applet_Sub1 extends Applet
         method8(493);
         if(i != 4747)
             return;
-        if(aFrame_Sub1_15 != null)
+        if(window != null)
         {
             try
             {
@@ -204,16 +230,16 @@ public class Applet_Sub1 extends Applet
 
     public void update(Graphics g)
     {
-        if(aGraphics12 == null)
-            aGraphics12 = g;
+        if(graphics == null)
+            graphics = g;
         aBoolean16 = true;
         method10((byte)1);
     }
 
     public void paint(Graphics g)
     {
-        if(aGraphics12 == null)
-            aGraphics12 = g;
+        if(graphics == null)
+            graphics = g;
         aBoolean16 = true;
         method10((byte)1);
     }
@@ -222,7 +248,7 @@ public class Applet_Sub1 extends Applet
     {
         int i = mouseevent.getX();
         int j = mouseevent.getY();
-        if(aFrame_Sub1_15 != null)
+        if(window != null)
         {
             i -= 4;
             j -= 22;
@@ -269,7 +295,7 @@ public class Applet_Sub1 extends Applet
     {
         int i = mouseevent.getX();
         int j = mouseevent.getY();
-        if(aFrame_Sub1_15 != null)
+        if(window != null)
         {
             i -= 4;
             j -= 22;
@@ -283,7 +309,7 @@ public class Applet_Sub1 extends Applet
     {
         int i = mouseevent.getX();
         int j = mouseevent.getY();
-        if(aFrame_Sub1_15 != null)
+        if(window != null)
         {
             i -= 4;
             j -= 22;
@@ -457,33 +483,30 @@ public class Applet_Sub1 extends Applet
             byte0 = 0;
     }
 
-    public Component method11(int i)
+    public Component getWindow()
     {
-        if(i != 0)
-        {
-            for(int j = 1; j > 0; j++);
-        }
-        if(aFrame_Sub1_15 != null)
-            return aFrame_Sub1_15;
-        else
+        if (window != null) {
+            return window;
+        } else {
             return this;
+        }
     }
 
-    public void method12(Runnable runnable, int i)
+    public void newThread(Runnable runnable, int priority)
     {
         Thread thread = new Thread(runnable);
         thread.start();
-        thread.setPriority(i);
+        thread.setPriority(priority);
     }
 
     public void method13(int i, byte byte0, String s)
     {
-        while(aGraphics12 == null) 
+        while(graphics == null)
         {
-            aGraphics12 = method11(0).getGraphics();
+            graphics = getWindow().getGraphics();
             try
             {
-                method11(0).repaint();
+                getWindow().repaint();
             }
             catch(Exception _ex) { }
             try
@@ -493,35 +516,35 @@ public class Applet_Sub1 extends Applet
             catch(Exception _ex) { }
         }
         Font font = new Font("Helvetica", 1, 13);
-        FontMetrics fontmetrics = method11(0).getFontMetrics(font);
+        FontMetrics fontmetrics = getWindow().getFontMetrics(font);
         Font font1 = new Font("Helvetica", 0, 13);
-        method11(0).getFontMetrics(font1);
+        getWindow().getFontMetrics(font1);
         if(aBoolean16)
         {
-            aGraphics12.setColor(Color.black);
-            aGraphics12.fillRect(0, 0, anInt10, anInt11);
+            graphics.setColor(Color.black);
+            graphics.fillRect(0, 0, aWidth, aHeight);
             aBoolean16 = false;
         }
         Color color = new Color(140, 17, 17);
-        int j = anInt11 / 2 - 18;
-        aGraphics12.setColor(color);
-        aGraphics12.drawRect(anInt10 / 2 - 152, j, 304, 34);
-        aGraphics12.fillRect(anInt10 / 2 - 150, j + 2, i * 3, 30);
-        aGraphics12.setColor(Color.black);
+        int j = aHeight / 2 - 18;
+        graphics.setColor(color);
+        graphics.drawRect(aWidth / 2 - 152, j, 304, 34);
+        graphics.fillRect(aWidth / 2 - 150, j + 2, i * 3, 30);
+        graphics.setColor(Color.black);
         if(byte0 != 4)
         {
             return;
         } else
         {
-            aGraphics12.fillRect((anInt10 / 2 - 150) + i * 3, j + 2, 300 - i * 3, 30);
-            aGraphics12.setFont(font);
-            aGraphics12.setColor(Color.white);
-            aGraphics12.drawString(s, (anInt10 - fontmetrics.stringWidth(s)) / 2, j + 22);
+            graphics.fillRect((aWidth / 2 - 150) + i * 3, j + 2, 300 - i * 3, 30);
+            graphics.setFont(font);
+            graphics.setColor(Color.white);
+            graphics.drawString(s, (aWidth - fontmetrics.stringWidth(s)) / 2, j + 22);
             return;
         }
     }
 
-    public Applet_Sub1()
+    public BrowserApplet()
     {
         aBoolean1 = true;
         anInt2 = 24869;
@@ -536,39 +559,4 @@ public class Applet_Sub1 extends Applet
         anIntArray30 = new int[128];
         anIntArray31 = new int[128];
     }
-
-    public boolean aBoolean1;
-    public int anInt2;
-    public int anInt3;
-    public int anInt4;
-    public int anInt5;
-    public int anInt6;
-    public long aLongArray7[];
-    public int anInt8;
-    public boolean aBoolean9;
-    public int anInt10;
-    public int anInt11;
-    public Graphics aGraphics12;
-    public Class15 aClass15_13;
-    public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1Array14[];
-    public Frame_Sub1 aFrame_Sub1_15;
-    public boolean aBoolean16;
-    public boolean aBoolean17;
-    public int anInt18;
-    public int anInt19;
-    public int anInt20;
-    public int anInt21;
-    public int anInt22;
-    public int anInt23;
-    public int anInt24;
-    public long aLong25;
-    public int anInt26;
-    public int anInt27;
-    public int anInt28;
-    public long aLong29;
-    public int anIntArray30[];
-    public int anIntArray31[];
-    public int anInt32;
-    public int anInt33;
-    public static int anInt34;
 }

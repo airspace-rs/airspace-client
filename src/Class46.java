@@ -174,7 +174,7 @@ public class Class46
             int j = class37.anInt648;
             int k = class37.anInt649;
             int l = class37.anInt650;
-            int i1 = client.anIntArray1232[l - k];
+            int i1 = Client.anIntArray1232[l - k];
             i = aClient765.anIntArray971[j] >> k & i1;
         } else
         if(anInt749 != -1)
@@ -527,7 +527,7 @@ label0:
     public boolean aBoolean762;
     public boolean aBoolean763;
     public boolean aBoolean764;
-    public static client aClient765;
+    public static Client aClient765;
     public boolean aBoolean766;
     public boolean aBoolean767;
     public int anInt768;

@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
 {
 
@@ -14,7 +12,7 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
             anInt1613 = -272;
         if(aClass20_1607 != null)
         {
-            int k = client.anInt1161 - anInt1608;
+            int k = Client.anInt1161 - anInt1608;
             if(k > 100 && aClass20_1607.anInt356 > 0)
                 k = 100;
             while(k > aClass20_1607.method258(anInt1599, (byte)-39)) 
@@ -29,7 +27,7 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
                 aClass20_1607 = null;
                 break;
             }
-            anInt1608 = client.anInt1161 - k;
+            anInt1608 = Client.anInt1161 - k;
             if(aClass20_1607 != null)
                 j = aClass20_1607.anIntArray353[anInt1599];
         }
@@ -61,7 +59,7 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
             int k = class37.anInt648;
             int l = class37.anInt649;
             int i1 = class37.anInt650;
-            int j1 = client.anIntArray1232[i1 - l];
+            int j1 = Client.anIntArray1232[i1 - l];
             i = aClient1609.anIntArray971[k] >> l & j1;
         } else
         if(anInt1602 != -1)
@@ -91,7 +89,7 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
         {
             aClass20_1607 = Class20.aClass20Array351[l1];
             anInt1599 = 0;
-            anInt1608 = client.anInt1161;
+            anInt1608 = Client.anInt1161;
             if(flag && aClass20_1607.anInt356 != -1)
             {
                 anInt1599 = (int)(Math.random() * (double)aClass20_1607.anInt352);
@@ -115,7 +113,7 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
     public int anInt1606;
     public Class20 aClass20_1607;
     public int anInt1608;
-    public static client aClient1609;
+    public static Client aClient1609;
     public int anInt1610;
     public int anInt1611;
     public int anInt1612;

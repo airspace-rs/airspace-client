@@ -41,9 +41,9 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         }
         if(aClass30_Sub2_Sub4_Sub6_1714 != null)
         {
-            if(client.anInt1161 >= anInt1708)
+            if(Client.anInt1161 >= anInt1708)
                 aClass30_Sub2_Sub4_Sub6_1714 = null;
-            if(client.anInt1161 >= anInt1707 && client.anInt1161 < anInt1708)
+            if(Client.anInt1161 >= anInt1707 && Client.anInt1161 < anInt1708)
             {
                 Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = aClass30_Sub2_Sub4_Sub6_1714;
                 class30_sub2_sub4_sub6_1.method475(anInt1711 - super.anInt1550, anInt1712 - anInt1709, 16384, anInt1713 - super.anInt1551);
@@ -120,7 +120,7 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         for(int l = 0; l < 5; l++)
         {
             int j1 = buffer.method408();
-            if(j1 < 0 || j1 >= client.anIntArrayArray1003[l].length)
+            if(j1 < 0 || j1 >= Client.anIntArrayArray1003[l].length)
                 j1 = 0;
             anIntArray1700[l] = j1;
         }
@@ -267,9 +267,9 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
             for(int j3 = 0; j3 < 5; j3++)
                 if(anIntArray1700[j3] != 0)
                 {
-                    class30_sub2_sub4_sub6_1.method476(client.anIntArrayArray1003[j3][0], client.anIntArrayArray1003[j3][anIntArray1700[j3]]);
+                    class30_sub2_sub4_sub6_1.method476(Client.anIntArrayArray1003[j3][0], Client.anIntArrayArray1003[j3][anIntArray1700[j3]]);
                     if(j3 == 1)
-                        class30_sub2_sub4_sub6_1.method476(client.anIntArray1204[0], client.anIntArray1204[anIntArray1700[j3]]);
+                        class30_sub2_sub4_sub6_1.method476(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j3]]);
                 }
 
             class30_sub2_sub4_sub6_1.method469((byte)-71);
@@ -342,9 +342,9 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         for(int j1 = 0; j1 < 5; j1++)
             if(anIntArray1700[j1] != 0)
             {
-                class30_sub2_sub4_sub6.method476(client.anIntArrayArray1003[j1][0], client.anIntArrayArray1003[j1][anIntArray1700[j1]]);
+                class30_sub2_sub4_sub6.method476(Client.anIntArrayArray1003[j1][0], Client.anIntArrayArray1003[j1][anIntArray1700[j1]]);
                 if(j1 == 1)
-                    class30_sub2_sub4_sub6.method476(client.anIntArray1204[0], client.anIntArray1204[anIntArray1700[j1]]);
+                    class30_sub2_sub4_sub6.method476(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j1]]);
             }
 
         return class30_sub2_sub4_sub6;

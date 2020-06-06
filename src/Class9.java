@@ -257,7 +257,7 @@ public class Class9
         if(i == 2)
             class30_sub2_sub4_sub6 = Class5.method159(j).method160(true);
         if(i == 3)
-            class30_sub2_sub4_sub6 = client.aClass30_Sub2_Sub4_Sub1_Sub2_1126.method453((byte)-41);
+            class30_sub2_sub4_sub6 = Client.aClass30_Sub2_Sub4_Sub1_Sub2_1126.method453((byte)-41);
         if(i == 4)
             class30_sub2_sub4_sub6 = Class8.method198(j).method202(50, true);
         if(i == 5)

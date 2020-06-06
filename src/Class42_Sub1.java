@@ -126,7 +126,7 @@ public class Class42_Sub1 extends Class42
         }
     }
 
-    public void method551(Class44 class44, client client1)
+    public void method551(Class44 class44, Client client1)
     {
         String as[] = {
             "model_version", "anim_version", "midi_version", "map_version"
@@ -197,7 +197,7 @@ public class Class42_Sub1 extends Class42
 
         aClient1343 = client1;
         aBoolean1353 = true;
-        aClient1343.method12(this, 2);
+        aClient1343.newThread(this, 2);
     }
 
     public int method552()
@@ -247,7 +247,7 @@ public class Class42_Sub1 extends Class42
                 if(l - aLong1335 < 4000L)
                     return;
                 aLong1335 = l;
-                aSocket1363 = aClient1343.method19(43594 + client.portOffset);
+                aSocket1363 = aClient1343.method19(43594 + Client.portOffset);
                 anInputStream1362 = aSocket1363.getInputStream();
                 anOutputStream1354 = aSocket1363.getOutputStream();
                 anOutputStream1354.write(15);
@@ -721,7 +721,7 @@ public class Class42_Sub1 extends Class42
     public int anInt1340;
     public int anInt1341;
     public byte aByteArrayArray1342[][];
-    public client aClient1343;
+    public Client aClient1343;
     public Class19 aClass19_1344;
     public static int anInt1345;
     public int anInt1346;

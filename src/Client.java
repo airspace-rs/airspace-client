@@ -10,7 +10,7 @@ import java.net.*;
 import java.util.zip.CRC32;
 import sign.signlink;
 
-public class client extends Applet_Sub1
+public class Client extends BrowserApplet
 {
 
     public static String method14(int i, int j)
@@ -133,7 +133,7 @@ public class client extends Applet_Sub1
 
     public void method18(int i)
     {
-        aClass15_1166.method237(0);
+        aGraphicsBuffer_1166.method237(0);
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1180;
         aClass30_Sub2_Sub1_Sub2_1198.method361(0, 16083, 0);
         if(aBoolean1256)
@@ -279,8 +279,8 @@ public class client extends Applet_Sub1
         }
         if(aBoolean885 && anInt948 == 2)
             method40((byte)9);
-        aClass15_1166.method238(357, 23680, super.aGraphics12, 17);
-        aClass15_1165.method237(0);
+        aGraphicsBuffer_1166.method238(357, 23680, super.graphics, 17);
+        aGraphicsBuffer_1165.method237(0);
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1182;
         if(i < 6 || i > 6)
             aBoolean991 = !aBoolean991;
@@ -300,20 +300,20 @@ public class client extends Applet_Sub1
             aBoolean959 = false;
         else
             aBoolean959 = true;
-        method2(503, false, 765);
+        intialise(765, 503);
     }
 
-    public void method12(Runnable runnable, int i)
+    public void newThread(Runnable runnable, int priority)
     {
-        if(i > 10)
-            i = 10;
+        if(priority > 10)
+            priority = 10;
         if(signlink.mainapp != null)
         {
-            signlink.startthread(runnable, i);
+            signlink.startthread(runnable, priority);
             return;
         } else
         {
-            super.method12(runnable, i);
+            super.newThread(runnable, priority);
             return;
         }
     }
@@ -594,7 +594,7 @@ public class client extends Applet_Sub1
             }
             buffer1.method397((byte)6, 0);
             class7.method171(aClass11Array1230, aClass25_946, 2);
-            aClass15_1165.method237(0);
+            aGraphicsBuffer_1165.method237(0);
             buffer1.method397((byte)6, 0);
             int k3 = Class7.anInt145;
             if(k3 > anInt918)
@@ -623,7 +623,7 @@ public class client extends Applet_Sub1
         catch(Exception exception) { }
         Class46.aClass12_785.method224();
         aBoolean1157 &= flag;
-        if(super.aFrame_Sub1_15 != null)
+        if(super.window != null)
         {
             buffer1.method397((byte)6, 210);
             buffer1.writeDWord(0x3f008edd);
@@ -719,7 +719,7 @@ public class client extends Applet_Sub1
 
         }
 
-        aClass15_1165.method237(0);
+        aGraphicsBuffer_1165.method237(0);
         aBoolean1157 &= flag;
         anInt1071 = 0;
         for(int k2 = 0; k2 < 104; k2++)
@@ -1593,7 +1593,7 @@ public class client extends Applet_Sub1
 
     public void method36(byte byte0)
     {
-        aClass15_1163.method237(0);
+        aGraphicsBuffer_1163.method237(0);
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1181;
         if(byte0 != -81)
             return;
@@ -1605,8 +1605,8 @@ public class client extends Applet_Sub1
             method105(8, 0, 0, Class9.aClass9Array210[anIntArray1130[anInt1221]], 0);
         if(aBoolean885 && anInt948 == 1)
             method40((byte)9);
-        aClass15_1163.method238(205, 23680, super.aGraphics12, 553);
-        aClass15_1165.method237(0);
+        aGraphicsBuffer_1163.method238(205, 23680, super.graphics, 553);
+        aGraphicsBuffer_1165.method237(0);
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1182;
     }
 
@@ -2408,10 +2408,10 @@ public class client extends Applet_Sub1
         aClass30_Sub2_Sub1_Sub1_1201 = new Class30_Sub2_Sub1_Sub1(128, 265);
         aClass30_Sub2_Sub1_Sub1_1202 = new Class30_Sub2_Sub1_Sub1(128, 265);
         for(int i1 = 0; i1 < 33920; i1++)
-            aClass30_Sub2_Sub1_Sub1_1201.anIntArray1439[i1] = aClass15_1110.anIntArray315[i1];
+            aClass30_Sub2_Sub1_Sub1_1201.anIntArray1439[i1] = aGraphicsBuffer_1110.pixels[i1];
 
         for(int j1 = 0; j1 < 33920; j1++)
-            aClass30_Sub2_Sub1_Sub1_1202.anIntArray1439[j1] = aClass15_1111.anIntArray315[j1];
+            aClass30_Sub2_Sub1_Sub1_1202.anIntArray1439[j1] = aGraphicsBuffer_1111.pixels[j1];
 
         anIntArray851 = new int[256];
         for(int k1 = 0; k1 < 64; k1++)
@@ -2463,7 +2463,7 @@ public class client extends Applet_Sub1
         {
             aBoolean880 = true;
             aBoolean831 = true;
-            method12(this, 2);
+            newThread(this, 2);
         }
     }
 
@@ -2514,8 +2514,8 @@ public class client extends Applet_Sub1
             }
             signlink.storeid = Integer.parseInt(args[4]);
             signlink.startpriv(InetAddress.getLocalHost());
-            client client1 = new client();
-            client1.method1(503, false, 765);
+            Client client = new Client();
+            client.initialiseWithWindow(765, 503);
             return;
         }
         catch(Exception exception)
@@ -2530,10 +2530,10 @@ public class client extends Applet_Sub1
             return;
         if(isLowMemory && anInt1023 == 2 && Class7.anInt131 != anInt918)
         {
-            aClass15_1165.method237(0);
+            aGraphicsBuffer_1165.method237(0);
             aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
             aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
-            aClass15_1165.method238(4, 23680, super.aGraphics12, 4);
+            aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
             anInt1023 = 1;
             aLong824 = System.currentTimeMillis();
         }
@@ -2642,23 +2642,23 @@ public class client extends Applet_Sub1
     {
         byte abyte0[] = aClass44_1053.method571("title.dat", null);
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(abyte0, this);
-        aClass15_1110.method237(0);
+        aGraphicsBuffer_1110.method237(0);
         class30_sub2_sub1_sub1.method346(0, 0, -32357);
-        aClass15_1111.method237(0);
+        aGraphicsBuffer_1111.method237(0);
         class30_sub2_sub1_sub1.method346(-637, 0, -32357);
-        aClass15_1107.method237(0);
+        aGraphicsBuffer_1107.method237(0);
         class30_sub2_sub1_sub1.method346(-128, 0, -32357);
-        aClass15_1108.method237(0);
+        aGraphicsBuffer_1108.method237(0);
         class30_sub2_sub1_sub1.method346(-202, -371, -32357);
-        aClass15_1109.method237(0);
+        aGraphicsBuffer_1109.method237(0);
         class30_sub2_sub1_sub1.method346(-202, -171, -32357);
-        aClass15_1112.method237(0);
+        aGraphicsBuffer_1112.method237(0);
         class30_sub2_sub1_sub1.method346(0, -265, -32357);
-        aClass15_1113.method237(0);
+        aGraphicsBuffer_1113.method237(0);
         class30_sub2_sub1_sub1.method346(-562, -265, -32357);
-        aClass15_1114.method237(0);
+        aGraphicsBuffer_1114.method237(0);
         class30_sub2_sub1_sub1.method346(-128, -171, -32357);
-        aClass15_1115.method237(0);
+        aGraphicsBuffer_1115.method237(0);
         class30_sub2_sub1_sub1.method346(-562, -171, -32357);
         int ai[] = new int[class30_sub2_sub1_sub1.anInt1440];
         for(int j = 0; j < class30_sub2_sub1_sub1.anInt1441; j++)
@@ -2671,23 +2671,23 @@ public class client extends Applet_Sub1
 
         }
 
-        aClass15_1110.method237(0);
+        aGraphicsBuffer_1110.method237(0);
         class30_sub2_sub1_sub1.method346(382, 0, -32357);
-        aClass15_1111.method237(0);
+        aGraphicsBuffer_1111.method237(0);
         class30_sub2_sub1_sub1.method346(-255, 0, -32357);
-        aClass15_1107.method237(0);
+        aGraphicsBuffer_1107.method237(0);
         class30_sub2_sub1_sub1.method346(254, 0, -32357);
-        aClass15_1108.method237(0);
+        aGraphicsBuffer_1108.method237(0);
         class30_sub2_sub1_sub1.method346(180, -371, -32357);
-        aClass15_1109.method237(0);
+        aGraphicsBuffer_1109.method237(0);
         class30_sub2_sub1_sub1.method346(180, -171, -32357);
-        aClass15_1112.method237(0);
+        aGraphicsBuffer_1112.method237(0);
         class30_sub2_sub1_sub1.method346(382, -265, -32357);
-        aClass15_1113.method237(0);
+        aGraphicsBuffer_1113.method237(0);
         class30_sub2_sub1_sub1.method346(-180, -265, -32357);
-        aClass15_1114.method237(0);
+        aGraphicsBuffer_1114.method237(0);
         class30_sub2_sub1_sub1.method346(254, -171, -32357);
-        aClass15_1115.method237(0);
+        aGraphicsBuffer_1115.method237(0);
         if(i != 0)
         {
             return;
@@ -2695,7 +2695,7 @@ public class client extends Applet_Sub1
         {
             class30_sub2_sub1_sub1.method346(-180, -171, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(aClass44_1053, "logo", 0);
-            aClass15_1107.method237(0);
+            aGraphicsBuffer_1107.method237(0);
             class30_sub2_sub1_sub1.method348(382 - class30_sub2_sub1_sub1.anInt1440 / 2 - 128, 16083, 18);
             class30_sub2_sub1_sub1 = null;
             Object obj = null;
@@ -3234,35 +3234,35 @@ public class client extends Applet_Sub1
 
     public void method64(int i)
     {
-        if(aClass15_1107 != null)
+        if(aGraphicsBuffer_1107 != null)
             return;
-        super.aClass15_13 = null;
-        aClass15_1166 = null;
-        aClass15_1164 = null;
-        aClass15_1163 = null;
-        aClass15_1165 = null;
-        aClass15_1123 = null;
-        aClass15_1124 = null;
-        aClass15_1125 = null;
-        aClass15_1110 = new Class15(128, 265, method11(0), 0);
+        super.graphicsBuffer = null;
+        aGraphicsBuffer_1166 = null;
+        aGraphicsBuffer_1164 = null;
+        aGraphicsBuffer_1163 = null;
+        aGraphicsBuffer_1165 = null;
+        aGraphicsBuffer_1123 = null;
+        aGraphicsBuffer_1124 = null;
+        aGraphicsBuffer_1125 = null;
+        aGraphicsBuffer_1110 = new GraphicsBuffer(128, 265, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1111 = new Class15(128, 265, method11(0), 0);
+        aGraphicsBuffer_1111 = new GraphicsBuffer(128, 265, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1107 = new Class15(509, 171, method11(0), 0);
+        aGraphicsBuffer_1107 = new GraphicsBuffer(509, 171, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1108 = new Class15(360, 132, method11(0), 0);
+        aGraphicsBuffer_1108 = new GraphicsBuffer(360, 132, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1109 = new Class15(360, 200, method11(0), 0);
+        aGraphicsBuffer_1109 = new GraphicsBuffer(360, 200, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1112 = new Class15(202, 238, method11(0), 0);
+        aGraphicsBuffer_1112 = new GraphicsBuffer(202, 238, getWindow());
         if(i < 0 || i > 0)
             aClass19ArrayArrayArray827 = null;
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1113 = new Class15(203, 238, method11(0), 0);
+        aGraphicsBuffer_1113 = new GraphicsBuffer(203, 238, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1114 = new Class15(74, 94, method11(0), 0);
+        aGraphicsBuffer_1114 = new GraphicsBuffer(74, 94, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1115 = new Class15(75, 94, method11(0), 0);
+        aGraphicsBuffer_1115 = new GraphicsBuffer(75, 94, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
         if(aClass44_1053 != null)
         {
@@ -3282,7 +3282,7 @@ public class client extends Applet_Sub1
             super.method13(i, (byte)4, s);
             return;
         }
-        aClass15_1109.method237(0);
+        aGraphicsBuffer_1109.method237(0);
         char c = '\u0168';
         char c1 = '\310';
         byte byte1 = 20;
@@ -3293,7 +3293,7 @@ public class client extends Applet_Sub1
         Class30_Sub2_Sub1.method336(30, j + 2, c / 2 - 150, 0x8c1111, i * 3, 0);
         Class30_Sub2_Sub1.method336(30, j + 2, (c / 2 - 150) + i * 3, 0, 300 - i * 3, 0);
         aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, s, 23693, (c1 / 2 + 5) - byte1, c / 2);
-        aClass15_1109.method238(171, 23680, super.aGraphics12, 202);
+        aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
         if(byte0 != 4)
         {
             for(int k = 1; k > 0; k++);
@@ -3303,15 +3303,15 @@ public class client extends Applet_Sub1
             aBoolean1255 = false;
             if(!aBoolean831)
             {
-                aClass15_1110.method238(0, 23680, super.aGraphics12, 0);
-                aClass15_1111.method238(0, 23680, super.aGraphics12, 637);
+                aGraphicsBuffer_1110.method238(0, 23680, super.graphics, 0);
+                aGraphicsBuffer_1111.method238(0, 23680, super.graphics, 637);
             }
-            aClass15_1107.method238(0, 23680, super.aGraphics12, 128);
-            aClass15_1108.method238(371, 23680, super.aGraphics12, 202);
-            aClass15_1112.method238(265, 23680, super.aGraphics12, 0);
-            aClass15_1113.method238(265, 23680, super.aGraphics12, 562);
-            aClass15_1114.method238(171, 23680, super.aGraphics12, 128);
-            aClass15_1115.method238(171, 23680, super.aGraphics12, 562);
+            aGraphicsBuffer_1107.method238(0, 23680, super.graphics, 128);
+            aGraphicsBuffer_1108.method238(371, 23680, super.graphics, 202);
+            aGraphicsBuffer_1112.method238(265, 23680, super.graphics, 0);
+            aGraphicsBuffer_1113.method238(265, 23680, super.graphics, 562);
+            aGraphicsBuffer_1114.method238(171, 23680, super.graphics, 128);
+            aGraphicsBuffer_1115.method238(171, 23680, super.graphics, 562);
         }
     }
 
@@ -3544,14 +3544,14 @@ public class client extends Applet_Sub1
             method44(true);
             return;
         }
-        aClass15_1165.method237(0);
+        aGraphicsBuffer_1165.method237(0);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Connection lost", 23693, 144, 257);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Connection lost", 23693, 143, 256);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Please wait - attempting to reestablish", 23693, 159, 257);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Please wait - attempting to reestablish", 23693, 158, 256);
         while(i >= 0) 
             buffer1.writeUnsignedByte(164);
-        aClass15_1165.method238(4, 23680, super.aGraphics12, 4);
+        aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
         anInt1021 = 0;
         anInt1261 = 0;
         Connection connection = this.connection;
@@ -4707,22 +4707,22 @@ public class client extends Applet_Sub1
         anIntArray1280 = null;
         anIntArray1281 = null;
         aByteArray912 = null;
-        aClass15_1163 = null;
-        aClass15_1164 = null;
-        aClass15_1165 = null;
-        aClass15_1166 = null;
-        aClass15_1123 = null;
-        aClass15_1124 = null;
-        aClass15_1125 = null;
-        aClass15_903 = null;
-        aClass15_904 = null;
-        aClass15_905 = null;
-        aClass15_906 = null;
-        aClass15_907 = null;
-        aClass15_908 = null;
-        aClass15_909 = null;
-        aClass15_910 = null;
-        aClass15_911 = null;
+        aGraphicsBuffer_1163 = null;
+        aGraphicsBuffer_1164 = null;
+        aGraphicsBuffer_1165 = null;
+        aGraphicsBuffer_1166 = null;
+        aGraphicsBuffer_1123 = null;
+        aGraphicsBuffer_1124 = null;
+        aGraphicsBuffer_1125 = null;
+        aGraphicsBuffer_903 = null;
+        aGraphicsBuffer_904 = null;
+        aGraphicsBuffer_905 = null;
+        aGraphicsBuffer_906 = null;
+        aGraphicsBuffer_907 = null;
+        aGraphicsBuffer_908 = null;
+        aGraphicsBuffer_909 = null;
+        aGraphicsBuffer_910 = null;
+        aGraphicsBuffer_911 = null;
         aClass30_Sub2_Sub1_Sub2_1196 = null;
         aClass30_Sub2_Sub1_Sub2_1197 = null;
         aClass30_Sub2_Sub1_Sub2_1198 = null;
@@ -4777,15 +4777,15 @@ public class client extends Applet_Sub1
         aStringArray1082 = null;
         aLongArray955 = null;
         anIntArray826 = null;
-        aClass15_1110 = null;
-        aClass15_1111 = null;
-        aClass15_1107 = null;
-        aClass15_1108 = null;
-        aClass15_1109 = null;
-        aClass15_1112 = null;
-        aClass15_1113 = null;
-        aClass15_1114 = null;
-        aClass15_1115 = null;
+        aGraphicsBuffer_1110 = null;
+        aGraphicsBuffer_1111 = null;
+        aGraphicsBuffer_1107 = null;
+        aGraphicsBuffer_1108 = null;
+        aGraphicsBuffer_1109 = null;
+        aGraphicsBuffer_1112 = null;
+        aGraphicsBuffer_1113 = null;
+        aGraphicsBuffer_1114 = null;
+        aGraphicsBuffer_1115 = null;
         method118(3);
         Class46.method575(-501);
         Class5.method163(-501);
@@ -4798,7 +4798,7 @@ public class client extends Applet_Sub1
         Class23.aClass23Array403 = null;
         Class23.aClass12_415 = null;
         Class41.aClass41Array701 = null;
-        super.aClass15_13 = null;
+        super.graphicsBuffer = null;
         Class30_Sub2_Sub4_Sub1_Sub2.aClass12_1704 = null;
         Class30_Sub2_Sub1_Sub3.method363(-501);
         Class25.method273(-501);
@@ -4826,15 +4826,16 @@ public class client extends Applet_Sub1
         super.aBoolean9 = true;
     }
 
-    public Component method11(int i)
+    public Component getWindow()
     {
-        anInt1007 += i;
-        if(signlink.mainapp != null)
+        if (signlink.mainapp != null) {
             return signlink.mainapp;
-        if(super.aFrame_Sub1_15 != null)
-            return super.aFrame_Sub1_15;
-        else
+        }
+        if(super.window != null) {
+            return super.window;
+        } else {
             return this;
+        }
     }
 
     public void method73(int i)
@@ -5728,31 +5729,31 @@ public class client extends Applet_Sub1
 
     public void method79(int i)
     {
-        if(aClass15_1166 != null)
+        if(aGraphicsBuffer_1166 != null)
             return;
         method118(3);
-        super.aClass15_13 = null;
-        aClass15_1107 = null;
-        aClass15_1108 = null;
-        aClass15_1109 = null;
-        aClass15_1110 = null;
-        aClass15_1111 = null;
-        aClass15_1112 = null;
-        aClass15_1113 = null;
-        aClass15_1114 = null;
-        aClass15_1115 = null;
-        aClass15_1166 = new Class15(479, 96, method11(0), 0);
-        aClass15_1164 = new Class15(172, 156, method11(0), 0);
+        super.graphicsBuffer = null;
+        aGraphicsBuffer_1107 = null;
+        aGraphicsBuffer_1108 = null;
+        aGraphicsBuffer_1109 = null;
+        aGraphicsBuffer_1110 = null;
+        aGraphicsBuffer_1111 = null;
+        aGraphicsBuffer_1112 = null;
+        aGraphicsBuffer_1113 = null;
+        aGraphicsBuffer_1114 = null;
+        aGraphicsBuffer_1115 = null;
+        aGraphicsBuffer_1166 = new GraphicsBuffer(479, 96, getWindow());
+        aGraphicsBuffer_1164 = new GraphicsBuffer(172, 156, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
         aClass30_Sub2_Sub1_Sub2_1197.method361(0, 16083, 0);
-        aClass15_1163 = new Class15(190, 261, method11(0), 0);
-        aClass15_1165 = new Class15(512, 334, method11(0), 0);
+        aGraphicsBuffer_1163 = new GraphicsBuffer(190, 261, getWindow());
+        aGraphicsBuffer_1165 = new GraphicsBuffer(512, 334, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        aClass15_1123 = new Class15(496, 50, method11(0), 0);
+        aGraphicsBuffer_1123 = new GraphicsBuffer(496, 50, getWindow());
         if(i != 1)
             method6();
-        aClass15_1124 = new Class15(269, 37, method11(0), 0);
-        aClass15_1125 = new Class15(249, 45, method11(0), 0);
+        aGraphicsBuffer_1124 = new GraphicsBuffer(269, 37, getWindow());
+        aGraphicsBuffer_1125 = new GraphicsBuffer(249, 45, getWindow());
         aBoolean1255 = true;
     }
 
@@ -5761,7 +5762,7 @@ public class client extends Applet_Sub1
         aBoolean1157 &= flag;
         if(signlink.mainapp != null)
             return signlink.mainapp.getDocumentBase().getHost().toLowerCase();
-        if(super.aFrame_Sub1_15 != null)
+        if(super.window != null)
             return "runescape.com";
         else
             return super.getDocumentBase().getHost().toLowerCase();
@@ -7097,31 +7098,31 @@ public class client extends Applet_Sub1
                 aClass30_Sub2_Sub1_Sub2Array1219[l4] = new Class30_Sub2_Sub1_Sub2(class44_2, "mod_icons", l4);
 
             Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backleft1", 0);
-            aClass15_903 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_903 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backleft2", 0);
-            aClass15_904 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_904 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backright1", 0);
-            aClass15_905 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_905 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backright2", 0);
-            aClass15_906 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_906 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backtop1", 0);
-            aClass15_907 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_907 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backvmid1", 0);
-            aClass15_908 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_908 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backvmid2", 0);
-            aClass15_909 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_909 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backvmid3", 0);
-            aClass15_910 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_910 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44_2, "backhmid2", 0);
-            aClass15_911 = new Class15(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, method11(0), 0);
+            aGraphicsBuffer_911 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             int i5 = (int)(Math.random() * 21D) - 10;
             int j5 = (int)(Math.random() * 21D) - 10;
@@ -7225,7 +7226,7 @@ public class client extends Applet_Sub1
             Class25.method310(500, 800, 512, 334, ai, aBoolean1231);
             Class34.method487(class44_4);
             aClass48_879 = new Class48(this, anInt1096);
-            method12(aClass48_879, 10);
+            newThread(aClass48_879, 10);
             Class30_Sub2_Sub4_Sub5.aClient1609 = this;
             Class46.aClient765 = this;
             Class5.aClient82 = this;
@@ -7352,7 +7353,7 @@ public class client extends Applet_Sub1
         {
             for(int j = 1; j > 0; j++);
         }
-        Graphics g = method11(0).getGraphics();
+        Graphics g = getWindow().getGraphics();
         g.setColor(Color.black);
         g.fillRect(0, 0, 765, 503);
         method4(false, 1);
@@ -7413,7 +7414,7 @@ public class client extends Applet_Sub1
             return signlink.mainapp.getCodeBase();
         try
         {
-            if(super.aFrame_Sub1_15 != null)
+            if(super.window != null)
                 return new URL("http://127.0.0.1:" + (80 + portOffset));
         }
         catch(Exception _ex) { }
@@ -7768,23 +7769,23 @@ public class client extends Applet_Sub1
         if(aBoolean1255)
         {
             aBoolean1255 = false;
-            aClass15_903.method238(4, 23680, super.aGraphics12, 0);
-            aClass15_904.method238(357, 23680, super.aGraphics12, 0);
-            aClass15_905.method238(4, 23680, super.aGraphics12, 722);
-            aClass15_906.method238(205, 23680, super.aGraphics12, 743);
-            aClass15_907.method238(0, 23680, super.aGraphics12, 0);
-            aClass15_908.method238(4, 23680, super.aGraphics12, 516);
-            aClass15_909.method238(205, 23680, super.aGraphics12, 516);
-            aClass15_910.method238(357, 23680, super.aGraphics12, 496);
-            aClass15_911.method238(338, 23680, super.aGraphics12, 0);
+            aGraphicsBuffer_903.method238(4, 23680, super.graphics, 0);
+            aGraphicsBuffer_904.method238(357, 23680, super.graphics, 0);
+            aGraphicsBuffer_905.method238(4, 23680, super.graphics, 722);
+            aGraphicsBuffer_906.method238(205, 23680, super.graphics, 743);
+            aGraphicsBuffer_907.method238(0, 23680, super.graphics, 0);
+            aGraphicsBuffer_908.method238(4, 23680, super.graphics, 516);
+            aGraphicsBuffer_909.method238(205, 23680, super.graphics, 516);
+            aGraphicsBuffer_910.method238(357, 23680, super.graphics, 496);
+            aGraphicsBuffer_911.method238(338, 23680, super.graphics, 0);
             aBoolean1153 = true;
             aBoolean1223 = true;
             aBoolean1103 = true;
             aBoolean1233 = true;
             if(anInt1023 != 2)
             {
-                aClass15_1165.method238(4, 23680, super.aGraphics12, 4);
-                aClass15_1164.method238(4, 23680, super.aGraphics12, 550);
+                aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
+                aGraphicsBuffer_1164.method238(4, 23680, super.graphics, 550);
             }
         }
         if(anInt1023 == 2)
@@ -7844,7 +7845,7 @@ public class client extends Applet_Sub1
         if(anInt1023 == 2)
         {
             method126(false);
-            aClass15_1164.method238(4, 23680, super.aGraphics12, 550);
+            aGraphicsBuffer_1164.method238(4, 23680, super.graphics, 550);
         }
         if(anInt1054 != -1)
             aBoolean1103 = true;
@@ -7857,7 +7858,7 @@ public class client extends Applet_Sub1
                 buffer1.writeUnsignedByte(anInt1221);
             }
             aBoolean1103 = false;
-            aClass15_1125.method237(0);
+            aGraphicsBuffer_1125.method237(0);
             aClass30_Sub2_Sub1_Sub2_1029.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
@@ -7893,8 +7894,8 @@ public class client extends Applet_Sub1
                 if(anIntArray1130[6] != -1 && (anInt1054 != 6 || anInt1161 % 20 < 10))
                     aClass30_Sub2_Sub1_Sub2Array947[6].method361(208, 16083, 13);
             }
-            aClass15_1125.method238(160, 23680, super.aGraphics12, 516);
-            aClass15_1124.method237(0);
+            aGraphicsBuffer_1125.method238(160, 23680, super.graphics, 516);
+            aGraphicsBuffer_1124.method237(0);
             aClass30_Sub2_Sub1_Sub2_1028.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
@@ -7928,13 +7929,13 @@ public class client extends Applet_Sub1
                 if(anIntArray1130[13] != -1 && (anInt1054 != 13 || anInt1161 % 20 < 10))
                     aClass30_Sub2_Sub1_Sub2Array947[12].method361(226, 16083, 2);
             }
-            aClass15_1124.method238(466, 23680, super.aGraphics12, 496);
-            aClass15_1165.method237(0);
+            aGraphicsBuffer_1124.method238(466, 23680, super.graphics, 496);
+            aGraphicsBuffer_1165.method237(0);
         }
         if(aBoolean1233)
         {
             aBoolean1233 = false;
-            aClass15_1123.method237(0);
+            aGraphicsBuffer_1123.method237(0);
             aClass30_Sub2_Sub1_Sub2_1027.method361(0, 16083, 0);
             aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 55, anInt939, "Public chat", 28, true);
             if(anInt1287 == 0)
@@ -7960,8 +7961,8 @@ public class client extends Applet_Sub1
             if(anInt1248 == 2)
                 aClass30_Sub2_Sub1_Sub4_1271.method382(0xff0000, 324, anInt939, "Off", 41, true);
             aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 458, anInt939, "Report abuse", 33, true);
-            aClass15_1123.method238(453, 23680, super.aGraphics12, 0);
-            aClass15_1165.method237(0);
+            aGraphicsBuffer_1123.method238(453, 23680, super.graphics, 0);
+            aGraphicsBuffer_1165.method237(0);
         }
         anInt945 = 0;
     }
@@ -9364,7 +9365,7 @@ public class client extends Applet_Sub1
     {
         if(flag)
             return;
-        aClass15_1164.method237(0);
+        aGraphicsBuffer_1164.method237(0);
         if(anInt1021 == 2)
         {
             byte abyte0[] = aClass30_Sub2_Sub1_Sub2_1197.aByteArray1450;
@@ -9375,7 +9376,7 @@ public class client extends Applet_Sub1
                     ai[i5] = 0;
 
             aClass30_Sub2_Sub1_Sub1_1122.method352(33, anInt1185, anIntArray1057, 256, anIntArray968, -236, 25, 0, 0, 33, 25);
-            aClass15_1165.method237(0);
+            aGraphicsBuffer_1165.method237(0);
             return;
         }
         int i = anInt1185 + anInt1209 & 0x7ff;
@@ -9488,7 +9489,7 @@ public class client extends Applet_Sub1
             method141(aClass30_Sub2_Sub1_Sub1_870, j2, l4, false);
         }
         Class30_Sub2_Sub1.method336(3, 78, 97, 0xffffff, 3, 0);
-        aClass15_1165.method237(0);
+        aGraphicsBuffer_1165.method237(0);
     }
 
     public void method127(boolean flag, Class30_Sub2_Sub4_Sub1 class30_sub2_sub4_sub1, int i)
@@ -9713,7 +9714,7 @@ public class client extends Applet_Sub1
 
         }
         for(int l = 0; l < 33920; l++)
-            aClass15_1110.anIntArray315[l] = aClass30_Sub2_Sub1_Sub1_1201.anIntArray1439[l];
+            aGraphicsBuffer_1110.pixels[l] = aClass30_Sub2_Sub1_Sub1_1201.anIntArray1439[l];
 
         int i1 = 0;
         int j1 = 1152;
@@ -9732,8 +9733,8 @@ public class client extends Applet_Sub1
                     int l3 = j3;
                     int j4 = 256 - j3;
                     j3 = anIntArray850[j3];
-                    int l4 = aClass15_1110.anIntArray315[j1];
-                    aClass15_1110.anIntArray315[j1++] = ((j3 & 0xff00ff) * l3 + (l4 & 0xff00ff) * j4 & 0xff00ff00) + ((j3 & 0xff00) * l3 + (l4 & 0xff00) * j4 & 0xff0000) >> 8;
+                    int l4 = aGraphicsBuffer_1110.pixels[j1];
+                    aGraphicsBuffer_1110.pixels[j1++] = ((j3 & 0xff00ff) * l3 + (l4 & 0xff00ff) * j4 & 0xff00ff00) + ((j3 & 0xff00) * l3 + (l4 & 0xff00) * j4 & 0xff0000) >> 8;
                 } else
                 {
                     j1++;
@@ -9743,9 +9744,9 @@ public class client extends Applet_Sub1
             j1 += j2;
         }
 
-        aClass15_1110.method238(0, 23680, super.aGraphics12, 0);
+        aGraphicsBuffer_1110.method238(0, 23680, super.graphics, 0);
         for(int i2 = 0; i2 < 33920; i2++)
-            aClass15_1111.anIntArray315[i2] = aClass30_Sub2_Sub1_Sub1_1202.anIntArray1439[i2];
+            aGraphicsBuffer_1111.pixels[i2] = aClass30_Sub2_Sub1_Sub1_1202.anIntArray1439[i2];
 
         i1 = 0;
         j1 = 1176;
@@ -9762,8 +9763,8 @@ public class client extends Applet_Sub1
                     int i5 = k4;
                     int j5 = 256 - k4;
                     k4 = anIntArray850[k4];
-                    int k5 = aClass15_1111.anIntArray315[j1];
-                    aClass15_1111.anIntArray315[j1++] = ((k4 & 0xff00ff) * i5 + (k5 & 0xff00ff) * j5 & 0xff00ff00) + ((k4 & 0xff00) * i5 + (k5 & 0xff00) * j5 & 0xff0000) >> 8;
+                    int k5 = aGraphicsBuffer_1111.pixels[j1];
+                    aGraphicsBuffer_1111.pixels[j1++] = ((k4 & 0xff00ff) * i5 + (k5 & 0xff00ff) * j5 & 0xff00ff00) + ((k4 & 0xff00) * i5 + (k5 & 0xff00) * j5 & 0xff0000) >> 8;
                 } else
                 {
                     j1++;
@@ -9774,7 +9775,7 @@ public class client extends Applet_Sub1
             j1 += 128 - k3 - i3;
         }
 
-        aClass15_1111.method238(0, 23680, super.aGraphics12, 637);
+        aGraphicsBuffer_1111.method238(0, 23680, super.graphics, 637);
         if(byte0 != 9)
             anInt1008 = aBuffer_1083.method408();
     }
@@ -9846,7 +9847,7 @@ public class client extends Applet_Sub1
     public void method135(boolean flag, boolean flag1)
     {
         method64(0);
-        aClass15_1109.method237(0);
+        aGraphicsBuffer_1109.method237(0);
         aClass30_Sub2_Sub1_Sub2_966.method361(0, 16083, 0);
         char c = '\u0168';
         char c1 = '\310';
@@ -9915,16 +9916,16 @@ public class client extends Applet_Sub1
             aClass30_Sub2_Sub1_Sub2_967.method361(j1 - 73, 16083, i2 - 20);
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, j1, anInt939, "Cancel", i2 + 5, true);
         }
-        aClass15_1109.method238(171, 23680, super.aGraphics12, 202);
+        aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
         if(aBoolean1255)
         {
             aBoolean1255 = false;
-            aClass15_1107.method238(0, 23680, super.aGraphics12, 128);
-            aClass15_1108.method238(371, 23680, super.aGraphics12, 202);
-            aClass15_1112.method238(265, 23680, super.aGraphics12, 0);
-            aClass15_1113.method238(265, 23680, super.aGraphics12, 562);
-            aClass15_1114.method238(171, 23680, super.aGraphics12, 128);
-            aClass15_1115.method238(171, 23680, super.aGraphics12, 562);
+            aGraphicsBuffer_1107.method238(0, 23680, super.graphics, 128);
+            aGraphicsBuffer_1108.method238(371, 23680, super.graphics, 202);
+            aGraphicsBuffer_1112.method238(265, 23680, super.graphics, 0);
+            aGraphicsBuffer_1113.method238(265, 23680, super.graphics, 562);
+            aGraphicsBuffer_1114.method238(171, 23680, super.graphics, 128);
+            aGraphicsBuffer_1115.method238(171, 23680, super.graphics, 562);
         }
     }
 
@@ -10367,15 +10368,15 @@ public class client extends Applet_Sub1
             aClass19ArrayArrayArray827 = null;
         if(loginPage == 0)
         {
-            int i = super.anInt10 / 2 - 80;
-            int l = super.anInt11 / 2 + 20;
+            int i = super.aWidth / 2 - 80;
+            int l = super.aHeight / 2 + 20;
             l += 20;
             if(super.anInt26 == 1 && super.anInt27 >= i - 75 && super.anInt27 <= i + 75 && super.anInt28 >= l - 20 && super.anInt28 <= l + 20)
             {
                 loginPage = 3;
                 loginFieldFocus = 0;
             }
-            i = super.anInt10 / 2 + 80;
+            i = super.aWidth / 2 + 80;
             if(super.anInt26 == 1 && super.anInt27 >= i - 75 && super.anInt27 <= i + 75 && super.anInt28 >= l - 20 && super.anInt28 <= l + 20)
             {
                 loginWindowTextLine1 = "Enter your username & password.";
@@ -10388,7 +10389,7 @@ public class client extends Applet_Sub1
         {
             if(loginPage == 2)
             {
-                int j = super.anInt11 / 2 - 40;
+                int j = super.aHeight / 2 - 40;
                 j += 30;
                 j += 25;
                 if(super.anInt26 == 1 && super.anInt28 >= j - 15 && super.anInt28 < j)
@@ -10397,8 +10398,8 @@ public class client extends Applet_Sub1
                 if(super.anInt26 == 1 && super.anInt28 >= j - 15 && super.anInt28 < j)
                     loginFieldFocus = 2;
                 j += 15;
-                int i1 = super.anInt10 / 2 - 80;
-                int k1 = super.anInt11 / 2 + 50;
+                int i1 = super.aWidth / 2 - 80;
+                int k1 = super.aHeight / 2 + 50;
                 k1 += 20;
                 if(super.anInt26 == 1 && super.anInt27 >= i1 - 75 && super.anInt27 <= i1 + 75 && super.anInt28 >= k1 - 20 && super.anInt28 <= k1 + 20)
                 {
@@ -10407,7 +10408,7 @@ public class client extends Applet_Sub1
                     if(aBoolean1157)
                         return;
                 }
-                i1 = super.anInt10 / 2 + 80;
+                i1 = super.aWidth / 2 + 80;
                 if(super.anInt26 == 1 && super.anInt27 >= i1 - 75 && super.anInt27 <= i1 + 75 && super.anInt28 >= k1 - 20 && super.anInt28 <= k1 + 20)
                 {
                     loginPage = 0;
@@ -10473,8 +10474,8 @@ public class client extends Applet_Sub1
             }
             if(loginPage == 3)
             {
-                int k = super.anInt10 / 2;
-                int j1 = super.anInt11 / 2 + 50;
+                int k = super.aWidth / 2;
+                int j1 = super.aHeight / 2 + 50;
                 j1 += 20;
                 if(super.anInt26 == 1 && super.anInt27 >= k - 75 && super.anInt27 <= k + 75 && super.anInt28 >= j1 - 20 && super.anInt28 <= j1 + 20)
                     loginPage = 0;
@@ -10923,10 +10924,10 @@ public class client extends Applet_Sub1
                     aBoolean1141 = true;
                 anInt1023 = 1;
                 aLong824 = System.currentTimeMillis();
-                aClass15_1165.method237(0);
+                aGraphicsBuffer_1165.method237(0);
                 aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
                 aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
-                aClass15_1165.method238(4, 23680, super.aGraphics12, 4);
+                aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
                 if(anInt1008 == 73)
                 {
                     int k16 = 0;
@@ -11945,7 +11946,7 @@ public class client extends Applet_Sub1
             method61(-252);
             method37(854, k2);
             method112(8);
-            aClass15_1165.method238(4, 23680, super.aGraphics12, 4);
+            aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
             anInt858 = l;
             anInt859 = i1;
             anInt860 = j1;
@@ -11976,7 +11977,7 @@ public class client extends Applet_Sub1
             buffer1.writeUnsignedByte(13);
     }
 
-    public client()
+    public Client()
     {
         anIntArrayArray825 = new int[104][104];
         anIntArray826 = new int[200];
@@ -12240,15 +12241,15 @@ public class client extends Applet_Sub1
     public int anInt900;
     public int anIntArrayArray901[][];
     public int anInt902;
-    public Class15 aClass15_903;
-    public Class15 aClass15_904;
-    public Class15 aClass15_905;
-    public Class15 aClass15_906;
-    public Class15 aClass15_907;
-    public Class15 aClass15_908;
-    public Class15 aClass15_909;
-    public Class15 aClass15_910;
-    public Class15 aClass15_911;
+    public GraphicsBuffer aGraphicsBuffer_903;
+    public GraphicsBuffer aGraphicsBuffer_904;
+    public GraphicsBuffer aGraphicsBuffer_905;
+    public GraphicsBuffer aGraphicsBuffer_906;
+    public GraphicsBuffer aGraphicsBuffer_907;
+    public GraphicsBuffer aGraphicsBuffer_908;
+    public GraphicsBuffer aGraphicsBuffer_909;
+    public GraphicsBuffer aGraphicsBuffer_910;
+    public GraphicsBuffer aGraphicsBuffer_911;
     public byte aByteArray912[];
     public int anInt913;
     public int anInt914;
@@ -12461,15 +12462,15 @@ public class client extends Applet_Sub1
     public int anInt1104;
     public int anInt1105;
     public boolean aBoolean1106;
-    public Class15 aClass15_1107;
-    public Class15 aClass15_1108;
-    public Class15 aClass15_1109;
-    public Class15 aClass15_1110;
-    public Class15 aClass15_1111;
-    public Class15 aClass15_1112;
-    public Class15 aClass15_1113;
-    public Class15 aClass15_1114;
-    public Class15 aClass15_1115;
+    public GraphicsBuffer aGraphicsBuffer_1107;
+    public GraphicsBuffer aGraphicsBuffer_1108;
+    public GraphicsBuffer aGraphicsBuffer_1109;
+    public GraphicsBuffer aGraphicsBuffer_1110;
+    public GraphicsBuffer aGraphicsBuffer_1111;
+    public GraphicsBuffer aGraphicsBuffer_1112;
+    public GraphicsBuffer aGraphicsBuffer_1113;
+    public GraphicsBuffer aGraphicsBuffer_1114;
+    public GraphicsBuffer aGraphicsBuffer_1115;
     public int anInt1116;
     public static int anInt1117;
     public int anInt1118;
@@ -12477,9 +12478,9 @@ public class client extends Applet_Sub1
     public int anInt1120;
     public String aString1121;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1_1122;
-    public Class15 aClass15_1123;
-    public Class15 aClass15_1124;
-    public Class15 aClass15_1125;
+    public GraphicsBuffer aGraphicsBuffer_1123;
+    public GraphicsBuffer aGraphicsBuffer_1124;
+    public GraphicsBuffer aGraphicsBuffer_1125;
     public static Class30_Sub2_Sub4_Sub1_Sub2 aClass30_Sub2_Sub4_Sub1_Sub2_1126;
     public String aStringArray1127[];
     public boolean aBooleanArray1128[];
@@ -12520,10 +12521,10 @@ public class client extends Applet_Sub1
     public boolean aBoolean1160;
     public static int anInt1161;
     public static String aString1162 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!\"\243$%^&*()-_=+[{]};:'@#~,<.>/?\\| ";
-    public Class15 aClass15_1163;
-    public Class15 aClass15_1164;
-    public Class15 aClass15_1165;
-    public Class15 aClass15_1166;
+    public GraphicsBuffer aGraphicsBuffer_1163;
+    public GraphicsBuffer aGraphicsBuffer_1164;
+    public GraphicsBuffer aGraphicsBuffer_1165;
+    public GraphicsBuffer aGraphicsBuffer_1166;
     public int anInt1167;
     public Connection connection;
     public int anInt1169;
