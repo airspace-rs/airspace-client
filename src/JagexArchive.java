@@ -2,10 +2,10 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-public class Class44
+public class JagexArchive
 {
 
-    public Class44(int i, byte abyte0[])
+    public JagexArchive(int i, byte abyte0[])
     {
         aByte723 = 0;
         anInt724 = 9;

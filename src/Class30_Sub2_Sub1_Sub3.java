@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
 {
 
@@ -86,7 +84,7 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
         }
     }
 
-    public static void method368(Class44 class44, int i)
+    public static void method368(JagexArchive jagexArchive, int i)
     {
         anInt1473 = 0;
         if(i != 0)
@@ -94,7 +92,7 @@ public class Class30_Sub2_Sub1_Sub3 extends Class30_Sub2_Sub1
         for(int j = 0; j < 50; j++)
             try
             {
-                aClass30_Sub2_Sub1_Sub2Array1474[j] = new Class30_Sub2_Sub1_Sub2(class44, String.valueOf(j), 0);
+                aClass30_Sub2_Sub1_Sub2Array1474[j] = new Class30_Sub2_Sub1_Sub2(jagexArchive, String.valueOf(j), 0);
                 if(aBoolean1461 && aClass30_Sub2_Sub1_Sub2Array1474[j].anInt1456 == 128)
                     aClass30_Sub2_Sub1_Sub2Array1474[j].method356(false);
                 else

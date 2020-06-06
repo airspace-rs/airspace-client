@@ -82,10 +82,10 @@ public class Class46
 
     }
 
-    public static void method576(Class44 class44)
+    public static void method576(JagexArchive jagexArchive)
     {
-        aBuffer_753 = new Buffer(class44.method571("loc.dat", null), 891);
-        Buffer buffer = new Buffer(class44.method571("loc.idx", null), 891);
+        aBuffer_753 = new Buffer(jagexArchive.method571("loc.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("loc.idx", null), 891);
         anInt756 = buffer.method410();
         anIntArray755 = new int[anInt756];
         int i = 2;

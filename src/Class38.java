@@ -5,9 +5,9 @@
 public class Class38
 {
 
-    public static void method535(int i, Class44 class44)
+    public static void method535(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(class44.method571("idk.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("idk.dat", null), 891);
         anInt655 = buffer.method410();
         if(aClass38Array656 == null)
             aClass38Array656 = new Class38[anInt655];

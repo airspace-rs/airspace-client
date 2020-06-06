@@ -19,10 +19,10 @@ public class Class9
         anIntArray252[j] = k;
     }
 
-    public static void method205(Class44 class44, Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[], byte byte0, Class44 class44_1)
+    public static void method205(JagexArchive jagexArchive, Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[], byte byte0, JagexArchive jagexArchive_1)
     {
         aClass12_238 = new Class12(false, 50000);
-        Buffer buffer = new Buffer(class44.method571("data", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("data", null), 891);
         int i = -1;
         int j = buffer.method410();
         aClass9Array210 = new Class9[j];
@@ -116,10 +116,10 @@ public class Class9
                         class9.anIntArray215[j2] = buffer.method411();
                         class9.anIntArray247[j2] = buffer.method411();
                         String s1 = buffer.method415();
-                        if(class44_1 != null && s1.length() > 0)
+                        if(jagexArchive_1 != null && s1.length() > 0)
                         {
                             int i5 = s1.lastIndexOf(",");
-                            class9.aClass30_Sub2_Sub1_Sub1Array209[j2] = method207(Integer.parseInt(s1.substring(i5 + 1)), false, class44_1, s1.substring(0, i5));
+                            class9.aClass30_Sub2_Sub1_Sub1Array209[j2] = method207(Integer.parseInt(s1.substring(i5 + 1)), false, jagexArchive_1, s1.substring(0, i5));
                         }
                     }
                 }
@@ -159,16 +159,16 @@ public class Class9
             if(class9.anInt262 == 5)
             {
                 String s = buffer.method415();
-                if(class44_1 != null && s.length() > 0)
+                if(jagexArchive_1 != null && s.length() > 0)
                 {
                     int i4 = s.lastIndexOf(",");
-                    class9.aClass30_Sub2_Sub1_Sub1_207 = method207(Integer.parseInt(s.substring(i4 + 1)), false, class44_1, s.substring(0, i4));
+                    class9.aClass30_Sub2_Sub1_Sub1_207 = method207(Integer.parseInt(s.substring(i4 + 1)), false, jagexArchive_1, s.substring(0, i4));
                 }
                 s = buffer.method415();
-                if(class44_1 != null && s.length() > 0)
+                if(jagexArchive_1 != null && s.length() > 0)
                 {
                     int j4 = s.lastIndexOf(",");
-                    class9.aClass30_Sub2_Sub1_Sub1_260 = method207(Integer.parseInt(s.substring(j4 + 1)), false, class44_1, s.substring(0, j4));
+                    class9.aClass30_Sub2_Sub1_Sub1_260 = method207(Integer.parseInt(s.substring(j4 + 1)), false, jagexArchive_1, s.substring(0, j4));
                 }
             }
             if(class9.anInt262 == 6)
@@ -267,7 +267,7 @@ public class Class9
         return class30_sub2_sub4_sub6;
     }
 
-    public static Class30_Sub2_Sub1_Sub1 method207(int i, boolean flag, Class44 class44, String s)
+    public static Class30_Sub2_Sub1_Sub1 method207(int i, boolean flag, JagexArchive jagexArchive, String s)
     {
         long l = (Class50.method585((byte)1, s) << 8) + (long)i;
         if(flag)
@@ -277,7 +277,7 @@ public class Class9
             return class30_sub2_sub1_sub1;
         try
         {
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(class44, s, i);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive, s, i);
             aClass12_238.method223(class30_sub2_sub1_sub1, l, (byte)2);
         }
         catch(Exception _ex)

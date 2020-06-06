@@ -5,13 +5,13 @@
 public class Class30_Sub2_Sub1_Sub2 extends Class30_Sub2_Sub1
 {
 
-    public Class30_Sub2_Sub1_Sub2(Class44 class44, String s, int i)
+    public Class30_Sub2_Sub1_Sub2(JagexArchive jagexArchive, String s, int i)
     {
         aBoolean1447 = false;
         anInt1448 = 360;
         aByte1449 = 3;
-        Buffer buffer = new Buffer(class44.method571(s + ".dat", null), 891);
-        Buffer buffer_1 = new Buffer(class44.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571(s + ".dat", null), 891);
+        Buffer buffer_1 = new Buffer(jagexArchive.method571("index.dat", null), 891);
         buffer_1.pointer = buffer.method410();
         anInt1456 = buffer_1.method410();
         anInt1457 = buffer_1.method410();

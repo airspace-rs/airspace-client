@@ -5,11 +5,11 @@
 public class Class37
 {
 
-    public static void method533(int i, Class44 class44)
+    public static void method533(int i, JagexArchive jagexArchive)
     {
         if(i != 0)
             anInt644 = 91;
-        Buffer buffer = new Buffer(class44.method571("varbit.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("varbit.dat", null), 891);
         anInt645 = buffer.method410();
         if(aClass37Array646 == null)
             aClass37Array646 = new Class37[anInt645];

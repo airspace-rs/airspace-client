@@ -37,10 +37,10 @@ public class Class8
         return flag;
     }
 
-    public static void method193(Class44 class44)
+    public static void method193(JagexArchive jagexArchive)
     {
-        aBuffer_183 = new Buffer(class44.method571("obj.dat", null), 891);
-        Buffer buffer = new Buffer(class44.method571("obj.idx", null), 891);
+        aBuffer_183 = new Buffer(jagexArchive.method571("obj.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("obj.idx", null), 891);
         anInt203 = buffer.method410();
         anIntArray195 = new int[anInt203];
         int i = 2;

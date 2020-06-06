@@ -5,9 +5,9 @@
 public class Class41
 {
 
-    public static void method546(int i, Class44 class44)
+    public static void method546(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(class44.method571("varp.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("varp.dat", null), 891);
         anInt702 = 0;
         anInt700 = buffer.method410();
         if(aClass41Array701 == null)

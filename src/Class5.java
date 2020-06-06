@@ -80,10 +80,10 @@ public class Class5
             return method159(anIntArray88[j]);
     }
 
-    public static void method162(Class44 class44)
+    public static void method162(JagexArchive jagexArchive)
     {
-        aBuffer_60 = new Buffer(class44.method571("npc.dat", null), 891);
-        Buffer buffer = new Buffer(class44.method571("npc.idx", null), 891);
+        aBuffer_60 = new Buffer(jagexArchive.method571("npc.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("npc.idx", null), 891);
         anInt62 = buffer.method410();
         anIntArray72 = new int[anInt62];
         int i = 2;

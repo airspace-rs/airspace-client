@@ -5,11 +5,11 @@
 public class Class22
 {
 
-    public static void method260(int i, Class44 class44)
+    public static void method260(int i, JagexArchive jagexArchive)
     {
         if(i != 0)
             anInt386 = 115;
-        Buffer buffer = new Buffer(class44.method571("flo.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571("flo.dat", null), 891);
         anInt387 = buffer.method410();
         if(aClass22Array388 == null)
             aClass22Array388 = new Class22[anInt387];

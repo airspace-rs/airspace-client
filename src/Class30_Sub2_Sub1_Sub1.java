@@ -61,7 +61,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         }
     }
 
-    public Class30_Sub2_Sub1_Sub1(Class44 class44, String s, int i)
+    public Class30_Sub2_Sub1_Sub1(JagexArchive jagexArchive, String s, int i)
     {
         aBoolean1428 = false;
         anInt1429 = 24869;
@@ -73,8 +73,8 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         aBoolean1436 = true;
         aBoolean1437 = true;
         aBoolean1438 = false;
-        Buffer buffer = new Buffer(class44.method571(s + ".dat", null), 891);
-        Buffer buffer_1 = new Buffer(class44.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(jagexArchive.method571(s + ".dat", null), 891);
+        Buffer buffer_1 = new Buffer(jagexArchive.method571("index.dat", null), 891);
         buffer_1.pointer = buffer.method410();
         anInt1444 = buffer_1.method410();
         anInt1445 = buffer_1.method410();
