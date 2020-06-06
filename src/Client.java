@@ -2379,28 +2379,26 @@ public class Client extends BrowserApplet
         }
     }
 
-    public void method51(int i)
+    public void showLoadingScreen()
     {
-        aClass30_Sub2_Sub1_Sub2_966 = new Class30_Sub2_Sub1_Sub2(aJagexArchive_1053, "titlebox", 0);
-        if(i <= 0)
-            aBoolean1231 = !aBoolean1231;
-        aClass30_Sub2_Sub1_Sub2_967 = new Class30_Sub2_Sub1_Sub2(aJagexArchive_1053, "titlebutton", 0);
-        aClass30_Sub2_Sub1_Sub2Array1152 = new Class30_Sub2_Sub1_Sub2[12];
+        titleBoxImage = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "titlebox", 0);
+        titleButtonImage = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "titlebutton", 0);
+        runeImages = new Class30_Sub2_Sub1_Sub2[12];
         int j = 0;
-        try
-        {
+        try {
             j = Integer.parseInt(getParameter("fl_icon"));
+        } catch (Exception _ex) {
+            //
         }
-        catch(Exception _ex) { }
-        if(j == 0)
-        {
-            for(int k = 0; k < 12; k++)
-                aClass30_Sub2_Sub1_Sub2Array1152[k] = new Class30_Sub2_Sub1_Sub2(aJagexArchive_1053, "runes", k);
+        if (j == 0) {
+            for (int k = 0; k < 12; k++) {
+                runeImages[k] = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "runes", k);
+            }
 
-        } else
-        {
-            for(int l = 0; l < 12; l++)
-                aClass30_Sub2_Sub1_Sub2Array1152[l] = new Class30_Sub2_Sub1_Sub2(aJagexArchive_1053, "runes", 12 + (l & 3));
+        } else {
+            for (int l = 0; l < 12; l++) {
+                runeImages[l] = new Class30_Sub2_Sub1_Sub2(titleScreenArchive, "runes", 12 + (l & 3));
+            }
 
         }
         aClass30_Sub2_Sub1_Sub1_1201 = new Class30_Sub2_Sub1_Sub1(128, 265);
@@ -2636,9 +2634,9 @@ public class Client extends BrowserApplet
             return super.getAppletContext();
     }
 
-    public void method56()
+    public void drawLogo()
     {
-        byte abyte0[] = aJagexArchive_1053.method571("title.dat", null);
+        byte abyte0[] = titleScreenArchive.method571("title.dat", null);
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(abyte0, this);
         aGraphicsBuffer_1110.method237();
         class30_sub2_sub1_sub1.method346(0, 0, -32357);
@@ -2686,7 +2684,7 @@ public class Client extends BrowserApplet
         class30_sub2_sub1_sub1.method346(254, -171, -32357);
         aGraphicsBuffer_1115.method237();
         class30_sub2_sub1_sub1.method346(-180, -171, -32357);
-        class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(aJagexArchive_1053, "logo", 0);
+        class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(titleScreenArchive, "logo", 0);
         aGraphicsBuffer_1107.method237();
         class30_sub2_sub1_sub1.method348(382 - class30_sub2_sub1_sub1.anInt1440 / 2 - 128, 16083, 18);
         class30_sub2_sub1_sub1 = null;
@@ -2781,7 +2779,7 @@ public class Client extends BrowserApplet
         {
             anInt1275 -= anIntArray1190.length;
             int i2 = (int)(Math.random() * 12D);
-            method106(aClass30_Sub2_Sub1_Sub2Array1152[i2], -135);
+            method106(runeImages[i2], -135);
         }
         for(int j2 = 1; j2 < c - 1; j2++)
         {
@@ -3254,10 +3252,10 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub1.method334(aBoolean1206);
         aGraphicsBuffer_1115 = new GraphicsBuffer(75, 94, getWindow());
         Class30_Sub2_Sub1.method334(aBoolean1206);
-        if(aJagexArchive_1053 != null)
+        if(titleScreenArchive != null)
         {
-            method56();
-            method51(215);
+            drawLogo();
+            showLoadingScreen();
         }
         aBoolean1255 = true;
     }
@@ -3267,7 +3265,7 @@ public class Client extends BrowserApplet
         anInt1079 = percent;
         aString1049 = text;
         method64(0);
-        if(aJagexArchive_1053 == null)
+        if(titleScreenArchive == null)
         {
             super.drawLoadingScreen(percent, text);
             return;
@@ -6727,22 +6725,24 @@ public class Client extends BrowserApplet
         try {
 //            validateCache();
 
-            aJagexArchive_1053 = getArchiveAtIndex(1);
+            titleScreenArchive = getArchiveAtIndex(1);
 
             // Fonts?!
-            aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", aJagexArchive_1053);
-            aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", aJagexArchive_1053);
-            aClass30_Sub2_Sub1_Sub4_1272 = new Class30_Sub2_Sub1_Sub4(false, "b12_full", aJagexArchive_1053);
-            aClass30_Sub2_Sub1_Sub4_1273 = new Class30_Sub2_Sub1_Sub4(true, "q8_full", aJagexArchive_1053);
+            aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", titleScreenArchive);
+            aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", titleScreenArchive);
+            aClass30_Sub2_Sub1_Sub4_1272 = new Class30_Sub2_Sub1_Sub4(false, "b12_full", titleScreenArchive);
+            aClass30_Sub2_Sub1_Sub4_1273 = new Class30_Sub2_Sub1_Sub4(true, "q8_full", titleScreenArchive);
 
-            method56();
-            method51(215);
+            drawLogo();
+            showLoadingScreen();
+
             JagexArchive jagexArchive = getArchiveAtIndex(2);
-            JagexArchive jagexArchive_1 = getArchiveAtIndex(3);
-            JagexArchive jagexArchive_2 = getArchiveAtIndex(4);
-            JagexArchive jagexArchive_3 = getArchiveAtIndex(6);
-            JagexArchive jagexArchive_4 = getArchiveAtIndex(7);
-            JagexArchive jagexArchive_5 = getArchiveAtIndex(8);
+            JagexArchive jagexArchive1 = getArchiveAtIndex(3);
+            JagexArchive jagexArchive2 = getArchiveAtIndex(4);
+            JagexArchive jagexArchive3 = getArchiveAtIndex(6);
+            JagexArchive jagexArchive4 = getArchiveAtIndex(7);
+            JagexArchive jagexArchive5 = getArchiveAtIndex(8);
+
             aByteArrayArrayArray1258 = new byte[4][104][104];
             anIntArrayArrayArray1214 = new int[4][105][105];
             aClass25_946 = new Class25(104, (byte)43, 104, anIntArrayArrayArray1214, 4);
@@ -6756,26 +6756,21 @@ public class Client extends BrowserApplet
             aClass42_Sub1_1068.method551(jagexArchive_6, this);
             Class36.method528(aClass42_Sub1_1068.method557(0));
             Class30_Sub2_Sub4_Sub6.method459(aClass42_Sub1_1068.method555(79, 0), aClass42_Sub1_1068);
-            if(!isLowMemory)
-            {
+            if (!isLowMemory) {
                 anInt1227 = 0;
-                try
-                {
+                try {
                     anInt1227 = Integer.parseInt(getParameter("music"));
+                } catch (Exception _ex) {
                 }
-                catch(Exception _ex) { }
                 aBoolean1228 = true;
                 aClass42_Sub1_1068.method558(2, anInt1227);
-                while(aClass42_Sub1_1068.method552() > 0) 
-                {
+                while (aClass42_Sub1_1068.method552() > 0) {
                     method57(false);
-                    try
-                    {
+                    try {
                         Thread.sleep(100L);
+                    } catch (Exception _ex) {
                     }
-                    catch(Exception _ex) { }
-                    if(aClass42_Sub1_1068.anInt1349 > 3)
-                    {
+                    if (aClass42_Sub1_1068.anInt1349 > 3) {
                         method28("ondemand");
                         return;
                     }
@@ -6895,105 +6890,105 @@ public class Client extends BrowserApplet
 
             }
             drawLoadingScreen(80, "Unpacking media");
-            aClass30_Sub2_Sub1_Sub2_1196 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "invback", 0);
-            aClass30_Sub2_Sub1_Sub2_1198 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "chatback", 0);
-            aClass30_Sub2_Sub1_Sub2_1197 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "mapback", 0);
-            aClass30_Sub2_Sub1_Sub2_1027 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "backbase1", 0);
-            aClass30_Sub2_Sub1_Sub2_1028 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "backbase2", 0);
-            aClass30_Sub2_Sub1_Sub2_1029 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "backhmid1", 0);
+            aClass30_Sub2_Sub1_Sub2_1196 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "invback", 0);
+            aClass30_Sub2_Sub1_Sub2_1198 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "chatback", 0);
+            aClass30_Sub2_Sub1_Sub2_1197 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mapback", 0);
+            aClass30_Sub2_Sub1_Sub2_1027 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backbase1", 0);
+            aClass30_Sub2_Sub1_Sub2_1028 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backbase2", 0);
+            aClass30_Sub2_Sub1_Sub2_1029 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "backhmid1", 0);
             for(int j3 = 0; j3 < 13; j3++)
-                aClass30_Sub2_Sub1_Sub2Array947[j3] = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "sideicons", j3);
+                aClass30_Sub2_Sub1_Sub2Array947[j3] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "sideicons", j3);
 
-            aClass30_Sub2_Sub1_Sub1_1122 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "compass", 0);
-            aClass30_Sub2_Sub1_Sub1_1001 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapedge", 0);
+            aClass30_Sub2_Sub1_Sub1_1122 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "compass", 0);
+            aClass30_Sub2_Sub1_Sub1_1001 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapedge", 0);
             aClass30_Sub2_Sub1_Sub1_1001.method345(5059);
             try
             {
                 for(int k3 = 0; k3 < 100; k3++)
-                    aClass30_Sub2_Sub1_Sub2Array1060[k3] = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "mapscene", k3);
+                    aClass30_Sub2_Sub1_Sub2Array1060[k3] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mapscene", k3);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int l3 = 0; l3 < 100; l3++)
-                    aClass30_Sub2_Sub1_Sub1Array1033[l3] = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapfunction", l3);
+                    aClass30_Sub2_Sub1_Sub1Array1033[l3] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapfunction", l3);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int i4 = 0; i4 < 20; i4++)
-                    aClass30_Sub2_Sub1_Sub1Array987[i4] = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "hitmarks", i4);
+                    aClass30_Sub2_Sub1_Sub1Array987[i4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "hitmarks", i4);
 
             }
             catch(Exception _ex) { }
             try
             {
                 for(int j4 = 0; j4 < 20; j4++)
-                    aClass30_Sub2_Sub1_Sub1Array1095[j4] = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "headicons", j4);
+                    aClass30_Sub2_Sub1_Sub1Array1095[j4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "headicons", j4);
 
             }
             catch(Exception _ex) { }
-            aClass30_Sub2_Sub1_Sub1_870 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapmarker", 0);
-            aClass30_Sub2_Sub1_Sub1_871 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapmarker", 1);
+            aClass30_Sub2_Sub1_Sub1_870 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapmarker", 0);
+            aClass30_Sub2_Sub1_Sub1_871 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapmarker", 1);
             for(int k4 = 0; k4 < 8; k4++)
-                aClass30_Sub2_Sub1_Sub1Array1150[k4] = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "cross", k4);
+                aClass30_Sub2_Sub1_Sub1Array1150[k4] = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "cross", k4);
 
-            aClass30_Sub2_Sub1_Sub1_1074 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapdots", 0);
-            aClass30_Sub2_Sub1_Sub1_1075 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapdots", 1);
-            aClass30_Sub2_Sub1_Sub1_1076 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapdots", 2);
-            aClass30_Sub2_Sub1_Sub1_1077 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapdots", 3);
-            aClass30_Sub2_Sub1_Sub1_1078 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "mapdots", 4);
-            aClass30_Sub2_Sub1_Sub2_1024 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "scrollbar", 0);
-            aClass30_Sub2_Sub1_Sub2_1025 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "scrollbar", 1);
-            aClass30_Sub2_Sub1_Sub2_1143 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone1", 0);
-            aClass30_Sub2_Sub1_Sub2_1144 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone2", 0);
-            aClass30_Sub2_Sub1_Sub2_1145 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone3", 0);
-            aClass30_Sub2_Sub1_Sub2_1146 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone1", 0);
+            aClass30_Sub2_Sub1_Sub1_1074 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 0);
+            aClass30_Sub2_Sub1_Sub1_1075 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 1);
+            aClass30_Sub2_Sub1_Sub1_1076 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 2);
+            aClass30_Sub2_Sub1_Sub1_1077 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 3);
+            aClass30_Sub2_Sub1_Sub1_1078 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "mapdots", 4);
+            aClass30_Sub2_Sub1_Sub2_1024 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "scrollbar", 0);
+            aClass30_Sub2_Sub1_Sub2_1025 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "scrollbar", 1);
+            aClass30_Sub2_Sub1_Sub2_1143 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
+            aClass30_Sub2_Sub1_Sub2_1144 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
+            aClass30_Sub2_Sub1_Sub2_1145 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone3", 0);
+            aClass30_Sub2_Sub1_Sub2_1146 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
             aClass30_Sub2_Sub1_Sub2_1146.method358(0);
-            aClass30_Sub2_Sub1_Sub2_1147 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone2", 0);
+            aClass30_Sub2_Sub1_Sub2_1147 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
             aClass30_Sub2_Sub1_Sub2_1147.method358(0);
-            aClass30_Sub2_Sub1_Sub2_865 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone1", 0);
+            aClass30_Sub2_Sub1_Sub2_865 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
             aClass30_Sub2_Sub1_Sub2_865.method359(true);
-            aClass30_Sub2_Sub1_Sub2_866 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone2", 0);
+            aClass30_Sub2_Sub1_Sub2_866 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
             aClass30_Sub2_Sub1_Sub2_866.method359(true);
-            aClass30_Sub2_Sub1_Sub2_867 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone3", 0);
+            aClass30_Sub2_Sub1_Sub2_867 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone3", 0);
             aClass30_Sub2_Sub1_Sub2_867.method359(true);
-            aClass30_Sub2_Sub1_Sub2_868 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone1", 0);
+            aClass30_Sub2_Sub1_Sub2_868 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone1", 0);
             aClass30_Sub2_Sub1_Sub2_868.method358(0);
             aClass30_Sub2_Sub1_Sub2_868.method359(true);
-            aClass30_Sub2_Sub1_Sub2_869 = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "redstone2", 0);
+            aClass30_Sub2_Sub1_Sub2_869 = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "redstone2", 0);
             aClass30_Sub2_Sub1_Sub2_869.method358(0);
             aClass30_Sub2_Sub1_Sub2_869.method359(true);
             for(int l4 = 0; l4 < 2; l4++)
-                aClass30_Sub2_Sub1_Sub2Array1219[l4] = new Class30_Sub2_Sub1_Sub2(jagexArchive_2, "mod_icons", l4);
+                aClass30_Sub2_Sub1_Sub2Array1219[l4] = new Class30_Sub2_Sub1_Sub2(jagexArchive2, "mod_icons", l4);
 
-            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backleft1", 0);
+            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backleft1", 0);
             aGraphicsBuffer_903 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backleft2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backleft2", 0);
             aGraphicsBuffer_904 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backright1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backright1", 0);
             aGraphicsBuffer_905 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backright2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backright2", 0);
             aGraphicsBuffer_906 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backtop1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backtop1", 0);
             aGraphicsBuffer_907 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backvmid1", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid1", 0);
             aGraphicsBuffer_908 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backvmid2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid2", 0);
             aGraphicsBuffer_909 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backvmid3", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backvmid3", 0);
             aGraphicsBuffer_910 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive_2, "backhmid2", 0);
+            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(jagexArchive2, "backhmid2", 0);
             aGraphicsBuffer_911 = new GraphicsBuffer(class30_sub2_sub1_sub1.anInt1440, class30_sub2_sub1_sub1.anInt1441, getWindow());
             class30_sub2_sub1_sub1.method346(0, 0, -32357);
             int i5 = (int)(Math.random() * 21D) - 10;
@@ -7009,7 +7004,7 @@ public class Client extends BrowserApplet
             }
 
             drawLoadingScreen(83, "Unpacking textures");
-            Class30_Sub2_Sub1_Sub3.method368(jagexArchive_3, 0);
+            Class30_Sub2_Sub1_Sub3.method368(jagexArchive3, 0);
             Class30_Sub2_Sub1_Sub3.method372(0.80000000000000004D, aByte1200);
             Class30_Sub2_Sub1_Sub3.method367(20, true);
             drawLoadingScreen(86, "Unpacking config");
@@ -7026,7 +7021,7 @@ public class Client extends BrowserApplet
             if(!isLowMemory)
             {
                 drawLoadingScreen(90, "Unpacking sounds");
-                byte abyte0[] = jagexArchive_5.method571("sounds.dat", null);
+                byte abyte0[] = jagexArchive5.method571("sounds.dat", null);
                 Buffer buffer = new Buffer(abyte0, 891);
                 Class16.method240(0, buffer);
             }
@@ -7034,7 +7029,7 @@ public class Client extends BrowserApplet
             Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[] = {
                 aClass30_Sub2_Sub1_Sub4_1270, aClass30_Sub2_Sub1_Sub4_1271, aClass30_Sub2_Sub1_Sub4_1272, aClass30_Sub2_Sub1_Sub4_1273
             };
-            Class9.method205(jagexArchive_1, aclass30_sub2_sub1_sub4, (byte)-84, jagexArchive_2);
+            Class9.method205(jagexArchive1, aclass30_sub2_sub1_sub4, (byte)-84, jagexArchive2);
             drawLoadingScreen(100, "Preparing game engine");
             for(int j6 = 0; j6 < 33; j6++)
             {
@@ -7096,7 +7091,7 @@ public class Client extends BrowserApplet
             }
 
             Class25.method310(500, 800, 512, 334, ai, aBoolean1231);
-            Class34.method487(jagexArchive_4);
+            Class34.method487(jagexArchive4);
             aClass48_879 = new Class48(this, anInt1096);
             newThread(aClass48_879, 10);
             Class30_Sub2_Sub4_Sub5.aClient1609 = this;
@@ -8887,9 +8882,9 @@ public class Client extends BrowserApplet
             }
             catch(Exception _ex) { }
         }
-        aClass30_Sub2_Sub1_Sub2_966 = null;
-        aClass30_Sub2_Sub1_Sub2_967 = null;
-        aClass30_Sub2_Sub1_Sub2Array1152 = null;
+        titleBoxImage = null;
+        titleButtonImage = null;
+        runeImages = null;
         anIntArray850 = null;
         anIntArray851 = null;
         anIntArray852 = null;
@@ -9073,10 +9068,11 @@ public class Client extends BrowserApplet
 
     public String getParameter(String s)
     {
-        if(signlink.mainapp != null)
+        if (signlink.mainapp != null) {
             return signlink.mainapp.getParameter(s);
-        else
+        } else {
             return super.getParameter(s);
+        }
     }
 
     public void method123(byte byte0, boolean flag, int i)
@@ -9720,7 +9716,7 @@ public class Client extends BrowserApplet
     {
         method64(0);
         aGraphicsBuffer_1109.method237();
-        aClass30_Sub2_Sub1_Sub2_966.method361(0, 16083, 0);
+        titleBoxImage.method361(0, 16083, 0);
         char c = '\u0168';
         char c1 = '\310';
         if(flag1)
@@ -9734,10 +9730,10 @@ public class Client extends BrowserApplet
             i += 30;
             int l = c / 2 - 80;
             int k1 = c1 / 2 + 20;
-            aClass30_Sub2_Sub1_Sub2_967.method361(l - 73, 16083, k1 - 20);
+            titleButtonImage.method361(l - 73, 16083, k1 - 20);
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, l, anInt939, "New User", k1 + 5, true);
             l = c / 2 + 80;
-            aClass30_Sub2_Sub1_Sub2_967.method361(l - 73, 16083, k1 - 20);
+            titleButtonImage.method361(l - 73, 16083, k1 - 20);
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, l, anInt939, "Existing User", k1 + 5, true);
         }
         if(loginPage == 2)
@@ -9764,10 +9760,10 @@ public class Client extends BrowserApplet
             {
                 int i1 = c / 2 - 80;
                 int l1 = c1 / 2 + 50;
-                aClass30_Sub2_Sub1_Sub2_967.method361(i1 - 73, 16083, l1 - 20);
+                titleButtonImage.method361(i1 - 73, 16083, l1 - 20);
                 aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, i1, anInt939, "Login", l1 + 5, true);
                 i1 = c / 2 + 80;
-                aClass30_Sub2_Sub1_Sub2_967.method361(i1 - 73, 16083, l1 - 20);
+                titleButtonImage.method361(i1 - 73, 16083, l1 - 20);
                 aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, i1, anInt939, "Cancel", l1 + 5, true);
             }
         }
@@ -9785,7 +9781,7 @@ public class Client extends BrowserApplet
             k += 15;
             int j1 = c / 2;
             int i2 = c1 / 2 + 50;
-            aClass30_Sub2_Sub1_Sub2_967.method361(j1 - 73, 16083, i2 - 20);
+            titleButtonImage.method361(j1 - 73, 16083, i2 - 20);
             aClass30_Sub2_Sub1_Sub4_1272.method382(0xffffff, j1, anInt939, "Cancel", i2 + 5, true);
         }
         aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
@@ -12178,8 +12174,8 @@ public class Client extends BrowserApplet
     public int anIntArray965[] = {
         0xffff00, 0xff0000, 65280, 65535, 0xff00ff, 0xffffff
     };
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_966;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_967;
+    public Class30_Sub2_Sub1_Sub2 titleBoxImage;
+    public Class30_Sub2_Sub1_Sub2 titleButtonImage;
     public int anIntArray968[];
     public int anIntArray969[];
     public JagexFileStore jagexFileStores[];
@@ -12280,7 +12276,7 @@ public class Client extends BrowserApplet
     public int anInt1050;
     public static int anInt1051;
     public int anIntArray1052[];
-    public JagexArchive aJagexArchive_1053;
+    public JagexArchive titleScreenArchive;
     public int anInt1054;
     public int anInt1055;
     public Class19 aClass19_1056;
@@ -12382,7 +12378,7 @@ public class Client extends BrowserApplet
     public boolean aBoolean1149;
     public Class30_Sub2_Sub1_Sub1 aClass30_Sub2_Sub1_Sub1Array1150[];
     public boolean aBoolean1151;
-    public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2Array1152[];
+    public Class30_Sub2_Sub1_Sub2 runeImages[];
     public boolean aBoolean1153;
     public int anInt1154;
     public static int anInt1155;
