@@ -70,10 +70,12 @@ public class BrowserApplet extends Applet implements Runnable, MouseListener, Mo
         getWindow().addMouseMotionListener(this);
         getWindow().addKeyListener(this);
         getWindow().addFocusListener(this);
+
         if (window != null) {
             window.addWindowListener(this);
         }
-        method13(0, (byte)4, "Loading...");
+
+        drawLoadingScreen(0, "Loading...");
         method6();
         int i = 0;
         int j = 256;
@@ -499,49 +501,44 @@ public class BrowserApplet extends Applet implements Runnable, MouseListener, Mo
         thread.setPriority(priority);
     }
 
-    public void method13(int i, byte byte0, String s)
+    public void drawLoadingScreen(int i, String s)
     {
-        while(graphics == null)
-        {
+        while (graphics == null) {
             graphics = getWindow().getGraphics();
-            try
-            {
+            try {
                 getWindow().repaint();
+            } catch (Exception _ex) {
+                //
             }
-            catch(Exception _ex) { }
-            try
-            {
+            try {
                 Thread.sleep(1000L);
+            } catch (Exception _ex) {
+                //
             }
-            catch(Exception _ex) { }
         }
-        Font font = new Font("Helvetica", 1, 13);
-        FontMetrics fontmetrics = getWindow().getFontMetrics(font);
-        Font font1 = new Font("Helvetica", 0, 13);
-        getWindow().getFontMetrics(font1);
-        if(aBoolean16)
-        {
+
+        Font boldFont = new Font("Helvetica", Font.BOLD, 13);
+        FontMetrics fontmetrics = getWindow().getFontMetrics(boldFont);
+        Font plainFont = new Font("Helvetica", Font.PLAIN, 13);
+        getWindow().getFontMetrics(plainFont);
+
+        if (aBoolean16) {
             graphics.setColor(Color.black);
             graphics.fillRect(0, 0, aWidth, aHeight);
             aBoolean16 = false;
         }
+
         Color color = new Color(140, 17, 17);
-        int j = aHeight / 2 - 18;
+
+        int loadingBarHeight = aHeight / 2 - 18;
         graphics.setColor(color);
-        graphics.drawRect(aWidth / 2 - 152, j, 304, 34);
-        graphics.fillRect(aWidth / 2 - 150, j + 2, i * 3, 30);
+        graphics.drawRect(aWidth / 2 - 152, loadingBarHeight, 304, 34);
+        graphics.fillRect(aWidth / 2 - 150, loadingBarHeight + 2, i * 3, 30);
         graphics.setColor(Color.black);
-        if(byte0 != 4)
-        {
-            return;
-        } else
-        {
-            graphics.fillRect((aWidth / 2 - 150) + i * 3, j + 2, 300 - i * 3, 30);
-            graphics.setFont(font);
-            graphics.setColor(Color.white);
-            graphics.drawString(s, (aWidth - fontmetrics.stringWidth(s)) / 2, j + 22);
-            return;
-        }
+        graphics.fillRect((aWidth / 2 - 150) + i * 3, loadingBarHeight + 2, 300 - i * 3, 30);
+        graphics.setFont(boldFont);
+        graphics.setColor(Color.white);
+        graphics.drawString(s, (aWidth - fontmetrics.stringWidth(s)) / 2, loadingBarHeight + 22);
     }
 
     public BrowserApplet()

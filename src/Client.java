@@ -53,7 +53,7 @@ public class Client extends BrowserApplet
         while(anIntArray1090[8] == 0) 
         {
             String s = "Unknown problem";
-            method13(20, (byte)4, "Connecting to web server");
+            drawLoadingScreen(20, "Connecting to web server");
             try
             {
                 DataInputStream datainputstream = method132("crc" + (int)(Math.random() * 99999999D) + "-" + 317);
@@ -98,11 +98,11 @@ public class Client extends BrowserApplet
                 {
                     if(k >= 10)
                     {
-                        method13(10, (byte)4, "Game updated - please reload page");
+                        drawLoadingScreen(10, "Game updated - please reload page");
                         l = 10;
                     } else
                     {
-                        method13(10, (byte)4, s + " - Will retry in " + l + " secs.");
+                        drawLoadingScreen(10, s + " - Will retry in " + l + " secs.");
                     }
                     try
                     {
@@ -2458,7 +2458,7 @@ public class Client extends BrowserApplet
         method106(null, -135);
         anIntArray828 = new int[32768];
         anIntArray829 = new int[32768];
-        method13(10, (byte)4, "Connecting to fileserver");
+        drawLoadingScreen(10, "Connecting to fileserver");
         if(!aBoolean831)
         {
             aBoolean880 = true;
@@ -3272,14 +3272,14 @@ public class Client extends BrowserApplet
         aBoolean1255 = true;
     }
 
-    public void method13(int i, byte byte0, String s)
+    public void drawLoadingScreen(int i, String s)
     {
         anInt1079 = i;
         aString1049 = s;
         method64(0);
         if(aClass44_1053 == null)
         {
-            super.method13(i, (byte)4, s);
+            super.drawLoadingScreen(i, s);
             return;
         }
         aGraphicsBuffer_1109.method237(0);
@@ -3294,10 +3294,6 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub1.method336(30, j + 2, (c / 2 - 150) + i * 3, 0, 300 - i * 3, 0);
         aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, s, 23693, (c1 / 2 + 5) - byte1, c / 2);
         aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
-        if(byte0 != 4)
-        {
-            for(int k = 1; k > 0; k++);
-        }
         if(aBoolean1255)
         {
             aBoolean1255 = false;
@@ -3422,7 +3418,7 @@ public class Client extends BrowserApplet
         while(abyte0 == null) 
         {
             String s2 = "Unknown error";
-            method13(k, (byte)4, "Requesting " + s);
+            drawLoadingScreen(k, "Requesting " + s);
             Object obj = null;
             try
             {
@@ -3452,7 +3448,7 @@ public class Client extends BrowserApplet
                     j2 += j3;
                     int k3 = (j2 * 100) / i2;
                     if(k3 != k1)
-                        method13(k, (byte)4, "Loading " + s + " - " + k3 + "%");
+                        drawLoadingScreen(k, "Loading " + s + " - " + k3 + "%");
                     k1 = k3;
                 }
                 datainputstream.close();
@@ -3511,11 +3507,11 @@ public class Client extends BrowserApplet
                 {
                     if(j1 >= 3)
                     {
-                        method13(k, (byte)4, "Game updated - please reload page");
+                        drawLoadingScreen(k, "Game updated - please reload page");
                         l1 = 10;
                     } else
                     {
-                        method13(k, (byte)4, s2 + " - Retrying in " + l1);
+                        drawLoadingScreen(k, s2 + " - Retrying in " + l1);
                     }
                     try
                     {
@@ -6817,7 +6813,7 @@ public class Client extends BrowserApplet
 
     public void method6()
     {
-        method13(20, (byte)4, "Starting up");
+        drawLoadingScreen(20, "Starting up");
         if(signlink.sunjava)
             super.anInt6 = 5;
         if(aBoolean993)
@@ -6879,7 +6875,7 @@ public class Client extends BrowserApplet
 
             aClass30_Sub2_Sub1_Sub1_1263 = new Class30_Sub2_Sub1_Sub1(512, 512);
             Class44 class44_6 = method67(5, "update list", "versionlist", anIntArray1090[5], (byte)-41, 60);
-            method13(60, (byte)4, "Connecting to update server");
+            drawLoadingScreen(60, "Connecting to update server");
             aClass42_Sub1_1068 = new Class42_Sub1();
             aClass42_Sub1_1068.method551(class44_6, this);
             Class36.method528(aClass42_Sub1_1068.method557(0));
@@ -6909,7 +6905,7 @@ public class Client extends BrowserApplet
                     }
                 }
             }
-            method13(65, (byte)4, "Requesting animations");
+            drawLoadingScreen(65, "Requesting animations");
             int k = aClass42_Sub1_1068.method555(79, 1);
             for(int i1 = 0; i1 < k; i1++)
                 aClass42_Sub1_1068.method558(1, i1);
@@ -6918,7 +6914,7 @@ public class Client extends BrowserApplet
             {
                 int j1 = k - aClass42_Sub1_1068.method552();
                 if(j1 > 0)
-                    method13(65, (byte)4, "Loading animations - " + (j1 * 100) / k + "%");
+                    drawLoadingScreen(65, "Loading animations - " + (j1 * 100) / k + "%");
                 method57(false);
                 try
                 {
@@ -6931,7 +6927,7 @@ public class Client extends BrowserApplet
                     return;
                 }
             }
-            method13(70, (byte)4, "Requesting models");
+            drawLoadingScreen(70, "Requesting models");
             k = aClass42_Sub1_1068.method555(79, 0);
             for(int k1 = 0; k1 < k; k1++)
             {
@@ -6945,7 +6941,7 @@ public class Client extends BrowserApplet
             {
                 int i2 = k - aClass42_Sub1_1068.method552();
                 if(i2 > 0)
-                    method13(70, (byte)4, "Loading models - " + (i2 * 100) / k + "%");
+                    drawLoadingScreen(70, "Loading models - " + (i2 * 100) / k + "%");
                 method57(false);
                 try
                 {
@@ -6955,7 +6951,7 @@ public class Client extends BrowserApplet
             }
             if(aClass14Array970[0] != null)
             {
-                method13(75, (byte)4, "Requesting maps");
+                drawLoadingScreen(75, "Requesting maps");
                 aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 47));
                 aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 48, 47));
                 aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 48));
@@ -6973,7 +6969,7 @@ public class Client extends BrowserApplet
                 {
                     int j2 = k - aClass42_Sub1_1068.method552();
                     if(j2 > 0)
-                        method13(75, (byte)4, "Loading maps - " + (j2 * 100) / k + "%");
+                        drawLoadingScreen(75, "Loading maps - " + (j2 * 100) / k + "%");
                     method57(false);
                     try
                     {
@@ -7022,7 +7018,7 @@ public class Client extends BrowserApplet
                         aClass42_Sub1_1068.method563((byte)1, 2, i3, (byte)8);
 
             }
-            method13(80, (byte)4, "Unpacking media");
+            drawLoadingScreen(80, "Unpacking media");
             aClass30_Sub2_Sub1_Sub2_1196 = new Class30_Sub2_Sub1_Sub2(class44_2, "invback", 0);
             aClass30_Sub2_Sub1_Sub2_1198 = new Class30_Sub2_Sub1_Sub2(class44_2, "chatback", 0);
             aClass30_Sub2_Sub1_Sub2_1197 = new Class30_Sub2_Sub1_Sub2(class44_2, "mapback", 0);
@@ -7136,11 +7132,11 @@ public class Client extends BrowserApplet
                     aClass30_Sub2_Sub1_Sub2Array1060[i6].method360(i5 + l5, j5 + l5, k5 + l5, 0);
             }
 
-            method13(83, (byte)4, "Unpacking textures");
+            drawLoadingScreen(83, "Unpacking textures");
             Class30_Sub2_Sub1_Sub3.method368(class44_3, 0);
             Class30_Sub2_Sub1_Sub3.method372(0.80000000000000004D, aByte1200);
             Class30_Sub2_Sub1_Sub3.method367(20, true);
-            method13(86, (byte)4, "Unpacking config");
+            drawLoadingScreen(86, "Unpacking config");
             Class20.method257(0, class44);
             Class46.method576(class44);
             Class22.method260(0, class44);
@@ -7153,17 +7149,17 @@ public class Client extends BrowserApplet
             Class8.aBoolean182 = aBoolean959;
             if(!isLowMemory)
             {
-                method13(90, (byte)4, "Unpacking sounds");
+                drawLoadingScreen(90, "Unpacking sounds");
                 byte abyte0[] = class44_5.method571("sounds.dat", null);
                 Buffer buffer = new Buffer(abyte0, 891);
                 Class16.method240(0, buffer);
             }
-            method13(95, (byte)4, "Unpacking interfaces");
+            drawLoadingScreen(95, "Unpacking interfaces");
             Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[] = {
                 aClass30_Sub2_Sub1_Sub4_1270, aClass30_Sub2_Sub1_Sub4_1271, aClass30_Sub2_Sub1_Sub4_1272, aClass30_Sub2_Sub1_Sub4_1273
             };
             Class9.method205(class44_1, aclass30_sub2_sub1_sub4, (byte)-84, class44_2);
-            method13(100, (byte)4, "Preparing game engine");
+            drawLoadingScreen(100, "Preparing game engine");
             for(int j6 = 0; j6 < 33; j6++)
             {
                 int k6 = 999;
