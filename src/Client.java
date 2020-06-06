@@ -39,14 +39,12 @@ public class Client extends BrowserApplet
     
     private static boolean connectToServer = false;
 
-    public void method16(int i)
+    public void validateCache()
     {
-        if (!connectToServer) {
-            return;
-        }
-        
-        if(i <= 0)
-            anInt1218 = encryption.method246();
+//        if (!connectToServer) {
+//            return;
+//        }
+
         int j = 5;
         anIntArray1090[8] = 0;
         int k = 0;
@@ -133,7 +131,7 @@ public class Client extends BrowserApplet
 
     public void method18(int i)
     {
-        aGraphicsBuffer_1166.method237(0);
+        aGraphicsBuffer_1166.method237();
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1180;
         aClass30_Sub2_Sub1_Sub2_1198.method361(0, 16083, 0);
         if(aBoolean1256)
@@ -280,7 +278,7 @@ public class Client extends BrowserApplet
         if(aBoolean885 && anInt948 == 2)
             method40((byte)9);
         aGraphicsBuffer_1166.method238(357, 23680, super.graphics, 17);
-        aGraphicsBuffer_1165.method237(0);
+        aGraphicsBuffer_1165.method237();
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1182;
         if(i < 6 || i > 6)
             aBoolean991 = !aBoolean991;
@@ -594,7 +592,7 @@ public class Client extends BrowserApplet
             }
             buffer1.method397((byte)6, 0);
             class7.method171(aClass11Array1230, aClass25_946, 2);
-            aGraphicsBuffer_1165.method237(0);
+            aGraphicsBuffer_1165.method237();
             buffer1.method397((byte)6, 0);
             int k3 = Class7.anInt145;
             if(k3 > anInt918)
@@ -628,7 +626,7 @@ public class Client extends BrowserApplet
             buffer1.method397((byte)6, 210);
             buffer1.writeDWord(0x3f008edd);
         }
-        if(isLowMemory && signlink.cache_dat != null)
+        if(isLowMemory && signlink.cacheData != null)
         {
             int j = aClass42_Sub1_1068.method555(79, 0);
             for(int i1 = 0; i1 < j; i1++)
@@ -719,7 +717,7 @@ public class Client extends BrowserApplet
 
         }
 
-        aGraphicsBuffer_1165.method237(0);
+        aGraphicsBuffer_1165.method237();
         aBoolean1157 &= flag;
         anInt1071 = 0;
         for(int k2 = 0; k2 < 104; k2++)
@@ -1593,7 +1591,7 @@ public class Client extends BrowserApplet
 
     public void method36(byte byte0)
     {
-        aGraphicsBuffer_1163.method237(0);
+        aGraphicsBuffer_1163.method237();
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1181;
         if(byte0 != -81)
             return;
@@ -1606,7 +1604,7 @@ public class Client extends BrowserApplet
         if(aBoolean885 && anInt948 == 1)
             method40((byte)9);
         aGraphicsBuffer_1163.method238(205, 23680, super.graphics, 553);
-        aGraphicsBuffer_1165.method237(0);
+        aGraphicsBuffer_1165.method237();
         Class30_Sub2_Sub1_Sub3.anIntArray1472 = anIntArray1182;
     }
 
@@ -2530,7 +2528,7 @@ public class Client extends BrowserApplet
             return;
         if(isLowMemory && anInt1023 == 2 && Class7.anInt131 != anInt918)
         {
-            aGraphicsBuffer_1165.method237(0);
+            aGraphicsBuffer_1165.method237();
             aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
             aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
             aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
@@ -2542,7 +2540,7 @@ public class Client extends BrowserApplet
             int j = method54((byte)-95);
             if(j != 0 && System.currentTimeMillis() - aLong824 > 0x57e40L)
             {
-                signlink.reporterror(enteredUsername + " glcfb " + aLong1215 + "," + j + "," + isLowMemory + "," + aClass14Array970[0] + "," + aClass42_Sub1_1068.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
+                signlink.reporterror(enteredUsername + " glcfb " + aLong1215 + "," + j + "," + isLowMemory + "," + jagexFileStores[0] + "," + aClass42_Sub1_1068.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
                 aLong824 = System.currentTimeMillis();
             }
         }
@@ -2638,71 +2636,63 @@ public class Client extends BrowserApplet
             return super.getAppletContext();
     }
 
-    public void method56(int i)
+    public void method56()
     {
         byte abyte0[] = aClass44_1053.method571("title.dat", null);
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(abyte0, this);
-        aGraphicsBuffer_1110.method237(0);
+        aGraphicsBuffer_1110.method237();
         class30_sub2_sub1_sub1.method346(0, 0, -32357);
-        aGraphicsBuffer_1111.method237(0);
+        aGraphicsBuffer_1111.method237();
         class30_sub2_sub1_sub1.method346(-637, 0, -32357);
-        aGraphicsBuffer_1107.method237(0);
+        aGraphicsBuffer_1107.method237();
         class30_sub2_sub1_sub1.method346(-128, 0, -32357);
-        aGraphicsBuffer_1108.method237(0);
+        aGraphicsBuffer_1108.method237();
         class30_sub2_sub1_sub1.method346(-202, -371, -32357);
-        aGraphicsBuffer_1109.method237(0);
+        aGraphicsBuffer_1109.method237();
         class30_sub2_sub1_sub1.method346(-202, -171, -32357);
-        aGraphicsBuffer_1112.method237(0);
+        aGraphicsBuffer_1112.method237();
         class30_sub2_sub1_sub1.method346(0, -265, -32357);
-        aGraphicsBuffer_1113.method237(0);
+        aGraphicsBuffer_1113.method237();
         class30_sub2_sub1_sub1.method346(-562, -265, -32357);
-        aGraphicsBuffer_1114.method237(0);
+        aGraphicsBuffer_1114.method237();
         class30_sub2_sub1_sub1.method346(-128, -171, -32357);
-        aGraphicsBuffer_1115.method237(0);
+        aGraphicsBuffer_1115.method237();
         class30_sub2_sub1_sub1.method346(-562, -171, -32357);
         int ai[] = new int[class30_sub2_sub1_sub1.anInt1440];
-        for(int j = 0; j < class30_sub2_sub1_sub1.anInt1441; j++)
-        {
-            for(int k = 0; k < class30_sub2_sub1_sub1.anInt1440; k++)
+        for (int j = 0; j < class30_sub2_sub1_sub1.anInt1441; j++) {
+            for (int k = 0; k < class30_sub2_sub1_sub1.anInt1440; k++) {
                 ai[k] = class30_sub2_sub1_sub1.anIntArray1439[(class30_sub2_sub1_sub1.anInt1440 - k - 1) + class30_sub2_sub1_sub1.anInt1440 * j];
-
-            for(int l = 0; l < class30_sub2_sub1_sub1.anInt1440; l++)
+            }
+            for (int l = 0; l < class30_sub2_sub1_sub1.anInt1440; l++) {
                 class30_sub2_sub1_sub1.anIntArray1439[l + class30_sub2_sub1_sub1.anInt1440 * j] = ai[l];
+            }
 
         }
-
-        aGraphicsBuffer_1110.method237(0);
+        aGraphicsBuffer_1110.method237();
         class30_sub2_sub1_sub1.method346(382, 0, -32357);
-        aGraphicsBuffer_1111.method237(0);
+        aGraphicsBuffer_1111.method237();
         class30_sub2_sub1_sub1.method346(-255, 0, -32357);
-        aGraphicsBuffer_1107.method237(0);
+        aGraphicsBuffer_1107.method237();
         class30_sub2_sub1_sub1.method346(254, 0, -32357);
-        aGraphicsBuffer_1108.method237(0);
+        aGraphicsBuffer_1108.method237();
         class30_sub2_sub1_sub1.method346(180, -371, -32357);
-        aGraphicsBuffer_1109.method237(0);
+        aGraphicsBuffer_1109.method237();
         class30_sub2_sub1_sub1.method346(180, -171, -32357);
-        aGraphicsBuffer_1112.method237(0);
+        aGraphicsBuffer_1112.method237();
         class30_sub2_sub1_sub1.method346(382, -265, -32357);
-        aGraphicsBuffer_1113.method237(0);
+        aGraphicsBuffer_1113.method237();
         class30_sub2_sub1_sub1.method346(-180, -265, -32357);
-        aGraphicsBuffer_1114.method237(0);
+        aGraphicsBuffer_1114.method237();
         class30_sub2_sub1_sub1.method346(254, -171, -32357);
-        aGraphicsBuffer_1115.method237(0);
-        if(i != 0)
-        {
-            return;
-        } else
-        {
-            class30_sub2_sub1_sub1.method346(-180, -171, -32357);
-            class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(aClass44_1053, "logo", 0);
-            aGraphicsBuffer_1107.method237(0);
-            class30_sub2_sub1_sub1.method348(382 - class30_sub2_sub1_sub1.anInt1440 / 2 - 128, 16083, 18);
-            class30_sub2_sub1_sub1 = null;
-            Object obj = null;
-            Object obj1 = null;
-            System.gc();
-            return;
-        }
+        aGraphicsBuffer_1115.method237();
+        class30_sub2_sub1_sub1.method346(-180, -171, -32357);
+        class30_sub2_sub1_sub1 = new Class30_Sub2_Sub1_Sub1(aClass44_1053, "logo", 0);
+        aGraphicsBuffer_1107.method237();
+        class30_sub2_sub1_sub1.method348(382 - class30_sub2_sub1_sub1.anInt1440 / 2 - 128, 16083, 18);
+        class30_sub2_sub1_sub1 = null;
+        Object obj = null;
+        Object obj1 = null;
+        System.gc();
     }
 
     public void method57(boolean flag)
@@ -3266,23 +3256,23 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub1.method334(aBoolean1206);
         if(aClass44_1053 != null)
         {
-            method56(0);
+            method56();
             method51(215);
         }
         aBoolean1255 = true;
     }
 
-    public void drawLoadingScreen(int i, String s)
+    public void drawLoadingScreen(int percent, String text)
     {
-        anInt1079 = i;
-        aString1049 = s;
+        anInt1079 = percent;
+        aString1049 = text;
         method64(0);
         if(aClass44_1053 == null)
         {
-            super.drawLoadingScreen(i, s);
+            super.drawLoadingScreen(percent, text);
             return;
         }
-        aGraphicsBuffer_1109.method237(0);
+        aGraphicsBuffer_1109.method237();
         char c = '\u0168';
         char c1 = '\310';
         byte byte1 = 20;
@@ -3290,9 +3280,9 @@ public class Client extends BrowserApplet
         int j = c1 / 2 - 18 - byte1;
         Class30_Sub2_Sub1.method337(c / 2 - 152, 304, 34, 0x8c1111, j, true);
         Class30_Sub2_Sub1.method337(c / 2 - 151, 302, 32, 0, j + 1, true);
-        Class30_Sub2_Sub1.method336(30, j + 2, c / 2 - 150, 0x8c1111, i * 3, 0);
-        Class30_Sub2_Sub1.method336(30, j + 2, (c / 2 - 150) + i * 3, 0, 300 - i * 3, 0);
-        aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, s, 23693, (c1 / 2 + 5) - byte1, c / 2);
+        Class30_Sub2_Sub1.method336(30, j + 2, c / 2 - 150, 0x8c1111, percent * 3, 0);
+        Class30_Sub2_Sub1.method336(30, j + 2, (c / 2 - 150) + percent * 3, 0, 300 - percent * 3, 0);
+        aClass30_Sub2_Sub1_Sub4_1272.method381(0xffffff, text, 23693, (c1 / 2 + 5) - byte1, c / 2);
         aGraphicsBuffer_1109.method238(171, 23680, super.graphics, 202);
         if(aBoolean1255)
         {
@@ -3391,24 +3381,26 @@ public class Client extends BrowserApplet
         return true;
     }
 
-    public Class44 method67(int i, String s, String s1, int j, byte byte0, int k)
+    public Class44 method67(int i, String s, String s1, int j, int loadingPercent)
     {
         byte abyte0[] = null;
         int l = 5;
-        try
-        {
-            if(aClass14Array970[0] != null)
-                abyte0 = aClass14Array970[0].method233(true, i);
+        try {
+            if (jagexFileStores[0] != null) {
+                abyte0 = jagexFileStores[0].decompress(i);
+            }
+        } catch (Exception _ex) {
+            //
         }
-        catch(Exception _ex) { }
-        if(abyte0 != null)
-        {
+
+//        if (abyte0 != null) {
 //            aCRC32_930.reset();
 //            aCRC32_930.update(abyte0);
 //            int i1 = (int)aCRC32_930.getValue();
 //            if(i1 != j)
 //                abyte0 = null;
-        }
+//        }
+
         if(abyte0 != null)
         {
             Class44 class44 = new Class44(44820, abyte0);
@@ -3418,7 +3410,7 @@ public class Client extends BrowserApplet
         while(abyte0 == null) 
         {
             String s2 = "Unknown error";
-            drawLoadingScreen(k, "Requesting " + s);
+            drawLoadingScreen(loadingPercent, "Requesting " + s);
             Object obj = null;
             try
             {
@@ -3448,18 +3440,18 @@ public class Client extends BrowserApplet
                     j2 += j3;
                     int k3 = (j2 * 100) / i2;
                     if(k3 != k1)
-                        drawLoadingScreen(k, "Loading " + s + " - " + k3 + "%");
+                        drawLoadingScreen(loadingPercent, "Loading " + s + " - " + k3 + "%");
                     k1 = k3;
                 }
                 datainputstream.close();
                 try
                 {
-                    if(aClass14Array970[0] != null)
-                        aClass14Array970[0].method234(abyte0.length, abyte0, (byte)2, i);
+                    if(jagexFileStores[0] != null)
+                        jagexFileStores[0].method234(abyte0.length, abyte0, (byte)2, i);
                 }
                 catch(Exception _ex)
                 {
-                    aClass14Array970[0] = null;
+                    jagexFileStores[0] = null;
                 }
                 if(abyte0 != null)
                 {
@@ -3507,11 +3499,11 @@ public class Client extends BrowserApplet
                 {
                     if(j1 >= 3)
                     {
-                        drawLoadingScreen(k, "Game updated - please reload page");
+                        drawLoadingScreen(loadingPercent, "Game updated - please reload page");
                         l1 = 10;
                     } else
                     {
-                        drawLoadingScreen(k, s2 + " - Retrying in " + l1);
+                        drawLoadingScreen(loadingPercent, s2 + " - Retrying in " + l1);
                     }
                     try
                     {
@@ -3526,11 +3518,7 @@ public class Client extends BrowserApplet
                 aBoolean872 = !aBoolean872;
             }
         }
-        Class44 class44_1 = new Class44(44820, abyte0);
-        if(byte0 != -41)
-            throw new NullPointerException();
-        else
-            return class44_1;
+        return new Class44(44820, abyte0);
     }
 
     public void method68(int i)
@@ -3540,7 +3528,7 @@ public class Client extends BrowserApplet
             method44(true);
             return;
         }
-        aGraphicsBuffer_1165.method237(0);
+        aGraphicsBuffer_1165.method237();
         aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Connection lost", 23693, 144, 257);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Connection lost", 23693, 143, 256);
         aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Please wait - attempting to reestablish", 23693, 159, 257);
@@ -5753,15 +5741,17 @@ public class Client extends BrowserApplet
         aBoolean1255 = true;
     }
 
-    public String method80(boolean flag)
+    public String getHostname(boolean flag)
     {
         aBoolean1157 &= flag;
-        if(signlink.mainapp != null)
+        if (signlink.mainapp != null) {
             return signlink.mainapp.getDocumentBase().getHost().toLowerCase();
-        if(super.window != null)
+        }
+        if (super.window != null) {
             return "runescape.com";
-        else
+        } else {
             return super.getDocumentBase().getHost().toLowerCase();
+        }
     }
 
     public void method81(Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1, int i, int j, int k)
@@ -6814,59 +6804,69 @@ public class Client extends BrowserApplet
     public void method6()
     {
         drawLoadingScreen(20, "Starting up");
-        if(signlink.sunjava)
+        if (signlink.sunjava) {
             super.anInt6 = 5;
-        if(aBoolean993)
-        {
+        }
+        if (aBoolean993) {
             aBoolean1252 = true;
             return;
         }
         aBoolean993 = true;
-        boolean flag = false;
-        String s = method80(true);
-        if(s.endsWith("jagex.com"))
-            flag = true;
-        if(s.endsWith("runescape.com"))
-            flag = true;
-        if(s.endsWith("192.168.1.2"))
-            flag = true;
-        if(s.endsWith("192.168.1.229"))
-            flag = true;
-        if(s.endsWith("192.168.1.228"))
-            flag = true;
-        if(s.endsWith("192.168.1.227"))
-            flag = true;
-        if(s.endsWith("192.168.1.226"))
-            flag = true;
-        if(s.endsWith("127.0.0.1"))
-            flag = true;
-        if(!flag)
-        {
+
+        boolean isGoodHostname = false;
+        String hostName = getHostname(true);
+        if (hostName.endsWith("jagex.com")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("runescape.com")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("192.168.1.2")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("192.168.1.229")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("192.168.1.228")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("192.168.1.227")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("192.168.1.226")) {
+            isGoodHostname = true;
+        }
+        if (hostName.endsWith("127.0.0.1")) {
+            isGoodHostname = true;
+        }
+        if(!isGoodHostname) {
             aBoolean1176 = true;
             return;
         }
-        if(signlink.cache_dat != null)
-        {
-            for(int i = 0; i < 5; i++)
-                aClass14Array970[i] = new Class14(0x7a120, signlink.cache_dat, signlink.cache_idx[i], i + 1, true);
 
+        if (signlink.cacheData != null) {
+            for (int i = 0; i < 5; i++) {
+                jagexFileStores[i] = new JagexFileStore(0x7a120, signlink.cacheData, signlink.cacheIndex[i], i + 1);
+            }
         }
-        try
-        {
-//            method16(533);
-            aClass44_1053 = method67(1, "title screen", "title", anIntArray1090[1], (byte)-41, 25);
-            aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", 0, aClass44_1053);
-            aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", 0, aClass44_1053);
-            aClass30_Sub2_Sub1_Sub4_1272 = new Class30_Sub2_Sub1_Sub4(false, "b12_full", 0, aClass44_1053);
-            aClass30_Sub2_Sub1_Sub4_1273 = new Class30_Sub2_Sub1_Sub4(true, "q8_full", 0, aClass44_1053);
-            method56(0);
+
+        try {
+//            validateCache();
+
+            aClass44_1053 = method67(1, "title screen", "title", anIntArray1090[1], 25);
+            aClass30_Sub2_Sub1_Sub4_1270 = new Class30_Sub2_Sub1_Sub4(false, "p11_full", aClass44_1053);
+            aClass30_Sub2_Sub1_Sub4_1271 = new Class30_Sub2_Sub1_Sub4(false, "p12_full", aClass44_1053);
+            aClass30_Sub2_Sub1_Sub4_1272 = new Class30_Sub2_Sub1_Sub4(false, "b12_full", aClass44_1053);
+            aClass30_Sub2_Sub1_Sub4_1273 = new Class30_Sub2_Sub1_Sub4(true, "q8_full", aClass44_1053);
+
+            method56();
             method51(215);
-            Class44 class44 = method67(2, "config", "config", anIntArray1090[2], (byte)-41, 30);
-            Class44 class44_1 = method67(3, "interface", "interface", anIntArray1090[3], (byte)-41, 35);
-            Class44 class44_2 = method67(4, "2d graphics", "media", anIntArray1090[4], (byte)-41, 40);
-            Class44 class44_3 = method67(6, "textures", "textures", anIntArray1090[6], (byte)-41, 45);
-            Class44 class44_4 = method67(7, "chat system", "wordenc", anIntArray1090[7], (byte)-41, 50);
-            Class44 class44_5 = method67(8, "sound effects", "sounds", anIntArray1090[8], (byte)-41, 55);
+            Class44 class44 = method67(2, "config", "config", anIntArray1090[2], 30);
+            Class44 class44_1 = method67(3, "interface", "interface", anIntArray1090[3], 35);
+            Class44 class44_2 = method67(4, "2d graphics", "media", anIntArray1090[4], 40);
+            Class44 class44_3 = method67(6, "textures", "textures", anIntArray1090[6], 45);
+            Class44 class44_4 = method67(7, "chat system", "wordenc", anIntArray1090[7], 50);
+            Class44 class44_5 = method67(8, "sound effects", "sounds", anIntArray1090[8], 55);
             aByteArrayArrayArray1258 = new byte[4][104][104];
             anIntArrayArrayArray1214 = new int[4][105][105];
             aClass25_946 = new Class25(104, (byte)43, 104, anIntArrayArrayArray1214, 4);
@@ -6874,7 +6874,7 @@ public class Client extends BrowserApplet
                 aClass11Array1230[j] = new Class11(104, 104, true);
 
             aClass30_Sub2_Sub1_Sub1_1263 = new Class30_Sub2_Sub1_Sub1(512, 512);
-            Class44 class44_6 = method67(5, "update list", "versionlist", anIntArray1090[5], (byte)-41, 60);
+            Class44 class44_6 = method67(5, "update list", "versionlist", anIntArray1090[5], 60);
             drawLoadingScreen(60, "Connecting to update server");
             aClass42_Sub1_1068 = new Class42_Sub1();
             aClass42_Sub1_1068.method551(class44_6, this);
@@ -6949,7 +6949,7 @@ public class Client extends BrowserApplet
                 }
                 catch(Exception _ex) { }
             }
-            if(aClass14Array970[0] != null)
+            if(jagexFileStores[0] != null)
             {
                 drawLoadingScreen(75, "Requesting maps");
                 aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 47));
@@ -7854,7 +7854,7 @@ public class Client extends BrowserApplet
                 buffer1.writeUnsignedByte(anInt1221);
             }
             aBoolean1103 = false;
-            aGraphicsBuffer_1125.method237(0);
+            aGraphicsBuffer_1125.method237();
             aClass30_Sub2_Sub1_Sub2_1029.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
@@ -7891,7 +7891,7 @@ public class Client extends BrowserApplet
                     aClass30_Sub2_Sub1_Sub2Array947[6].method361(208, 16083, 13);
             }
             aGraphicsBuffer_1125.method238(160, 23680, super.graphics, 516);
-            aGraphicsBuffer_1124.method237(0);
+            aGraphicsBuffer_1124.method237();
             aClass30_Sub2_Sub1_Sub2_1028.method361(0, 16083, 0);
             if(anInt1189 == -1)
             {
@@ -7926,12 +7926,12 @@ public class Client extends BrowserApplet
                     aClass30_Sub2_Sub1_Sub2Array947[12].method361(226, 16083, 2);
             }
             aGraphicsBuffer_1124.method238(466, 23680, super.graphics, 496);
-            aGraphicsBuffer_1165.method237(0);
+            aGraphicsBuffer_1165.method237();
         }
         if(aBoolean1233)
         {
             aBoolean1233 = false;
-            aGraphicsBuffer_1123.method237(0);
+            aGraphicsBuffer_1123.method237();
             aClass30_Sub2_Sub1_Sub2_1027.method361(0, 16083, 0);
             aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 55, anInt939, "Public chat", 28, true);
             if(anInt1287 == 0)
@@ -7958,7 +7958,7 @@ public class Client extends BrowserApplet
                 aClass30_Sub2_Sub1_Sub4_1271.method382(0xff0000, 324, anInt939, "Off", 41, true);
             aClass30_Sub2_Sub1_Sub4_1271.method382(0xffffff, 458, anInt939, "Report abuse", 33, true);
             aGraphicsBuffer_1123.method238(453, 23680, super.graphics, 0);
-            aGraphicsBuffer_1165.method237(0);
+            aGraphicsBuffer_1165.method237();
         }
         anInt945 = 0;
     }
@@ -9361,7 +9361,7 @@ public class Client extends BrowserApplet
     {
         if(flag)
             return;
-        aGraphicsBuffer_1164.method237(0);
+        aGraphicsBuffer_1164.method237();
         if(anInt1021 == 2)
         {
             byte abyte0[] = aClass30_Sub2_Sub1_Sub2_1197.aByteArray1450;
@@ -9372,7 +9372,7 @@ public class Client extends BrowserApplet
                     ai[i5] = 0;
 
             aClass30_Sub2_Sub1_Sub1_1122.method352(33, anInt1185, anIntArray1057, 256, anIntArray968, -236, 25, 0, 0, 33, 25);
-            aGraphicsBuffer_1165.method237(0);
+            aGraphicsBuffer_1165.method237();
             return;
         }
         int i = anInt1185 + anInt1209 & 0x7ff;
@@ -9485,7 +9485,7 @@ public class Client extends BrowserApplet
             method141(aClass30_Sub2_Sub1_Sub1_870, j2, l4, false);
         }
         Class30_Sub2_Sub1.method336(3, 78, 97, 0xffffff, 3, 0);
-        aGraphicsBuffer_1165.method237(0);
+        aGraphicsBuffer_1165.method237();
     }
 
     public void method127(boolean flag, Class30_Sub2_Sub4_Sub1 class30_sub2_sub4_sub1, int i)
@@ -9843,7 +9843,7 @@ public class Client extends BrowserApplet
     public void method135(boolean flag, boolean flag1)
     {
         method64(0);
-        aGraphicsBuffer_1109.method237(0);
+        aGraphicsBuffer_1109.method237();
         aClass30_Sub2_Sub1_Sub2_966.method361(0, 16083, 0);
         char c = '\u0168';
         char c1 = '\310';
@@ -10920,7 +10920,7 @@ public class Client extends BrowserApplet
                     aBoolean1141 = true;
                 anInt1023 = 1;
                 aLong824 = System.currentTimeMillis();
-                aGraphicsBuffer_1165.method237(0);
+                aGraphicsBuffer_1165.method237();
                 aClass30_Sub2_Sub1_Sub4_1271.method381(0, "Loading - please wait.", 23693, 151, 257);
                 aClass30_Sub2_Sub1_Sub4_1271.method381(0xffffff, "Loading - please wait.", 23693, 150, 256);
                 aGraphicsBuffer_1165.method238(4, 23680, super.graphics, 4);
@@ -12035,7 +12035,7 @@ public class Client extends BrowserApplet
         anInt964 = -1;
         anIntArray968 = new int[33];
         anIntArray969 = new int[256];
-        aClass14Array970 = new Class14[5];
+        jagexFileStores = new JagexFileStore[5];
         anIntArray971 = new int[2000];
         aBoolean972 = false;
         aByte973 = -74;
@@ -12306,7 +12306,7 @@ public class Client extends BrowserApplet
     public Class30_Sub2_Sub1_Sub2 aClass30_Sub2_Sub1_Sub2_967;
     public int anIntArray968[];
     public int anIntArray969[];
-    public Class14 aClass14Array970[];
+    public JagexFileStore jagexFileStores[];
     public int anIntArray971[];
     public boolean aBoolean972;
     public byte aByte973;

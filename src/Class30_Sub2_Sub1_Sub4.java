@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
 {
 
-    public Class30_Sub2_Sub1_Sub4(boolean flag, String s, int i, Class44 class44)
+    public Class30_Sub2_Sub1_Sub4(boolean flag, String s, Class44 class44)
     {
         aBoolean1484 = false;
         anInt1485 = 445;
@@ -27,8 +27,6 @@ public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
         Buffer buffer = new Buffer(class44.method571(s + ".dat", null), 891);
         Buffer buffer_1 = new Buffer(class44.method571("index.dat", null), 891);
         byte byte0 = -1;
-        if(i != 0)
-            aBoolean1490 = !aBoolean1490;
         buffer_1.pointer = buffer.method410() + 4;
         int k = buffer_1.method408();
         if(k > 0)

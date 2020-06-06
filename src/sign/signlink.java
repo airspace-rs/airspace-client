@@ -52,9 +52,9 @@ public class signlink
             File file = new File(s + "main_file_cache.dat");
             if(file.exists() && file.length() > 0x3200000L)
                 file.delete();
-            cache_dat = new RandomAccessFile(s + "main_file_cache.dat", "rw");
+            cacheData = new RandomAccessFile(s + "main_file_cache.dat", "rw");
             for(int j = 0; j < 5; j++)
-                cache_idx[j] = new RandomAccessFile(s + "main_file_cache.idx" + j, "rw");
+                cacheIndex[j] = new RandomAccessFile(s + "main_file_cache.idx" + j, "rw");
 
         }
         catch(Exception exception)
@@ -319,8 +319,8 @@ public class signlink
     public static final int clientversion = 317;
     public static int uid;
     public static int storeid = 32;
-    public static RandomAccessFile cache_dat = null;
-    public static RandomAccessFile cache_idx[] = new RandomAccessFile[5];
+    public static RandomAccessFile cacheData = null;
+    public static RandomAccessFile cacheIndex[] = new RandomAccessFile[5];
     public static boolean sunjava;
     public static Applet mainapp = null;
     public static boolean active;

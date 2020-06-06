@@ -93,8 +93,8 @@ public class Class42_Sub1 extends Class42
                 for(int k1 = 0; k1 < anInt1347; k1 += anInputStream1362.read(abyte0, k1 + i1, anInt1347 - k1));
                 if(anInt1347 + anInt1346 >= abyte0.length && aClass30_Sub2_Sub3_1369 != null)
                 {
-                    if(aClient1343.aClass14Array970[0] != null)
-                        aClient1343.aClass14Array970[aClass30_Sub2_Sub3_1369.anInt1419 + 1].method234(abyte0.length, abyte0, (byte)2, aClass30_Sub2_Sub3_1369.anInt1421);
+                    if(aClient1343.jagexFileStores[0] != null)
+                        aClient1343.jagexFileStores[aClass30_Sub2_Sub3_1369.anInt1419 + 1].method234(abyte0.length, abyte0, (byte)2, aClass30_Sub2_Sub3_1369.anInt1421);
                     if(!aClass30_Sub2_Sub3_1369.aBoolean1422 && aClass30_Sub2_Sub3_1369.anInt1419 == 3)
                     {
                         aClass30_Sub2_Sub3_1369.aBoolean1422 = true;
@@ -330,7 +330,7 @@ public class Class42_Sub1 extends Class42
             {
                 anInt1341++;
                 int i = 20;
-                if(anInt1332 == 0 && aClient1343.aClass14Array970[0] != null)
+                if(anInt1332 == 0 && aClient1343.jagexFileStores[0] != null)
                     i = 50;
                 try
                 {
@@ -399,7 +399,7 @@ public class Class42_Sub1 extends Class42
                     anInt1373 = 0;
                     aString1333 = "";
                 }
-                if(aClient1343.aBoolean1157 && aSocket1363 != null && anOutputStream1354 != null && (anInt1332 > 0 || aClient1343.aClass14Array970[0] == null))
+                if(aClient1343.aBoolean1157 && aSocket1363 != null && anOutputStream1354 != null && (anInt1332 > 0 || aClient1343.jagexFileStores[0] == null))
                 {
                     anInt1334++;
                     if(anInt1334 > 500)
@@ -430,7 +430,7 @@ public class Class42_Sub1 extends Class42
 
     public void method560(int i, int j, boolean flag)
     {
-        if(aClient1343.aClass14Array970[0] == null)
+        if(aClient1343.jagexFileStores[0] == null)
             return;
         if(anIntArrayArray1364[j][i] == 0)
             return;
@@ -516,11 +516,11 @@ public class Class42_Sub1 extends Class42
             byte1 = 0;
         else
             anInt1340 = 237;
-        if(aClient1343.aClass14Array970[0] == null)
+        if(aClient1343.jagexFileStores[0] == null)
             return;
         if(anIntArrayArray1364[i][j] == 0)
             return;
-        byte abyte0[] = aClient1343.aClass14Array970[i + 1].method233(true, j);
+        byte abyte0[] = aClient1343.jagexFileStores[i + 1].decompress(j);
         if(method549(anIntArrayArray1364[i][j], (byte)3, anIntArrayArray1365[i][j], abyte0))
             return;
         aByteArrayArray1342[i][j] = byte0;
@@ -592,8 +592,8 @@ public class Class42_Sub1 extends Class42
         {
             aBoolean1357 = true;
             byte abyte0[] = null;
-            if(aClient1343.aClass14Array970[0] != null)
-                abyte0 = aClient1343.aClass14Array970[class30_sub2_sub3.anInt1419 + 1].method233(true, class30_sub2_sub3.anInt1421);
+            if(aClient1343.jagexFileStores[0] != null)
+                abyte0 = aClient1343.jagexFileStores[class30_sub2_sub3.anInt1419 + 1].decompress(class30_sub2_sub3.anInt1421);
             if(!method549(anIntArrayArray1364[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], (byte)3, anIntArrayArray1365[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], abyte0))
                 abyte0 = null;
             synchronized(aClass19_1370)

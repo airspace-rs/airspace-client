@@ -20,16 +20,12 @@ public class GraphicsBuffer implements ImageProducer, ImageObserver
         component.prepareImage(anImage320, this);
         method239();
         component.prepareImage(anImage320, this);
-        method237(0);
+        method237();
     }
 
-    public void method237(int i)
+    public void method237()
     {
-        Class30_Sub2_Sub1.method331(height, width, -293, pixels);
-        if(i != 0)
-        {
-            for(int j = 1; j > 0; j++);
-        }
+        Class30_Sub2_Sub1.method331(height, width, pixels);
     }
 
     public void method238(int i, int j, Graphics g, int k)

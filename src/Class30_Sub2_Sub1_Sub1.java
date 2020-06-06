@@ -124,7 +124,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
     {
         if(i != 0)
             aBoolean1438 = !aBoolean1438;
-        Class30_Sub2_Sub1.method331(anInt1441, anInt1440, -293, anIntArray1439);
+        Class30_Sub2_Sub1.method331(anInt1441, anInt1440, anIntArray1439);
     }
 
     public void method344(int i, int j, int k, int l)

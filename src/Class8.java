@@ -300,7 +300,7 @@ public class Class8
         int i3 = Class30_Sub2_Sub1.anInt1381;
         int j3 = Class30_Sub2_Sub1.anInt1382;
         Class30_Sub2_Sub1_Sub3.aBoolean1464 = false;
-        Class30_Sub2_Sub1.method331(32, 32, -293, class30_sub2_sub1_sub1_1.anIntArray1439);
+        Class30_Sub2_Sub1.method331(32, 32, class30_sub2_sub1_sub1_1.anIntArray1439);
         Class30_Sub2_Sub1.method336(32, 0, 0, 0, 32, 0);
         Class30_Sub2_Sub1_Sub3.method364((byte)6);
         int k3 = class8.anInt181;
@@ -373,7 +373,7 @@ public class Class8
         }
         if(k == 0)
             aClass12_158.method223(class30_sub2_sub1_sub1_1, i, (byte)2);
-        Class30_Sub2_Sub1.method331(j2, i2, -293, ai1);
+        Class30_Sub2_Sub1.method331(j2, i2, ai1);
         Class30_Sub2_Sub1.method333(j3, k2, false, l2, i3);
         Class30_Sub2_Sub1_Sub3.anInt1466 = k1;
         Class30_Sub2_Sub1_Sub3.anInt1467 = l1;

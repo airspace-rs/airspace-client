@@ -2,16 +2,12 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub1 extends Class30_Sub2
 {
 
-    public static void method331(int i, int j, int k, int ai[])
+    public static void method331(int i, int j, int[] ai)
     {
         anIntArray1378 = ai;
-        while(k >= 0) 
-            anInt1374 = 275;
         anInt1379 = j;
         anInt1380 = i;
         method333(i, 0, false, j, 0);

@@ -3,40 +3,32 @@
 // Decompiler options: packimports(3) 
 
 import java.io.*;
-import sign.signlink;
 
-public class Class14
+public class JagexFileStore
 {
 
-    public Class14(int i, RandomAccessFile randomaccessfile, RandomAccessFile randomaccessfile1, int j, boolean flag)
+    public JagexFileStore(int i, RandomAccessFile randomAccessFile, RandomAccessFile randomAccessFile2, int j)
     {
+        // Not checked yet
         anInt306 = 923;
         aBoolean307 = true;
-        anInt312 = 65000;
         anInt311 = j;
-        if(!flag)
-        {
-            throw new NullPointerException();
-        } else
-        {
-            aRandomAccessFile309 = randomaccessfile;
-            aRandomAccessFile310 = randomaccessfile1;
-            anInt312 = i;
-            return;
-        }
+
+        // Definitely good
+        anInt312 = i;
+        this.randomAccessFile = randomAccessFile;
+        this.randomAccessFile2 = randomAccessFile2;
     }
 
-    public synchronized byte[] method233(boolean flag, int i)
+    public synchronized byte[] decompress(int i)
     {
-        if(!flag)
-            throw new NullPointerException();
         try
         {
-            method236(aRandomAccessFile310, -660, i * 6);
+            method236(randomAccessFile2, -660, i * 6);
             int l;
             for(int j = 0; j < 6; j += l)
             {
-                l = aRandomAccessFile310.read(aByteArray308, j, 6 - j);
+                l = randomAccessFile2.read(aByteArray308, j, 6 - j);
                 if(l == -1)
                     return null;
             }
@@ -45,7 +37,7 @@ public class Class14
             int j1 = ((aByteArray308[3] & 0xff) << 16) + ((aByteArray308[4] & 0xff) << 8) + (aByteArray308[5] & 0xff);
             if(i1 < 0 || i1 > anInt312)
                 return null;
-            if(j1 <= 0 || (long)j1 > aRandomAccessFile309.length() / 520L)
+            if(j1 <= 0 || (long)j1 > randomAccessFile.length() / 520L)
                 return null;
             byte abyte0[] = new byte[i1];
             int k1 = 0;
@@ -53,7 +45,7 @@ public class Class14
             {
                 if(j1 == 0)
                     return null;
-                method236(aRandomAccessFile309, -660, j1 * 520);
+                method236(randomAccessFile, -660, j1 * 520);
                 int k = 0;
                 int i2 = i1 - k1;
                 if(i2 > 512)
@@ -61,7 +53,7 @@ public class Class14
                 int j2;
                 for(; k < i2 + 8; k += j2)
                 {
-                    j2 = aRandomAccessFile309.read(aByteArray308, k, (i2 + 8) - k);
+                    j2 = randomAccessFile.read(aByteArray308, k, (i2 + 8) - k);
                     if(j2 == -1)
                         return null;
                 }
@@ -72,7 +64,7 @@ public class Class14
                 int j3 = aByteArray308[7] & 0xff;
                 if(k2 != i || l2 != l1 || j3 != anInt311)
                     return null;
-                if(i3 < 0 || (long)i3 > aRandomAccessFile309.length() / 520L)
+                if(i3 < 0 || (long)i3 > randomAccessFile.length() / 520L)
                     return null;
                 for(int k3 = 0; k3 < i2; k3++)
                     abyte0[k1++] = aByteArray308[k3 + 8];
@@ -108,21 +100,21 @@ public class Class14
             int l;
             if(flag)
             {
-                method236(aRandomAccessFile310, -660, j * 6);
+                method236(randomAccessFile2, -660, j * 6);
                 int k1;
                 for(int i1 = 0; i1 < 6; i1 += k1)
                 {
-                    k1 = aRandomAccessFile310.read(aByteArray308, i1, 6 - i1);
+                    k1 = randomAccessFile2.read(aByteArray308, i1, 6 - i1);
                     if(k1 == -1)
                         return false;
                 }
 
                 l = ((aByteArray308[3] & 0xff) << 16) + ((aByteArray308[4] & 0xff) << 8) + (aByteArray308[5] & 0xff);
-                if(l <= 0 || (long)l > aRandomAccessFile309.length() / 520L)
+                if(l <= 0 || (long)l > randomAccessFile.length() / 520L)
                     return false;
             } else
             {
-                l = (int)((aRandomAccessFile309.length() + 519L) / 520L);
+                l = (int)((randomAccessFile.length() + 519L) / 520L);
                 if(l == 0)
                     l = 1;
             }
@@ -132,20 +124,20 @@ public class Class14
             aByteArray308[3] = (byte)(l >> 16);
             aByteArray308[4] = (byte)(l >> 8);
             aByteArray308[5] = (byte)l;
-            method236(aRandomAccessFile310, -660, j * 6);
-            aRandomAccessFile310.write(aByteArray308, 0, 6);
+            method236(randomAccessFile2, -660, j * 6);
+            randomAccessFile2.write(aByteArray308, 0, 6);
             int j1 = 0;
             for(int l1 = 0; j1 < k; l1++)
             {
                 int i2 = 0;
                 if(flag)
                 {
-                    method236(aRandomAccessFile309, -660, l * 520);
+                    method236(randomAccessFile, -660, l * 520);
                     int j2;
                     int l2;
                     for(j2 = 0; j2 < 8; j2 += l2)
                     {
-                        l2 = aRandomAccessFile309.read(aByteArray308, j2, 8 - j2);
+                        l2 = randomAccessFile.read(aByteArray308, j2, 8 - j2);
                         if(l2 == -1)
                             break;
                     }
@@ -158,14 +150,14 @@ public class Class14
                         int k3 = aByteArray308[7] & 0xff;
                         if(i3 != j || j3 != l1 || k3 != anInt311)
                             return false;
-                        if(i2 < 0 || (long)i2 > aRandomAccessFile309.length() / 520L)
+                        if(i2 < 0 || (long)i2 > randomAccessFile.length() / 520L)
                             return false;
                     }
                 }
                 if(i2 == 0)
                 {
                     flag = false;
-                    i2 = (int)((aRandomAccessFile309.length() + 519L) / 520L);
+                    i2 = (int)((randomAccessFile.length() + 519L) / 520L);
                     if(i2 == 0)
                         i2++;
                     if(i2 == l)
@@ -181,12 +173,12 @@ public class Class14
                 aByteArray308[5] = (byte)(i2 >> 8);
                 aByteArray308[6] = (byte)i2;
                 aByteArray308[7] = (byte)anInt311;
-                method236(aRandomAccessFile309, -660, l * 520);
-                aRandomAccessFile309.write(aByteArray308, 0, 8);
+                method236(randomAccessFile, -660, l * 520);
+                randomAccessFile.write(aByteArray308, 0, 8);
                 int k2 = k - j1;
                 if(k2 > 512)
                     k2 = 512;
-                aRandomAccessFile309.write(abyte0, j1, k2);
+                randomAccessFile.write(abyte0, j1, k2);
                 j1 += k2;
                 l = i2;
             }
@@ -220,8 +212,8 @@ public class Class14
     public int anInt306;
     public boolean aBoolean307;
     public static byte aByteArray308[] = new byte[520];
-    public RandomAccessFile aRandomAccessFile309;
-    public RandomAccessFile aRandomAccessFile310;
+    public RandomAccessFile randomAccessFile;
+    public RandomAccessFile randomAccessFile2;
     public int anInt311;
     public int anInt312;
 
