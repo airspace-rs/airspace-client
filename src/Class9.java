@@ -247,24 +247,24 @@ public class Class9
         if(byte0 == -84);
     }
 
-    public Class30_Sub2_Sub4_Sub6 method206(int i, int j)
+    public Model method206(int i, int j)
     {
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = (Class30_Sub2_Sub4_Sub6)aClass12_264.method222((i << 16) + j);
-        if(class30_sub2_sub4_sub6 != null)
-            return class30_sub2_sub4_sub6;
+        Model model = (Model)aClass12_264.method222((i << 16) + j);
+        if(model != null)
+            return model;
         if(i == 1)
-            class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt213, j);
+            model = Model.method462(anInt213, j);
         if(i == 2)
-            class30_sub2_sub4_sub6 = Class5.method159(j).method160(true);
+            model = Class5.method159(j).method160(true);
         if(i == 3)
-            class30_sub2_sub4_sub6 = Client.aClass30_Sub2_Sub4_Sub1_Sub2_1126.method453((byte)-41);
+            model = Client.aClass30_Sub2_Sub4_Sub1_Sub2_1126.method453((byte)-41);
         if(i == 4)
-            class30_sub2_sub4_sub6 = Class8.method198(j).method202(50, true);
+            model = Class8.method198(j).method202(50, true);
         if(i == 5)
-            class30_sub2_sub4_sub6 = null;
-        if(class30_sub2_sub4_sub6 != null)
-            aClass12_264.method223(class30_sub2_sub4_sub6, (i << 16) + j, (byte)2);
-        return class30_sub2_sub4_sub6;
+            model = null;
+        if(model != null)
+            aClass12_264.method223(model, (i << 16) + j, (byte)2);
+        return model;
     }
 
     public static Class30_Sub2_Sub1_Sub1 method207(int i, boolean flag, JagexArchive jagexArchive, String s)
@@ -287,38 +287,38 @@ public class Class9
         return class30_sub2_sub1_sub1;
     }
 
-    public static void method208(int i, boolean flag, int j, Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6)
+    public static void method208(int i, boolean flag, int j, Model model)
     {
         if(flag)
             return;
         aClass12_264.method224();
-        if(class30_sub2_sub4_sub6 != null && j != 4)
-            aClass12_264.method223(class30_sub2_sub4_sub6, (j << 16) + i, (byte)2);
+        if(model != null && j != 4)
+            aClass12_264.method223(model, (j << 16) + i, (byte)2);
     }
 
-    public Class30_Sub2_Sub4_Sub6 method209(int i, int j, int k, boolean flag)
+    public Model method209(int i, int j, int k, boolean flag)
     {
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6;
+        Model model;
         if(flag)
-            class30_sub2_sub4_sub6 = method206(anInt255, anInt256);
+            model = method206(anInt255, anInt256);
         else
-            class30_sub2_sub4_sub6 = method206(anInt233, anInt234);
-        if(class30_sub2_sub4_sub6 == null)
+            model = method206(anInt233, anInt234);
+        if(model == null)
             return null;
-        if(k == -1 && j == -1 && class30_sub2_sub4_sub6.anIntArray1640 == null)
-            return class30_sub2_sub4_sub6;
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = new Class30_Sub2_Sub4_Sub6(9, true, Class36.method532(k, false) & Class36.method532(j, false), false, class30_sub2_sub4_sub6);
+        if(k == -1 && j == -1 && model.anIntArray1640 == null)
+            return model;
+        Model model_1 = new Model(9, true, Animation.method532(k, false) & Animation.method532(j, false), false, model);
         if(k != -1 || j != -1)
-            class30_sub2_sub4_sub6_1.method469((byte)-71);
+            model_1.method469((byte)-71);
         if(k != -1)
-            class30_sub2_sub4_sub6_1.method470(k, 40542);
+            model_1.method470(k, 40542);
         if(j != -1)
-            class30_sub2_sub4_sub6_1.method470(j, 40542);
-        class30_sub2_sub4_sub6_1.method479(64, 768, -50, -10, -50, true);
+            model_1.method470(j, 40542);
+        model_1.method479(64, 768, -50, -10, -50, true);
         if(i != 0)
             throw new NullPointerException();
         else
-            return class30_sub2_sub4_sub6_1;
+            return model_1;
     }
 
     public Class9()

@@ -33,9 +33,9 @@ public class Class20
         }
         if(j == 0)
         {
-            Class36 class36 = Class36.method531(anInt348, anIntArray353[i]);
-            if(class36 != null)
-                j = anIntArray355[i] = class36.anInt636;
+            Animation animation = Animation.method531(anInt348, anIntArray353[i]);
+            if(animation != null)
+                j = anIntArray355[i] = animation.anInt636;
         }
         if(j == 0)
             j = 1;

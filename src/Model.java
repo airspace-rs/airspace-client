@@ -2,7 +2,7 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
+public class Model extends Class30_Sub2_Sub4
 {
 
     public static void method458(int i)
@@ -116,7 +116,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             anInt1619 = -219;
     }
 
-    public static Class30_Sub2_Sub4_Sub6 method462(int i, int j)
+    public static Model method462(int i, int j)
     {
         if(aClass21Array1661 == null)
             return null;
@@ -131,7 +131,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             return null;
         } else
         {
-            return new Class30_Sub2_Sub4_Sub6(j, -870);
+            return new Model(j, -870);
         }
     }
 
@@ -150,7 +150,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         }
     }
 
-    public Class30_Sub2_Sub4_Sub6(boolean flag)
+    public Model(boolean flag)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -162,7 +162,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             aBoolean1618 = !aBoolean1618;
     }
 
-    public Class30_Sub2_Sub4_Sub6(int i, int j)
+    public Model(int i, int j)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -316,7 +316,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
 
     }
 
-    public Class30_Sub2_Sub4_Sub6(int i, Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6[], int j)
+    public Model(int i, Model aclass30_sub2_sub4_sub6[], int j)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -335,25 +335,25 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         anInt1641 = -1;
         for(int k = 0; k < i; k++)
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = aclass30_sub2_sub4_sub6[k];
-            if(class30_sub2_sub4_sub6 != null)
+            Model model = aclass30_sub2_sub4_sub6[k];
+            if(model != null)
             {
-                anInt1626 += class30_sub2_sub4_sub6.anInt1626;
-                anInt1630 += class30_sub2_sub4_sub6.anInt1630;
-                anInt1642 += class30_sub2_sub4_sub6.anInt1642;
-                flag |= class30_sub2_sub4_sub6.anIntArray1637 != null;
-                if(class30_sub2_sub4_sub6.anIntArray1638 != null)
+                anInt1626 += model.anInt1626;
+                anInt1630 += model.anInt1630;
+                anInt1642 += model.anInt1642;
+                flag |= model.anIntArray1637 != null;
+                if(model.anIntArray1638 != null)
                 {
                     flag1 = true;
                 } else
                 {
                     if(anInt1641 == -1)
-                        anInt1641 = class30_sub2_sub4_sub6.anInt1641;
-                    if(anInt1641 != class30_sub2_sub4_sub6.anInt1641)
+                        anInt1641 = model.anInt1641;
+                    if(anInt1641 != model.anInt1641)
                         flag1 = true;
                 }
-                flag2 |= class30_sub2_sub4_sub6.anIntArray1639 != null;
-                flag3 |= class30_sub2_sub4_sub6.anIntArray1656 != null;
+                flag2 |= model.anIntArray1639 != null;
+                flag3 |= model.anIntArray1656 != null;
             }
         }
 
@@ -384,56 +384,56 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         int l = 0;
         for(int i1 = 0; i1 < i; i1++)
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = aclass30_sub2_sub4_sub6[i1];
-            if(class30_sub2_sub4_sub6_1 != null)
+            Model model_1 = aclass30_sub2_sub4_sub6[i1];
+            if(model_1 != null)
             {
-                for(int j1 = 0; j1 < class30_sub2_sub4_sub6_1.anInt1630; j1++)
+                for(int j1 = 0; j1 < model_1.anInt1630; j1++)
                 {
                     if(flag)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1637 == null)
+                        if(model_1.anIntArray1637 == null)
                         {
                             anIntArray1637[anInt1630] = 0;
                         } else
                         {
-                            int k1 = class30_sub2_sub4_sub6_1.anIntArray1637[j1];
+                            int k1 = model_1.anIntArray1637[j1];
                             if((k1 & 2) == 2)
                                 k1 += l << 2;
                             anIntArray1637[anInt1630] = k1;
                         }
                     if(flag1)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1638 == null)
-                            anIntArray1638[anInt1630] = class30_sub2_sub4_sub6_1.anInt1641;
+                        if(model_1.anIntArray1638 == null)
+                            anIntArray1638[anInt1630] = model_1.anInt1641;
                         else
-                            anIntArray1638[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1638[j1];
+                            anIntArray1638[anInt1630] = model_1.anIntArray1638[j1];
                     if(flag2)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1639 == null)
+                        if(model_1.anIntArray1639 == null)
                             anIntArray1639[anInt1630] = 0;
                         else
-                            anIntArray1639[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1639[j1];
-                    if(flag3 && class30_sub2_sub4_sub6_1.anIntArray1656 != null)
-                        anIntArray1656[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1656[j1];
-                    anIntArray1640[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1640[j1];
-                    anIntArray1631[anInt1630] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1631[j1]);
-                    anIntArray1632[anInt1630] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1632[j1]);
-                    anIntArray1633[anInt1630] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1633[j1]);
+                            anIntArray1639[anInt1630] = model_1.anIntArray1639[j1];
+                    if(flag3 && model_1.anIntArray1656 != null)
+                        anIntArray1656[anInt1630] = model_1.anIntArray1656[j1];
+                    anIntArray1640[anInt1630] = model_1.anIntArray1640[j1];
+                    anIntArray1631[anInt1630] = method465(model_1, model_1.anIntArray1631[j1]);
+                    anIntArray1632[anInt1630] = method465(model_1, model_1.anIntArray1632[j1]);
+                    anIntArray1633[anInt1630] = method465(model_1, model_1.anIntArray1633[j1]);
                     anInt1630++;
                 }
 
-                for(int l1 = 0; l1 < class30_sub2_sub4_sub6_1.anInt1642; l1++)
+                for(int l1 = 0; l1 < model_1.anInt1642; l1++)
                 {
-                    anIntArray1643[anInt1642] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1643[l1]);
-                    anIntArray1644[anInt1642] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1644[l1]);
-                    anIntArray1645[anInt1642] = method465(class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_1.anIntArray1645[l1]);
+                    anIntArray1643[anInt1642] = method465(model_1, model_1.anIntArray1643[l1]);
+                    anIntArray1644[anInt1642] = method465(model_1, model_1.anIntArray1644[l1]);
+                    anIntArray1645[anInt1642] = method465(model_1, model_1.anIntArray1645[l1]);
                     anInt1642++;
                 }
 
-                l += class30_sub2_sub4_sub6_1.anInt1642;
+                l += model_1.anInt1642;
             }
         }
 
     }
 
-    public Class30_Sub2_Sub4_Sub6(int i, int j, boolean flag, Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6[])
+    public Model(int i, int j, boolean flag, Model aclass30_sub2_sub4_sub6[])
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -452,25 +452,25 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         anInt1641 = -1;
         for(int k = 0; k < i; k++)
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = aclass30_sub2_sub4_sub6[k];
-            if(class30_sub2_sub4_sub6 != null)
+            Model model = aclass30_sub2_sub4_sub6[k];
+            if(model != null)
             {
-                anInt1626 += class30_sub2_sub4_sub6.anInt1626;
-                anInt1630 += class30_sub2_sub4_sub6.anInt1630;
-                anInt1642 += class30_sub2_sub4_sub6.anInt1642;
-                flag1 |= class30_sub2_sub4_sub6.anIntArray1637 != null;
-                if(class30_sub2_sub4_sub6.anIntArray1638 != null)
+                anInt1626 += model.anInt1626;
+                anInt1630 += model.anInt1630;
+                anInt1642 += model.anInt1642;
+                flag1 |= model.anIntArray1637 != null;
+                if(model.anIntArray1638 != null)
                 {
                     flag2 = true;
                 } else
                 {
                     if(anInt1641 == -1)
-                        anInt1641 = class30_sub2_sub4_sub6.anInt1641;
-                    if(anInt1641 != class30_sub2_sub4_sub6.anInt1641)
+                        anInt1641 = model.anInt1641;
+                    if(anInt1641 != model.anInt1641)
                         flag2 = true;
                 }
-                flag3 |= class30_sub2_sub4_sub6.anIntArray1639 != null;
-                flag4 |= class30_sub2_sub4_sub6.anIntArray1640 != null;
+                flag3 |= model.anIntArray1639 != null;
+                flag4 |= model.anIntArray1640 != null;
             }
         }
 
@@ -504,68 +504,68 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         int i1 = 0;
         for(int j1 = 0; j1 < i; j1++)
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = aclass30_sub2_sub4_sub6[j1];
-            if(class30_sub2_sub4_sub6_1 != null)
+            Model model_1 = aclass30_sub2_sub4_sub6[j1];
+            if(model_1 != null)
             {
                 int k1 = anInt1626;
-                for(int l1 = 0; l1 < class30_sub2_sub4_sub6_1.anInt1626; l1++)
+                for(int l1 = 0; l1 < model_1.anInt1626; l1++)
                 {
-                    anIntArray1627[anInt1626] = class30_sub2_sub4_sub6_1.anIntArray1627[l1];
-                    anIntArray1628[anInt1626] = class30_sub2_sub4_sub6_1.anIntArray1628[l1];
-                    anIntArray1629[anInt1626] = class30_sub2_sub4_sub6_1.anIntArray1629[l1];
+                    anIntArray1627[anInt1626] = model_1.anIntArray1627[l1];
+                    anIntArray1628[anInt1626] = model_1.anIntArray1628[l1];
+                    anIntArray1629[anInt1626] = model_1.anIntArray1629[l1];
                     anInt1626++;
                 }
 
-                for(int i2 = 0; i2 < class30_sub2_sub4_sub6_1.anInt1630; i2++)
+                for(int i2 = 0; i2 < model_1.anInt1630; i2++)
                 {
-                    anIntArray1631[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1631[i2] + k1;
-                    anIntArray1632[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1632[i2] + k1;
-                    anIntArray1633[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1633[i2] + k1;
-                    anIntArray1634[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1634[i2];
-                    anIntArray1635[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1635[i2];
-                    anIntArray1636[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1636[i2];
+                    anIntArray1631[anInt1630] = model_1.anIntArray1631[i2] + k1;
+                    anIntArray1632[anInt1630] = model_1.anIntArray1632[i2] + k1;
+                    anIntArray1633[anInt1630] = model_1.anIntArray1633[i2] + k1;
+                    anIntArray1634[anInt1630] = model_1.anIntArray1634[i2];
+                    anIntArray1635[anInt1630] = model_1.anIntArray1635[i2];
+                    anIntArray1636[anInt1630] = model_1.anIntArray1636[i2];
                     if(flag1)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1637 == null)
+                        if(model_1.anIntArray1637 == null)
                         {
                             anIntArray1637[anInt1630] = 0;
                         } else
                         {
-                            int j2 = class30_sub2_sub4_sub6_1.anIntArray1637[i2];
+                            int j2 = model_1.anIntArray1637[i2];
                             if((j2 & 2) == 2)
                                 j2 += i1 << 2;
                             anIntArray1637[anInt1630] = j2;
                         }
                     if(flag2)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1638 == null)
-                            anIntArray1638[anInt1630] = class30_sub2_sub4_sub6_1.anInt1641;
+                        if(model_1.anIntArray1638 == null)
+                            anIntArray1638[anInt1630] = model_1.anInt1641;
                         else
-                            anIntArray1638[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1638[i2];
+                            anIntArray1638[anInt1630] = model_1.anIntArray1638[i2];
                     if(flag3)
-                        if(class30_sub2_sub4_sub6_1.anIntArray1639 == null)
+                        if(model_1.anIntArray1639 == null)
                             anIntArray1639[anInt1630] = 0;
                         else
-                            anIntArray1639[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1639[i2];
-                    if(flag4 && class30_sub2_sub4_sub6_1.anIntArray1640 != null)
-                        anIntArray1640[anInt1630] = class30_sub2_sub4_sub6_1.anIntArray1640[i2];
+                            anIntArray1639[anInt1630] = model_1.anIntArray1639[i2];
+                    if(flag4 && model_1.anIntArray1640 != null)
+                        anIntArray1640[anInt1630] = model_1.anIntArray1640[i2];
                     anInt1630++;
                 }
 
-                for(int k2 = 0; k2 < class30_sub2_sub4_sub6_1.anInt1642; k2++)
+                for(int k2 = 0; k2 < model_1.anInt1642; k2++)
                 {
-                    anIntArray1643[anInt1642] = class30_sub2_sub4_sub6_1.anIntArray1643[k2] + k1;
-                    anIntArray1644[anInt1642] = class30_sub2_sub4_sub6_1.anIntArray1644[k2] + k1;
-                    anIntArray1645[anInt1642] = class30_sub2_sub4_sub6_1.anIntArray1645[k2] + k1;
+                    anIntArray1643[anInt1642] = model_1.anIntArray1643[k2] + k1;
+                    anIntArray1644[anInt1642] = model_1.anIntArray1644[k2] + k1;
+                    anIntArray1645[anInt1642] = model_1.anIntArray1645[k2] + k1;
                     anInt1642++;
                 }
 
-                i1 += class30_sub2_sub4_sub6_1.anInt1642;
+                i1 += model_1.anInt1642;
             }
         }
 
         method466(false);
     }
 
-    public Class30_Sub2_Sub4_Sub6(int i, boolean flag, boolean flag1, boolean flag2, Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6)
+    public Model(int i, boolean flag, boolean flag1, boolean flag2, Model model)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -574,14 +574,14 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         aBoolean1618 = true;
         aBoolean1659 = false;
         anInt1620++;
-        anInt1626 = class30_sub2_sub4_sub6.anInt1626;
-        anInt1630 = class30_sub2_sub4_sub6.anInt1630;
-        anInt1642 = class30_sub2_sub4_sub6.anInt1642;
+        anInt1626 = model.anInt1626;
+        anInt1630 = model.anInt1630;
+        anInt1642 = model.anInt1642;
         if(flag2)
         {
-            anIntArray1627 = class30_sub2_sub4_sub6.anIntArray1627;
-            anIntArray1628 = class30_sub2_sub4_sub6.anIntArray1628;
-            anIntArray1629 = class30_sub2_sub4_sub6.anIntArray1629;
+            anIntArray1627 = model.anIntArray1627;
+            anIntArray1628 = model.anIntArray1628;
+            anIntArray1629 = model.anIntArray1629;
         } else
         {
             anIntArray1627 = new int[anInt1626];
@@ -589,29 +589,29 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             anIntArray1629 = new int[anInt1626];
             for(int j = 0; j < anInt1626; j++)
             {
-                anIntArray1627[j] = class30_sub2_sub4_sub6.anIntArray1627[j];
-                anIntArray1628[j] = class30_sub2_sub4_sub6.anIntArray1628[j];
-                anIntArray1629[j] = class30_sub2_sub4_sub6.anIntArray1629[j];
+                anIntArray1627[j] = model.anIntArray1627[j];
+                anIntArray1628[j] = model.anIntArray1628[j];
+                anIntArray1629[j] = model.anIntArray1629[j];
             }
 
         }
         if(flag)
         {
-            anIntArray1640 = class30_sub2_sub4_sub6.anIntArray1640;
+            anIntArray1640 = model.anIntArray1640;
         } else
         {
             anIntArray1640 = new int[anInt1630];
             for(int k = 0; k < anInt1630; k++)
-                anIntArray1640[k] = class30_sub2_sub4_sub6.anIntArray1640[k];
+                anIntArray1640[k] = model.anIntArray1640[k];
 
         }
         if(flag1)
         {
-            anIntArray1639 = class30_sub2_sub4_sub6.anIntArray1639;
+            anIntArray1639 = model.anIntArray1639;
         } else
         {
             anIntArray1639 = new int[anInt1630];
-            if(class30_sub2_sub4_sub6.anIntArray1639 == null)
+            if(model.anIntArray1639 == null)
             {
                 for(int l = 0; l < anInt1630; l++)
                     anIntArray1639[l] = 0;
@@ -619,28 +619,28 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             } else
             {
                 for(int i1 = 0; i1 < anInt1630; i1++)
-                    anIntArray1639[i1] = class30_sub2_sub4_sub6.anIntArray1639[i1];
+                    anIntArray1639[i1] = model.anIntArray1639[i1];
 
             }
         }
-        anIntArray1655 = class30_sub2_sub4_sub6.anIntArray1655;
-        anIntArray1656 = class30_sub2_sub4_sub6.anIntArray1656;
-        anIntArray1637 = class30_sub2_sub4_sub6.anIntArray1637;
-        anIntArray1631 = class30_sub2_sub4_sub6.anIntArray1631;
-        anIntArray1632 = class30_sub2_sub4_sub6.anIntArray1632;
-        anIntArray1633 = class30_sub2_sub4_sub6.anIntArray1633;
-        anIntArray1638 = class30_sub2_sub4_sub6.anIntArray1638;
-        anInt1641 = class30_sub2_sub4_sub6.anInt1641;
-        anIntArray1643 = class30_sub2_sub4_sub6.anIntArray1643;
+        anIntArray1655 = model.anIntArray1655;
+        anIntArray1656 = model.anIntArray1656;
+        anIntArray1637 = model.anIntArray1637;
+        anIntArray1631 = model.anIntArray1631;
+        anIntArray1632 = model.anIntArray1632;
+        anIntArray1633 = model.anIntArray1633;
+        anIntArray1638 = model.anIntArray1638;
+        anInt1641 = model.anInt1641;
+        anIntArray1643 = model.anIntArray1643;
         if(i < 9 || i > 9)
         {
             for(int j1 = 1; j1 > 0; j1++);
         }
-        anIntArray1644 = class30_sub2_sub4_sub6.anIntArray1644;
-        anIntArray1645 = class30_sub2_sub4_sub6.anIntArray1645;
+        anIntArray1644 = model.anIntArray1644;
+        anIntArray1645 = model.anIntArray1645;
     }
 
-    public Class30_Sub2_Sub4_Sub6(boolean flag, int i, boolean flag1, Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6)
+    public Model(boolean flag, int i, boolean flag1, Model model)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -649,18 +649,18 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         aBoolean1618 = true;
         aBoolean1659 = false;
         anInt1620++;
-        anInt1626 = class30_sub2_sub4_sub6.anInt1626;
-        anInt1630 = class30_sub2_sub4_sub6.anInt1630;
-        anInt1642 = class30_sub2_sub4_sub6.anInt1642;
+        anInt1626 = model.anInt1626;
+        anInt1630 = model.anInt1630;
+        anInt1642 = model.anInt1642;
         if(flag)
         {
             anIntArray1628 = new int[anInt1626];
             for(int j = 0; j < anInt1626; j++)
-                anIntArray1628[j] = class30_sub2_sub4_sub6.anIntArray1628[j];
+                anIntArray1628[j] = model.anIntArray1628[j];
 
         } else
         {
-            anIntArray1628 = class30_sub2_sub4_sub6.anIntArray1628;
+            anIntArray1628 = model.anIntArray1628;
         }
         if(flag1)
         {
@@ -669,13 +669,13 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             anIntArray1636 = new int[anInt1630];
             for(int k = 0; k < anInt1630; k++)
             {
-                anIntArray1634[k] = class30_sub2_sub4_sub6.anIntArray1634[k];
-                anIntArray1635[k] = class30_sub2_sub4_sub6.anIntArray1635[k];
-                anIntArray1636[k] = class30_sub2_sub4_sub6.anIntArray1636[k];
+                anIntArray1634[k] = model.anIntArray1634[k];
+                anIntArray1635[k] = model.anIntArray1635[k];
+                anIntArray1636[k] = model.anIntArray1636[k];
             }
 
             anIntArray1637 = new int[anInt1630];
-            if(class30_sub2_sub4_sub6.anIntArray1637 == null)
+            if(model.anIntArray1637 == null)
             {
                 for(int l = 0; l < anInt1630; l++)
                     anIntArray1637[l] = 0;
@@ -683,62 +683,62 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             } else
             {
                 for(int i1 = 0; i1 < anInt1630; i1++)
-                    anIntArray1637[i1] = class30_sub2_sub4_sub6.anIntArray1637[i1];
+                    anIntArray1637[i1] = model.anIntArray1637[i1];
 
             }
             super.aClass33Array1425 = new Class33[anInt1626];
             for(int j1 = 0; j1 < anInt1626; j1++)
             {
                 Class33 class33 = super.aClass33Array1425[j1] = new Class33();
-                Class33 class33_1 = ((Class30_Sub2_Sub4) (class30_sub2_sub4_sub6)).aClass33Array1425[j1];
+                Class33 class33_1 = ((Class30_Sub2_Sub4) (model)).aClass33Array1425[j1];
                 class33.anInt602 = class33_1.anInt602;
                 class33.anInt603 = class33_1.anInt603;
                 class33.anInt604 = class33_1.anInt604;
                 class33.anInt605 = class33_1.anInt605;
             }
 
-            aClass33Array1660 = class30_sub2_sub4_sub6.aClass33Array1660;
+            aClass33Array1660 = model.aClass33Array1660;
         } else
         {
-            anIntArray1634 = class30_sub2_sub4_sub6.anIntArray1634;
-            anIntArray1635 = class30_sub2_sub4_sub6.anIntArray1635;
-            anIntArray1636 = class30_sub2_sub4_sub6.anIntArray1636;
-            anIntArray1637 = class30_sub2_sub4_sub6.anIntArray1637;
+            anIntArray1634 = model.anIntArray1634;
+            anIntArray1635 = model.anIntArray1635;
+            anIntArray1636 = model.anIntArray1636;
+            anIntArray1637 = model.anIntArray1637;
         }
-        anIntArray1627 = class30_sub2_sub4_sub6.anIntArray1627;
-        anIntArray1629 = class30_sub2_sub4_sub6.anIntArray1629;
-        anIntArray1640 = class30_sub2_sub4_sub6.anIntArray1640;
-        anIntArray1639 = class30_sub2_sub4_sub6.anIntArray1639;
-        anIntArray1638 = class30_sub2_sub4_sub6.anIntArray1638;
-        anInt1641 = class30_sub2_sub4_sub6.anInt1641;
-        anIntArray1631 = class30_sub2_sub4_sub6.anIntArray1631;
-        anIntArray1632 = class30_sub2_sub4_sub6.anIntArray1632;
-        anIntArray1633 = class30_sub2_sub4_sub6.anIntArray1633;
-        anIntArray1643 = class30_sub2_sub4_sub6.anIntArray1643;
-        anIntArray1644 = class30_sub2_sub4_sub6.anIntArray1644;
-        anIntArray1645 = class30_sub2_sub4_sub6.anIntArray1645;
-        super.anInt1426 = ((Class30_Sub2_Sub4) (class30_sub2_sub4_sub6)).anInt1426;
-        for(anInt1651 = class30_sub2_sub4_sub6.anInt1651; i >= 0;)
+        anIntArray1627 = model.anIntArray1627;
+        anIntArray1629 = model.anIntArray1629;
+        anIntArray1640 = model.anIntArray1640;
+        anIntArray1639 = model.anIntArray1639;
+        anIntArray1638 = model.anIntArray1638;
+        anInt1641 = model.anInt1641;
+        anIntArray1631 = model.anIntArray1631;
+        anIntArray1632 = model.anIntArray1632;
+        anIntArray1633 = model.anIntArray1633;
+        anIntArray1643 = model.anIntArray1643;
+        anIntArray1644 = model.anIntArray1644;
+        anIntArray1645 = model.anIntArray1645;
+        super.anInt1426 = ((Class30_Sub2_Sub4) (model)).anInt1426;
+        for(anInt1651 = model.anInt1651; i >= 0;)
             throw new NullPointerException();
 
-        anInt1650 = class30_sub2_sub4_sub6.anInt1650;
-        anInt1653 = class30_sub2_sub4_sub6.anInt1653;
-        anInt1652 = class30_sub2_sub4_sub6.anInt1652;
-        anInt1646 = class30_sub2_sub4_sub6.anInt1646;
-        anInt1648 = class30_sub2_sub4_sub6.anInt1648;
-        anInt1649 = class30_sub2_sub4_sub6.anInt1649;
-        anInt1647 = class30_sub2_sub4_sub6.anInt1647;
+        anInt1650 = model.anInt1650;
+        anInt1653 = model.anInt1653;
+        anInt1652 = model.anInt1652;
+        anInt1646 = model.anInt1646;
+        anInt1648 = model.anInt1648;
+        anInt1649 = model.anInt1649;
+        anInt1647 = model.anInt1647;
     }
 
-    public void method464(int i, Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6, boolean flag)
+    public void method464(int i, Model model, boolean flag)
     {
-        anInt1626 = class30_sub2_sub4_sub6.anInt1626;
+        anInt1626 = model.anInt1626;
         if(i != 7)
         {
             for(int j = 1; j > 0; j++);
         }
-        anInt1630 = class30_sub2_sub4_sub6.anInt1630;
-        anInt1642 = class30_sub2_sub4_sub6.anInt1642;
+        anInt1630 = model.anInt1630;
+        anInt1642 = model.anInt1642;
         if(anIntArray1622.length < anInt1626)
         {
             anIntArray1622 = new int[anInt1626 + 100];
@@ -750,20 +750,20 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         anIntArray1629 = anIntArray1624;
         for(int k = 0; k < anInt1626; k++)
         {
-            anIntArray1627[k] = class30_sub2_sub4_sub6.anIntArray1627[k];
-            anIntArray1628[k] = class30_sub2_sub4_sub6.anIntArray1628[k];
-            anIntArray1629[k] = class30_sub2_sub4_sub6.anIntArray1629[k];
+            anIntArray1627[k] = model.anIntArray1627[k];
+            anIntArray1628[k] = model.anIntArray1628[k];
+            anIntArray1629[k] = model.anIntArray1629[k];
         }
 
         if(flag)
         {
-            anIntArray1639 = class30_sub2_sub4_sub6.anIntArray1639;
+            anIntArray1639 = model.anIntArray1639;
         } else
         {
             if(anIntArray1625.length < anInt1630)
                 anIntArray1625 = new int[anInt1630 + 100];
             anIntArray1639 = anIntArray1625;
-            if(class30_sub2_sub4_sub6.anIntArray1639 == null)
+            if(model.anIntArray1639 == null)
             {
                 for(int l = 0; l < anInt1630; l++)
                     anIntArray1639[l] = 0;
@@ -771,33 +771,33 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             } else
             {
                 for(int i1 = 0; i1 < anInt1630; i1++)
-                    anIntArray1639[i1] = class30_sub2_sub4_sub6.anIntArray1639[i1];
+                    anIntArray1639[i1] = model.anIntArray1639[i1];
 
             }
         }
-        anIntArray1637 = class30_sub2_sub4_sub6.anIntArray1637;
-        anIntArray1640 = class30_sub2_sub4_sub6.anIntArray1640;
-        anIntArray1638 = class30_sub2_sub4_sub6.anIntArray1638;
-        anInt1641 = class30_sub2_sub4_sub6.anInt1641;
-        anIntArrayArray1658 = class30_sub2_sub4_sub6.anIntArrayArray1658;
-        anIntArrayArray1657 = class30_sub2_sub4_sub6.anIntArrayArray1657;
-        anIntArray1631 = class30_sub2_sub4_sub6.anIntArray1631;
-        anIntArray1632 = class30_sub2_sub4_sub6.anIntArray1632;
-        anIntArray1633 = class30_sub2_sub4_sub6.anIntArray1633;
-        anIntArray1634 = class30_sub2_sub4_sub6.anIntArray1634;
-        anIntArray1635 = class30_sub2_sub4_sub6.anIntArray1635;
-        anIntArray1636 = class30_sub2_sub4_sub6.anIntArray1636;
-        anIntArray1643 = class30_sub2_sub4_sub6.anIntArray1643;
-        anIntArray1644 = class30_sub2_sub4_sub6.anIntArray1644;
-        anIntArray1645 = class30_sub2_sub4_sub6.anIntArray1645;
+        anIntArray1637 = model.anIntArray1637;
+        anIntArray1640 = model.anIntArray1640;
+        anIntArray1638 = model.anIntArray1638;
+        anInt1641 = model.anInt1641;
+        anIntArrayArray1658 = model.anIntArrayArray1658;
+        anIntArrayArray1657 = model.anIntArrayArray1657;
+        anIntArray1631 = model.anIntArray1631;
+        anIntArray1632 = model.anIntArray1632;
+        anIntArray1633 = model.anIntArray1633;
+        anIntArray1634 = model.anIntArray1634;
+        anIntArray1635 = model.anIntArray1635;
+        anIntArray1636 = model.anIntArray1636;
+        anIntArray1643 = model.anIntArray1643;
+        anIntArray1644 = model.anIntArray1644;
+        anIntArray1645 = model.anIntArray1645;
     }
 
-    public int method465(Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6, int i)
+    public int method465(Model model, int i)
     {
         int j = -1;
-        int k = class30_sub2_sub4_sub6.anIntArray1627[i];
-        int l = class30_sub2_sub4_sub6.anIntArray1628[i];
-        int i1 = class30_sub2_sub4_sub6.anIntArray1629[i];
+        int k = model.anIntArray1627[i];
+        int l = model.anIntArray1628[i];
+        int i1 = model.anIntArray1629[i];
         for(int j1 = 0; j1 < anInt1626; j1++)
         {
             if(k != anIntArray1627[j1] || l != anIntArray1628[j1] || i1 != anIntArray1629[j1])
@@ -811,8 +811,8 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             anIntArray1627[anInt1626] = k;
             anIntArray1628[anInt1626] = l;
             anIntArray1629[anInt1626] = i1;
-            if(class30_sub2_sub4_sub6.anIntArray1655 != null)
-                anIntArray1655[anInt1626] = class30_sub2_sub4_sub6.anIntArray1655[i];
+            if(model.anIntArray1655 != null)
+                anIntArray1655[anInt1626] = model.anIntArray1655[i];
             j = anInt1626++;
         }
         return j;
@@ -974,19 +974,19 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             return;
         if(i == -1)
             return;
-        Class36 class36 = Class36.method531(anInt1614, i);
-        if(class36 == null)
+        Animation animation = Animation.method531(anInt1614, i);
+        if(animation == null)
             return;
-        Class18 class18 = class36.aClass18_637;
+        Class18 class18 = animation.aClass18_637;
         if(j != 40542)
             return;
         anInt1681 = 0;
         anInt1682 = 0;
         anInt1683 = 0;
-        for(int k = 0; k < class36.anInt638; k++)
+        for(int k = 0; k < animation.anInt638; k++)
         {
-            int l = class36.anIntArray639[k];
-            method472(class18.anIntArray342[l], class18.anIntArrayArray343[l], class36.anIntArray640[k], class36.anIntArray641[k], class36.anIntArray642[k]);
+            int l = animation.anIntArray639[k];
+            method472(class18.anIntArray342[l], class18.anIntArrayArray343[l], animation.anIntArray640[k], animation.anIntArray641[k], animation.anIntArray642[k]);
         }
 
     }
@@ -1000,29 +1000,29 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             method470(k, 40542);
             return;
         }
-        Class36 class36 = Class36.method531(anInt1614, k);
-        if(class36 == null)
+        Animation animation = Animation.method531(anInt1614, k);
+        if(animation == null)
             return;
-        Class36 class36_1 = Class36.method531(anInt1614, j);
+        Animation animation_1 = Animation.method531(anInt1614, j);
         if(i != -20491)
             return;
-        if(class36_1 == null)
+        if(animation_1 == null)
         {
             method470(k, 40542);
             return;
         }
-        Class18 class18 = class36.aClass18_637;
+        Class18 class18 = animation.aClass18_637;
         anInt1681 = 0;
         anInt1682 = 0;
         anInt1683 = 0;
         int l = 0;
         int i1 = ai[l++];
-        for(int j1 = 0; j1 < class36.anInt638; j1++)
+        for(int j1 = 0; j1 < animation.anInt638; j1++)
         {
             int k1;
-            for(k1 = class36.anIntArray639[j1]; k1 > i1; i1 = ai[l++]);
+            for(k1 = animation.anIntArray639[j1]; k1 > i1; i1 = ai[l++]);
             if(k1 != i1 || class18.anIntArray342[k1] == 0)
-                method472(class18.anIntArray342[k1], class18.anIntArrayArray343[k1], class36.anIntArray640[j1], class36.anIntArray641[j1], class36.anIntArray642[j1]);
+                method472(class18.anIntArray342[k1], class18.anIntArrayArray343[k1], animation.anIntArray640[j1], animation.anIntArray641[j1], animation.anIntArray642[j1]);
         }
 
         anInt1681 = 0;
@@ -1030,12 +1030,12 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         anInt1683 = 0;
         l = 0;
         i1 = ai[l++];
-        for(int l1 = 0; l1 < class36_1.anInt638; l1++)
+        for(int l1 = 0; l1 < animation_1.anInt638; l1++)
         {
             int i2;
-            for(i2 = class36_1.anIntArray639[l1]; i2 > i1; i1 = ai[l++]);
+            for(i2 = animation_1.anIntArray639[l1]; i2 > i1; i1 = ai[l++]);
             if(i2 == i1 || class18.anIntArray342[i2] == 0)
-                method472(class18.anIntArray342[i2], class18.anIntArrayArray343[i2], class36_1.anIntArray640[l1], class36_1.anIntArray641[l1], class36_1.anIntArray642[l1]);
+                method472(class18.anIntArray342[i2], class18.anIntArrayArray343[i2], animation_1.anIntArray640[l1], animation_1.anIntArray641[l1], animation_1.anIntArray642[l1]);
         }
 
     }
@@ -2052,7 +2052,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
     public boolean aBoolean1618;
     public static int anInt1619 = -192;
     public static int anInt1620;
-    public static Class30_Sub2_Sub4_Sub6 aClass30_Sub2_Sub4_Sub6_1621 = new Class30_Sub2_Sub4_Sub6(true);
+    public static Model aModel_1621 = new Model(true);
     public static int anIntArray1622[] = new int[2000];
     public static int anIntArray1623[] = new int[2000];
     public static int anIntArray1624[] = new int[2000];

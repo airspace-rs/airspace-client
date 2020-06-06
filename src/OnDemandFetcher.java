@@ -8,9 +8,75 @@ import java.util.zip.CRC32;
 import java.util.zip.GZIPInputStream;
 import sign.signlink;
 
-public class Class42_Sub1 extends Class42
-    implements Runnable
+public class OnDemandFetcher extends Class42 implements Runnable
 {
+    public int anInt1330;
+    public Class19 aClass19_1331;
+    public int anInt1332;
+    public String aString1333;
+    public int anInt1334;
+    public long aLong1335;
+    public boolean aBoolean1336;
+    public int anIntArray1337[];
+    public CRC32 aCRC32_1338;
+    public byte aByteArray1339[];
+    public int anInt1340;
+    public int anInt1341;
+    public byte aByteArrayArray1342[][];
+    public Client aClient1343;
+    public Class19 aClass19_1344;
+    public static int anInt1345;
+    public int anInt1346;
+    public int anInt1347;
+    public int anIntArray1348[];
+    public int anInt1349;
+    public int anIntArray1350[];
+    public int anInt1351;
+    public int anInt1352;
+    public boolean aBoolean1353;
+    public OutputStream anOutputStream1354;
+    public boolean aBoolean1355;
+    public int anIntArray1356[];
+    public boolean aBoolean1357;
+    public Class19 aClass19_1358;
+    public byte aByteArray1359[];
+    public int animationIndices[];
+    public Class2 aClass2_1361;
+    public InputStream anInputStream1362;
+    public Socket aSocket1363;
+    public int fileStoreFiles[][];
+    public int anIntArrayArray1365[][];
+    public int anInt1366;
+    public int anInt1367;
+    public Class19 aClass19_1368;
+    public Class30_Sub2_Sub3 aClass30_Sub2_Sub3_1369;
+    public Class19 aClass19_1370;
+    public int anIntArray1371[];
+    public byte aByteArray1372[];
+    public int anInt1373;
+
+    public OnDemandFetcher()
+    {
+        aClass19_1331 = new Class19(169);
+        aString1333 = "";
+        aBoolean1336 = true;
+        aCRC32_1338 = new CRC32();
+        aByteArray1339 = new byte[500];
+        anInt1340 = 923;
+        aByteArrayArray1342 = new byte[4][];
+        aClass19_1344 = new Class19(169);
+        anInt1352 = 13603;
+        aBoolean1353 = true;
+        aBoolean1355 = false;
+        aBoolean1357 = false;
+        aClass19_1358 = new Class19(169);
+        aByteArray1359 = new byte[65000];
+        aClass2_1361 = new Class2(anInt1345);
+        fileStoreFiles = new int[4][];
+        anIntArrayArray1365 = new int[4][];
+        aClass19_1368 = new Class19(169);
+        aClass19_1370 = new Class19(169);
+    }
 
     public boolean method549(int i, byte byte0, int j, byte abyte0[])
     {
@@ -136,10 +202,10 @@ public class Class42_Sub1 extends Class42
             byte abyte0[] = jagexArchive.getFile(as[i], null);
             int j = abyte0.length / 2;
             Buffer buffer = new Buffer(abyte0);
-            anIntArrayArray1364[i] = new int[j];
+            fileStoreFiles[i] = new int[j];
             aByteArrayArray1342[i] = new byte[j];
             for(int l = 0; l < j; l++)
-                anIntArrayArray1364[i][l] = buffer.method410();
+                fileStoreFiles[i][l] = buffer.method410();
 
         }
 
@@ -158,7 +224,7 @@ public class Class42_Sub1 extends Class42
         }
 
         byte abyte2[] = jagexArchive.getFile("model_index", null);
-        int j1 = anIntArrayArray1364[0].length;
+        int j1 = fileStoreFiles[0].length;
         aByteArray1372 = new byte[j1];
         for(int k1 = 0; k1 < j1; k1++)
             if(k1 < abyte2.length)
@@ -184,9 +250,9 @@ public class Class42_Sub1 extends Class42
         abyte2 = jagexArchive.getFile("anim_index", null);
         class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 2;
-        anIntArray1360 = new int[j1];
+        animationIndices = new int[j1];
         for(int j2 = 0; j2 < j1; j2++)
-            anIntArray1360[j2] = class30_sub2_sub2_2.method410();
+            animationIndices[j2] = class30_sub2_sub2_2.method410();
 
         abyte2 = jagexArchive.getFile("midi_index", null);
         class30_sub2_sub2_2 = new Buffer(abyte2);
@@ -228,11 +294,9 @@ public class Class42_Sub1 extends Class42
 
     }
 
-    public int method555(int i, int j)
+    public int getFileCount(int fileStoreIndex)
     {
-        if(i <= 0)
-            aBoolean1355 = !aBoolean1355;
-        return anIntArrayArray1364[j].length;
+        return fileStoreFiles[fileStoreIndex].length;
     }
 
     public void method556(int i, Class30_Sub2_Sub3 class30_sub2_sub3)
@@ -284,18 +348,16 @@ public class Class42_Sub1 extends Class42
         anInt1349++;
     }
 
-    public int method557(int i)
+    public int getCount()
     {
-        if(i != 0)
-            anInt1352 = -76;
-        return anIntArray1360.length;
+        return animationIndices.length;
     }
 
     public void method558(int i, int j)
     {
-        if(i < 0 || i > anIntArrayArray1364.length || j < 0 || j > anIntArrayArray1364[i].length)
+        if(i < 0 || i > fileStoreFiles.length || j < 0 || j > fileStoreFiles[i].length)
             return;
-        if(anIntArrayArray1364[i][j] == 0)
+        if(fileStoreFiles[i][j] == 0)
             return;
         synchronized(aClass2_1361)
         {
@@ -432,7 +494,7 @@ public class Class42_Sub1 extends Class42
     {
         if(aClient1343.jagexFileStores[0] == null)
             return;
-        if(anIntArrayArray1364[j][i] == 0)
+        if(fileStoreFiles[j][i] == 0)
             return;
         if(aByteArrayArray1342[j][i] == 0)
             return;
@@ -518,10 +580,10 @@ public class Class42_Sub1 extends Class42
             anInt1340 = 237;
         if(aClient1343.jagexFileStores[0] == null)
             return;
-        if(anIntArrayArray1364[i][j] == 0)
+        if(fileStoreFiles[i][j] == 0)
             return;
         byte abyte0[] = aClient1343.jagexFileStores[i + 1].decompress(j);
-        if(method549(anIntArrayArray1364[i][j], (byte)3, anIntArrayArray1365[i][j], abyte0))
+        if(method549(fileStoreFiles[i][j], (byte)3, anIntArrayArray1365[i][j], abyte0))
             return;
         aByteArrayArray1342[i][j] = byte0;
         if(byte0 > anInt1332)
@@ -594,7 +656,7 @@ public class Class42_Sub1 extends Class42
             byte abyte0[] = null;
             if(aClient1343.jagexFileStores[0] != null)
                 abyte0 = aClient1343.jagexFileStores[class30_sub2_sub3.anInt1419 + 1].decompress(class30_sub2_sub3.anInt1421);
-            if(!method549(anIntArrayArray1364[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], (byte)3, anIntArrayArray1365[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], abyte0))
+            if(!method549(fileStoreFiles[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], (byte)3, anIntArrayArray1365[class30_sub2_sub3.anInt1419][class30_sub2_sub3.anInt1421], abyte0))
                 abyte0 = null;
             synchronized(aClass19_1370)
             {
@@ -684,72 +746,4 @@ public class Class42_Sub1 extends Class42
             anInt1345 = 169;
         return anIntArray1348[i] == 1;
     }
-
-    public Class42_Sub1()
-    {
-        aClass19_1331 = new Class19(169);
-        aString1333 = "";
-        aBoolean1336 = true;
-        aCRC32_1338 = new CRC32();
-        aByteArray1339 = new byte[500];
-        anInt1340 = 923;
-        aByteArrayArray1342 = new byte[4][];
-        aClass19_1344 = new Class19(169);
-        anInt1352 = 13603;
-        aBoolean1353 = true;
-        aBoolean1355 = false;
-        aBoolean1357 = false;
-        aClass19_1358 = new Class19(169);
-        aByteArray1359 = new byte[65000];
-        aClass2_1361 = new Class2(anInt1345);
-        anIntArrayArray1364 = new int[4][];
-        anIntArrayArray1365 = new int[4][];
-        aClass19_1368 = new Class19(169);
-        aClass19_1370 = new Class19(169);
-    }
-
-    public int anInt1330;
-    public Class19 aClass19_1331;
-    public int anInt1332;
-    public String aString1333;
-    public int anInt1334;
-    public long aLong1335;
-    public boolean aBoolean1336;
-    public int anIntArray1337[];
-    public CRC32 aCRC32_1338;
-    public byte aByteArray1339[];
-    public int anInt1340;
-    public int anInt1341;
-    public byte aByteArrayArray1342[][];
-    public Client aClient1343;
-    public Class19 aClass19_1344;
-    public static int anInt1345;
-    public int anInt1346;
-    public int anInt1347;
-    public int anIntArray1348[];
-    public int anInt1349;
-    public int anIntArray1350[];
-    public int anInt1351;
-    public int anInt1352;
-    public boolean aBoolean1353;
-    public OutputStream anOutputStream1354;
-    public boolean aBoolean1355;
-    public int anIntArray1356[];
-    public boolean aBoolean1357;
-    public Class19 aClass19_1358;
-    public byte aByteArray1359[];
-    public int anIntArray1360[];
-    public Class2 aClass2_1361;
-    public InputStream anInputStream1362;
-    public Socket aSocket1363;
-    public int anIntArrayArray1364[][];
-    public int anIntArrayArray1365[][];
-    public int anInt1366;
-    public int anInt1367;
-    public Class19 aClass19_1368;
-    public Class30_Sub2_Sub3 aClass30_Sub2_Sub3_1369;
-    public Class19 aClass19_1370;
-    public int anIntArray1371[];
-    public byte aByteArray1372[];
-    public int anInt1373;
 }

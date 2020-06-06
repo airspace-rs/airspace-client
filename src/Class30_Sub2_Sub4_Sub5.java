@@ -5,7 +5,7 @@
 public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
 {
 
-    public Class30_Sub2_Sub4_Sub6 method444(int i)
+    public Model method444(int i)
     {
         int j = -1;
         if(i != 4016)
@@ -41,8 +41,8 @@ public class Class30_Sub2_Sub4_Sub5 extends Class30_Sub2_Sub4
             return null;
         } else
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = class46.method578(anInt1611, anInt1612, anInt1603, anInt1604, anInt1605, anInt1606, j);
-            return class30_sub2_sub4_sub6;
+            Model model = class46.method578(anInt1611, anInt1612, anInt1603, anInt1604, anInt1605, anInt1606, j);
+            return model;
         }
     }
 

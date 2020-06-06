@@ -628,18 +628,18 @@ public class Client extends BrowserApplet
         }
         if(isLowMemory && signlink.cacheData != null)
         {
-            int j = aClass42_Sub1_1068.method555(79, 0);
+            int j = onDemandFetcher.getFileCount(0);
             for(int i1 = 0; i1 < j; i1++)
             {
-                int l1 = aClass42_Sub1_1068.method559(i1, -203);
+                int l1 = onDemandFetcher.method559(i1, -203);
                 if((l1 & 0x79) == 0)
-                    Class30_Sub2_Sub4_Sub6.method461(116, i1);
+                    Model.method461(116, i1);
             }
 
         }
         System.gc();
         Class30_Sub2_Sub1_Sub3.method367(20, true);
-        aClass42_Sub1_1068.method566(0);
+        onDemandFetcher.method566(0);
         int k = (anInt1069 - 6) / 8 - 1;
         int j1 = (anInt1069 + 6) / 8 + 1;
         int i2 = (anInt1070 - 6) / 8 - 1;
@@ -656,12 +656,12 @@ public class Client extends BrowserApplet
             for(int j5 = i2; j5 <= l2; j5++)
                 if(l3 == k || l3 == j1 || j5 == i2 || j5 == l2)
                 {
-                    int j7 = aClass42_Sub1_1068.method562(0, 0, j5, l3);
+                    int j7 = onDemandFetcher.method562(0, 0, j5, l3);
                     if(j7 != -1)
-                        aClass42_Sub1_1068.method560(j7, 3, false);
-                    int k8 = aClass42_Sub1_1068.method562(1, 0, j5, l3);
+                        onDemandFetcher.method560(j7, 3, false);
+                    int k8 = onDemandFetcher.method562(1, 0, j5, l3);
                     if(k8 != -1)
-                        aClass42_Sub1_1068.method560(k8, 3, false);
+                        onDemandFetcher.method560(k8, 3, false);
                 }
 
         }
@@ -836,24 +836,22 @@ public class Client extends BrowserApplet
             return signlink.wavereplay();
     }
 
-    public void method28(String s)
+    public void showError(String s)
     {
         System.out.println(s);
-        try
-        {
+        try {
             getAppletContext().showDocument(new URL(getCodeBase(), "loaderror_" + s + ".html"));
-        }
-        catch(Exception exception)
-        {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
-        do
-            try
-            {
+        do {
+            try {
                 Thread.sleep(1000L);
+            } catch (Exception _ex) {
+                //
             }
-            catch(Exception _ex) { }
-        while(true);
+        }
+        while (true);
     }
 
     public void method29(int i, int j, Class9 class9, int k, int l, int i1, int j1)
@@ -1262,7 +1260,7 @@ public class Client extends BrowserApplet
                 {
                     anInt1227 = anInt956;
                     aBoolean1228 = true;
-                    aClass42_Sub1_1068.method558(2, anInt1227);
+                    onDemandFetcher.method558(2, anInt1227);
                 } else
                 {
                     method15(860);
@@ -2067,7 +2065,7 @@ public class Client extends BrowserApplet
             int k1 = ((Class30_Sub2_Sub4_Sub1) (class30_sub2_sub4_sub1_sub2)).anInt1551 >> 7;
             if(j1 < 0 || j1 >= 104 || k1 < 0 || k1 >= 104)
                 continue;
-            if(class30_sub2_sub4_sub1_sub2.aClass30_Sub2_Sub4_Sub6_1714 != null && anInt1161 >= class30_sub2_sub4_sub1_sub2.anInt1707 && anInt1161 < class30_sub2_sub4_sub1_sub2.anInt1708)
+            if(class30_sub2_sub4_sub1_sub2.aModel_1714 != null && anInt1161 >= class30_sub2_sub4_sub1_sub2.anInt1707 && anInt1161 < class30_sub2_sub4_sub1_sub2.anInt1708)
             {
                 class30_sub2_sub4_sub1_sub2.aBoolean1699 = false;
                 class30_sub2_sub4_sub1_sub2.anInt1709 = method42(anInt918, ((Class30_Sub2_Sub4_Sub1) (class30_sub2_sub4_sub1_sub2)).anInt1551, true, ((Class30_Sub2_Sub4_Sub1) (class30_sub2_sub4_sub1_sub2)).anInt1550);
@@ -2538,7 +2536,7 @@ public class Client extends BrowserApplet
             int j = method54((byte)-95);
             if(j != 0 && System.currentTimeMillis() - aLong824 > 0x57e40L)
             {
-                signlink.reporterror(enteredUsername + " glcfb " + aLong1215 + "," + j + "," + isLowMemory + "," + jagexFileStores[0] + "," + aClass42_Sub1_1068.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
+                signlink.reporterror(enteredUsername + " glcfb " + aLong1215 + "," + j + "," + isLowMemory + "," + jagexFileStores[0] + "," + onDemandFetcher.method552() + "," + anInt918 + "," + anInt1069 + "," + anInt1070);
                 aLong824 = System.currentTimeMillis();
             }
         }
@@ -2702,13 +2700,13 @@ public class Client extends BrowserApplet
             Class30_Sub2_Sub3 class30_sub2_sub3;
             do
             {
-                class30_sub2_sub3 = aClass42_Sub1_1068.method561();
+                class30_sub2_sub3 = onDemandFetcher.method561();
                 if(class30_sub2_sub3 == null)
                     return;
                 if(class30_sub2_sub3.anInt1419 == 0)
                 {
-                    Class30_Sub2_Sub4_Sub6.method460(class30_sub2_sub3.aByteArray1420, -4036, class30_sub2_sub3.anInt1421);
-                    if((aClass42_Sub1_1068.method559(class30_sub2_sub3.anInt1421, -203) & 0x62) != 0)
+                    Model.method460(class30_sub2_sub3.aByteArray1420, -4036, class30_sub2_sub3.anInt1421);
+                    if((onDemandFetcher.method559(class30_sub2_sub3.anInt1421, -203) & 0x62) != 0)
                     {
                         aBoolean1153 = true;
                         if(anInt1276 != -1)
@@ -2716,7 +2714,7 @@ public class Client extends BrowserApplet
                     }
                 }
                 if(class30_sub2_sub3.anInt1419 == 1 && class30_sub2_sub3.aByteArray1420 != null)
-                    Class36.method529(class30_sub2_sub3.aByteArray1420, false);
+                    Animation.method529(class30_sub2_sub3.aByteArray1420, false);
                 if(class30_sub2_sub3.anInt1419 == 2 && class30_sub2_sub3.anInt1421 == anInt1227 && class30_sub2_sub3.aByteArray1420 != null)
                     method21(aBoolean1228, 0, class30_sub2_sub3.aByteArray1420);
                 if(class30_sub2_sub3.anInt1419 == 3 && anInt1023 == 1)
@@ -2739,8 +2737,8 @@ public class Client extends BrowserApplet
                     }
 
                 }
-            } while(class30_sub2_sub3.anInt1419 != 93 || !aClass42_Sub1_1068.method564(class30_sub2_sub3.anInt1421, -520));
-            Class7.method173((byte)-107, new Buffer(class30_sub2_sub3.aByteArray1420), aClass42_Sub1_1068);
+            } while(class30_sub2_sub3.anInt1419 != 93 || !onDemandFetcher.method564(class30_sub2_sub3.anInt1421, -520));
+            Class7.method173((byte)-107, new Buffer(class30_sub2_sub3.aByteArray1420), onDemandFetcher);
         } while(true);
     }
 
@@ -4339,9 +4337,9 @@ public class Client extends BrowserApplet
             anInt1133++;
         }
         int j = -1;
-        for(int k = 0; k < Class30_Sub2_Sub4_Sub6.anInt1687; k++)
+        for(int k = 0; k < Model.anInt1687; k++)
         {
-            int l = Class30_Sub2_Sub4_Sub6.anIntArray1688[k];
+            int l = Model.anIntArray1688[k];
             int i1 = l & 0x7f;
             int j1 = l >> 7 & 0x7f;
             int k1 = l >> 29 & 3;
@@ -4543,8 +4541,8 @@ public class Client extends BrowserApplet
         if(aClass48_879 != null)
             aClass48_879.aBoolean808 = false;
         aClass48_879 = null;
-        aClass42_Sub1_1068.method553();
-        aClass42_Sub1_1068 = null;
+        onDemandFetcher.method553();
+        onDemandFetcher = null;
         aBuffer_834 = null;
         buffer1 = null;
         buffer2 = null;
@@ -4658,8 +4656,8 @@ public class Client extends BrowserApplet
         Class30_Sub2_Sub4_Sub1_Sub2.aClass12_1704 = null;
         Class30_Sub2_Sub1_Sub3.method363(-501);
         Class25.method273(-501);
-        Class30_Sub2_Sub4_Sub6.method458(-501);
-        Class36.method530(-501);
+        Model.method458(-501);
+        Animation.method530(-501);
         System.gc();
     }
 
@@ -4667,8 +4665,8 @@ public class Client extends BrowserApplet
     {
         System.out.println("============");
         System.out.println("flame-cycle:" + anInt1208);
-        if(aClass42_Sub1_1068 != null)
-            System.out.println("Od-cycle:" + aClass42_Sub1_1068.anInt1341);
+        if(onDemandFetcher != null)
+            System.out.println("Od-cycle:" + onDemandFetcher.anInt1341);
         System.out.println("loop-cycle:" + anInt1161);
         System.out.println("draw-cycle:" + anInt1061);
         System.out.println("ptype:" + anInt1008);
@@ -4842,8 +4840,8 @@ public class Client extends BrowserApplet
                             method72((byte)1);
                         if(aString887.equals("::prefetchmusic"))
                         {
-                            for(int j1 = 0; j1 < aClass42_Sub1_1068.method555(79, 2); j1++)
-                                aClass42_Sub1_1068.method563((byte)1, 2, j1, (byte)8);
+                            for(int j1 = 0; j1 < onDemandFetcher.getFileCount(2); j1++)
+                                onDemandFetcher.method563((byte)1, 2, j1, (byte)8);
 
                         }
                         if(aString887.equals("::fpson"))
@@ -5220,7 +5218,7 @@ public class Client extends BrowserApplet
                 }
 
                 aBoolean1031 = false;
-                Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6[] = new Class30_Sub2_Sub4_Sub6[7];
+                Model aclass30_sub2_sub4_sub6[] = new Model[7];
                 int i2 = 0;
                 for(int j2 = 0; j2 < 7; j2++)
                 {
@@ -5229,21 +5227,21 @@ public class Client extends BrowserApplet
                         aclass30_sub2_sub4_sub6[i2++] = Class38.aClass38Array656[k2].method538(false);
                 }
 
-                Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = new Class30_Sub2_Sub4_Sub6(i2, aclass30_sub2_sub4_sub6, -38);
+                Model model = new Model(i2, aclass30_sub2_sub4_sub6, -38);
                 for(int l2 = 0; l2 < 5; l2++)
                     if(anIntArray990[l2] != 0)
                     {
-                        class30_sub2_sub4_sub6.method476(anIntArrayArray1003[l2][0], anIntArrayArray1003[l2][anIntArray990[l2]]);
+                        model.method476(anIntArrayArray1003[l2][0], anIntArrayArray1003[l2][anIntArray990[l2]]);
                         if(l2 == 1)
-                            class30_sub2_sub4_sub6.method476(anIntArray1204[0], anIntArray1204[anIntArray990[l2]]);
+                            model.method476(anIntArray1204[0], anIntArray1204[anIntArray990[l2]]);
                     }
 
-                class30_sub2_sub4_sub6.method469((byte)-71);
-                class30_sub2_sub4_sub6.method470(Class20.aClass20Array351[((Class30_Sub2_Sub4_Sub1) (aClass30_Sub2_Sub4_Sub1_Sub2_1126)).anInt1511].anIntArray353[0], 40542);
-                class30_sub2_sub4_sub6.method479(64, 850, -30, -50, -30, true);
+                model.method469((byte)-71);
+                model.method470(Class20.aClass20Array351[((Class30_Sub2_Sub4_Sub1) (aClass30_Sub2_Sub4_Sub1_Sub2_1126)).anInt1511].anIntArray353[0], 40542);
+                model.method479(64, 850, -30, -50, -30, true);
                 class9.anInt233 = 5;
                 class9.anInt234 = 0;
-                Class9.method208(0, aBoolean994, 5, class30_sub2_sub4_sub6);
+                Class9.method208(0, aBoolean994, 5, model);
             }
             return;
         }
@@ -5634,8 +5632,8 @@ public class Client extends BrowserApplet
         if(l > 4225 && l < 0x15f90)
         {
             int i1 = anInt1185 + anInt1209 & 0x7ff;
-            int j1 = Class30_Sub2_Sub4_Sub6.anIntArray1689[i1];
-            int k1 = Class30_Sub2_Sub4_Sub6.anIntArray1690[i1];
+            int j1 = Model.anIntArray1689[i1];
+            int k1 = Model.anIntArray1690[i1];
             j1 = (j1 * 256) / (anInt1170 + 256);
             k1 = (k1 * 256) / (anInt1170 + 256);
             int l1 = j * j1 + k * k1 >> 16;
@@ -6668,7 +6666,7 @@ public class Client extends BrowserApplet
             {
                 anInt1227 = anInt956;
                 aBoolean1228 = true;
-                aClass42_Sub1_1068.method558(2, anInt1227);
+                onDemandFetcher.method558(2, anInt1227);
             }
         }
     }
@@ -6752,10 +6750,10 @@ public class Client extends BrowserApplet
             aClass30_Sub2_Sub1_Sub1_1263 = new Class30_Sub2_Sub1_Sub1(512, 512);
             JagexArchive versionsArchive = getArchiveAtIndex(5);
             drawLoadingScreen(60, "Connecting to update server");
-            aClass42_Sub1_1068 = new Class42_Sub1();
-            aClass42_Sub1_1068.method551(versionsArchive, this);
-            Class36.method528(aClass42_Sub1_1068.method557(0));
-            Class30_Sub2_Sub4_Sub6.method459(aClass42_Sub1_1068.method555(79, 0), aClass42_Sub1_1068);
+            onDemandFetcher = new OnDemandFetcher();
+            onDemandFetcher.method551(versionsArchive, this);
+            Animation.method528(onDemandFetcher.getCount());
+            Model.method459(onDemandFetcher.getFileCount(0), onDemandFetcher);
             if (!isLowMemory) {
                 anInt1227 = 0;
                 try {
@@ -6763,27 +6761,27 @@ public class Client extends BrowserApplet
                 } catch (Exception _ex) {
                 }
                 aBoolean1228 = true;
-                aClass42_Sub1_1068.method558(2, anInt1227);
-                while (aClass42_Sub1_1068.method552() > 0) {
+                onDemandFetcher.method558(2, anInt1227);
+                while (onDemandFetcher.method552() > 0) {
                     method57(false);
                     try {
                         Thread.sleep(100L);
                     } catch (Exception _ex) {
                     }
-                    if (aClass42_Sub1_1068.anInt1349 > 3) {
-                        method28("ondemand");
+                    if (onDemandFetcher.anInt1349 > 3) {
+                        showError("ondemand");
                         return;
                     }
                 }
             }
             drawLoadingScreen(65, "Requesting animations");
-            int k = aClass42_Sub1_1068.method555(79, 1);
+            int k = onDemandFetcher.getFileCount(1);
             for(int i1 = 0; i1 < k; i1++)
-                aClass42_Sub1_1068.method558(1, i1);
+                onDemandFetcher.method558(1, i1);
 
-            while(aClass42_Sub1_1068.method552() > 0) 
+            while(onDemandFetcher.method552() > 0)
             {
-                int j1 = k - aClass42_Sub1_1068.method552();
+                int j1 = k - onDemandFetcher.method552();
                 if(j1 > 0)
                     drawLoadingScreen(65, "Loading animations - " + (j1 * 100) / k + "%");
                 method57(false);
@@ -6792,25 +6790,25 @@ public class Client extends BrowserApplet
                     Thread.sleep(100L);
                 }
                 catch(Exception _ex) { }
-                if(aClass42_Sub1_1068.anInt1349 > 3)
+                if(onDemandFetcher.anInt1349 > 3)
                 {
-                    method28("ondemand");
+                    showError("ondemand");
                     return;
                 }
             }
             drawLoadingScreen(70, "Requesting models");
-            k = aClass42_Sub1_1068.method555(79, 0);
+            k = onDemandFetcher.getFileCount(0);
             for(int k1 = 0; k1 < k; k1++)
             {
-                int l1 = aClass42_Sub1_1068.method559(k1, -203);
+                int l1 = onDemandFetcher.method559(k1, -203);
                 if((l1 & 1) != 0)
-                    aClass42_Sub1_1068.method558(0, k1);
+                    onDemandFetcher.method558(0, k1);
             }
 
-            k = aClass42_Sub1_1068.method552();
-            while(aClass42_Sub1_1068.method552() > 0) 
+            k = onDemandFetcher.method552();
+            while(onDemandFetcher.method552() > 0)
             {
-                int i2 = k - aClass42_Sub1_1068.method552();
+                int i2 = k - onDemandFetcher.method552();
                 if(i2 > 0)
                     drawLoadingScreen(70, "Loading models - " + (i2 * 100) / k + "%");
                 method57(false);
@@ -6823,22 +6821,22 @@ public class Client extends BrowserApplet
             if(jagexFileStores[0] != null)
             {
                 drawLoadingScreen(75, "Requesting maps");
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 47));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 48, 47));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 48));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 48, 48));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 48, 49));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 48, 49));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 47, 47));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 47, 47));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 47, 48));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 47, 48));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(0, 0, 148, 48));
-                aClass42_Sub1_1068.method558(3, aClass42_Sub1_1068.method562(1, 0, 148, 48));
-                k = aClass42_Sub1_1068.method552();
-                while(aClass42_Sub1_1068.method552() > 0) 
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 48, 47));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 48, 47));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 48, 48));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 48, 48));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 48, 49));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 48, 49));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 47, 47));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 47, 47));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 47, 48));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 47, 48));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(0, 0, 148, 48));
+                onDemandFetcher.method558(3, onDemandFetcher.method562(1, 0, 148, 48));
+                k = onDemandFetcher.method552();
+                while(onDemandFetcher.method552() > 0)
                 {
-                    int j2 = k - aClass42_Sub1_1068.method552();
+                    int j2 = k - onDemandFetcher.method552();
                     if(j2 > 0)
                         drawLoadingScreen(75, "Loading maps - " + (j2 * 100) / k + "%");
                     method57(false);
@@ -6849,10 +6847,10 @@ public class Client extends BrowserApplet
                     catch(Exception _ex) { }
                 }
             }
-            k = aClass42_Sub1_1068.method555(79, 0);
+            k = onDemandFetcher.getFileCount(0);
             for(int k2 = 0; k2 < k; k2++)
             {
-                int l2 = aClass42_Sub1_1068.method559(k2, -203);
+                int l2 = onDemandFetcher.method559(k2, -203);
                 byte byte0 = 0;
                 if((l2 & 8) != 0)
                     byte0 = 10;
@@ -6877,16 +6875,16 @@ public class Client extends BrowserApplet
                 if((l2 & 1) != 0)
                     byte0 = 3;
                 if(byte0 != 0)
-                    aClass42_Sub1_1068.method563(byte0, 0, k2, (byte)8);
+                    onDemandFetcher.method563(byte0, 0, k2, (byte)8);
             }
 
-            aClass42_Sub1_1068.method554(aBoolean959, 0);
+            onDemandFetcher.method554(aBoolean959, 0);
             if(!isLowMemory)
             {
-                int l = aClass42_Sub1_1068.method555(79, 2);
+                int l = onDemandFetcher.getFileCount(2);
                 for(int i3 = 1; i3 < l; i3++)
-                    if(aClass42_Sub1_1068.method569(i3, 5))
-                        aClass42_Sub1_1068.method563((byte)1, 2, i3, (byte)8);
+                    if(onDemandFetcher.method569(i3, 5))
+                        onDemandFetcher.method563((byte)1, 2, i3, (byte)8);
 
             }
             drawLoadingScreen(80, "Unpacking media");
@@ -8155,17 +8153,17 @@ public class Client extends BrowserApplet
                         i7 = class9_1.anInt258;
                     else
                         i7 = class9_1.anInt257;
-                    Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6;
+                    Model model;
                     if(i7 == -1)
                     {
-                        class30_sub2_sub4_sub6 = class9_1.method209(0, -1, -1, flag2);
+                        model = class9_1.method209(0, -1, -1, flag2);
                     } else
                     {
                         Class20 class20 = Class20.aClass20Array351[i7];
-                        class30_sub2_sub4_sub6 = class9_1.method209(0, class20.anIntArray354[class9_1.anInt246], class20.anIntArray353[class9_1.anInt246], flag2);
+                        model = class9_1.method209(0, class20.anIntArray354[class9_1.anInt246], class20.anIntArray353[class9_1.anInt246], flag2);
                     }
-                    if(class30_sub2_sub4_sub6 != null)
-                        class30_sub2_sub4_sub6.method482(0, class9_1.anInt271, 0, class9_1.anInt270, 0, i5, l5);
+                    if(model != null)
+                        model.method482(0, class9_1.anInt271, 0, class9_1.anInt270, 0, i5, l5);
                     Class30_Sub2_Sub1_Sub3.anInt1466 = k3;
                     Class30_Sub2_Sub1_Sub3.anInt1467 = j4;
                 } else
@@ -9377,10 +9375,10 @@ public class Client extends BrowserApplet
         i -= anInt858;
         i1 -= anInt859;
         l -= anInt860;
-        int j1 = Class30_Sub2_Sub4_Sub6.anIntArray1689[anInt861];
-        int k1 = Class30_Sub2_Sub4_Sub6.anIntArray1690[anInt861];
-        int l1 = Class30_Sub2_Sub4_Sub6.anIntArray1689[anInt862];
-        int i2 = Class30_Sub2_Sub4_Sub6.anIntArray1690[anInt862];
+        int j1 = Model.anIntArray1689[anInt861];
+        int k1 = Model.anIntArray1690[anInt861];
+        int l1 = Model.anIntArray1689[anInt862];
+        int i2 = Model.anIntArray1690[anInt862];
         int j2 = l * l1 + i * i2 >> 16;
         l = l * i2 - i * l1 >> 16;
         i = j2;
@@ -9722,7 +9720,7 @@ public class Client extends BrowserApplet
         if(loginPage == 0)
         {
             int i = c1 / 2 + 80;
-            aJagexFont_1270.method382(0x75a9a9, c / 2, anInt939, aClass42_Sub1_1068.aString1333, i, true);
+            aJagexFont_1270.method382(0x75a9a9, c / 2, anInt939, onDemandFetcher.aString1333, i, true);
             i = c1 / 2 - 20;
             aJagexFont_1272.method382(0xffff00, c / 2, anInt939, "Welcome to RuneScape", i, true);
             i += 30;
@@ -10023,13 +10021,13 @@ public class Client extends BrowserApplet
                 int j22 = anIntArrayArrayArray1214[anInt918][k4 + 1][j7];
                 int k22 = anIntArrayArrayArray1214[anInt918][k4 + 1][j7 + 1];
                 int l22 = anIntArrayArrayArray1214[anInt918][k4][j7 + 1];
-                Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = class46.method578(j19, i20, i22, j22, k22, l22, -1);
-                if(class30_sub2_sub4_sub6 != null)
+                Model model = class46.method578(j19, i20, i22, j22, k22, l22, -1);
+                if(model != null)
                 {
                     method130(404, k17 + 1, -1, 0, l20, j7, 0, anInt918, k4, l14 + 1);
                     class30_sub2_sub4_sub1_sub2.anInt1707 = l14 + anInt1161;
                     class30_sub2_sub4_sub1_sub2.anInt1708 = k17 + anInt1161;
-                    class30_sub2_sub4_sub1_sub2.aClass30_Sub2_Sub4_Sub6_1714 = class30_sub2_sub4_sub6;
+                    class30_sub2_sub4_sub1_sub2.aModel_1714 = model;
                     int i23 = class46.anInt744;
                     int j23 = class46.anInt761;
                     if(i20 == 1 || i20 == 3)
@@ -10357,8 +10355,8 @@ public class Client extends BrowserApplet
             return;
         if(l > 6400)
             return;
-        int i1 = Class30_Sub2_Sub4_Sub6.anIntArray1689[k];
-        int j1 = Class30_Sub2_Sub4_Sub6.anIntArray1690[k];
+        int i1 = Model.anIntArray1689[k];
+        int j1 = Model.anIntArray1690[k];
         i1 = (i1 * 256) / (anInt1170 + 256);
         j1 = (j1 * 256) / (anInt1170 + 256);
         int k1 = j * i1 + i * j1 >> 16;
@@ -10479,16 +10477,16 @@ public class Client extends BrowserApplet
             method6();
         if(l1 != 0)
         {
-            int i3 = Class30_Sub2_Sub4_Sub6.anIntArray1689[l1];
-            int k3 = Class30_Sub2_Sub4_Sub6.anIntArray1690[l1];
+            int i3 = Model.anIntArray1689[l1];
+            int k3 = Model.anIntArray1690[l1];
             int i4 = k2 * k3 - l2 * i3 >> 16;
             l2 = k2 * i3 + l2 * k3 >> 16;
             k2 = i4;
         }
         if(i2 != 0)
         {
-            int j3 = Class30_Sub2_Sub4_Sub6.anIntArray1689[i2];
-            int l3 = Class30_Sub2_Sub4_Sub6.anIntArray1690[i2];
+            int j3 = Model.anIntArray1689[i2];
+            int l3 = Model.anIntArray1690[i2];
             int j4 = l2 * j3 + j2 * l3 >> 16;
             l2 = l2 * l3 - j2 * j3 >> 16;
             j2 = j4;
@@ -10702,7 +10700,7 @@ public class Client extends BrowserApplet
                 {
                     anInt1227 = i2;
                     aBoolean1228 = true;
-                    aClass42_Sub1_1068.method558(2, anInt1227);
+                    onDemandFetcher.method558(2, anInt1227);
                 }
                 anInt956 = i2;
                 anInt1008 = -1;
@@ -10716,7 +10714,7 @@ public class Client extends BrowserApplet
                 {
                     anInt1227 = j2;
                     aBoolean1228 = false;
-                    aClass42_Sub1_1068.method558(2, anInt1227);
+                    onDemandFetcher.method558(2, anInt1227);
                     anInt1259 = k10;
                 }
                 anInt1008 = -1;
@@ -10822,12 +10820,12 @@ public class Client extends BrowserApplet
                                 k16++;
                             } else
                             {
-                                int k28 = anIntArray1235[k16] = aClass42_Sub1_1068.method562(0, 0, j26, l23);
+                                int k28 = anIntArray1235[k16] = onDemandFetcher.method562(0, 0, j26, l23);
                                 if(k28 != -1)
-                                    aClass42_Sub1_1068.method558(3, k28);
-                                int j30 = anIntArray1236[k16] = aClass42_Sub1_1068.method562(1, 0, j26, l23);
+                                    onDemandFetcher.method558(3, k28);
+                                int j30 = anIntArray1236[k16] = onDemandFetcher.method562(1, 0, j26, l23);
                                 if(j30 != -1)
-                                    aClass42_Sub1_1068.method558(3, j30);
+                                    onDemandFetcher.method558(3, j30);
                                 k16++;
                             }
                         }
@@ -10878,12 +10876,12 @@ public class Client extends BrowserApplet
                         int i29 = anIntArray1234[l26] = ai[l26];
                         int l30 = i29 >> 8 & 0xff;
                         int l31 = i29 & 0xff;
-                        int j32 = anIntArray1235[l26] = aClass42_Sub1_1068.method562(0, 0, l31, l30);
+                        int j32 = anIntArray1235[l26] = onDemandFetcher.method562(0, 0, l31, l30);
                         if(j32 != -1)
-                            aClass42_Sub1_1068.method558(3, j32);
-                        int i33 = anIntArray1236[l26] = aClass42_Sub1_1068.method562(1, 0, l31, l30);
+                            onDemandFetcher.method558(3, j32);
+                        int i33 = anIntArray1236[l26] = onDemandFetcher.method562(1, 0, l31, l30);
                         if(i33 != -1)
-                            aClass42_Sub1_1068.method558(3, i33);
+                            onDemandFetcher.method558(3, i33);
                     }
 
                 }
@@ -11796,15 +11794,15 @@ public class Client extends BrowserApplet
             }
 
         int k2 = Class30_Sub2_Sub1_Sub3.anInt1481;
-        Class30_Sub2_Sub4_Sub6.aBoolean1684 = true;
+        Model.aBoolean1684 = true;
         if(byte0 != 1)
         {
             return;
         } else
         {
-            Class30_Sub2_Sub4_Sub6.anInt1687 = 0;
-            Class30_Sub2_Sub4_Sub6.anInt1685 = super.anInt20 - 4;
-            Class30_Sub2_Sub4_Sub6.anInt1686 = super.anInt21 - 4;
+            Model.anInt1687 = 0;
+            Model.anInt1685 = super.anInt20 - 4;
+            Model.anInt1686 = super.anInt21 - 4;
             Class30_Sub2_Sub1.method334(aBoolean1206);
             aClass25_946.method313(anInt858, anInt860, anInt862, anInt859, j, anInt861, false);
             aClass25_946.method288((byte)104);
@@ -12289,7 +12287,7 @@ public class Client extends BrowserApplet
     public int anIntArray1065[];
     public int anInt1066;
     public int anInt1067;
-    public Class42_Sub1 aClass42_Sub1_1068;
+    public OnDemandFetcher onDemandFetcher;
     public int anInt1069;
     public int anInt1070;
     public int anInt1071;

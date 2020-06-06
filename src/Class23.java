@@ -66,20 +66,20 @@ public class Class23
         } while(true);
     }
 
-    public Class30_Sub2_Sub4_Sub6 method266()
+    public Model method266()
     {
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = (Class30_Sub2_Sub4_Sub6)aClass12_415.method222(anInt404);
-        if(class30_sub2_sub4_sub6 != null)
-            return class30_sub2_sub4_sub6;
-        class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt400, anInt405);
-        if(class30_sub2_sub4_sub6 == null)
+        Model model = (Model)aClass12_415.method222(anInt404);
+        if(model != null)
+            return model;
+        model = Model.method462(anInt400, anInt405);
+        if(model == null)
             return null;
         for(int i = 0; i < 6; i++)
             if(anIntArray408[0] != 0)
-                class30_sub2_sub4_sub6.method476(anIntArray408[i], anIntArray409[i]);
+                model.method476(anIntArray408[i], anIntArray409[i]);
 
-        aClass12_415.method223(class30_sub2_sub4_sub6, anInt404, (byte)2);
-        return class30_sub2_sub4_sub6;
+        aClass12_415.method223(model, anInt404, (byte)2);
+        return model;
     }
 
     public Class23()

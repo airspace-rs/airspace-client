@@ -2,12 +2,10 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub4_Sub2 extends Class30_Sub2_Sub4
 {
 
-    public Class30_Sub2_Sub4_Sub6 method444(int i)
+    public Model method444(int i)
     {
         Class8 class8 = Class8.method198(anInt1558);
         if(i != 4016)

@@ -30,9 +30,9 @@ public class Class8
         if(k == -1)
             return true;
         boolean flag = true;
-        if(!Class30_Sub2_Sub4_Sub6.method463(k))
+        if(!Model.method463(k))
             flag = false;
-        if(l != -1 && !Class30_Sub2_Sub4_Sub6.method463(l))
+        if(l != -1 && !Model.method463(l))
             flag = false;
         return flag;
     }
@@ -56,7 +56,7 @@ public class Class8
 
     }
 
-    public Class30_Sub2_Sub4_Sub6 method194(int i, int j)
+    public Model method194(int i, int j)
     {
         while(i >= 0) 
             aBoolean186 = !aBoolean186;
@@ -69,22 +69,22 @@ public class Class8
         }
         if(k == -1)
             return null;
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt171, k);
+        Model model = Model.method462(anInt171, k);
         if(l != -1)
         {
-            Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = Class30_Sub2_Sub4_Sub6.method462(anInt171, l);
-            Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6[] = {
-                class30_sub2_sub4_sub6, class30_sub2_sub4_sub6_1
+            Model model_1 = Model.method462(anInt171, l);
+            Model aclass30_sub2_sub4_sub6[] = {
+                    model, model_1
             };
-            class30_sub2_sub4_sub6 = new Class30_Sub2_Sub4_Sub6(2, aclass30_sub2_sub4_sub6, -38);
+            model = new Model(2, aclass30_sub2_sub4_sub6, -38);
         }
         if(anIntArray156 != null)
         {
             for(int i1 = 0; i1 < anIntArray156.length; i1++)
-                class30_sub2_sub4_sub6.method476(anIntArray156[i1], anIntArray160[i1]);
+                model.method476(anIntArray156[i1], anIntArray160[i1]);
 
         }
-        return class30_sub2_sub4_sub6;
+        return model;
     }
 
     public boolean method195(int i, int j)
@@ -103,16 +103,16 @@ public class Class8
         if(k == -1)
             return true;
         boolean flag = true;
-        if(!Class30_Sub2_Sub4_Sub6.method463(k))
+        if(!Model.method463(k))
             flag = false;
-        if(l != -1 && !Class30_Sub2_Sub4_Sub6.method463(l))
+        if(l != -1 && !Model.method463(l))
             flag = false;
-        if(i1 != -1 && !Class30_Sub2_Sub4_Sub6.method463(i1))
+        if(i1 != -1 && !Model.method463(i1))
             flag = false;
         return flag;
     }
 
-    public Class30_Sub2_Sub4_Sub6 method196(boolean flag, int i)
+    public Model method196(boolean flag, int i)
     {
         if(flag)
             throw new NullPointerException();
@@ -127,35 +127,35 @@ public class Class8
         }
         if(j == -1)
             return null;
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt171, j);
+        Model model = Model.method462(anInt171, j);
         if(k != -1)
             if(l != -1)
             {
-                Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_1 = Class30_Sub2_Sub4_Sub6.method462(anInt171, k);
-                Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_3 = Class30_Sub2_Sub4_Sub6.method462(anInt171, l);
-                Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6_1[] = {
-                    class30_sub2_sub4_sub6, class30_sub2_sub4_sub6_1, class30_sub2_sub4_sub6_3
+                Model model_1 = Model.method462(anInt171, k);
+                Model model_3 = Model.method462(anInt171, l);
+                Model aclass30_sub2_sub4_sub6_1[] = {
+                        model, model_1, model_3
                 };
-                class30_sub2_sub4_sub6 = new Class30_Sub2_Sub4_Sub6(3, aclass30_sub2_sub4_sub6_1, -38);
+                model = new Model(3, aclass30_sub2_sub4_sub6_1, -38);
             } else
             {
-                Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6_2 = Class30_Sub2_Sub4_Sub6.method462(anInt171, k);
-                Class30_Sub2_Sub4_Sub6 aclass30_sub2_sub4_sub6[] = {
-                    class30_sub2_sub4_sub6, class30_sub2_sub4_sub6_2
+                Model class30_sub2_sub4_sub6_2 = Model.method462(anInt171, k);
+                Model aclass30_sub2_sub4_sub6[] = {
+                        model, class30_sub2_sub4_sub6_2
                 };
-                class30_sub2_sub4_sub6 = new Class30_Sub2_Sub4_Sub6(2, aclass30_sub2_sub4_sub6, -38);
+                model = new Model(2, aclass30_sub2_sub4_sub6, -38);
             }
         if(i == 0 && aByte205 != 0)
-            class30_sub2_sub4_sub6.method475(0, aByte205, 16384, 0);
+            model.method475(0, aByte205, 16384, 0);
         if(i == 1 && aByte154 != 0)
-            class30_sub2_sub4_sub6.method475(0, aByte154, 16384, 0);
+            model.method475(0, aByte154, 16384, 0);
         if(anIntArray156 != null)
         {
             for(int i1 = 0; i1 < anIntArray156.length; i1++)
-                class30_sub2_sub4_sub6.method476(anIntArray156[i1], anIntArray160[i1]);
+                model.method476(anIntArray156[i1], anIntArray160[i1]);
 
         }
-        return class30_sub2_sub4_sub6;
+        return model;
     }
 
     public void method197()
@@ -278,8 +278,8 @@ public class Class8
             if(i1 != -1)
                 class8 = method198(i1);
         }
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = class8.method201(1);
-        if(class30_sub2_sub4_sub6 == null)
+        Model model = class8.method201(1);
+        if(model == null)
             return null;
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1_2 = null;
         if(class8.anInt163 != -1)
@@ -310,7 +310,7 @@ public class Class8
             k3 = (int)((double)k3 * 1.04D);
         int l3 = Class30_Sub2_Sub1_Sub3.anIntArray1470[class8.anInt190] * k3 >> 16;
         int i4 = Class30_Sub2_Sub1_Sub3.anIntArray1471[class8.anInt190] * k3 >> 16;
-        class30_sub2_sub4_sub6.method482(0, class8.anInt198, class8.anInt204, class8.anInt190, class8.anInt169, l3 + ((Class30_Sub2_Sub4) (class30_sub2_sub4_sub6)).anInt1426 / 2 + class8.anInt194, i4 + class8.anInt194);
+        model.method482(0, class8.anInt198, class8.anInt204, class8.anInt190, class8.anInt169, l3 + ((Class30_Sub2_Sub4) (model)).anInt1426 / 2 + class8.anInt194, i4 + class8.anInt194);
         for(int i5 = 31; i5 >= 0; i5--)
         {
             for(int j4 = 31; j4 >= 0; j4--)
@@ -391,7 +391,7 @@ public class Class8
         return class30_sub2_sub1_sub1_1;
     }
 
-    public Class30_Sub2_Sub4_Sub6 method201(int i)
+    public Model method201(int i)
     {
         if(anIntArray193 != null && i > 1)
         {
@@ -403,27 +403,27 @@ public class Class8
             if(j != -1)
                 return method198(j).method201(1);
         }
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = (Class30_Sub2_Sub4_Sub6)aClass12_159.method222(anInt157);
-        if(class30_sub2_sub4_sub6 != null)
-            return class30_sub2_sub4_sub6;
-        class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt171, anInt174);
-        if(class30_sub2_sub4_sub6 == null)
+        Model model = (Model)aClass12_159.method222(anInt157);
+        if(model != null)
+            return model;
+        model = Model.method462(anInt171, anInt174);
+        if(model == null)
             return null;
         if(anInt167 != 128 || anInt192 != 128 || anInt191 != 128)
-            class30_sub2_sub4_sub6.method478(anInt167, anInt191, anInt177, anInt192);
+            model.method478(anInt167, anInt191, anInt177, anInt192);
         if(anIntArray156 != null)
         {
             for(int l = 0; l < anIntArray156.length; l++)
-                class30_sub2_sub4_sub6.method476(anIntArray156[l], anIntArray160[l]);
+                model.method476(anIntArray156[l], anIntArray160[l]);
 
         }
-        class30_sub2_sub4_sub6.method479(64 + anInt196, 768 + anInt184, -50, -10, -50, true);
-        class30_sub2_sub4_sub6.aBoolean1659 = true;
-        aClass12_159.method223(class30_sub2_sub4_sub6, anInt157, (byte)2);
-        return class30_sub2_sub4_sub6;
+        model.method479(64 + anInt196, 768 + anInt184, -50, -10, -50, true);
+        model.aBoolean1659 = true;
+        aClass12_159.method223(model, anInt157, (byte)2);
+        return model;
     }
 
-    public Class30_Sub2_Sub4_Sub6 method202(int i, boolean flag)
+    public Model method202(int i, boolean flag)
     {
         if(anIntArray193 != null && i > 1)
         {
@@ -435,18 +435,18 @@ public class Class8
             if(j != -1)
                 return method198(j).method202(1, true);
         }
-        Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6 = Class30_Sub2_Sub4_Sub6.method462(anInt171, anInt174);
+        Model model = Model.method462(anInt171, anInt174);
         if(!flag)
             throw new NullPointerException();
-        if(class30_sub2_sub4_sub6 == null)
+        if(model == null)
             return null;
         if(anIntArray156 != null)
         {
             for(int l = 0; l < anIntArray156.length; l++)
-                class30_sub2_sub4_sub6.method476(anIntArray156[l], anIntArray160[l]);
+                model.method476(anIntArray156[l], anIntArray160[l]);
 
         }
-        return class30_sub2_sub4_sub6;
+        return model;
     }
 
     public void method203(boolean flag, Buffer buffer)

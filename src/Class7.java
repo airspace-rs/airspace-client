@@ -587,7 +587,7 @@ public class Class7
   }
   
   public static void method173 (byte i, Buffer buffer,
-				Class42_Sub1 class42_sub1)
+				OnDemandFetcher onDemandFetcher)
   {
     int i_110_ = -1;
     if (i != -107)
@@ -599,7 +599,7 @@ public class Class7
 	  break;
 	i_110_ += i_111_;
 	Class46 class46 = Class46.method572 (i_110_);
-	class46.method574 (class42_sub1, -235);
+	class46.method574 (onDemandFetcher, -235);
 	for (;;)
 	  {
 	    int i_112_ = buffer.method422 ();
@@ -721,16 +721,16 @@ public class Class7
 					   i_131_, (byte) 110, i, i_121_)
 			&& class46.aBoolean779)
 		      {
-			Class30_Sub2_Sub4_Sub6 class30_sub2_sub4_sub6;
+			Model model;
 			if (class30_sub2_sub4
-			    instanceof Class30_Sub2_Sub4_Sub6)
-			  class30_sub2_sub4_sub6
-			    = (Class30_Sub2_Sub4_Sub6) class30_sub2_sub4;
+			    instanceof Model)
+			  model
+			    = (Model) class30_sub2_sub4;
 			else
-			  class30_sub2_sub4_sub6
+			  model
 			    = class46.method578 (10, i_123_, i_124_, i_125_,
 						 i_126_, i_127_, -1);
-			if (class30_sub2_sub4_sub6 != null)
+			if (model != null)
 			  {
 			    for (int i_134_ = 0; i_134_ <= i_132_; i_134_++)
 			      {
@@ -738,7 +738,7 @@ public class Class7
 				     i_135_++)
 				  {
 				    int i_136_
-				      = class30_sub2_sub4_sub6.anInt1650 / 4;
+				      = model.anInt1650 / 4;
 				    if (i_136_ > 30)
 				      i_136_ = 30;
 				    if (i_136_
