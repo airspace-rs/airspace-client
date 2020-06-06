@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class9
 {
 
@@ -24,100 +22,100 @@ public class Class9
     public static void method205(Class44 class44, Class30_Sub2_Sub1_Sub4 aclass30_sub2_sub1_sub4[], byte byte0, Class44 class44_1)
     {
         aClass12_238 = new Class12(false, 50000);
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("data", null), 891);
+        Buffer buffer = new Buffer(class44.method571("data", null), 891);
         int i = -1;
-        int j = class30_sub2_sub2.method410();
+        int j = buffer.method410();
         aClass9Array210 = new Class9[j];
-        while(class30_sub2_sub2.anInt1406 < class30_sub2_sub2.aByteArray1405.length) 
+        while(buffer.pointer < buffer.data.length)
         {
-            int k = class30_sub2_sub2.method410();
+            int k = buffer.method410();
             if(k == 65535)
             {
-                i = class30_sub2_sub2.method410();
-                k = class30_sub2_sub2.method410();
+                i = buffer.method410();
+                k = buffer.method410();
             }
             Class9 class9 = aClass9Array210[k] = new Class9();
             class9.anInt250 = k;
             class9.anInt236 = i;
-            class9.anInt262 = class30_sub2_sub2.method408();
-            class9.anInt217 = class30_sub2_sub2.method408();
-            class9.anInt214 = class30_sub2_sub2.method410();
-            class9.anInt220 = class30_sub2_sub2.method410();
-            class9.anInt267 = class30_sub2_sub2.method410();
-            class9.aByte254 = (byte)class30_sub2_sub2.method408();
-            class9.anInt230 = class30_sub2_sub2.method408();
+            class9.anInt262 = buffer.method408();
+            class9.anInt217 = buffer.method408();
+            class9.anInt214 = buffer.method410();
+            class9.anInt220 = buffer.method410();
+            class9.anInt267 = buffer.method410();
+            class9.aByte254 = (byte) buffer.method408();
+            class9.anInt230 = buffer.method408();
             if(class9.anInt230 != 0)
-                class9.anInt230 = (class9.anInt230 - 1 << 8) + class30_sub2_sub2.method408();
+                class9.anInt230 = (class9.anInt230 - 1 << 8) + buffer.method408();
             else
                 class9.anInt230 = -1;
-            int i1 = class30_sub2_sub2.method408();
+            int i1 = buffer.method408();
             if(i1 > 0)
             {
                 class9.anIntArray245 = new int[i1];
                 class9.anIntArray212 = new int[i1];
                 for(int j1 = 0; j1 < i1; j1++)
                 {
-                    class9.anIntArray245[j1] = class30_sub2_sub2.method408();
-                    class9.anIntArray212[j1] = class30_sub2_sub2.method410();
+                    class9.anIntArray245[j1] = buffer.method408();
+                    class9.anIntArray212[j1] = buffer.method410();
                 }
 
             }
-            int k1 = class30_sub2_sub2.method408();
+            int k1 = buffer.method408();
             if(k1 > 0)
             {
                 class9.anIntArrayArray226 = new int[k1][];
                 for(int l1 = 0; l1 < k1; l1++)
                 {
-                    int i3 = class30_sub2_sub2.method410();
+                    int i3 = buffer.method410();
                     class9.anIntArrayArray226[l1] = new int[i3];
                     for(int l4 = 0; l4 < i3; l4++)
-                        class9.anIntArrayArray226[l1][l4] = class30_sub2_sub2.method410();
+                        class9.anIntArrayArray226[l1][l4] = buffer.method410();
 
                 }
 
             }
             if(class9.anInt262 == 0)
             {
-                class9.anInt261 = class30_sub2_sub2.method410();
-                class9.aBoolean266 = class30_sub2_sub2.method408() == 1;
-                int i2 = class30_sub2_sub2.method410();
+                class9.anInt261 = buffer.method410();
+                class9.aBoolean266 = buffer.method408() == 1;
+                int i2 = buffer.method410();
                 class9.anIntArray240 = new int[i2];
                 class9.anIntArray241 = new int[i2];
                 class9.anIntArray272 = new int[i2];
                 for(int j3 = 0; j3 < i2; j3++)
                 {
-                    class9.anIntArray240[j3] = class30_sub2_sub2.method410();
-                    class9.anIntArray241[j3] = class30_sub2_sub2.method411();
-                    class9.anIntArray272[j3] = class30_sub2_sub2.method411();
+                    class9.anIntArray240[j3] = buffer.method410();
+                    class9.anIntArray241[j3] = buffer.method411();
+                    class9.anIntArray272[j3] = buffer.method411();
                 }
 
             }
             if(class9.anInt262 == 1)
             {
-                class9.anInt211 = class30_sub2_sub2.method410();
-                class9.aBoolean251 = class30_sub2_sub2.method408() == 1;
+                class9.anInt211 = buffer.method410();
+                class9.aBoolean251 = buffer.method408() == 1;
             }
             if(class9.anInt262 == 2)
             {
                 class9.anIntArray253 = new int[class9.anInt220 * class9.anInt267];
                 class9.anIntArray252 = new int[class9.anInt220 * class9.anInt267];
-                class9.aBoolean259 = class30_sub2_sub2.method408() == 1;
-                class9.aBoolean249 = class30_sub2_sub2.method408() == 1;
-                class9.aBoolean242 = class30_sub2_sub2.method408() == 1;
-                class9.aBoolean235 = class30_sub2_sub2.method408() == 1;
-                class9.anInt231 = class30_sub2_sub2.method408();
-                class9.anInt244 = class30_sub2_sub2.method408();
+                class9.aBoolean259 = buffer.method408() == 1;
+                class9.aBoolean249 = buffer.method408() == 1;
+                class9.aBoolean242 = buffer.method408() == 1;
+                class9.aBoolean235 = buffer.method408() == 1;
+                class9.anInt231 = buffer.method408();
+                class9.anInt244 = buffer.method408();
                 class9.anIntArray215 = new int[20];
                 class9.anIntArray247 = new int[20];
                 class9.aClass30_Sub2_Sub1_Sub1Array209 = new Class30_Sub2_Sub1_Sub1[20];
                 for(int j2 = 0; j2 < 20; j2++)
                 {
-                    int k3 = class30_sub2_sub2.method408();
+                    int k3 = buffer.method408();
                     if(k3 == 1)
                     {
-                        class9.anIntArray215[j2] = class30_sub2_sub2.method411();
-                        class9.anIntArray247[j2] = class30_sub2_sub2.method411();
-                        String s1 = class30_sub2_sub2.method415();
+                        class9.anIntArray215[j2] = buffer.method411();
+                        class9.anIntArray247[j2] = buffer.method411();
+                        String s1 = buffer.method415();
                         if(class44_1 != null && s1.length() > 0)
                         {
                             int i5 = s1.lastIndexOf(",");
@@ -129,44 +127,44 @@ public class Class9
                 class9.aStringArray225 = new String[5];
                 for(int l3 = 0; l3 < 5; l3++)
                 {
-                    class9.aStringArray225[l3] = class30_sub2_sub2.method415();
+                    class9.aStringArray225[l3] = buffer.method415();
                     if(class9.aStringArray225[l3].length() == 0)
                         class9.aStringArray225[l3] = null;
                 }
 
             }
             if(class9.anInt262 == 3)
-                class9.aBoolean227 = class30_sub2_sub2.method408() == 1;
+                class9.aBoolean227 = buffer.method408() == 1;
             if(class9.anInt262 == 4 || class9.anInt262 == 1)
             {
-                class9.aBoolean223 = class30_sub2_sub2.method408() == 1;
-                int k2 = class30_sub2_sub2.method408();
+                class9.aBoolean223 = buffer.method408() == 1;
+                int k2 = buffer.method408();
                 if(aclass30_sub2_sub1_sub4 != null)
                     class9.aClass30_Sub2_Sub1_Sub4_243 = aclass30_sub2_sub1_sub4[k2];
-                class9.aBoolean268 = class30_sub2_sub2.method408() == 1;
+                class9.aBoolean268 = buffer.method408() == 1;
             }
             if(class9.anInt262 == 4)
             {
-                class9.aString248 = class30_sub2_sub2.method415();
-                class9.aString228 = class30_sub2_sub2.method415();
+                class9.aString248 = buffer.method415();
+                class9.aString228 = buffer.method415();
             }
             if(class9.anInt262 == 1 || class9.anInt262 == 3 || class9.anInt262 == 4)
-                class9.anInt232 = class30_sub2_sub2.method413();
+                class9.anInt232 = buffer.method413();
             if(class9.anInt262 == 3 || class9.anInt262 == 4)
             {
-                class9.anInt219 = class30_sub2_sub2.method413();
-                class9.anInt216 = class30_sub2_sub2.method413();
-                class9.anInt239 = class30_sub2_sub2.method413();
+                class9.anInt219 = buffer.method413();
+                class9.anInt216 = buffer.method413();
+                class9.anInt239 = buffer.method413();
             }
             if(class9.anInt262 == 5)
             {
-                String s = class30_sub2_sub2.method415();
+                String s = buffer.method415();
                 if(class44_1 != null && s.length() > 0)
                 {
                     int i4 = s.lastIndexOf(",");
                     class9.aClass30_Sub2_Sub1_Sub1_207 = method207(Integer.parseInt(s.substring(i4 + 1)), false, class44_1, s.substring(0, i4));
                 }
-                s = class30_sub2_sub2.method415();
+                s = buffer.method415();
                 if(class44_1 != null && s.length() > 0)
                 {
                     int j4 = s.lastIndexOf(",");
@@ -175,49 +173,49 @@ public class Class9
             }
             if(class9.anInt262 == 6)
             {
-                int l = class30_sub2_sub2.method408();
+                int l = buffer.method408();
                 if(l != 0)
                 {
                     class9.anInt233 = 1;
-                    class9.anInt234 = (l - 1 << 8) + class30_sub2_sub2.method408();
+                    class9.anInt234 = (l - 1 << 8) + buffer.method408();
                 }
-                l = class30_sub2_sub2.method408();
+                l = buffer.method408();
                 if(l != 0)
                 {
                     class9.anInt255 = 1;
-                    class9.anInt256 = (l - 1 << 8) + class30_sub2_sub2.method408();
+                    class9.anInt256 = (l - 1 << 8) + buffer.method408();
                 }
-                l = class30_sub2_sub2.method408();
+                l = buffer.method408();
                 if(l != 0)
-                    class9.anInt257 = (l - 1 << 8) + class30_sub2_sub2.method408();
+                    class9.anInt257 = (l - 1 << 8) + buffer.method408();
                 else
                     class9.anInt257 = -1;
-                l = class30_sub2_sub2.method408();
+                l = buffer.method408();
                 if(l != 0)
-                    class9.anInt258 = (l - 1 << 8) + class30_sub2_sub2.method408();
+                    class9.anInt258 = (l - 1 << 8) + buffer.method408();
                 else
                     class9.anInt258 = -1;
-                class9.anInt269 = class30_sub2_sub2.method410();
-                class9.anInt270 = class30_sub2_sub2.method410();
-                class9.anInt271 = class30_sub2_sub2.method410();
+                class9.anInt269 = buffer.method410();
+                class9.anInt270 = buffer.method410();
+                class9.anInt271 = buffer.method410();
             }
             if(class9.anInt262 == 7)
             {
                 class9.anIntArray253 = new int[class9.anInt220 * class9.anInt267];
                 class9.anIntArray252 = new int[class9.anInt220 * class9.anInt267];
-                class9.aBoolean223 = class30_sub2_sub2.method408() == 1;
-                int l2 = class30_sub2_sub2.method408();
+                class9.aBoolean223 = buffer.method408() == 1;
+                int l2 = buffer.method408();
                 if(aclass30_sub2_sub1_sub4 != null)
                     class9.aClass30_Sub2_Sub1_Sub4_243 = aclass30_sub2_sub1_sub4[l2];
-                class9.aBoolean268 = class30_sub2_sub2.method408() == 1;
-                class9.anInt232 = class30_sub2_sub2.method413();
-                class9.anInt231 = class30_sub2_sub2.method411();
-                class9.anInt244 = class30_sub2_sub2.method411();
-                class9.aBoolean249 = class30_sub2_sub2.method408() == 1;
+                class9.aBoolean268 = buffer.method408() == 1;
+                class9.anInt232 = buffer.method413();
+                class9.anInt231 = buffer.method411();
+                class9.anInt244 = buffer.method411();
+                class9.aBoolean249 = buffer.method408() == 1;
                 class9.aStringArray225 = new String[5];
                 for(int k4 = 0; k4 < 5; k4++)
                 {
-                    class9.aStringArray225[k4] = class30_sub2_sub2.method415();
+                    class9.aStringArray225[k4] = buffer.method415();
                     if(class9.aStringArray225[k4].length() == 0)
                         class9.aStringArray225[k4] = null;
                 }
@@ -225,13 +223,13 @@ public class Class9
             }
             if(class9.anInt217 == 2 || class9.anInt262 == 2)
             {
-                class9.aString222 = class30_sub2_sub2.method415();
-                class9.aString218 = class30_sub2_sub2.method415();
-                class9.anInt237 = class30_sub2_sub2.method410();
+                class9.aString222 = buffer.method415();
+                class9.aString218 = buffer.method415();
+                class9.anInt237 = buffer.method410();
             }
             if(class9.anInt217 == 1 || class9.anInt217 == 4 || class9.anInt217 == 5 || class9.anInt217 == 6)
             {
-                class9.aString221 = class30_sub2_sub2.method415();
+                class9.aString221 = buffer.method415();
                 if(class9.aString221.length() == 0)
                 {
                     if(class9.anInt217 == 1)

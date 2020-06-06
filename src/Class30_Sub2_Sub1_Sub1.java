@@ -4,8 +4,6 @@
 
 import java.awt.*;
 import java.awt.image.PixelGrabber;
-import java.io.PrintStream;
-import sign.signlink;
 
 public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
 {
@@ -75,38 +73,38 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         aBoolean1436 = true;
         aBoolean1437 = true;
         aBoolean1438 = false;
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571(s + ".dat", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(class44.method571("index.dat", null), 891);
-        class30_sub2_sub2_1.anInt1406 = class30_sub2_sub2.method410();
-        anInt1444 = class30_sub2_sub2_1.method410();
-        anInt1445 = class30_sub2_sub2_1.method410();
-        int j = class30_sub2_sub2_1.method408();
+        Buffer buffer = new Buffer(class44.method571(s + ".dat", null), 891);
+        Buffer buffer_1 = new Buffer(class44.method571("index.dat", null), 891);
+        buffer_1.pointer = buffer.method410();
+        anInt1444 = buffer_1.method410();
+        anInt1445 = buffer_1.method410();
+        int j = buffer_1.method408();
         int ai[] = new int[j];
         for(int k = 0; k < j - 1; k++)
         {
-            ai[k + 1] = class30_sub2_sub2_1.method412();
+            ai[k + 1] = buffer_1.method412();
             if(ai[k + 1] == 0)
                 ai[k + 1] = 1;
         }
 
         for(int l = 0; l < i; l++)
         {
-            class30_sub2_sub2_1.anInt1406 += 2;
-            class30_sub2_sub2.anInt1406 += class30_sub2_sub2_1.method410() * class30_sub2_sub2_1.method410();
-            class30_sub2_sub2_1.anInt1406++;
+            buffer_1.pointer += 2;
+            buffer.pointer += buffer_1.method410() * buffer_1.method410();
+            buffer_1.pointer++;
         }
 
-        anInt1442 = class30_sub2_sub2_1.method408();
-        anInt1443 = class30_sub2_sub2_1.method408();
-        anInt1440 = class30_sub2_sub2_1.method410();
-        anInt1441 = class30_sub2_sub2_1.method410();
-        int i1 = class30_sub2_sub2_1.method408();
+        anInt1442 = buffer_1.method408();
+        anInt1443 = buffer_1.method408();
+        anInt1440 = buffer_1.method410();
+        anInt1441 = buffer_1.method410();
+        int i1 = buffer_1.method408();
         int j1 = anInt1440 * anInt1441;
         anIntArray1439 = new int[j1];
         if(i1 == 0)
         {
             for(int k1 = 0; k1 < j1; k1++)
-                anIntArray1439[k1] = ai[class30_sub2_sub2.method408()];
+                anIntArray1439[k1] = ai[buffer.method408()];
 
             return;
         }
@@ -115,7 +113,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
             for(int l1 = 0; l1 < anInt1440; l1++)
             {
                 for(int i2 = 0; i2 < anInt1441; i2++)
-                    anIntArray1439[l1 + i2 * anInt1440] = ai[class30_sub2_sub2.method408()];
+                    anIntArray1439[l1 + i2 * anInt1440] = ai[buffer.method408()];
 
             }
 

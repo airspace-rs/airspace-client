@@ -2,82 +2,80 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class34
 {
 
     public static void method487(Class44 class44)
     {
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("fragmentsenc.txt", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(class44.method571("badenc.txt", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2_2 = new Class30_Sub2_Sub2(class44.method571("domainenc.txt", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2_3 = new Class30_Sub2_Sub2(class44.method571("tldlist.txt", null), 891);
-        method488(class30_sub2_sub2, class30_sub2_sub2_1, class30_sub2_sub2_2, class30_sub2_sub2_3);
+        Buffer buffer = new Buffer(class44.method571("fragmentsenc.txt", null), 891);
+        Buffer buffer_1 = new Buffer(class44.method571("badenc.txt", null), 891);
+        Buffer class30_sub2_sub2_2 = new Buffer(class44.method571("domainenc.txt", null), 891);
+        Buffer buffer_3 = new Buffer(class44.method571("tldlist.txt", null), 891);
+        method488(buffer, buffer_1, class30_sub2_sub2_2, buffer_3);
     }
 
-    public static void method488(Class30_Sub2_Sub2 class30_sub2_sub2, Class30_Sub2_Sub2 class30_sub2_sub2_1, Class30_Sub2_Sub2 class30_sub2_sub2_2, Class30_Sub2_Sub2 class30_sub2_sub2_3)
+    public static void method488(Buffer buffer, Buffer buffer_1, Buffer class30_sub2_sub2_2, Buffer buffer_3)
     {
-        method490(9121, class30_sub2_sub2_1);
+        method490(9121, buffer_1);
         method491(class30_sub2_sub2_2, (byte)-28);
-        method492(class30_sub2_sub2, true);
-        method489((byte)2, class30_sub2_sub2_3);
+        method492(buffer, true);
+        method489((byte)2, buffer_3);
     }
 
-    public static void method489(byte byte0, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public static void method489(byte byte0, Buffer buffer)
     {
-        int i = class30_sub2_sub2.method413();
+        int i = buffer.method413();
         aCharArrayArray624 = new char[i][];
         anIntArray625 = new int[i];
         if(byte0 != 2)
             return;
         for(int j = 0; j < i; j++)
         {
-            anIntArray625[j] = class30_sub2_sub2.method408();
-            char ac[] = new char[class30_sub2_sub2.method408()];
+            anIntArray625[j] = buffer.method408();
+            char ac[] = new char[buffer.method408()];
             for(int k = 0; k < ac.length; k++)
-                ac[k] = (char)class30_sub2_sub2.method408();
+                ac[k] = (char) buffer.method408();
 
             aCharArrayArray624[j] = ac;
         }
 
     }
 
-    public static void method490(int i, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public static void method490(int i, Buffer buffer)
     {
         if(i != 9121)
             aBoolean619 = !aBoolean619;
-        int j = class30_sub2_sub2.method413();
+        int j = buffer.method413();
         aCharArrayArray621 = new char[j][];
         aByteArrayArrayArray622 = new byte[j][][];
-        method493(class30_sub2_sub2, aCharArrayArray621, true, aByteArrayArrayArray622);
+        method493(buffer, aCharArrayArray621, true, aByteArrayArrayArray622);
     }
 
-    public static void method491(Class30_Sub2_Sub2 class30_sub2_sub2, byte byte0)
+    public static void method491(Buffer buffer, byte byte0)
     {
-        int i = class30_sub2_sub2.method413();
+        int i = buffer.method413();
         aCharArrayArray623 = new char[i][];
         if(byte0 != -28)
         {
             return;
         } else
         {
-            method494(aCharArrayArray623, class30_sub2_sub2, -490);
+            method494(aCharArrayArray623, buffer, -490);
             return;
         }
     }
 
-    public static void method492(Class30_Sub2_Sub2 class30_sub2_sub2, boolean flag)
+    public static void method492(Buffer buffer, boolean flag)
     {
-        anIntArray620 = new int[class30_sub2_sub2.method413()];
+        anIntArray620 = new int[buffer.method413()];
         for(int i = 0; i < anIntArray620.length; i++)
-            anIntArray620[i] = class30_sub2_sub2.method410();
+            anIntArray620[i] = buffer.method410();
 
         if(!flag)
             anInt609 = 167;
     }
 
-    public static void method493(Class30_Sub2_Sub2 class30_sub2_sub2, char ac[][], boolean flag, byte abyte0[][][])
+    public static void method493(Buffer buffer, char ac[][], boolean flag, byte abyte0[][][])
     {
         if(!flag)
         {
@@ -85,16 +83,16 @@ public class Class34
         }
         for(int j = 0; j < ac.length; j++)
         {
-            char ac1[] = new char[class30_sub2_sub2.method408()];
+            char ac1[] = new char[buffer.method408()];
             for(int k = 0; k < ac1.length; k++)
-                ac1[k] = (char)class30_sub2_sub2.method408();
+                ac1[k] = (char) buffer.method408();
 
             ac[j] = ac1;
-            byte abyte1[][] = new byte[class30_sub2_sub2.method408()][2];
+            byte abyte1[][] = new byte[buffer.method408()][2];
             for(int l = 0; l < abyte1.length; l++)
             {
-                abyte1[l][0] = (byte)class30_sub2_sub2.method408();
-                abyte1[l][1] = (byte)class30_sub2_sub2.method408();
+                abyte1[l][0] = (byte) buffer.method408();
+                abyte1[l][1] = (byte) buffer.method408();
             }
 
             if(abyte1.length > 0)
@@ -103,15 +101,15 @@ public class Class34
 
     }
 
-    public static void method494(char ac[][], Class30_Sub2_Sub2 class30_sub2_sub2, int i)
+    public static void method494(char ac[][], Buffer buffer, int i)
     {
         if(i >= 0)
             return;
         for(int j = 0; j < ac.length; j++)
         {
-            char ac1[] = new char[class30_sub2_sub2.method408()];
+            char ac1[] = new char[buffer.method408()];
             for(int k = 0; k < ac1.length; k++)
-                ac1[k] = (char)class30_sub2_sub2.method408();
+                ac1[k] = (char) buffer.method408();
 
             ac[j] = ac1;
         }

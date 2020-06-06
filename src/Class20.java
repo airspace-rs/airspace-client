@@ -2,23 +2,20 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.io.PrintStream;
-import sign.signlink;
-
 public class Class20
 {
 
     public static void method257(int i, Class44 class44)
     {
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("seq.dat", null), 891);
-        anInt350 = class30_sub2_sub2.method410();
+        Buffer buffer = new Buffer(class44.method571("seq.dat", null), 891);
+        anInt350 = buffer.method410();
         if(aClass20Array351 == null)
             aClass20Array351 = new Class20[anInt350];
         for(int j = 0; j < anInt350; j++)
         {
             if(aClass20Array351[j] == null)
                 aClass20Array351[j] = new Class20();
-            aClass20Array351[j].method259(true, class30_sub2_sub2);
+            aClass20Array351[j].method259(true, buffer);
         }
 
         if(i != 0)
@@ -45,40 +42,40 @@ public class Class20
         return j;
     }
 
-    public void method259(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method259(boolean flag, Buffer buffer)
     {
         if(!flag)
             aBoolean349 = !aBoolean349;
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 break;
             if(i == 1)
             {
-                anInt352 = class30_sub2_sub2.method408();
+                anInt352 = buffer.method408();
                 anIntArray353 = new int[anInt352];
                 anIntArray354 = new int[anInt352];
                 anIntArray355 = new int[anInt352];
                 for(int j = 0; j < anInt352; j++)
                 {
-                    anIntArray353[j] = class30_sub2_sub2.method410();
-                    anIntArray354[j] = class30_sub2_sub2.method410();
+                    anIntArray353[j] = buffer.method410();
+                    anIntArray354[j] = buffer.method410();
                     if(anIntArray354[j] == 65535)
                         anIntArray354[j] = -1;
-                    anIntArray355[j] = class30_sub2_sub2.method410();
+                    anIntArray355[j] = buffer.method410();
                 }
 
             } else
             if(i == 2)
-                anInt356 = class30_sub2_sub2.method410();
+                anInt356 = buffer.method410();
             else
             if(i == 3)
             {
-                int k = class30_sub2_sub2.method408();
+                int k = buffer.method408();
                 anIntArray357 = new int[k + 1];
                 for(int l = 0; l < k; l++)
-                    anIntArray357[l] = class30_sub2_sub2.method408();
+                    anIntArray357[l] = buffer.method408();
 
                 anIntArray357[k] = 0x98967f;
             } else
@@ -86,28 +83,28 @@ public class Class20
                 aBoolean358 = true;
             else
             if(i == 5)
-                anInt359 = class30_sub2_sub2.method408();
+                anInt359 = buffer.method408();
             else
             if(i == 6)
-                anInt360 = class30_sub2_sub2.method410();
+                anInt360 = buffer.method410();
             else
             if(i == 7)
-                anInt361 = class30_sub2_sub2.method410();
+                anInt361 = buffer.method410();
             else
             if(i == 8)
-                anInt362 = class30_sub2_sub2.method408();
+                anInt362 = buffer.method408();
             else
             if(i == 9)
-                anInt363 = class30_sub2_sub2.method408();
+                anInt363 = buffer.method408();
             else
             if(i == 10)
-                anInt364 = class30_sub2_sub2.method408();
+                anInt364 = buffer.method408();
             else
             if(i == 11)
-                anInt365 = class30_sub2_sub2.method408();
+                anInt365 = buffer.method408();
             else
             if(i == 12)
-                anInt366 = class30_sub2_sub2.method413();
+                anInt366 = buffer.method413();
             else
                 System.out.println("Error unrecognised seq config code: " + i);
         } while(true);

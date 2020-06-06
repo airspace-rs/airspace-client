@@ -3,7 +3,6 @@
 // Decompiler options: packimports(3) 
 
 import java.util.Random;
-import sign.signlink;
 
 public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
 {
@@ -25,29 +24,29 @@ public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
         anIntArray1496 = new int[256];
         aRandom1498 = new Random();
         aBoolean1499 = false;
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571(s + ".dat", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(class44.method571("index.dat", null), 891);
+        Buffer buffer = new Buffer(class44.method571(s + ".dat", null), 891);
+        Buffer buffer_1 = new Buffer(class44.method571("index.dat", null), 891);
         byte byte0 = -1;
         if(i != 0)
             aBoolean1490 = !aBoolean1490;
-        class30_sub2_sub2_1.anInt1406 = class30_sub2_sub2.method410() + 4;
-        int k = class30_sub2_sub2_1.method408();
+        buffer_1.pointer = buffer.method410() + 4;
+        int k = buffer_1.method408();
         if(k > 0)
-            class30_sub2_sub2_1.anInt1406 += 3 * (k - 1);
+            buffer_1.pointer += 3 * (k - 1);
         for(int l = 0; l < 256; l++)
         {
             int j = l;
-            anIntArray1494[l] = class30_sub2_sub2_1.method408();
-            anIntArray1495[l] = class30_sub2_sub2_1.method408();
-            int i1 = anIntArray1492[l] = class30_sub2_sub2_1.method410();
-            int j1 = anIntArray1493[l] = class30_sub2_sub2_1.method410();
-            int k1 = class30_sub2_sub2_1.method408();
+            anIntArray1494[l] = buffer_1.method408();
+            anIntArray1495[l] = buffer_1.method408();
+            int i1 = anIntArray1492[l] = buffer_1.method410();
+            int j1 = anIntArray1493[l] = buffer_1.method410();
+            int k1 = buffer_1.method408();
             int l1 = i1 * j1;
             aByteArrayArray1491[l] = new byte[l1];
             if(k1 == 0)
             {
                 for(int i2 = 0; i2 < l1; i2++)
-                    aByteArrayArray1491[l][i2] = class30_sub2_sub2.method409();
+                    aByteArrayArray1491[l][i2] = buffer.method409();
 
             } else
             if(k1 == 1)
@@ -55,7 +54,7 @@ public class Class30_Sub2_Sub1_Sub4 extends Class30_Sub2_Sub1
                 for(int j2 = 0; j2 < i1; j2++)
                 {
                     for(int l2 = 0; l2 < j1; l2++)
-                        aByteArrayArray1491[l][j2 + l2 * i1] = class30_sub2_sub2.method409();
+                        aByteArrayArray1491[l][j2 + l2 * i1] = buffer.method409();
 
                 }
 

@@ -2,18 +2,15 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.io.PrintStream;
-import sign.signlink;
-
 public class Class23
 {
 
     public static void method264(int i, Class44 class44)
     {
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("spotanim.dat", null), 891);
+        Buffer buffer = new Buffer(class44.method571("spotanim.dat", null), 891);
         if(i != 0)
             aBoolean401 = !aBoolean401;
-        anInt402 = class30_sub2_sub2.method410();
+        anInt402 = buffer.method410();
         if(aClass23Array403 == null)
             aClass23Array403 = new Class23[anInt402];
         for(int j = 0; j < anInt402; j++)
@@ -21,49 +18,49 @@ public class Class23
             if(aClass23Array403[j] == null)
                 aClass23Array403[j] = new Class23();
             aClass23Array403[j].anInt404 = j;
-            aClass23Array403[j].method265(true, class30_sub2_sub2);
+            aClass23Array403[j].method265(true, buffer);
         }
 
     }
 
-    public void method265(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method265(boolean flag, Buffer buffer)
     {
         if(!flag)
             throw new NullPointerException();
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt405 = class30_sub2_sub2.method410();
+                anInt405 = buffer.method410();
             else
             if(i == 2)
             {
-                anInt406 = class30_sub2_sub2.method410();
+                anInt406 = buffer.method410();
                 if(Class20.aClass20Array351 != null)
                     aClass20_407 = Class20.aClass20Array351[anInt406];
             } else
             if(i == 4)
-                anInt410 = class30_sub2_sub2.method410();
+                anInt410 = buffer.method410();
             else
             if(i == 5)
-                anInt411 = class30_sub2_sub2.method410();
+                anInt411 = buffer.method410();
             else
             if(i == 6)
-                anInt412 = class30_sub2_sub2.method410();
+                anInt412 = buffer.method410();
             else
             if(i == 7)
-                anInt413 = class30_sub2_sub2.method408();
+                anInt413 = buffer.method408();
             else
             if(i == 8)
-                anInt414 = class30_sub2_sub2.method408();
+                anInt414 = buffer.method408();
             else
             if(i >= 40 && i < 50)
-                anIntArray408[i - 40] = class30_sub2_sub2.method410();
+                anIntArray408[i - 40] = buffer.method410();
             else
             if(i >= 50 && i < 60)
-                anIntArray409[i - 50] = class30_sub2_sub2.method410();
+                anIntArray409[i - 50] = buffer.method410();
             else
                 System.out.println("Error unrecognised spotanim config code: " + i);
         } while(true);

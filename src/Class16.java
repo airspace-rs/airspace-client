@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class16
 {
 
@@ -15,25 +13,25 @@ public class Class16
             anInt324 = 477;
     }
 
-    public static void method240(int i, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public static void method240(int i, Buffer buffer)
     {
         aByteArray327 = new byte[0x6baa8];
-        aClass30_Sub2_Sub2_328 = new Class30_Sub2_Sub2(aByteArray327, 891);
+        aBuffer_328 = new Buffer(aByteArray327, 891);
         if(i != 0)
             aBoolean322 = !aBoolean322;
         Class6.method166();
         do
         {
-            int j = class30_sub2_sub2.method410();
+            int j = buffer.method410();
             if(j == 65535)
                 return;
             aClass16Array325[j] = new Class16(8);
-            aClass16Array325[j].method242(true, class30_sub2_sub2);
+            aClass16Array325[j].method242(true, buffer);
             anIntArray326[j] = aClass16Array325[j].method243(0);
         } while(true);
     }
 
-    public static Class30_Sub2_Sub2 method241(int i, int j, boolean flag)
+    public static Buffer method241(int i, int j, boolean flag)
     {
         if(flag)
             aBoolean323 = !aBoolean323;
@@ -47,23 +45,23 @@ public class Class16
         }
     }
 
-    public void method242(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method242(boolean flag, Buffer buffer)
     {
         for(int i = 0; i < 10; i++)
         {
-            int j = class30_sub2_sub2.method408();
+            int j = buffer.method408();
             if(j != 0)
             {
-                class30_sub2_sub2.anInt1406--;
+                buffer.pointer--;
                 aClass6Array329[i] = new Class6();
-                aClass6Array329[i].method169(true, class30_sub2_sub2);
+                aClass6Array329[i].method169(true, buffer);
             }
         }
 
         if(!flag)
             anInt324 = 58;
-        anInt330 = class30_sub2_sub2.method410();
-        anInt331 = class30_sub2_sub2.method410();
+        anInt330 = buffer.method410();
+        anInt331 = buffer.method410();
     }
 
     public int method243(int i)
@@ -91,29 +89,29 @@ public class Class16
         return j;
     }
 
-    public Class30_Sub2_Sub2 method244(int i, int j)
+    public Buffer method244(int i, int j)
     {
         int k = method245(i);
-        aClass30_Sub2_Sub2_328.anInt1406 = 0;
-        aClass30_Sub2_Sub2_328.method402(0x52494646);
-        aClass30_Sub2_Sub2_328.method403(0, 36 + k);
-        aClass30_Sub2_Sub2_328.method402(0x57415645);
-        aClass30_Sub2_Sub2_328.method402(0x666d7420);
-        aClass30_Sub2_Sub2_328.method403(0, 16);
-        aClass30_Sub2_Sub2_328.method400(true, 1);
+        aBuffer_328.pointer = 0;
+        aBuffer_328.writeDWord(0x52494646);
+        aBuffer_328.method403(0, 36 + k);
+        aBuffer_328.writeDWord(0x57415645);
+        aBuffer_328.writeDWord(0x666d7420);
+        aBuffer_328.method403(0, 16);
+        aBuffer_328.method400(true, 1);
         if(j < 6 || j > 6)
         {
             for(int l = 1; l > 0; l++);
         }
-        aClass30_Sub2_Sub2_328.method400(true, 1);
-        aClass30_Sub2_Sub2_328.method403(0, 22050);
-        aClass30_Sub2_Sub2_328.method403(0, 22050);
-        aClass30_Sub2_Sub2_328.method400(true, 1);
-        aClass30_Sub2_Sub2_328.method400(true, 8);
-        aClass30_Sub2_Sub2_328.method402(0x64617461);
-        aClass30_Sub2_Sub2_328.method403(0, k);
-        aClass30_Sub2_Sub2_328.anInt1406 += k;
-        return aClass30_Sub2_Sub2_328;
+        aBuffer_328.method400(true, 1);
+        aBuffer_328.method403(0, 22050);
+        aBuffer_328.method403(0, 22050);
+        aBuffer_328.method400(true, 1);
+        aBuffer_328.method400(true, 8);
+        aBuffer_328.writeDWord(0x64617461);
+        aBuffer_328.method403(0, k);
+        aBuffer_328.pointer += k;
+        return aBuffer_328;
     }
 
     public int method245(int i)
@@ -174,7 +172,7 @@ public class Class16
     public static Class16 aClass16Array325[] = new Class16[5000];
     public static int anIntArray326[] = new int[5000];
     public static byte aByteArray327[];
-    public static Class30_Sub2_Sub2 aClass30_Sub2_Sub2_328;
+    public static Buffer aBuffer_328;
     public Class6 aClass6Array329[];
     public int anInt330;
     public int anInt331;

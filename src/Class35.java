@@ -2,18 +2,16 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class35
 {
 
-    public static String method525(int i, boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public static String method525(int i, boolean flag, Buffer buffer)
     {
         int j = 0;
         int k = -1;
         for(int l = 0; l < i; l++)
         {
-            int i1 = class30_sub2_sub2.method408();
+            int i1 = buffer.method408();
             int j1 = i1 >> 4 & 0xf;
             if(k == -1)
             {
@@ -58,7 +56,7 @@ public class Class35
         return new String(aCharArray631, 0, j);
     }
 
-    public static void method526(String s, boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public static void method526(String s, boolean flag, Buffer buffer)
     {
         if(s.length() > 80)
             s = s.substring(0, 80);
@@ -83,15 +81,15 @@ public class Class35
                 if(k < 13)
                     i = k;
                 else
-                    class30_sub2_sub2.method398(k);
+                    buffer.writeUnsignedByte(k);
             } else
             if(k < 13)
             {
-                class30_sub2_sub2.method398((i << 4) + k);
+                buffer.writeUnsignedByte((i << 4) + k);
                 i = -1;
             } else
             {
-                class30_sub2_sub2.method398((i << 4) + (k >> 4));
+                buffer.writeUnsignedByte((i << 4) + (k >> 4));
                 i = k & 0xf;
             }
         }
@@ -99,18 +97,18 @@ public class Class35
         if(!flag)
             anInt628 = -452;
         if(i != -1)
-            class30_sub2_sub2.method398(i << 4);
+            buffer.writeUnsignedByte(i << 4);
     }
 
     public static String method527(String s, int i)
     {
-        aClass30_Sub2_Sub2_632.anInt1406 = 0;
-        method526(s, aBoolean630, aClass30_Sub2_Sub2_632);
-        int j = aClass30_Sub2_Sub2_632.anInt1406;
-        aClass30_Sub2_Sub2_632.anInt1406 = 0;
+        aBuffer_632.pointer = 0;
+        method526(s, aBoolean630, aBuffer_632);
+        int j = aBuffer_632.pointer;
+        aBuffer_632.pointer = 0;
         if(i != 0)
             aBoolean629 = !aBoolean629;
-        String s1 = method525(j, true, aClass30_Sub2_Sub2_632);
+        String s1 = method525(j, true, aBuffer_632);
         return s1;
     }
 
@@ -118,7 +116,7 @@ public class Class35
     public static boolean aBoolean629;
     public static boolean aBoolean630 = true;
     public static char aCharArray631[] = new char[100];
-    public static Class30_Sub2_Sub2 aClass30_Sub2_Sub2_632 = new Class30_Sub2_Sub2(new byte[100], 891);
+    public static Buffer aBuffer_632 = new Buffer(new byte[100], 891);
     public static char aCharArray633[] = {
         ' ', 'e', 't', 'a', 'o', 'i', 'h', 'n', 's', 'r', 
         'd', 'l', 'u', 'm', 'w', 'c', 'y', 'f', 'g', 'p', 

@@ -135,11 +135,11 @@ public class Class42_Sub1 extends Class42
         {
             byte abyte0[] = class44.method571(as[i], null);
             int j = abyte0.length / 2;
-            Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(abyte0, 891);
+            Buffer buffer = new Buffer(abyte0, 891);
             anIntArrayArray1364[i] = new int[j];
             aByteArrayArray1342[i] = new byte[j];
             for(int l = 0; l < j; l++)
-                anIntArrayArray1364[i][l] = class30_sub2_sub2.method410();
+                anIntArrayArray1364[i][l] = buffer.method410();
 
         }
 
@@ -150,10 +150,10 @@ public class Class42_Sub1 extends Class42
         {
             byte abyte1[] = class44.method571(as1[k], null);
             int i1 = abyte1.length / 4;
-            Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(abyte1, 891);
+            Buffer buffer_1 = new Buffer(abyte1, 891);
             anIntArrayArray1365[k] = new int[i1];
             for(int l1 = 0; l1 < i1; l1++)
-                anIntArrayArray1365[k][l1] = class30_sub2_sub2_1.method413();
+                anIntArrayArray1365[k][l1] = buffer_1.method413();
 
         }
 
@@ -167,7 +167,7 @@ public class Class42_Sub1 extends Class42
                 aByteArray1372[k1] = 0;
 
         abyte2 = class44.method571("map_index", null);
-        Class30_Sub2_Sub2 class30_sub2_sub2_2 = new Class30_Sub2_Sub2(abyte2, 891);
+        Buffer class30_sub2_sub2_2 = new Buffer(abyte2, 891);
         j1 = abyte2.length / 7;
         anIntArray1371 = new int[j1];
         anIntArray1350 = new int[j1];
@@ -182,14 +182,14 @@ public class Class42_Sub1 extends Class42
         }
 
         abyte2 = class44.method571("anim_index", null);
-        class30_sub2_sub2_2 = new Class30_Sub2_Sub2(abyte2, 891);
+        class30_sub2_sub2_2 = new Buffer(abyte2, 891);
         j1 = abyte2.length / 2;
         anIntArray1360 = new int[j1];
         for(int j2 = 0; j2 < j1; j2++)
             anIntArray1360[j2] = class30_sub2_sub2_2.method410();
 
         abyte2 = class44.method571("midi_index", null);
-        class30_sub2_sub2_2 = new Class30_Sub2_Sub2(abyte2, 891);
+        class30_sub2_sub2_2 = new Buffer(abyte2, 891);
         j1 = abyte2.length;
         anIntArray1348 = new int[j1];
         for(int k2 = 0; k2 < j1; k2++)
@@ -247,7 +247,7 @@ public class Class42_Sub1 extends Class42
                 if(l - aLong1335 < 4000L)
                     return;
                 aLong1335 = l;
-                aSocket1363 = aClient1343.method19(43594 + client.anInt958);
+                aSocket1363 = aClient1343.method19(43594 + client.portOffset);
                 anInputStream1362 = aSocket1363.getInputStream();
                 anOutputStream1354 = aSocket1363.getOutputStream();
                 anOutputStream1354.write(15);

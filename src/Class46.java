@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class46
 {
 
@@ -15,10 +13,10 @@ public class Class46
 
         anInt771 = (anInt771 + 1) % 20;
         Class46 class46 = aClass46Array782[anInt771];
-        aClass30_Sub2_Sub2_753.anInt1406 = anIntArray755[i];
+        aBuffer_753.pointer = anIntArray755[i];
         class46.anInt754 = i;
         class46.method573();
-        class46.method582(true, aClass30_Sub2_Sub2_753);
+        class46.method582(true, aBuffer_753);
         return class46;
     }
 
@@ -79,22 +77,22 @@ public class Class46
         aClass12_780 = null;
         anIntArray755 = null;
         aClass46Array782 = null;
-        for(aClass30_Sub2_Sub2_753 = null; i >= 0;)
+        for(aBuffer_753 = null; i >= 0;)
             return;
 
     }
 
     public static void method576(Class44 class44)
     {
-        aClass30_Sub2_Sub2_753 = new Class30_Sub2_Sub2(class44.method571("loc.dat", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("loc.idx", null), 891);
-        anInt756 = class30_sub2_sub2.method410();
+        aBuffer_753 = new Buffer(class44.method571("loc.dat", null), 891);
+        Buffer buffer = new Buffer(class44.method571("loc.idx", null), 891);
+        anInt756 = buffer.method410();
         anIntArray755 = new int[anInt756];
         int i = 2;
         for(int j = 0; j < anInt756; j++)
         {
             anIntArray755[j] = i;
-            i += class30_sub2_sub2.method410();
+            i += buffer.method410();
         }
 
         aClass46Array782 = new Class46[20];
@@ -295,7 +293,7 @@ public class Class46
         return class30_sub2_sub4_sub6_3;
     }
 
-    public void method582(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method582(boolean flag, Buffer buffer)
     {
         if(!flag)
             anInt750 = 217;
@@ -306,12 +304,12 @@ label0:
             int j;
             do
             {
-                j = class30_sub2_sub2.method408();
+                j = buffer.method408();
                 if(j == 0)
                     break label0;
                 if(j == 1)
                 {
-                    int k = class30_sub2_sub2.method408();
+                    int k = buffer.method408();
                     if(k > 0)
                         if(anIntArray773 == null || aBoolean752)
                         {
@@ -319,42 +317,42 @@ label0:
                             anIntArray773 = new int[k];
                             for(int k1 = 0; k1 < k; k1++)
                             {
-                                anIntArray773[k1] = class30_sub2_sub2.method410();
-                                anIntArray776[k1] = class30_sub2_sub2.method408();
+                                anIntArray773[k1] = buffer.method410();
+                                anIntArray776[k1] = buffer.method408();
                             }
 
                         } else
                         {
-                            class30_sub2_sub2.anInt1406 += k * 3;
+                            buffer.pointer += k * 3;
                         }
                 } else
                 if(j == 2)
-                    aString739 = class30_sub2_sub2.method415();
+                    aString739 = buffer.method415();
                 else
                 if(j == 3)
-                    aByteArray777 = class30_sub2_sub2.method416((byte)30);
+                    aByteArray777 = buffer.method416((byte)30);
                 else
                 if(j == 5)
                 {
-                    int l = class30_sub2_sub2.method408();
+                    int l = buffer.method408();
                     if(l > 0)
                         if(anIntArray773 == null || aBoolean752)
                         {
                             anIntArray776 = null;
                             anIntArray773 = new int[l];
                             for(int l1 = 0; l1 < l; l1++)
-                                anIntArray773[l1] = class30_sub2_sub2.method410();
+                                anIntArray773[l1] = buffer.method410();
 
                         } else
                         {
-                            class30_sub2_sub2.anInt1406 += l * 2;
+                            buffer.pointer += l * 2;
                         }
                 } else
                 if(j == 14)
-                    anInt744 = class30_sub2_sub2.method408();
+                    anInt744 = buffer.method408();
                 else
                 if(j == 15)
-                    anInt761 = class30_sub2_sub2.method408();
+                    anInt761 = buffer.method408();
                 else
                 if(j == 17)
                     aBoolean767 = false;
@@ -364,7 +362,7 @@ label0:
                 else
                 if(j == 19)
                 {
-                    i = class30_sub2_sub2.method408();
+                    i = buffer.method408();
                     if(i == 1)
                         aBoolean778 = true;
                 } else
@@ -379,41 +377,41 @@ label0:
                 else
                 if(j == 24)
                 {
-                    anInt781 = class30_sub2_sub2.method410();
+                    anInt781 = buffer.method410();
                     if(anInt781 == 65535)
                         anInt781 = -1;
                 } else
                 if(j == 28)
-                    anInt775 = class30_sub2_sub2.method408();
+                    anInt775 = buffer.method408();
                 else
                 if(j == 29)
-                    aByte737 = class30_sub2_sub2.method409();
+                    aByte737 = buffer.method409();
                 else
                 if(j == 39)
-                    aByte742 = class30_sub2_sub2.method409();
+                    aByte742 = buffer.method409();
                 else
                 if(j >= 30 && j < 39)
                 {
                     if(aStringArray786 == null)
                         aStringArray786 = new String[5];
-                    aStringArray786[j - 30] = class30_sub2_sub2.method415();
+                    aStringArray786[j - 30] = buffer.method415();
                     if(aStringArray786[j - 30].equalsIgnoreCase("hidden"))
                         aStringArray786[j - 30] = null;
                 } else
                 if(j == 40)
                 {
-                    int i1 = class30_sub2_sub2.method408();
+                    int i1 = buffer.method408();
                     anIntArray784 = new int[i1];
                     anIntArray747 = new int[i1];
                     for(int i2 = 0; i2 < i1; i2++)
                     {
-                        anIntArray784[i2] = class30_sub2_sub2.method410();
-                        anIntArray747[i2] = class30_sub2_sub2.method410();
+                        anIntArray784[i2] = buffer.method410();
+                        anIntArray747[i2] = buffer.method410();
                     }
 
                 } else
                 if(j == 60)
-                    anInt746 = class30_sub2_sub2.method410();
+                    anInt746 = buffer.method410();
                 else
                 if(j == 62)
                     aBoolean751 = true;
@@ -422,28 +420,28 @@ label0:
                     aBoolean779 = false;
                 else
                 if(j == 65)
-                    anInt748 = class30_sub2_sub2.method410();
+                    anInt748 = buffer.method410();
                 else
                 if(j == 66)
-                    anInt772 = class30_sub2_sub2.method410();
+                    anInt772 = buffer.method410();
                 else
                 if(j == 67)
-                    anInt740 = class30_sub2_sub2.method410();
+                    anInt740 = buffer.method410();
                 else
                 if(j == 68)
-                    anInt758 = class30_sub2_sub2.method410();
+                    anInt758 = buffer.method410();
                 else
                 if(j == 69)
-                    anInt768 = class30_sub2_sub2.method408();
+                    anInt768 = buffer.method408();
                 else
                 if(j == 70)
-                    anInt738 = class30_sub2_sub2.method411();
+                    anInt738 = buffer.method411();
                 else
                 if(j == 71)
-                    anInt745 = class30_sub2_sub2.method411();
+                    anInt745 = buffer.method411();
                 else
                 if(j == 72)
-                    anInt783 = class30_sub2_sub2.method411();
+                    anInt783 = buffer.method411();
                 else
                 if(j == 73)
                     aBoolean736 = true;
@@ -455,21 +453,21 @@ label0:
                 {
                     if(j != 75)
                         continue;
-                    anInt760 = class30_sub2_sub2.method408();
+                    anInt760 = buffer.method408();
                 }
                 continue label0;
             } while(j != 77);
-            anInt774 = class30_sub2_sub2.method410();
+            anInt774 = buffer.method410();
             if(anInt774 == 65535)
                 anInt774 = -1;
-            anInt749 = class30_sub2_sub2.method410();
+            anInt749 = buffer.method410();
             if(anInt749 == 65535)
                 anInt749 = -1;
-            int j1 = class30_sub2_sub2.method408();
+            int j1 = buffer.method408();
             anIntArray759 = new int[j1 + 1];
             for(int j2 = 0; j2 <= j1; j2++)
             {
-                anIntArray759[j2] = class30_sub2_sub2.method410();
+                anIntArray759[j2] = buffer.method410();
                 if(anIntArray759[j2] == 65535)
                     anIntArray759[j2] = -1;
             }
@@ -517,7 +515,7 @@ label0:
     public int anInt750;
     public boolean aBoolean751;
     public static boolean aBoolean752;
-    public static Class30_Sub2_Sub2 aClass30_Sub2_Sub2_753;
+    public static Buffer aBuffer_753;
     public int anInt754;
     public static int anIntArray755[];
     public static int anInt756;

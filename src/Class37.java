@@ -2,9 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.io.PrintStream;
-import sign.signlink;
-
 public class Class37
 {
 
@@ -12,49 +9,49 @@ public class Class37
     {
         if(i != 0)
             anInt644 = 91;
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("varbit.dat", null), 891);
-        anInt645 = class30_sub2_sub2.method410();
+        Buffer buffer = new Buffer(class44.method571("varbit.dat", null), 891);
+        anInt645 = buffer.method410();
         if(aClass37Array646 == null)
             aClass37Array646 = new Class37[anInt645];
         for(int j = 0; j < anInt645; j++)
         {
             if(aClass37Array646[j] == null)
                 aClass37Array646[j] = new Class37();
-            aClass37Array646[j].method534(class30_sub2_sub2, false, j);
+            aClass37Array646[j].method534(buffer, false, j);
             if(aClass37Array646[j].aBoolean651)
                 Class41.aClass41Array701[aClass37Array646[j].anInt648].aBoolean713 = true;
         }
 
-        if(class30_sub2_sub2.anInt1406 != class30_sub2_sub2.aByteArray1405.length)
+        if(buffer.pointer != buffer.data.length)
             System.out.println("varbit load mismatch");
     }
 
-    public void method534(Class30_Sub2_Sub2 class30_sub2_sub2, boolean flag, int i)
+    public void method534(Buffer buffer, boolean flag, int i)
     {
         if(flag)
             return;
         do
         {
-            int j = class30_sub2_sub2.method408();
+            int j = buffer.method408();
             if(j == 0)
                 return;
             if(j == 1)
             {
-                anInt648 = class30_sub2_sub2.method410();
-                anInt649 = class30_sub2_sub2.method408();
-                anInt650 = class30_sub2_sub2.method408();
+                anInt648 = buffer.method410();
+                anInt649 = buffer.method408();
+                anInt650 = buffer.method408();
             } else
             if(j == 10)
-                aString647 = class30_sub2_sub2.method415();
+                aString647 = buffer.method415();
             else
             if(j == 2)
                 aBoolean651 = true;
             else
             if(j == 3)
-                anInt652 = class30_sub2_sub2.method413();
+                anInt652 = buffer.method413();
             else
             if(j == 4)
-                anInt653 = class30_sub2_sub2.method413();
+                anInt653 = buffer.method413();
             else
                 System.out.println("Error unrecognised config code: " + j);
         } while(true);

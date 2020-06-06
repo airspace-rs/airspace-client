@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class39
 {
 
@@ -82,24 +80,24 @@ public class Class39
         return anIntArray665[i] * 2;
     }
 
-    public void method545(Class30_Sub2_Sub2 class30_sub2_sub2, boolean flag, Class29 class29)
+    public void method545(Buffer buffer, boolean flag, Class29 class29)
     {
-        int i = class30_sub2_sub2.method408();
+        int i = buffer.method408();
         anIntArray665[0] = i >> 4;
         if(flag)
             return;
         anIntArray665[1] = i & 0xf;
         if(i != 0)
         {
-            anIntArray668[0] = class30_sub2_sub2.method410();
-            anIntArray668[1] = class30_sub2_sub2.method410();
-            int j = class30_sub2_sub2.method408();
+            anIntArray668[0] = buffer.method410();
+            anIntArray668[1] = buffer.method410();
+            int j = buffer.method408();
             for(int k = 0; k < 2; k++)
             {
                 for(int l = 0; l < anIntArray665[k]; l++)
                 {
-                    anIntArrayArrayArray666[k][0][l] = class30_sub2_sub2.method410();
-                    anIntArrayArrayArray667[k][0][l] = class30_sub2_sub2.method410();
+                    anIntArrayArrayArray666[k][0][l] = buffer.method410();
+                    anIntArrayArrayArray667[k][0][l] = buffer.method410();
                 }
 
             }
@@ -109,8 +107,8 @@ public class Class39
                 for(int j1 = 0; j1 < anIntArray665[i1]; j1++)
                     if((j & 1 << i1 * 4 << j1) != 0)
                     {
-                        anIntArrayArrayArray666[i1][1][j1] = class30_sub2_sub2.method410();
-                        anIntArrayArrayArray667[i1][1][j1] = class30_sub2_sub2.method410();
+                        anIntArrayArrayArray666[i1][1][j1] = buffer.method410();
+                        anIntArrayArrayArray667[i1][1][j1] = buffer.method410();
                     } else
                     {
                         anIntArrayArrayArray666[i1][1][j1] = anIntArrayArrayArray666[i1][0][j1];
@@ -120,7 +118,7 @@ public class Class39
             }
 
             if(j != 0 || anIntArray668[1] != anIntArray668[0])
-                class29.method326((byte)-112, class30_sub2_sub2);
+                class29.method326((byte)-112, buffer);
             return;
         } else
         {

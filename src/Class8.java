@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class8
 {
 
@@ -15,7 +13,7 @@ public class Class8
         if(i >= 0)
             aBoolean187 = !aBoolean187;
         aClass8Array172 = null;
-        aClass30_Sub2_Sub2_183 = null;
+        aBuffer_183 = null;
     }
 
     public boolean method192(int i, int j)
@@ -41,15 +39,15 @@ public class Class8
 
     public static void method193(Class44 class44)
     {
-        aClass30_Sub2_Sub2_183 = new Class30_Sub2_Sub2(class44.method571("obj.dat", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("obj.idx", null), 891);
-        anInt203 = class30_sub2_sub2.method410();
+        aBuffer_183 = new Buffer(class44.method571("obj.dat", null), 891);
+        Buffer buffer = new Buffer(class44.method571("obj.idx", null), 891);
+        anInt203 = buffer.method410();
         anIntArray195 = new int[anInt203];
         int i = 2;
         for(int j = 0; j < anInt203; j++)
         {
             anIntArray195[j] = i;
-            i += class30_sub2_sub2.method410();
+            i += buffer.method410();
         }
 
         aClass8Array172 = new Class8[10];
@@ -211,10 +209,10 @@ public class Class8
 
         anInt180 = (anInt180 + 1) % 10;
         Class8 class8 = aClass8Array172[anInt180];
-        aClass30_Sub2_Sub2_183.anInt1406 = anIntArray195[i];
+        aBuffer_183.pointer = anIntArray195[i];
         class8.anInt157 = i;
         class8.method197();
-        class8.method203(true, aClass30_Sub2_Sub2_183);
+        class8.method203(true, aBuffer_183);
         if(class8.anInt163 != -1)
             class8.method199((byte)61);
         if(!aBoolean182 && class8.aBoolean161)
@@ -451,78 +449,78 @@ public class Class8
         return class30_sub2_sub4_sub6;
     }
 
-    public void method203(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method203(boolean flag, Buffer buffer)
     {
         if(!flag)
             throw new NullPointerException();
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt174 = class30_sub2_sub2.method410();
+                anInt174 = buffer.method410();
             else
             if(i == 2)
-                aString170 = class30_sub2_sub2.method415();
+                aString170 = buffer.method415();
             else
             if(i == 3)
-                aByteArray178 = class30_sub2_sub2.method416((byte)30);
+                aByteArray178 = buffer.method416((byte)30);
             else
             if(i == 4)
-                anInt181 = class30_sub2_sub2.method410();
+                anInt181 = buffer.method410();
             else
             if(i == 5)
-                anInt190 = class30_sub2_sub2.method410();
+                anInt190 = buffer.method410();
             else
             if(i == 6)
-                anInt198 = class30_sub2_sub2.method410();
+                anInt198 = buffer.method410();
             else
             if(i == 7)
             {
-                anInt169 = class30_sub2_sub2.method410();
+                anInt169 = buffer.method410();
                 if(anInt169 > 32767)
                     anInt169 -= 0x10000;
             } else
             if(i == 8)
             {
-                anInt194 = class30_sub2_sub2.method410();
+                anInt194 = buffer.method410();
                 if(anInt194 > 32767)
                     anInt194 -= 0x10000;
             } else
             if(i == 10)
-                anInt199 = class30_sub2_sub2.method410();
+                anInt199 = buffer.method410();
             else
             if(i == 11)
                 aBoolean176 = true;
             else
             if(i == 12)
-                anInt155 = class30_sub2_sub2.method413();
+                anInt155 = buffer.method413();
             else
             if(i == 16)
                 aBoolean161 = true;
             else
             if(i == 23)
             {
-                anInt165 = class30_sub2_sub2.method410();
-                aByte205 = class30_sub2_sub2.method409();
+                anInt165 = buffer.method410();
+                aByte205 = buffer.method409();
             } else
             if(i == 24)
-                anInt188 = class30_sub2_sub2.method410();
+                anInt188 = buffer.method410();
             else
             if(i == 25)
             {
-                anInt200 = class30_sub2_sub2.method410();
-                aByte154 = class30_sub2_sub2.method409();
+                anInt200 = buffer.method410();
+                aByte154 = buffer.method409();
             } else
             if(i == 26)
-                anInt164 = class30_sub2_sub2.method410();
+                anInt164 = buffer.method410();
             else
             if(i >= 30 && i < 35)
             {
                 if(aStringArray168 == null)
                     aStringArray168 = new String[5];
-                aStringArray168[i - 30] = class30_sub2_sub2.method415();
+                aStringArray168[i - 30] = buffer.method415();
                 if(aStringArray168[i - 30].equalsIgnoreCase("hidden"))
                     aStringArray168[i - 30] = null;
             } else
@@ -530,46 +528,46 @@ public class Class8
             {
                 if(aStringArray189 == null)
                     aStringArray189 = new String[5];
-                aStringArray189[i - 35] = class30_sub2_sub2.method415();
+                aStringArray189[i - 35] = buffer.method415();
             } else
             if(i == 40)
             {
-                int j = class30_sub2_sub2.method408();
+                int j = buffer.method408();
                 anIntArray156 = new int[j];
                 anIntArray160 = new int[j];
                 for(int k = 0; k < j; k++)
                 {
-                    anIntArray156[k] = class30_sub2_sub2.method410();
-                    anIntArray160[k] = class30_sub2_sub2.method410();
+                    anIntArray156[k] = buffer.method410();
+                    anIntArray160[k] = buffer.method410();
                 }
 
             } else
             if(i == 78)
-                anInt185 = class30_sub2_sub2.method410();
+                anInt185 = buffer.method410();
             else
             if(i == 79)
-                anInt162 = class30_sub2_sub2.method410();
+                anInt162 = buffer.method410();
             else
             if(i == 90)
-                anInt175 = class30_sub2_sub2.method410();
+                anInt175 = buffer.method410();
             else
             if(i == 91)
-                anInt197 = class30_sub2_sub2.method410();
+                anInt197 = buffer.method410();
             else
             if(i == 92)
-                anInt166 = class30_sub2_sub2.method410();
+                anInt166 = buffer.method410();
             else
             if(i == 93)
-                anInt173 = class30_sub2_sub2.method410();
+                anInt173 = buffer.method410();
             else
             if(i == 95)
-                anInt204 = class30_sub2_sub2.method410();
+                anInt204 = buffer.method410();
             else
             if(i == 97)
-                anInt179 = class30_sub2_sub2.method410();
+                anInt179 = buffer.method410();
             else
             if(i == 98)
-                anInt163 = class30_sub2_sub2.method410();
+                anInt163 = buffer.method410();
             else
             if(i >= 100 && i < 110)
             {
@@ -578,26 +576,26 @@ public class Class8
                     anIntArray193 = new int[10];
                     anIntArray201 = new int[10];
                 }
-                anIntArray193[i - 100] = class30_sub2_sub2.method410();
-                anIntArray201[i - 100] = class30_sub2_sub2.method410();
+                anIntArray193[i - 100] = buffer.method410();
+                anIntArray201[i - 100] = buffer.method410();
             } else
             if(i == 110)
-                anInt167 = class30_sub2_sub2.method410();
+                anInt167 = buffer.method410();
             else
             if(i == 111)
-                anInt192 = class30_sub2_sub2.method410();
+                anInt192 = buffer.method410();
             else
             if(i == 112)
-                anInt191 = class30_sub2_sub2.method410();
+                anInt191 = buffer.method410();
             else
             if(i == 113)
-                anInt196 = class30_sub2_sub2.method409();
+                anInt196 = buffer.method409();
             else
             if(i == 114)
-                anInt184 = class30_sub2_sub2.method409() * 5;
+                anInt184 = buffer.method409() * 5;
             else
             if(i == 115)
-                anInt202 = class30_sub2_sub2.method408();
+                anInt202 = buffer.method408();
         } while(true);
     }
 
@@ -639,7 +637,7 @@ public class Class8
     public static int anInt180;
     public int anInt181;
     public static boolean aBoolean182 = true;
-    public static Class30_Sub2_Sub2 aClass30_Sub2_Sub2_183;
+    public static Buffer aBuffer_183;
     public int anInt184;
     public int anInt185;
     public boolean aBoolean186;

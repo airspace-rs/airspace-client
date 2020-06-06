@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class5
 {
 
@@ -15,9 +13,9 @@ public class Class5
 
         anInt56 = (anInt56 + 1) % 20;
         Class5 class5 = aClass5Array80[anInt56] = new Class5();
-        aClass30_Sub2_Sub2_60.anInt1406 = anIntArray72[i];
+        aBuffer_60.pointer = anIntArray72[i];
         class5.aLong78 = i;
-        class5.method165(true, aClass30_Sub2_Sub2_60);
+        class5.method165(true, aBuffer_60);
         return class5;
     }
 
@@ -84,15 +82,15 @@ public class Class5
 
     public static void method162(Class44 class44)
     {
-        aClass30_Sub2_Sub2_60 = new Class30_Sub2_Sub2(class44.method571("npc.dat", null), 891);
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("npc.idx", null), 891);
-        anInt62 = class30_sub2_sub2.method410();
+        aBuffer_60 = new Buffer(class44.method571("npc.dat", null), 891);
+        Buffer buffer = new Buffer(class44.method571("npc.idx", null), 891);
+        anInt62 = buffer.method410();
         anIntArray72 = new int[anInt62];
         int i = 2;
         for(int j = 0; j < anInt62; j++)
         {
             anIntArray72[j] = i;
-            i += class30_sub2_sub2.method410();
+            i += buffer.method410();
         }
 
         aClass5Array80 = new Class5[20];
@@ -108,7 +106,7 @@ public class Class5
         if(i >= 0)
             anInt74 = 60;
         aClass5Array80 = null;
-        aClass30_Sub2_Sub2_60 = null;
+        aBuffer_60 = null;
     }
 
     public Class30_Sub2_Sub4_Sub6 method164(int i, int j, int k, int ai[])
@@ -170,122 +168,122 @@ public class Class5
         return class30_sub2_sub4_sub6_1;
     }
 
-    public void method165(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method165(boolean flag, Buffer buffer)
     {
         if(!flag)
             throw new NullPointerException();
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 return;
             if(i == 1)
             {
-                int j = class30_sub2_sub2.method408();
+                int j = buffer.method408();
                 anIntArray94 = new int[j];
                 for(int j1 = 0; j1 < j; j1++)
-                    anIntArray94[j1] = class30_sub2_sub2.method410();
+                    anIntArray94[j1] = buffer.method410();
 
             } else
             if(i == 2)
-                aString65 = class30_sub2_sub2.method415();
+                aString65 = buffer.method415();
             else
             if(i == 3)
-                aByteArray89 = class30_sub2_sub2.method416((byte)30);
+                aByteArray89 = buffer.method416((byte)30);
             else
             if(i == 12)
-                aByte68 = class30_sub2_sub2.method409();
+                aByte68 = buffer.method409();
             else
             if(i == 13)
-                anInt77 = class30_sub2_sub2.method410();
+                anInt77 = buffer.method410();
             else
             if(i == 14)
-                anInt67 = class30_sub2_sub2.method410();
+                anInt67 = buffer.method410();
             else
             if(i == 17)
             {
-                anInt67 = class30_sub2_sub2.method410();
-                anInt58 = class30_sub2_sub2.method410();
-                anInt83 = class30_sub2_sub2.method410();
-                anInt55 = class30_sub2_sub2.method410();
+                anInt67 = buffer.method410();
+                anInt58 = buffer.method410();
+                anInt83 = buffer.method410();
+                anInt55 = buffer.method410();
             } else
             if(i >= 30 && i < 40)
             {
                 if(aStringArray66 == null)
                     aStringArray66 = new String[5];
-                aStringArray66[i - 30] = class30_sub2_sub2.method415();
+                aStringArray66[i - 30] = buffer.method415();
                 if(aStringArray66[i - 30].equalsIgnoreCase("hidden"))
                     aStringArray66[i - 30] = null;
             } else
             if(i == 40)
             {
-                int k = class30_sub2_sub2.method408();
+                int k = buffer.method408();
                 anIntArray76 = new int[k];
                 anIntArray70 = new int[k];
                 for(int k1 = 0; k1 < k; k1++)
                 {
-                    anIntArray76[k1] = class30_sub2_sub2.method410();
-                    anIntArray70[k1] = class30_sub2_sub2.method410();
+                    anIntArray76[k1] = buffer.method410();
+                    anIntArray70[k1] = buffer.method410();
                 }
 
             } else
             if(i == 60)
             {
-                int l = class30_sub2_sub2.method408();
+                int l = buffer.method408();
                 anIntArray73 = new int[l];
                 for(int l1 = 0; l1 < l; l1++)
-                    anIntArray73[l1] = class30_sub2_sub2.method410();
+                    anIntArray73[l1] = buffer.method410();
 
             } else
             if(i == 90)
-                anInt96 = class30_sub2_sub2.method410();
+                anInt96 = buffer.method410();
             else
             if(i == 91)
-                anInt71 = class30_sub2_sub2.method410();
+                anInt71 = buffer.method410();
             else
             if(i == 92)
-                anInt90 = class30_sub2_sub2.method410();
+                anInt90 = buffer.method410();
             else
             if(i == 93)
                 aBoolean87 = false;
             else
             if(i == 95)
-                anInt61 = class30_sub2_sub2.method410();
+                anInt61 = buffer.method410();
             else
             if(i == 97)
-                anInt91 = class30_sub2_sub2.method410();
+                anInt91 = buffer.method410();
             else
             if(i == 98)
-                anInt86 = class30_sub2_sub2.method410();
+                anInt86 = buffer.method410();
             else
             if(i == 99)
                 aBoolean93 = true;
             else
             if(i == 100)
-                anInt85 = class30_sub2_sub2.method409();
+                anInt85 = buffer.method409();
             else
             if(i == 101)
-                anInt92 = class30_sub2_sub2.method409() * 5;
+                anInt92 = buffer.method409() * 5;
             else
             if(i == 102)
-                anInt75 = class30_sub2_sub2.method410();
+                anInt75 = buffer.method410();
             else
             if(i == 103)
-                anInt79 = class30_sub2_sub2.method410();
+                anInt79 = buffer.method410();
             else
             if(i == 106)
             {
-                anInt57 = class30_sub2_sub2.method410();
+                anInt57 = buffer.method410();
                 if(anInt57 == 65535)
                     anInt57 = -1;
-                anInt59 = class30_sub2_sub2.method410();
+                anInt59 = buffer.method410();
                 if(anInt59 == 65535)
                     anInt59 = -1;
-                int i1 = class30_sub2_sub2.method408();
+                int i1 = buffer.method408();
                 anIntArray88 = new int[i1 + 1];
                 for(int i2 = 0; i2 <= i1; i2++)
                 {
-                    anIntArray88[i2] = class30_sub2_sub2.method410();
+                    anIntArray88[i2] = buffer.method410();
                     if(anIntArray88[i2] == 65535)
                         anIntArray88[i2] = -1;
                 }
@@ -329,7 +327,7 @@ public class Class5
     public int anInt57;
     public int anInt58;
     public int anInt59;
-    public static Class30_Sub2_Sub2 aClass30_Sub2_Sub2_60;
+    public static Buffer aBuffer_60;
     public int anInt61;
     public static int anInt62;
     public int anInt63;

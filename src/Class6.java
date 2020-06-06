@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class6
 {
 
@@ -222,58 +220,58 @@ public class Class6
             return 0;
     }
 
-    public void method169(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method169(boolean flag, Buffer buffer)
     {
         aClass29_98 = new Class29();
-        aClass29_98.method325(true, class30_sub2_sub2);
+        aClass29_98.method325(true, buffer);
         aClass29_99 = new Class29();
         if(!flag)
             throw new NullPointerException();
-        aClass29_99.method325(true, class30_sub2_sub2);
-        int i = class30_sub2_sub2.method408();
+        aClass29_99.method325(true, buffer);
+        int i = buffer.method408();
         if(i != 0)
         {
-            class30_sub2_sub2.anInt1406--;
+            buffer.pointer--;
             aClass29_100 = new Class29();
-            aClass29_100.method325(true, class30_sub2_sub2);
+            aClass29_100.method325(true, buffer);
             aClass29_101 = new Class29();
-            aClass29_101.method325(true, class30_sub2_sub2);
+            aClass29_101.method325(true, buffer);
         }
-        i = class30_sub2_sub2.method408();
+        i = buffer.method408();
         if(i != 0)
         {
-            class30_sub2_sub2.anInt1406--;
+            buffer.pointer--;
             aClass29_102 = new Class29();
-            aClass29_102.method325(true, class30_sub2_sub2);
+            aClass29_102.method325(true, buffer);
             aClass29_103 = new Class29();
-            aClass29_103.method325(true, class30_sub2_sub2);
+            aClass29_103.method325(true, buffer);
         }
-        i = class30_sub2_sub2.method408();
+        i = buffer.method408();
         if(i != 0)
         {
-            class30_sub2_sub2.anInt1406--;
+            buffer.pointer--;
             aClass29_104 = new Class29();
-            aClass29_104.method325(true, class30_sub2_sub2);
+            aClass29_104.method325(true, buffer);
             aClass29_105 = new Class29();
-            aClass29_105.method325(true, class30_sub2_sub2);
+            aClass29_105.method325(true, buffer);
         }
         for(int j = 0; j < 10; j++)
         {
-            int k = class30_sub2_sub2.method422();
+            int k = buffer.method422();
             if(k == 0)
                 break;
             anIntArray106[j] = k;
-            anIntArray107[j] = class30_sub2_sub2.method421();
-            anIntArray108[j] = class30_sub2_sub2.method422();
+            anIntArray107[j] = buffer.method421();
+            anIntArray108[j] = buffer.method422();
         }
 
-        anInt109 = class30_sub2_sub2.method422();
-        anInt110 = class30_sub2_sub2.method422();
-        anInt113 = class30_sub2_sub2.method410();
-        anInt114 = class30_sub2_sub2.method410();
+        anInt109 = buffer.method422();
+        anInt110 = buffer.method422();
+        anInt113 = buffer.method410();
+        anInt114 = buffer.method410();
         aClass39_111 = new Class39();
         aClass29_112 = new Class29();
-        aClass39_111.method545(class30_sub2_sub2, false, aClass29_112);
+        aClass39_111.method545(buffer, false, aClass29_112);
     }
 
     public Class6()

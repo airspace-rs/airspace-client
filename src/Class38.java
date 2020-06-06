@@ -2,59 +2,56 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.io.PrintStream;
-import sign.signlink;
-
 public class Class38
 {
 
     public static void method535(int i, Class44 class44)
     {
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("idk.dat", null), 891);
-        anInt655 = class30_sub2_sub2.method410();
+        Buffer buffer = new Buffer(class44.method571("idk.dat", null), 891);
+        anInt655 = buffer.method410();
         if(aClass38Array656 == null)
             aClass38Array656 = new Class38[anInt655];
         for(int j = 0; j < anInt655; j++)
         {
             if(aClass38Array656[j] == null)
                 aClass38Array656[j] = new Class38();
-            aClass38Array656[j].method536(true, class30_sub2_sub2);
+            aClass38Array656[j].method536(true, buffer);
         }
 
         if(i == 0);
     }
 
-    public void method536(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method536(boolean flag, Buffer buffer)
     {
         if(!flag)
             throw new NullPointerException();
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt657 = class30_sub2_sub2.method408();
+                anInt657 = buffer.method408();
             else
             if(i == 2)
             {
-                int j = class30_sub2_sub2.method408();
+                int j = buffer.method408();
                 anIntArray658 = new int[j];
                 for(int k = 0; k < j; k++)
-                    anIntArray658[k] = class30_sub2_sub2.method410();
+                    anIntArray658[k] = buffer.method410();
 
             } else
             if(i == 3)
                 aBoolean662 = true;
             else
             if(i >= 40 && i < 50)
-                anIntArray659[i - 40] = class30_sub2_sub2.method410();
+                anIntArray659[i - 40] = buffer.method410();
             else
             if(i >= 50 && i < 60)
-                anIntArray660[i - 50] = class30_sub2_sub2.method410();
+                anIntArray660[i - 50] = buffer.method410();
             else
             if(i >= 60 && i < 70)
-                anIntArray661[i - 60] = class30_sub2_sub2.method410();
+                anIntArray661[i - 60] = buffer.method410();
             else
                 System.out.println("Error unrecognised config code: " + i);
         } while(true);

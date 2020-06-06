@@ -586,7 +586,7 @@ public class Class7
     return i_109_;
   }
   
-  public static void method173 (byte i, Class30_Sub2_Sub2 class30_sub2_sub2,
+  public static void method173 (byte i, Buffer buffer,
 				Class42_Sub1 class42_sub1)
   {
     int i_110_ = -1;
@@ -594,7 +594,7 @@ public class Class7
       aBoolean141 = ! aBoolean141;
     for (;;)
       {
-	int i_111_ = class30_sub2_sub2.method422 ();
+	int i_111_ = buffer.method422 ();
 	if (i_111_ == 0)
 	  break;
 	i_110_ += i_111_;
@@ -602,10 +602,10 @@ public class Class7
 	class46.method574 (class42_sub1, -235);
 	for (;;)
 	  {
-	    int i_112_ = class30_sub2_sub2.method422 ();
+	    int i_112_ = buffer.method422 ();
 	    if (i_112_ == 0)
 	      break;
-	    class30_sub2_sub2.method408 ();
+	    buffer.method408 ();
 	  }
       }
   }
@@ -1201,7 +1201,7 @@ public class Class7
 	    /* empty */
 	  }
       }
-    Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2 (is, 891);
+    Buffer buffer = new Buffer(is, 891);
     for (int i_172_ = 0; i_172_ < 4; i_172_++)
       {
 	for (int i_173_ = 0; i_173_ < 64; i_173_++)
@@ -1212,12 +1212,12 @@ public class Class7
 		    && i_174_ >= i_166_ && i_174_ < i_166_ + 8)
 		  method181 (i_168_ + Class4.method156 (i_174_ & 0x7, i_162_,
 							-383, i_173_ & 0x7),
-			     0, class30_sub2_sub2,
+			     0, buffer,
 			     i_164_ + Class4.method155 (i_162_, i_174_ & 0x7,
 							i_173_ & 0x7, false),
 			     i_167_, i_162_, 942, 0);
 		else
-		  method181 (-1, 0, class30_sub2_sub2, -1, 0, 0, 942, 0);
+		  method181 (-1, 0, buffer, -1, 0, 0, 942, 0);
 	      }
 	  }
       }
@@ -1240,13 +1240,13 @@ public class Class7
 	      }
 	  }
       }
-    Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2 (is, 891);
+    Buffer buffer = new Buffer(is, 891);
     for (int i_182_ = 0; i_182_ < 4; i_182_++)
       {
 	for (int i_183_ = 0; i_183_ < 64; i_183_++)
 	  {
 	    for (int i_184_ = 0; i_184_ < 64; i_184_++)
-	      method181 (i_184_ + i, i_177_, class30_sub2_sub2,
+	      method181 (i_184_ + i, i_177_, buffer,
 			 i_183_ + i_175_, i_182_, 0, 942, i_176_);
 	  }
       }
@@ -1255,8 +1255,8 @@ public class Class7
   }
   
   public void method181 (int i, int i_185_,
-			 Class30_Sub2_Sub2 class30_sub2_sub2, int i_186_,
-			 int i_187_, int i_188_, int i_189_, int i_190_)
+                         Buffer buffer, int i_186_,
+                         int i_187_, int i_188_, int i_189_, int i_190_)
   {
     i_189_ = 36 / i_189_;
     if (i_186_ >= 0 && i_186_ < 104 && i >= 0 && i < 104)
@@ -1264,7 +1264,7 @@ public class Class7
 	aByteArrayArrayArray149[i_187_][i_186_][i] = (byte) 0;
 	for (;;)
 	  {
-	    int i_191_ = class30_sub2_sub2.method408 ();
+	    int i_191_ = buffer.method408 ();
 	    if (i_191_ == 0)
 	      {
 		if (i_187_ == 0)
@@ -1281,7 +1281,7 @@ public class Class7
 	      }
 	    if (i_191_ == 1)
 	      {
-		int i_192_ = class30_sub2_sub2.method408 ();
+		int i_192_ = buffer.method408 ();
 		if (i_192_ == 1)
 		  i_192_ = 0;
 		if (i_187_ == 0)
@@ -1298,7 +1298,7 @@ public class Class7
 	    if (i_191_ <= 49)
 	      {
 		aByteArrayArrayArray130[i_187_][i_186_][i]
-		  = class30_sub2_sub2.method409 ();
+		  = buffer.method409 ();
 		aByteArrayArrayArray136[i_187_][i_186_][i]
 		  = (byte) ((i_191_ - 2) / 4);
 		aByteArrayArrayArray148[i_187_][i_186_][i]
@@ -1316,16 +1316,16 @@ public class Class7
       {
 	for (;;)
 	  {
-	    int i_193_ = class30_sub2_sub2.method408 ();
+	    int i_193_ = buffer.method408 ();
 	    if (i_193_ == 0)
 	      break;
 	    if (i_193_ == 1)
 	      {
-		class30_sub2_sub2.method408 ();
+		buffer.method408 ();
 		break;
 	      }
 	    if (i_193_ <= 49)
-	      class30_sub2_sub2.method408 ();
+	      buffer.method408 ();
 	  }
       }
   }
@@ -1345,27 +1345,27 @@ public class Class7
 			 int i_197_, int i_198_, boolean bool, int i_199_,
 			 byte[] is, int i_200_, int i_201_, int i_202_)
   {
-    Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2 (is, 891);
+    Buffer buffer = new Buffer(is, 891);
     int i_203_ = -1;
     if (! bool)
       aBoolean143 = ! aBoolean143;
     for (;;)
       {
-	int i_204_ = class30_sub2_sub2.method422 ();
+	int i_204_ = buffer.method422 ();
 	if (i_204_ == 0)
 	  break;
 	i_203_ += i_204_;
 	int i_205_ = 0;
 	for (;;)
 	  {
-	    int i_206_ = class30_sub2_sub2.method422 ();
+	    int i_206_ = buffer.method422 ();
 	    if (i_206_ == 0)
 	      break;
 	    i_205_ += i_206_ - 1;
 	    int i_207_ = i_205_ & 0x3f;
 	    int i_208_ = i_205_ >> 6 & 0x3f;
 	    int i_209_ = i_205_ >> 12;
-	    int i_210_ = class30_sub2_sub2.method408 ();
+	    int i_210_ = buffer.method408 ();
 	    int i_211_ = i_210_ >> 2;
 	    int i_212_ = i_210_ & 0x3;
 	    if (i_209_ == i && i_208_ >= i_200_ && i_208_ < i_200_ + 8
@@ -1749,11 +1749,11 @@ public class Class7
     if (i_251_ < 6 || i_251_ > 6)
       throw new NullPointerException ();
     boolean bool = true;
-    Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2 (is, 891);
+    Buffer buffer = new Buffer(is, 891);
     int i_252_ = -1;
     for (;;)
       {
-	int i_253_ = class30_sub2_sub2.method422 ();
+	int i_253_ = buffer.method422 ();
 	if (i_253_ == 0)
 	  break;
 	i_252_ += i_253_;
@@ -1763,20 +1763,20 @@ public class Class7
 	  {
 	    if (bool_255_)
 	      {
-		int i_256_ = class30_sub2_sub2.method422 ();
+		int i_256_ = buffer.method422 ();
 		if (i_256_ == 0)
 		  break;
-		class30_sub2_sub2.method408 ();
+		buffer.method408 ();
 	      }
 	    else
 	      {
-		int i_257_ = class30_sub2_sub2.method422 ();
+		int i_257_ = buffer.method422 ();
 		if (i_257_ == 0)
 		  break;
 		i_254_ += i_257_ - 1;
 		int i_258_ = i_254_ & 0x3f;
 		int i_259_ = i_254_ >> 6 & 0x3f;
-		int i_260_ = class30_sub2_sub2.method408 () >> 2;
+		int i_260_ = buffer.method408 () >> 2;
 		int i_261_ = i_259_ + i;
 		int i_262_ = i_258_ + i_250_;
 		if (i_261_ > 0 && i_262_ > 0 && i_261_ < 103 && i_262_ < 103)
@@ -1800,25 +1800,25 @@ public class Class7
   {
     if (i_264_ >= 7 && i_264_ <= 7)
       {
-	Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2 (is, 891);
+	Buffer buffer = new Buffer(is, 891);
 	int i_265_ = -1;
 	for (;;)
 	  {
-	    int i_266_ = class30_sub2_sub2.method422 ();
+	    int i_266_ = buffer.method422 ();
 	    if (i_266_ == 0)
 	      break;
 	    i_265_ += i_266_;
 	    int i_267_ = 0;
 	    for (;;)
 	      {
-		int i_268_ = class30_sub2_sub2.method422 ();
+		int i_268_ = buffer.method422 ();
 		if (i_268_ == 0)
 		  break;
 		i_267_ += i_268_ - 1;
 		int i_269_ = i_267_ & 0x3f;
 		int i_270_ = i_267_ >> 6 & 0x3f;
 		int i_271_ = i_267_ >> 12;
-		int i_272_ = class30_sub2_sub2.method408 ();
+		int i_272_ = buffer.method408 ();
 		int i_273_ = i_272_ >> 2;
 		int i_274_ = i_272_ & 0x3;
 		int i_275_ = i_270_ + i;

@@ -4,45 +4,39 @@
 
 import java.io.*;
 import java.net.Socket;
-import sign.signlink;
 
-public class Class24
-    implements Runnable
+public class Connection implements Runnable
 {
-
-    public Class24(Applet_Sub1 applet_sub1, int i, Socket socket)
-        throws IOException
+    public Connection(Applet_Sub1 applet_sub1, Socket socket) throws IOException
     {
         anInt416 = -53;
         aBoolean417 = true;
         anInt418 = 519;
-        aBoolean422 = false;
+        isDisconnected = false;
         aBoolean427 = false;
         aBoolean428 = false;
-        while(i >= 0) 
-            aBoolean417 = !aBoolean417;
         anApplet_Sub1_423 = applet_sub1;
-        aSocket421 = socket;
-        aSocket421.setSoTimeout(30000);
-        aSocket421.setTcpNoDelay(true);
-        anInputStream419 = aSocket421.getInputStream();
-        anOutputStream420 = aSocket421.getOutputStream();
+        this.socket = socket;
+        this.socket.setSoTimeout(30000);
+        this.socket.setTcpNoDelay(true);
+        inputStream = this.socket.getInputStream();
+        outputStream = this.socket.getOutputStream();
     }
 
-    public void method267()
+    public void close()
     {
-        aBoolean422 = true;
-        try
-        {
-            if(anInputStream419 != null)
-                anInputStream419.close();
-            if(anOutputStream420 != null)
-                anOutputStream420.close();
-            if(aSocket421 != null)
-                aSocket421.close();
-        }
-        catch(IOException _ex)
-        {
+        isDisconnected = true;
+        try {
+            if(inputStream != null) {
+                inputStream.close();
+            }
+            if(outputStream != null) {
+                outputStream.close();
+            }
+            if(socket != null) {
+                socket.close();
+            }
+        } catch(IOException _ex) {
             System.out.println("Error closing stream");
         }
         aBoolean427 = false;
@@ -53,33 +47,33 @@ public class Class24
         aByteArray424 = null;
     }
 
-    public int method268()
-        throws IOException
-    {
-        if(aBoolean422)
+    public int readByte() throws IOException {
+        if (isDisconnected) {
             return 0;
-        else
-            return anInputStream419.read();
+        } else {
+            return inputStream.read();
+        }
     }
 
-    public int method269()
-        throws IOException
-    {
-        if(aBoolean422)
+    public int method269() throws IOException {
+        if (isDisconnected) {
             return 0;
-        else
-            return anInputStream419.available();
+        } else {
+            return inputStream.available();
+        }
     }
 
-    public void method270(byte abyte0[], int i, int j)
-        throws IOException
+    public void method270(byte abyte0[], int i, int j) throws IOException
     {
-        if(aBoolean422)
+        if (isDisconnected) {
             return;
+        }
+
         int k;
+
         for(; j > 0; j -= k)
         {
-            k = anInputStream419.read(abyte0, i, j);
+            k = inputStream.read(abyte0, i, j);
             if(k <= 0)
                 throw new IOException("EOF");
             i += k;
@@ -87,11 +81,12 @@ public class Class24
 
     }
 
-    public void method271(int i, int j, byte abyte0[], int k)
-        throws IOException
+    public void write(int i, int j, byte abyte0[], int k) throws IOException
     {
-        if(aBoolean422)
+        if(isDisconnected) {
             return;
+        }
+
         if(aBoolean428)
         {
             aBoolean428 = false;
@@ -146,7 +141,7 @@ public class Class24
             {
                 try
                 {
-                    anOutputStream420.write(aByteArray424, j, i);
+                    outputStream.write(aByteArray424, j, i);
                 }
                 catch(IOException _ex)
                 {
@@ -156,7 +151,7 @@ public class Class24
                 try
                 {
                     if(anInt426 == anInt425)
-                        anOutputStream420.flush();
+                        outputStream.flush();
                 }
                 catch(IOException _ex)
                 {
@@ -170,7 +165,7 @@ public class Class24
     {
         if(byte0 != 1)
             anInt416 = 457;
-        System.out.println("dummy:" + aBoolean422);
+        System.out.println("dummy:" + isDisconnected);
         System.out.println("tcycl:" + anInt425);
         System.out.println("tnum:" + anInt426);
         System.out.println("writer:" + aBoolean427);
@@ -189,10 +184,10 @@ public class Class24
     public int anInt416;
     public boolean aBoolean417;
     public int anInt418;
-    public InputStream anInputStream419;
-    public OutputStream anOutputStream420;
-    public Socket aSocket421;
-    public boolean aBoolean422;
+    public InputStream inputStream;
+    public OutputStream outputStream;
+    public Socket socket;
+    public boolean isDisconnected;
     public Applet_Sub1 anApplet_Sub1_423;
     public byte aByteArray424[];
     public int anInt425;

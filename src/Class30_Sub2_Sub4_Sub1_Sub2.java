@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
 {
 
@@ -87,28 +85,28 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         return class30_sub2_sub4_sub6;
     }
 
-    public void method451(int i, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method451(int i, Buffer buffer)
     {
-        class30_sub2_sub2.anInt1406 = 0;
-        anInt1702 = class30_sub2_sub2.method408();
-        anInt1706 = class30_sub2_sub2.method408();
+        buffer.pointer = 0;
+        anInt1702 = buffer.method408();
+        anInt1706 = buffer.method408();
         if(i != 0)
             return;
         aClass5_1698 = null;
         anInt1701 = 0;
         for(int j = 0; j < 12; j++)
         {
-            int k = class30_sub2_sub2.method408();
+            int k = buffer.method408();
             if(k == 0)
             {
                 anIntArray1717[j] = 0;
                 continue;
             }
-            int i1 = class30_sub2_sub2.method408();
+            int i1 = buffer.method408();
             anIntArray1717[j] = (k << 8) + i1;
             if(j == 0 && anIntArray1717[0] == 65535)
             {
-                aClass5_1698 = Class5.method159(class30_sub2_sub2.method410());
+                aClass5_1698 = Class5.method159(buffer.method410());
                 break;
             }
             if(anIntArray1717[j] >= 512 && anIntArray1717[j] - 512 < Class8.anInt203)
@@ -121,36 +119,36 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
 
         for(int l = 0; l < 5; l++)
         {
-            int j1 = class30_sub2_sub2.method408();
+            int j1 = buffer.method408();
             if(j1 < 0 || j1 >= client.anIntArrayArray1003[l].length)
                 j1 = 0;
             anIntArray1700[l] = j1;
         }
 
-        super.anInt1511 = class30_sub2_sub2.method410();
+        super.anInt1511 = buffer.method410();
         if(super.anInt1511 == 65535)
             super.anInt1511 = -1;
-        super.anInt1512 = class30_sub2_sub2.method410();
+        super.anInt1512 = buffer.method410();
         if(super.anInt1512 == 65535)
             super.anInt1512 = -1;
-        super.anInt1554 = class30_sub2_sub2.method410();
+        super.anInt1554 = buffer.method410();
         if(super.anInt1554 == 65535)
             super.anInt1554 = -1;
-        super.anInt1555 = class30_sub2_sub2.method410();
+        super.anInt1555 = buffer.method410();
         if(super.anInt1555 == 65535)
             super.anInt1555 = -1;
-        super.anInt1556 = class30_sub2_sub2.method410();
+        super.anInt1556 = buffer.method410();
         if(super.anInt1556 == 65535)
             super.anInt1556 = -1;
-        super.anInt1557 = class30_sub2_sub2.method410();
+        super.anInt1557 = buffer.method410();
         if(super.anInt1557 == 65535)
             super.anInt1557 = -1;
-        super.anInt1505 = class30_sub2_sub2.method410();
+        super.anInt1505 = buffer.method410();
         if(super.anInt1505 == 65535)
             super.anInt1505 = -1;
-        aString1703 = Class50.method587(-45804, Class50.method584(class30_sub2_sub2.method414(-35089), (byte)-99));
-        anInt1705 = class30_sub2_sub2.method408();
-        anInt1723 = class30_sub2_sub2.method410();
+        aString1703 = Class50.method587(-45804, Class50.method584(buffer.method414(-35089), (byte)-99));
+        anInt1705 = buffer.method408();
+        anInt1723 = buffer.method410();
         aBoolean1710 = true;
         aLong1718 = 0L;
         for(int k1 = 0; k1 < 12; k1++)

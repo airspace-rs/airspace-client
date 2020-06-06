@@ -2,23 +2,20 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
-public class Class17
+public class IsaacCipher
 {
 
-    public Class17(int i, int ai[])
+    public IsaacCipher(int sessionKey[])
     {
         anInt332 = -436;
         anInt333 = -431;
         anIntArray336 = new int[256];
         anIntArray335 = new int[256];
-        for(int j = 0; j < ai.length; j++)
-            anIntArray335[j] = ai[j];
+        for(int j = 0; j < sessionKey.length; j++) {
+            anIntArray335[j] = sessionKey[j];
+        }
 
-        if(i >= 0)
-            anInt333 = -242;
-        method248();
+        initialiseKeySet();
     }
 
     public int method246()
@@ -56,7 +53,7 @@ public class Class17
 
     }
 
-    public void method248()
+    public void initialiseKeySet()
     {
         int i1;
         int j1;

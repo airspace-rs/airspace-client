@@ -2,8 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import sign.signlink;
-
 public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
 {
 
@@ -49,24 +47,24 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             class21.anInt371 = 0;
             return;
         }
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(abyte0, 891);
-        class30_sub2_sub2.anInt1406 = abyte0.length - 18;
+        Buffer buffer = new Buffer(abyte0, 891);
+        buffer.pointer = abyte0.length - 18;
         Class21 class21_1 = aClass21Array1661[j] = new Class21();
         class21_1.aByteArray368 = abyte0;
-        class21_1.anInt369 = class30_sub2_sub2.method410();
-        class21_1.anInt370 = class30_sub2_sub2.method410();
-        class21_1.anInt371 = class30_sub2_sub2.method408();
-        int k = class30_sub2_sub2.method408();
-        int l = class30_sub2_sub2.method408();
+        class21_1.anInt369 = buffer.method410();
+        class21_1.anInt370 = buffer.method410();
+        class21_1.anInt371 = buffer.method408();
+        int k = buffer.method408();
+        int l = buffer.method408();
         if(i != -4036)
             return;
-        int i1 = class30_sub2_sub2.method408();
-        int j1 = class30_sub2_sub2.method408();
-        int k1 = class30_sub2_sub2.method408();
-        int l1 = class30_sub2_sub2.method410();
-        int i2 = class30_sub2_sub2.method410();
-        int j2 = class30_sub2_sub2.method410();
-        int k2 = class30_sub2_sub2.method410();
+        int i1 = buffer.method408();
+        int j1 = buffer.method408();
+        int k1 = buffer.method408();
+        int l1 = buffer.method410();
+        int i2 = buffer.method410();
+        int j2 = buffer.method410();
+        int k2 = buffer.method410();
         int l2 = 0;
         class21_1.anInt372 = l2;
         l2 += class21_1.anInt369;
@@ -201,31 +199,31 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
         if(class21.anInt383 >= 0)
             anIntArray1656 = new int[anInt1630];
         anIntArray1640 = new int[anInt1630];
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class21.aByteArray368, 891);
-        class30_sub2_sub2.anInt1406 = class21.anInt372;
-        Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(class21.aByteArray368, 891);
-        class30_sub2_sub2_1.anInt1406 = class21.anInt373;
-        Class30_Sub2_Sub2 class30_sub2_sub2_2 = new Class30_Sub2_Sub2(class21.aByteArray368, 891);
-        class30_sub2_sub2_2.anInt1406 = class21.anInt374;
-        Class30_Sub2_Sub2 class30_sub2_sub2_3 = new Class30_Sub2_Sub2(class21.aByteArray368, 891);
-        class30_sub2_sub2_3.anInt1406 = class21.anInt375;
-        Class30_Sub2_Sub2 class30_sub2_sub2_4 = new Class30_Sub2_Sub2(class21.aByteArray368, 891);
-        class30_sub2_sub2_4.anInt1406 = class21.anInt376;
+        Buffer buffer = new Buffer(class21.aByteArray368, 891);
+        buffer.pointer = class21.anInt372;
+        Buffer buffer_1 = new Buffer(class21.aByteArray368, 891);
+        buffer_1.pointer = class21.anInt373;
+        Buffer class30_sub2_sub2_2 = new Buffer(class21.aByteArray368, 891);
+        class30_sub2_sub2_2.pointer = class21.anInt374;
+        Buffer buffer_3 = new Buffer(class21.aByteArray368, 891);
+        buffer_3.pointer = class21.anInt375;
+        Buffer buffer_4 = new Buffer(class21.aByteArray368, 891);
+        buffer_4.pointer = class21.anInt376;
         int k = 0;
         int l = 0;
         int i1 = 0;
         for(int j1 = 0; j1 < anInt1626; j1++)
         {
-            int k1 = class30_sub2_sub2.method408();
+            int k1 = buffer.method408();
             int i2 = 0;
             if((k1 & 1) != 0)
-                i2 = class30_sub2_sub2_1.method421();
+                i2 = buffer_1.method421();
             int k2 = 0;
             if((k1 & 2) != 0)
                 k2 = class30_sub2_sub2_2.method421();
             int i3 = 0;
             if((k1 & 4) != 0)
-                i3 = class30_sub2_sub2_3.method421();
+                i3 = buffer_3.method421();
             anIntArray1627[j1] = k + i2;
             anIntArray1628[j1] = l + k2;
             anIntArray1629[j1] = i1 + i3;
@@ -233,43 +231,43 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             l = anIntArray1628[j1];
             i1 = anIntArray1629[j1];
             if(anIntArray1655 != null)
-                anIntArray1655[j1] = class30_sub2_sub2_4.method408();
+                anIntArray1655[j1] = buffer_4.method408();
         }
 
-        class30_sub2_sub2.anInt1406 = class21.anInt379;
-        class30_sub2_sub2_1.anInt1406 = class21.anInt380;
-        class30_sub2_sub2_2.anInt1406 = class21.anInt381;
-        class30_sub2_sub2_3.anInt1406 = class21.anInt382;
-        class30_sub2_sub2_4.anInt1406 = class21.anInt383;
+        buffer.pointer = class21.anInt379;
+        buffer_1.pointer = class21.anInt380;
+        class30_sub2_sub2_2.pointer = class21.anInt381;
+        buffer_3.pointer = class21.anInt382;
+        buffer_4.pointer = class21.anInt383;
         for(int l1 = 0; l1 < anInt1630; l1++)
         {
-            anIntArray1640[l1] = class30_sub2_sub2.method410();
+            anIntArray1640[l1] = buffer.method410();
             if(anIntArray1637 != null)
-                anIntArray1637[l1] = class30_sub2_sub2_1.method408();
+                anIntArray1637[l1] = buffer_1.method408();
             if(anIntArray1638 != null)
                 anIntArray1638[l1] = class30_sub2_sub2_2.method408();
             if(anIntArray1639 != null)
-                anIntArray1639[l1] = class30_sub2_sub2_3.method408();
+                anIntArray1639[l1] = buffer_3.method408();
             if(anIntArray1656 != null)
-                anIntArray1656[l1] = class30_sub2_sub2_4.method408();
+                anIntArray1656[l1] = buffer_4.method408();
         }
 
-        class30_sub2_sub2.anInt1406 = class21.anInt377;
-        class30_sub2_sub2_1.anInt1406 = class21.anInt378;
+        buffer.pointer = class21.anInt377;
+        buffer_1.pointer = class21.anInt378;
         int j2 = 0;
         int l2 = 0;
         int j3 = 0;
         int k3 = 0;
         for(int l3 = 0; l3 < anInt1630; l3++)
         {
-            int i4 = class30_sub2_sub2_1.method408();
+            int i4 = buffer_1.method408();
             if(i4 == 1)
             {
-                j2 = class30_sub2_sub2.method421() + k3;
+                j2 = buffer.method421() + k3;
                 k3 = j2;
-                l2 = class30_sub2_sub2.method421() + k3;
+                l2 = buffer.method421() + k3;
                 k3 = l2;
-                j3 = class30_sub2_sub2.method421() + k3;
+                j3 = buffer.method421() + k3;
                 k3 = j3;
                 anIntArray1631[l3] = j2;
                 anIntArray1632[l3] = l2;
@@ -279,7 +277,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             {
                 j2 = j2;
                 l2 = j3;
-                j3 = class30_sub2_sub2.method421() + k3;
+                j3 = buffer.method421() + k3;
                 k3 = j3;
                 anIntArray1631[l3] = j2;
                 anIntArray1632[l3] = l2;
@@ -289,7 +287,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             {
                 j2 = j3;
                 l2 = l2;
-                j3 = class30_sub2_sub2.method421() + k3;
+                j3 = buffer.method421() + k3;
                 k3 = j3;
                 anIntArray1631[l3] = j2;
                 anIntArray1632[l3] = l2;
@@ -300,7 +298,7 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
                 int k4 = j2;
                 j2 = l2;
                 l2 = k4;
-                j3 = class30_sub2_sub2.method421() + k3;
+                j3 = buffer.method421() + k3;
                 k3 = j3;
                 anIntArray1631[l3] = j2;
                 anIntArray1632[l3] = l2;
@@ -308,12 +306,12 @@ public class Class30_Sub2_Sub4_Sub6 extends Class30_Sub2_Sub4
             }
         }
 
-        class30_sub2_sub2.anInt1406 = class21.anInt384;
+        buffer.pointer = class21.anInt384;
         for(int j4 = 0; j4 < anInt1642; j4++)
         {
-            anIntArray1643[j4] = class30_sub2_sub2.method410();
-            anIntArray1644[j4] = class30_sub2_sub2.method410();
-            anIntArray1645[j4] = class30_sub2_sub2.method410();
+            anIntArray1643[j4] = buffer.method410();
+            anIntArray1644[j4] = buffer.method410();
+            anIntArray1645[j4] = buffer.method410();
         }
 
     }

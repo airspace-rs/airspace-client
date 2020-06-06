@@ -2,9 +2,6 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-import java.io.PrintStream;
-import sign.signlink;
-
 public class Class22
 {
 
@@ -12,35 +9,35 @@ public class Class22
     {
         if(i != 0)
             anInt386 = 115;
-        Class30_Sub2_Sub2 class30_sub2_sub2 = new Class30_Sub2_Sub2(class44.method571("flo.dat", null), 891);
-        anInt387 = class30_sub2_sub2.method410();
+        Buffer buffer = new Buffer(class44.method571("flo.dat", null), 891);
+        anInt387 = buffer.method410();
         if(aClass22Array388 == null)
             aClass22Array388 = new Class22[anInt387];
         for(int j = 0; j < anInt387; j++)
         {
             if(aClass22Array388[j] == null)
                 aClass22Array388[j] = new Class22();
-            aClass22Array388[j].method261(true, class30_sub2_sub2);
+            aClass22Array388[j].method261(true, buffer);
         }
 
     }
 
-    public void method261(boolean flag, Class30_Sub2_Sub2 class30_sub2_sub2)
+    public void method261(boolean flag, Buffer buffer)
     {
         if(!flag)
             aBoolean385 = !aBoolean385;
         do
         {
-            int i = class30_sub2_sub2.method408();
+            int i = buffer.method408();
             if(i == 0)
                 return;
             if(i == 1)
             {
-                anInt390 = class30_sub2_sub2.method412();
+                anInt390 = buffer.method412();
                 method262(anInt390, 9);
             } else
             if(i == 2)
-                anInt391 = class30_sub2_sub2.method408();
+                anInt391 = buffer.method408();
             else
             if(i == 3)
                 aBoolean392 = true;
@@ -49,7 +46,7 @@ public class Class22
                 aBoolean393 = false;
             else
             if(i == 6)
-                aString389 = class30_sub2_sub2.method415();
+                aString389 = buffer.method415();
             else
             if(i == 7)
             {
@@ -57,7 +54,7 @@ public class Class22
                 int k = anInt395;
                 int l = anInt396;
                 int i1 = anInt397;
-                int j1 = class30_sub2_sub2.method412();
+                int j1 = buffer.method412();
                 method262(j1, 9);
                 anInt394 = j;
                 anInt395 = k;

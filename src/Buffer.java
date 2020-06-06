@@ -5,51 +5,29 @@
 import java.math.BigInteger;
 import sign.signlink;
 
-public class Class30_Sub2_Sub2 extends Class30_Sub2
+public class Buffer extends Class30_Sub2
 {
-
-    public static Class30_Sub2_Sub2 method396(int i, int j)
+    public static Buffer createNew()
     {
-        synchronized(aClass19_1415)
-        {
-            Class30_Sub2_Sub2 class30_sub2_sub2_2 = null;
-            if(i == 0 && anInt1411 > 0)
-            {
-                anInt1411--;
-                class30_sub2_sub2_2 = (Class30_Sub2_Sub2)aClass19_1414.method251();
-            } else
-            if(i == 1 && anInt1412 > 0)
-            {
-                anInt1412--;
-                class30_sub2_sub2_2 = (Class30_Sub2_Sub2)aClass19_1415.method251();
-            } else
-            if(i == 2 && anInt1413 > 0)
-            {
-                anInt1413--;
-                class30_sub2_sub2_2 = (Class30_Sub2_Sub2)aClass19_1416.method251();
-            }
-            if(class30_sub2_sub2_2 != null)
-            {
-                class30_sub2_sub2_2.anInt1406 = 0;
-                Class30_Sub2_Sub2 class30_sub2_sub2 = class30_sub2_sub2_2;
-                return class30_sub2_sub2;
-            }
-        }
-        if(j < 9 || j > 9)
-            throw new NullPointerException();
-        Class30_Sub2_Sub2 class30_sub2_sub2_1 = new Class30_Sub2_Sub2(false);
-        class30_sub2_sub2_1.anInt1406 = 0;
-        if(i == 0)
-            class30_sub2_sub2_1.aByteArray1405 = new byte[100];
-        else
-        if(i == 1)
-            class30_sub2_sub2_1.aByteArray1405 = new byte[5000];
-        else
-            class30_sub2_sub2_1.aByteArray1405 = new byte[30000];
-        return class30_sub2_sub2_1;
+        // Commented because I think it's sophisticated looking junk
+//        synchronized(aClass19_1415)
+//        {
+//            Stream class30_sub2_sub2_2 = null;
+//            class30_sub2_sub2_2 = (Stream)aClass19_1415.method251();
+//
+//            if(class30_sub2_sub2_2 != null) {
+//                class30_sub2_sub2_2.anInt1406 = 0;
+//                Stream stream = class30_sub2_sub2_2;
+//                return stream;
+//            }
+//        }
+        Buffer buffer = new Buffer();
+        buffer.pointer = 0;
+        buffer.data = new byte[5000];
+        return buffer;
     }
 
-    public Class30_Sub2_Sub2(boolean flag)
+    public Buffer()
     {
         anInt1389 = 891;
         anInt1390 = 9;
@@ -67,13 +45,9 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         anInt1402 = -373;
         aBoolean1403 = false;
         aBoolean1404 = true;
-        if(flag)
-            throw new NullPointerException();
-        else
-            return;
     }
 
-    public Class30_Sub2_Sub2(byte abyte0[], int i)
+    public Buffer(byte abyte0[], int i)
     {
         anInt1389 = 891;
         anInt1390 = 9;
@@ -96,8 +70,8 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
             throw new NullPointerException();
         } else
         {
-            aByteArray1405 = abyte0;
-            anInt1406 = 0;
+            data = abyte0;
+            pointer = 0;
             return;
         }
     }
@@ -108,54 +82,54 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         {
             for(int j = 1; j > 0; j++);
         }
-        aByteArray1405[anInt1406++] = (byte)(i + aClass17_1410.method246());
+        data[pointer++] = (byte)(i + encryption.method246());
     }
 
-    public void method398(int i)
+    public void writeUnsignedByte(int i)
     {
-        aByteArray1405[anInt1406++] = (byte)i;
+        data[pointer++] = (byte)i;
     }
 
-    public void method399(int i)
+    public void writeUnsignedWord(int i)
     {
-        aByteArray1405[anInt1406++] = (byte)(i >> 8);
-        aByteArray1405[anInt1406++] = (byte)i;
+        data[pointer++] = (byte)(i >> 8);
+        data[pointer++] = (byte)i;
     }
 
     public void method400(boolean flag, int i)
     {
-        aByteArray1405[anInt1406++] = (byte)i;
-        aByteArray1405[anInt1406++] = (byte)(i >> 8);
+        data[pointer++] = (byte)i;
+        data[pointer++] = (byte)(i >> 8);
         if(!flag)
             anInt1389 = -142;
     }
 
     public void method401(int i)
     {
-        aByteArray1405[anInt1406++] = (byte)(i >> 16);
-        aByteArray1405[anInt1406++] = (byte)(i >> 8);
-        aByteArray1405[anInt1406++] = (byte)i;
+        data[pointer++] = (byte)(i >> 16);
+        data[pointer++] = (byte)(i >> 8);
+        data[pointer++] = (byte)i;
     }
 
-    public void method402(int i)
+    public void writeDWord(int i)
     {
-        aByteArray1405[anInt1406++] = (byte)(i >> 24);
-        aByteArray1405[anInt1406++] = (byte)(i >> 16);
-        aByteArray1405[anInt1406++] = (byte)(i >> 8);
-        aByteArray1405[anInt1406++] = (byte)i;
+        data[pointer++] = (byte)(i >> 24);
+        data[pointer++] = (byte)(i >> 16);
+        data[pointer++] = (byte)(i >> 8);
+        data[pointer++] = (byte)i;
     }
 
     public void method403(int i, int j)
     {
-        aByteArray1405[anInt1406++] = (byte)j;
-        aByteArray1405[anInt1406++] = (byte)(j >> 8);
+        data[pointer++] = (byte)j;
+        data[pointer++] = (byte)(j >> 8);
         if(i != 0)
         {
             return;
         } else
         {
-            aByteArray1405[anInt1406++] = (byte)(j >> 16);
-            aByteArray1405[anInt1406++] = (byte)(j >> 24);
+            data[pointer++] = (byte)(j >> 16);
+            data[pointer++] = (byte)(j >> 24);
             return;
         }
     }
@@ -164,16 +138,16 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
     {
         try
         {
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 56);
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 48);
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 40);
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 32);
+            data[pointer++] = (byte)(int)(l >> 56);
+            data[pointer++] = (byte)(int)(l >> 48);
+            data[pointer++] = (byte)(int)(l >> 40);
+            data[pointer++] = (byte)(int)(l >> 32);
             if(i < 5 || i > 5)
                 anInt1402 = 409;
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 24);
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 16);
-            aByteArray1405[anInt1406++] = (byte)(int)(l >> 8);
-            aByteArray1405[anInt1406++] = (byte)(int)l;
+            data[pointer++] = (byte)(int)(l >> 24);
+            data[pointer++] = (byte)(int)(l >> 16);
+            data[pointer++] = (byte)(int)(l >> 8);
+            data[pointer++] = (byte)(int)l;
         }
         catch(RuntimeException runtimeexception)
         {
@@ -182,49 +156,49 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         }
     }
 
-    public void method405(String s)
+    public void writeString(String s)
     {
-        s.getBytes(0, s.length(), aByteArray1405, anInt1406);
-        anInt1406 += s.length();
-        aByteArray1405[anInt1406++] = 10;
+        s.getBytes(0, s.length(), data, pointer);
+        pointer += s.length();
+        data[pointer++] = 10;
     }
 
-    public void method406(byte abyte0[], int i, boolean flag, int j)
+    public void joinBuffer(byte abyte0[], int i, boolean flag, int j)
     {
         if(!flag)
             aBoolean1401 = !aBoolean1401;
         for(int k = j; k < j + i; k++)
-            aByteArray1405[anInt1406++] = abyte0[k];
+            data[pointer++] = abyte0[k];
 
     }
 
     public void method407(int i, byte byte0)
     {
-        aByteArray1405[anInt1406 - i - 1] = (byte)i;
+        data[pointer - i - 1] = (byte)i;
         if(byte0 == 0)
             byte0 = 0;
     }
 
     public int method408()
     {
-        return aByteArray1405[anInt1406++] & 0xff;
+        return data[pointer++] & 0xff;
     }
 
     public byte method409()
     {
-        return aByteArray1405[anInt1406++];
+        return data[pointer++];
     }
 
     public int method410()
     {
-        anInt1406 += 2;
-        return ((aByteArray1405[anInt1406 - 2] & 0xff) << 8) + (aByteArray1405[anInt1406 - 1] & 0xff);
+        pointer += 2;
+        return ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
     }
 
     public int method411()
     {
-        anInt1406 += 2;
-        int i = ((aByteArray1405[anInt1406 - 2] & 0xff) << 8) + (aByteArray1405[anInt1406 - 1] & 0xff);
+        pointer += 2;
+        int i = ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
         if(i > 32767)
             i -= 0x10000;
         return i;
@@ -232,14 +206,14 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
 
     public int method412()
     {
-        anInt1406 += 3;
-        return ((aByteArray1405[anInt1406 - 3] & 0xff) << 16) + ((aByteArray1405[anInt1406 - 2] & 0xff) << 8) + (aByteArray1405[anInt1406 - 1] & 0xff);
+        pointer += 3;
+        return ((data[pointer - 3] & 0xff) << 16) + ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
     }
 
     public int method413()
     {
-        anInt1406 += 4;
-        return ((aByteArray1405[anInt1406 - 4] & 0xff) << 24) + ((aByteArray1405[anInt1406 - 3] & 0xff) << 16) + ((aByteArray1405[anInt1406 - 2] & 0xff) << 8) + (aByteArray1405[anInt1406 - 1] & 0xff);
+        pointer += 4;
+        return ((data[pointer - 4] & 0xff) << 24) + ((data[pointer - 3] & 0xff) << 16) + ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
     }
 
     public long method414(int i)
@@ -253,20 +227,20 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
 
     public String method415()
     {
-        int i = anInt1406;
-        while(aByteArray1405[anInt1406++] != 10) ;
-        return new String(aByteArray1405, i, anInt1406 - i - 1);
+        int i = pointer;
+        while(data[pointer++] != 10) ;
+        return new String(data, i, pointer - i - 1);
     }
 
     public byte[] method416(byte byte0)
     {
-        int i = anInt1406;
-        while(aByteArray1405[anInt1406++] != 10) ;
-        byte abyte0[] = new byte[anInt1406 - i - 1];
+        int i = pointer;
+        while(data[pointer++] != 10) ;
+        byte abyte0[] = new byte[pointer - i - 1];
         if(byte0 != 30)
             aBoolean1404 = !aBoolean1404;
-        for(int j = i; j < anInt1406 - 1; j++)
-            abyte0[j - i] = aByteArray1405[j];
+        for(int j = i; j < pointer - 1; j++)
+            abyte0[j - i] = data[j];
 
         return abyte0;
     }
@@ -278,13 +252,13 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
             for(int k = 1; k > 0; k++);
         }
         for(int l = j; l < j + i; l++)
-            abyte0[l] = aByteArray1405[anInt1406++];
+            abyte0[l] = data[pointer++];
 
     }
 
     public void method418(int i)
     {
-        anInt1407 = anInt1406 * 8;
+        anInt1407 = pointer * 8;
         if(i != anInt1392)
         {
             for(int j = 1; j > 0; j++);
@@ -301,20 +275,20 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         anInt1407 += i;
         for(; i > l; l = 8)
         {
-            i1 += (aByteArray1405[k++] & anIntArray1409[l]) << i - l;
+            i1 += (data[k++] & anIntArray1409[l]) << i - l;
             i -= l;
         }
 
         if(i == l)
-            i1 += aByteArray1405[k] & anIntArray1409[l];
+            i1 += data[k] & anIntArray1409[l];
         else
-            i1 += aByteArray1405[k] >> l - i & anIntArray1409[i];
+            i1 += data[k] >> l - i & anIntArray1409[i];
         return i1;
     }
 
     public void method420(boolean flag)
     {
-        anInt1406 = (anInt1407 + 7) / 8;
+        pointer = (anInt1407 + 7) / 8;
         if(!flag)
         {
             for(int i = 1; i > 0; i++);
@@ -323,7 +297,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
 
     public int method421()
     {
-        int i = aByteArray1405[anInt1406] & 0xff;
+        int i = data[pointer] & 0xff;
         if(i < 128)
             return method408() - 64;
         else
@@ -332,32 +306,37 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
 
     public int method422()
     {
-        int i = aByteArray1405[anInt1406] & 0xff;
+        int i = data[pointer] & 0xff;
         if(i < 128)
             return method408();
         else
             return method410() - 32768;
     }
 
-    public void method423(BigInteger biginteger, BigInteger biginteger1, byte byte0)
+    public void rsaEncrypt(BigInteger bigInteger, BigInteger bigInteger1)
     {
-        int i = anInt1406;
-        anInt1406 = 0;
+        boolean doRsa = false;
+
+        int i = pointer;
+        pointer = 0;
         byte abyte0[] = new byte[i];
         method417(i, aByte1391, 0, abyte0);
-        BigInteger biginteger2 = new BigInteger(abyte0);
-        if(byte0 != 0)
-            aBoolean1403 = !aBoolean1403;
-        BigInteger biginteger3 = biginteger2.modPow(biginteger, biginteger1);
-        byte abyte1[] = biginteger3.toByteArray();
-        anInt1406 = 0;
-        method398(abyte1.length);
-        method406(abyte1, abyte1.length, true, 0);
+        BigInteger bigInteger2 = new BigInteger(abyte0);
+        BigInteger encryptedData;
+        if (doRsa) {
+            encryptedData = bigInteger2.modPow(bigInteger, bigInteger1);
+        } else {
+            encryptedData = bigInteger2;
+        }
+        byte abyte1[] = encryptedData.toByteArray();
+        pointer = 0;
+        writeUnsignedByte(abyte1.length);
+        joinBuffer(abyte1, abyte1.length, true, 0);
     }
 
     public void method424(int i, int j)
     {
-        aByteArray1405[anInt1406++] = (byte)(-i);
+        data[pointer++] = (byte)(-i);
         if(j != 0)
         {
             for(int k = 1; k > 0; k++);
@@ -366,7 +345,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
 
     public void method425(int i, int j)
     {
-        aByteArray1405[anInt1406++] = (byte)(128 - j);
+        data[pointer++] = (byte)(128 - j);
         i = 90 / i;
     }
 
@@ -375,21 +354,21 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         if(i != 0)
             return anInt1395;
         else
-            return aByteArray1405[anInt1406++] - 128 & 0xff;
+            return data[pointer++] - 128 & 0xff;
     }
 
     public int method427(boolean flag)
     {
         if(flag)
             anInt1389 = 310;
-        return -aByteArray1405[anInt1406++] & 0xff;
+        return -data[pointer++] & 0xff;
     }
 
     public int method428(int i)
     {
         if(i != 2)
             aBoolean1404 = !aBoolean1404;
-        return 128 - aByteArray1405[anInt1406++] & 0xff;
+        return 128 - data[pointer++] & 0xff;
     }
 
     public byte method429(byte byte0)
@@ -397,7 +376,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         if(byte0 != aByte1398)
             throw new NullPointerException();
         else
-            return (byte)(-aByteArray1405[anInt1406++]);
+            return (byte)(-data[pointer++]);
     }
 
     public byte method430(int i)
@@ -406,40 +385,40 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         {
             for(int j = 1; j > 0; j++);
         }
-        return (byte)(128 - aByteArray1405[anInt1406++]);
+        return (byte)(128 - data[pointer++]);
     }
 
     public void method431(boolean flag, int i)
     {
-        aByteArray1405[anInt1406++] = (byte)i;
-        aByteArray1405[anInt1406++] = (byte)(i >> 8);
+        data[pointer++] = (byte)i;
+        data[pointer++] = (byte)(i >> 8);
         if(!flag)
             aBoolean1401 = !aBoolean1401;
     }
 
     public void method432(int i, int j)
     {
-        aByteArray1405[anInt1406++] = (byte)(j >> 8);
+        data[pointer++] = (byte)(j >> 8);
         while(i >= 0) 
             anInt1402 = 376;
-        aByteArray1405[anInt1406++] = (byte)(j + 128);
+        data[pointer++] = (byte)(j + 128);
     }
 
     public void method433(int i, int j)
     {
-        aByteArray1405[anInt1406++] = (byte)(j + 128);
+        data[pointer++] = (byte)(j + 128);
         if(i != 0)
             anInt1402 = -238;
-        aByteArray1405[anInt1406++] = (byte)(j >> 8);
+        data[pointer++] = (byte)(j >> 8);
     }
 
     public int method434(byte byte0)
     {
-        anInt1406 += 2;
+        pointer += 2;
         if(byte0 != aByte1399)
             return 3;
         else
-            return ((aByteArray1405[anInt1406 - 1] & 0xff) << 8) + (aByteArray1405[anInt1406 - 2] & 0xff);
+            return ((data[pointer - 1] & 0xff) << 8) + (data[pointer - 2] & 0xff);
     }
 
     public int method435(boolean flag)
@@ -448,26 +427,26 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         {
             for(int i = 1; i > 0; i++);
         }
-        anInt1406 += 2;
-        return ((aByteArray1405[anInt1406 - 2] & 0xff) << 8) + (aByteArray1405[anInt1406 - 1] - 128 & 0xff);
+        pointer += 2;
+        return ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] - 128 & 0xff);
     }
 
     public int method436(byte byte0)
     {
-        anInt1406 += 2;
+        pointer += 2;
         if(byte0 != -74)
         {
             for(int i = 1; i > 0; i++);
         }
-        return ((aByteArray1405[anInt1406 - 1] & 0xff) << 8) + (aByteArray1405[anInt1406 - 2] - 128 & 0xff);
+        return ((data[pointer - 1] & 0xff) << 8) + (data[pointer - 2] - 128 & 0xff);
     }
 
     public int method437(int i)
     {
-        anInt1406 += 2;
+        pointer += 2;
         if(i >= 0)
             return 2;
-        int j = ((aByteArray1405[anInt1406 - 1] & 0xff) << 8) + (aByteArray1405[anInt1406 - 2] & 0xff);
+        int j = ((data[pointer - 1] & 0xff) << 8) + (data[pointer - 2] & 0xff);
         if(j > 32767)
             j -= 0x10000;
         return j;
@@ -479,8 +458,8 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         {
             for(int i = 1; i > 0; i++);
         }
-        anInt1406 += 2;
-        int j = ((aByteArray1405[anInt1406 - 1] & 0xff) << 8) + (aByteArray1405[anInt1406 - 2] - 128 & 0xff);
+        pointer += 2;
+        int j = ((data[pointer - 1] & 0xff) << 8) + (data[pointer - 2] - 128 & 0xff);
         if(j > 32767)
             j -= 0x10000;
         return j;
@@ -493,8 +472,8 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
             return 3;
         } else
         {
-            anInt1406 += 4;
-            return ((aByteArray1405[anInt1406 - 2] & 0xff) << 24) + ((aByteArray1405[anInt1406 - 1] & 0xff) << 16) + ((aByteArray1405[anInt1406 - 4] & 0xff) << 8) + (aByteArray1405[anInt1406 - 3] & 0xff);
+            pointer += 4;
+            return ((data[pointer - 2] & 0xff) << 24) + ((data[pointer - 1] & 0xff) << 16) + ((data[pointer - 4] & 0xff) << 8) + (data[pointer - 3] & 0xff);
         }
     }
 
@@ -502,8 +481,8 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
     {
         if(!flag)
             aBoolean1396 = !aBoolean1396;
-        anInt1406 += 4;
-        return ((aByteArray1405[anInt1406 - 3] & 0xff) << 24) + ((aByteArray1405[anInt1406 - 4] & 0xff) << 16) + ((aByteArray1405[anInt1406 - 1] & 0xff) << 8) + (aByteArray1405[anInt1406 - 2] & 0xff);
+        pointer += 4;
+        return ((data[pointer - 3] & 0xff) << 24) + ((data[pointer - 4] & 0xff) << 16) + ((data[pointer - 1] & 0xff) << 8) + (data[pointer - 2] & 0xff);
     }
 
     public void method441(int i, byte byte0, byte abyte0[], int j)
@@ -511,7 +490,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         if(byte0 != 6)
             aBoolean1396 = !aBoolean1396;
         for(int k = (i + j) - 1; k >= i; k--)
-            aByteArray1405[anInt1406++] = (byte)(abyte0[k] + 128);
+            data[pointer++] = (byte)(abyte0[k] + 128);
 
     }
 
@@ -520,7 +499,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         if(!flag)
             aBoolean1396 = !aBoolean1396;
         for(int k = (j + i) - 1; k >= j; k--)
-            abyte0[k] = aByteArray1405[anInt1406++];
+            abyte0[k] = data[pointer++];
 
     }
 
@@ -540,8 +519,8 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
     public int anInt1402;
     public boolean aBoolean1403;
     public boolean aBoolean1404;
-    public byte aByteArray1405[];
-    public int anInt1406;
+    public byte data[];
+    public int pointer;
     public int anInt1407;
     public static int anIntArray1408[];
     public static final int anIntArray1409[] = {
@@ -550,10 +529,7 @@ public class Class30_Sub2_Sub2 extends Class30_Sub2
         0xfffff, 0x1fffff, 0x3fffff, 0x7fffff, 0xffffff, 0x1ffffff, 0x3ffffff, 0x7ffffff, 0xfffffff, 0x1fffffff, 
         0x3fffffff, 0x7fffffff, -1
     };
-    public Class17 aClass17_1410;
-    public static int anInt1411;
-    public static int anInt1412;
-    public static int anInt1413;
+    public IsaacCipher encryption;
     public static Class19 aClass19_1414 = new Class19(169);
     public static Class19 aClass19_1415 = new Class19(169);
     public static Class19 aClass19_1416 = new Class19(169);
