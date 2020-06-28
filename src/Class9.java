@@ -22,69 +22,69 @@ public class Class9
     public static void method205(JagexArchive jagexArchive, JagexFont aclass30_sub2_sub1_sub4[], byte byte0, JagexArchive jagexArchive_1)
     {
         aClass12_238 = new Class12(false, 50000);
-        Buffer buffer = new Buffer(jagexArchive.getFile("data", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile("data"));
         int i = -1;
-        int j = buffer.method410();
+        int j = buffer.get2ByteInt();
         aClass9Array210 = new Class9[j];
         while(buffer.pointer < buffer.data.length)
         {
-            int k = buffer.method410();
+            int k = buffer.get2ByteInt();
             if(k == 65535)
             {
-                i = buffer.method410();
-                k = buffer.method410();
+                i = buffer.get2ByteInt();
+                k = buffer.get2ByteInt();
             }
             Class9 class9 = aClass9Array210[k] = new Class9();
             class9.anInt250 = k;
             class9.anInt236 = i;
-            class9.anInt262 = buffer.method408();
-            class9.anInt217 = buffer.method408();
-            class9.anInt214 = buffer.method410();
-            class9.anInt220 = buffer.method410();
-            class9.anInt267 = buffer.method410();
-            class9.aByte254 = (byte) buffer.method408();
-            class9.anInt230 = buffer.method408();
+            class9.anInt262 = buffer.get1ByteAsInt();
+            class9.anInt217 = buffer.get1ByteAsInt();
+            class9.anInt214 = buffer.get2ByteInt();
+            class9.anInt220 = buffer.get2ByteInt();
+            class9.anInt267 = buffer.get2ByteInt();
+            class9.aByte254 = (byte) buffer.get1ByteAsInt();
+            class9.anInt230 = buffer.get1ByteAsInt();
             if(class9.anInt230 != 0)
-                class9.anInt230 = (class9.anInt230 - 1 << 8) + buffer.method408();
+                class9.anInt230 = (class9.anInt230 - 1 << 8) + buffer.get1ByteAsInt();
             else
                 class9.anInt230 = -1;
-            int i1 = buffer.method408();
+            int i1 = buffer.get1ByteAsInt();
             if(i1 > 0)
             {
                 class9.anIntArray245 = new int[i1];
                 class9.anIntArray212 = new int[i1];
                 for(int j1 = 0; j1 < i1; j1++)
                 {
-                    class9.anIntArray245[j1] = buffer.method408();
-                    class9.anIntArray212[j1] = buffer.method410();
+                    class9.anIntArray245[j1] = buffer.get1ByteAsInt();
+                    class9.anIntArray212[j1] = buffer.get2ByteInt();
                 }
 
             }
-            int k1 = buffer.method408();
+            int k1 = buffer.get1ByteAsInt();
             if(k1 > 0)
             {
                 class9.anIntArrayArray226 = new int[k1][];
                 for(int l1 = 0; l1 < k1; l1++)
                 {
-                    int i3 = buffer.method410();
+                    int i3 = buffer.get2ByteInt();
                     class9.anIntArrayArray226[l1] = new int[i3];
                     for(int l4 = 0; l4 < i3; l4++)
-                        class9.anIntArrayArray226[l1][l4] = buffer.method410();
+                        class9.anIntArrayArray226[l1][l4] = buffer.get2ByteInt();
 
                 }
 
             }
             if(class9.anInt262 == 0)
             {
-                class9.anInt261 = buffer.method410();
-                class9.aBoolean266 = buffer.method408() == 1;
-                int i2 = buffer.method410();
+                class9.anInt261 = buffer.get2ByteInt();
+                class9.aBoolean266 = buffer.get1ByteAsInt() == 1;
+                int i2 = buffer.get2ByteInt();
                 class9.anIntArray240 = new int[i2];
                 class9.anIntArray241 = new int[i2];
                 class9.anIntArray272 = new int[i2];
                 for(int j3 = 0; j3 < i2; j3++)
                 {
-                    class9.anIntArray240[j3] = buffer.method410();
+                    class9.anIntArray240[j3] = buffer.get2ByteInt();
                     class9.anIntArray241[j3] = buffer.method411();
                     class9.anIntArray272[j3] = buffer.method411();
                 }
@@ -92,30 +92,30 @@ public class Class9
             }
             if(class9.anInt262 == 1)
             {
-                class9.anInt211 = buffer.method410();
-                class9.aBoolean251 = buffer.method408() == 1;
+                class9.anInt211 = buffer.get2ByteInt();
+                class9.aBoolean251 = buffer.get1ByteAsInt() == 1;
             }
             if(class9.anInt262 == 2)
             {
                 class9.anIntArray253 = new int[class9.anInt220 * class9.anInt267];
                 class9.anIntArray252 = new int[class9.anInt220 * class9.anInt267];
-                class9.aBoolean259 = buffer.method408() == 1;
-                class9.aBoolean249 = buffer.method408() == 1;
-                class9.aBoolean242 = buffer.method408() == 1;
-                class9.aBoolean235 = buffer.method408() == 1;
-                class9.anInt231 = buffer.method408();
-                class9.anInt244 = buffer.method408();
+                class9.aBoolean259 = buffer.get1ByteAsInt() == 1;
+                class9.aBoolean249 = buffer.get1ByteAsInt() == 1;
+                class9.aBoolean242 = buffer.get1ByteAsInt() == 1;
+                class9.aBoolean235 = buffer.get1ByteAsInt() == 1;
+                class9.anInt231 = buffer.get1ByteAsInt();
+                class9.anInt244 = buffer.get1ByteAsInt();
                 class9.anIntArray215 = new int[20];
                 class9.anIntArray247 = new int[20];
                 class9.aClass30_Sub2_Sub1_Sub1Array209 = new Class30_Sub2_Sub1_Sub1[20];
                 for(int j2 = 0; j2 < 20; j2++)
                 {
-                    int k3 = buffer.method408();
+                    int k3 = buffer.get1ByteAsInt();
                     if(k3 == 1)
                     {
                         class9.anIntArray215[j2] = buffer.method411();
                         class9.anIntArray247[j2] = buffer.method411();
-                        String s1 = buffer.method415();
+                        String s1 = buffer.readString();
                         if(jagexArchive_1 != null && s1.length() > 0)
                         {
                             int i5 = s1.lastIndexOf(",");
@@ -127,44 +127,44 @@ public class Class9
                 class9.aStringArray225 = new String[5];
                 for(int l3 = 0; l3 < 5; l3++)
                 {
-                    class9.aStringArray225[l3] = buffer.method415();
+                    class9.aStringArray225[l3] = buffer.readString();
                     if(class9.aStringArray225[l3].length() == 0)
                         class9.aStringArray225[l3] = null;
                 }
 
             }
             if(class9.anInt262 == 3)
-                class9.aBoolean227 = buffer.method408() == 1;
+                class9.aBoolean227 = buffer.get1ByteAsInt() == 1;
             if(class9.anInt262 == 4 || class9.anInt262 == 1)
             {
-                class9.aBoolean223 = buffer.method408() == 1;
-                int k2 = buffer.method408();
+                class9.aBoolean223 = buffer.get1ByteAsInt() == 1;
+                int k2 = buffer.get1ByteAsInt();
                 if(aclass30_sub2_sub1_sub4 != null)
                     class9.aJagexFont_243 = aclass30_sub2_sub1_sub4[k2];
-                class9.aBoolean268 = buffer.method408() == 1;
+                class9.aBoolean268 = buffer.get1ByteAsInt() == 1;
             }
             if(class9.anInt262 == 4)
             {
-                class9.aString248 = buffer.method415();
-                class9.aString228 = buffer.method415();
+                class9.aString248 = buffer.readString();
+                class9.aString228 = buffer.readString();
             }
             if(class9.anInt262 == 1 || class9.anInt262 == 3 || class9.anInt262 == 4)
-                class9.anInt232 = buffer.method413();
+                class9.anInt232 = buffer.get4ByteInt();
             if(class9.anInt262 == 3 || class9.anInt262 == 4)
             {
-                class9.anInt219 = buffer.method413();
-                class9.anInt216 = buffer.method413();
-                class9.anInt239 = buffer.method413();
+                class9.anInt219 = buffer.get4ByteInt();
+                class9.anInt216 = buffer.get4ByteInt();
+                class9.anInt239 = buffer.get4ByteInt();
             }
             if(class9.anInt262 == 5)
             {
-                String s = buffer.method415();
+                String s = buffer.readString();
                 if(jagexArchive_1 != null && s.length() > 0)
                 {
                     int i4 = s.lastIndexOf(",");
                     class9.aClass30_Sub2_Sub1_Sub1_207 = method207(Integer.parseInt(s.substring(i4 + 1)), false, jagexArchive_1, s.substring(0, i4));
                 }
-                s = buffer.method415();
+                s = buffer.readString();
                 if(jagexArchive_1 != null && s.length() > 0)
                 {
                     int j4 = s.lastIndexOf(",");
@@ -173,49 +173,49 @@ public class Class9
             }
             if(class9.anInt262 == 6)
             {
-                int l = buffer.method408();
+                int l = buffer.get1ByteAsInt();
                 if(l != 0)
                 {
                     class9.anInt233 = 1;
-                    class9.anInt234 = (l - 1 << 8) + buffer.method408();
+                    class9.anInt234 = (l - 1 << 8) + buffer.get1ByteAsInt();
                 }
-                l = buffer.method408();
+                l = buffer.get1ByteAsInt();
                 if(l != 0)
                 {
                     class9.anInt255 = 1;
-                    class9.anInt256 = (l - 1 << 8) + buffer.method408();
+                    class9.anInt256 = (l - 1 << 8) + buffer.get1ByteAsInt();
                 }
-                l = buffer.method408();
+                l = buffer.get1ByteAsInt();
                 if(l != 0)
-                    class9.anInt257 = (l - 1 << 8) + buffer.method408();
+                    class9.anInt257 = (l - 1 << 8) + buffer.get1ByteAsInt();
                 else
                     class9.anInt257 = -1;
-                l = buffer.method408();
+                l = buffer.get1ByteAsInt();
                 if(l != 0)
-                    class9.anInt258 = (l - 1 << 8) + buffer.method408();
+                    class9.anInt258 = (l - 1 << 8) + buffer.get1ByteAsInt();
                 else
                     class9.anInt258 = -1;
-                class9.anInt269 = buffer.method410();
-                class9.anInt270 = buffer.method410();
-                class9.anInt271 = buffer.method410();
+                class9.anInt269 = buffer.get2ByteInt();
+                class9.anInt270 = buffer.get2ByteInt();
+                class9.anInt271 = buffer.get2ByteInt();
             }
             if(class9.anInt262 == 7)
             {
                 class9.anIntArray253 = new int[class9.anInt220 * class9.anInt267];
                 class9.anIntArray252 = new int[class9.anInt220 * class9.anInt267];
-                class9.aBoolean223 = buffer.method408() == 1;
-                int l2 = buffer.method408();
+                class9.aBoolean223 = buffer.get1ByteAsInt() == 1;
+                int l2 = buffer.get1ByteAsInt();
                 if(aclass30_sub2_sub1_sub4 != null)
                     class9.aJagexFont_243 = aclass30_sub2_sub1_sub4[l2];
-                class9.aBoolean268 = buffer.method408() == 1;
-                class9.anInt232 = buffer.method413();
+                class9.aBoolean268 = buffer.get1ByteAsInt() == 1;
+                class9.anInt232 = buffer.get4ByteInt();
                 class9.anInt231 = buffer.method411();
                 class9.anInt244 = buffer.method411();
-                class9.aBoolean249 = buffer.method408() == 1;
+                class9.aBoolean249 = buffer.get1ByteAsInt() == 1;
                 class9.aStringArray225 = new String[5];
                 for(int k4 = 0; k4 < 5; k4++)
                 {
-                    class9.aStringArray225[k4] = buffer.method415();
+                    class9.aStringArray225[k4] = buffer.readString();
                     if(class9.aStringArray225[k4].length() == 0)
                         class9.aStringArray225[k4] = null;
                 }
@@ -223,13 +223,13 @@ public class Class9
             }
             if(class9.anInt217 == 2 || class9.anInt262 == 2)
             {
-                class9.aString222 = buffer.method415();
-                class9.aString218 = buffer.method415();
-                class9.anInt237 = buffer.method410();
+                class9.aString222 = buffer.readString();
+                class9.aString218 = buffer.readString();
+                class9.anInt237 = buffer.get2ByteInt();
             }
             if(class9.anInt217 == 1 || class9.anInt217 == 4 || class9.anInt217 == 5 || class9.anInt217 == 6)
             {
-                class9.aString221 = buffer.method415();
+                class9.aString221 = buffer.readString();
                 if(class9.aString221.length() == 0)
                 {
                     if(class9.anInt217 == 1)
@@ -249,17 +249,17 @@ public class Class9
 
     public Model method206(int i, int j)
     {
-        Model model = (Model)aClass12_264.method222((i << 16) + j);
+        Model model = (Model)aClass12_264.get((i << 16) + j);
         if(model != null)
             return model;
         if(i == 1)
-            model = Model.method462(anInt213, j);
+            model = Model.getModel(j);
         if(i == 2)
-            model = Class5.method159(j).method160(true);
+            model = NPC.getForId(j).getHeadModel();
         if(i == 3)
             model = Client.aClass30_Sub2_Sub4_Sub1_Sub2_1126.method453((byte)-41);
         if(i == 4)
-            model = Class8.method198(j).method202(50, true);
+            model = Item.method198(j).method202(50, true);
         if(i == 5)
             model = null;
         if(model != null)
@@ -272,7 +272,7 @@ public class Class9
         long l = (Class50.method585((byte)1, s) << 8) + (long)i;
         if(flag)
             throw new NullPointerException();
-        Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = (Class30_Sub2_Sub1_Sub1)aClass12_238.method222(l);
+        Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = (Class30_Sub2_Sub1_Sub1)aClass12_238.get(l);
         if(class30_sub2_sub1_sub1 != null)
             return class30_sub2_sub1_sub1;
         try

@@ -213,7 +213,7 @@ public class Buffer extends Class30_Sub2
             byte0 = 0;
     }
 
-    public int method408()
+    public int get1ByteAsInt()
     {
         return data[pointer++] & 0xff;
     }
@@ -223,7 +223,7 @@ public class Buffer extends Class30_Sub2
         return data[pointer++];
     }
 
-    public int method410()
+    public int get2ByteInt()
     {
         pointer += 2;
         return ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
@@ -238,13 +238,13 @@ public class Buffer extends Class30_Sub2
         return i;
     }
 
-    public int method412()
+    public int get3ByteInt()
     {
         pointer += 3;
         return ((data[pointer - 3] & 0xff) << 16) + ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
     }
 
-    public int method413()
+    public int get4ByteInt()
     {
         pointer += 4;
         return ((data[pointer - 4] & 0xff) << 24) + ((data[pointer - 3] & 0xff) << 16) + ((data[pointer - 2] & 0xff) << 8) + (data[pointer - 1] & 0xff);
@@ -252,31 +252,30 @@ public class Buffer extends Class30_Sub2
 
     public long method414(int i)
     {
-        long l = (long)method413() & 0xffffffffL;
+        long l = (long) get4ByteInt() & 0xffffffffL;
         if(i != -35089)
             aBoolean1403 = !aBoolean1403;
-        long l1 = (long)method413() & 0xffffffffL;
+        long l1 = (long) get4ByteInt() & 0xffffffffL;
         return (l << 32) + l1;
     }
 
-    public String method415()
+    public String readString()
     {
         int i = pointer;
         while(data[pointer++] != 10) ;
         return new String(data, i, pointer - i - 1);
     }
 
-    public byte[] method416(byte byte0)
+    public byte[] readStringBytes()
     {
         int i = pointer;
-        while(data[pointer++] != 10) ;
-        byte abyte0[] = new byte[pointer - i - 1];
-        if(byte0 != 30)
-            aBoolean1404 = !aBoolean1404;
-        for(int j = i; j < pointer - 1; j++)
-            abyte0[j - i] = data[j];
+        while (data[pointer++] != 10);
+        byte byteArray[] = new byte[pointer - i - 1];
+        for (int j = i; j < pointer - 1; j++) {
+            byteArray[j - i] = data[j];
+        }
 
-        return abyte0;
+        return byteArray;
     }
 
     public void method417(int i, byte byte0, int j, byte abyte0[])
@@ -333,18 +332,18 @@ public class Buffer extends Class30_Sub2
     {
         int i = data[pointer] & 0xff;
         if(i < 128)
-            return method408() - 64;
+            return get1ByteAsInt() - 64;
         else
-            return method410() - 49152;
+            return get2ByteInt() - 49152;
     }
 
     public int method422()
     {
         int i = data[pointer] & 0xff;
         if(i < 128)
-            return method408();
+            return get1ByteAsInt();
         else
-            return method410() - 32768;
+            return get2ByteInt() - 32768;
     }
 
     public void rsaEncrypt(BigInteger bigInteger, BigInteger bigInteger1)

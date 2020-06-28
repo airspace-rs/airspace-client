@@ -20,7 +20,7 @@ public class Class12
             anInt296 = -225;
     }
 
-    public Class30_Sub2 method222(long l)
+    public Class30_Sub2 get(long l)
     {
         Class30_Sub2 class30_sub2 = (Class30_Sub2)aClass1_303.method148(l);
         if(class30_sub2 != null)

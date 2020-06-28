@@ -2,373 +2,337 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-public class Class34
+public class Censor
 {
-
-    public static void method487(JagexArchive jagexArchive)
+    public static void loadConfig(JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.getFile("fragmentsenc.txt", null));
-        Buffer buffer_1 = new Buffer(jagexArchive.getFile("badenc.txt", null));
-        Buffer class30_sub2_sub2_2 = new Buffer(jagexArchive.getFile("domainenc.txt", null));
-        Buffer buffer_3 = new Buffer(jagexArchive.getFile("tldlist.txt", null));
-        method488(buffer, buffer_1, class30_sub2_sub2_2, buffer_3);
+        Buffer characters = new Buffer(jagexArchive.getFile("fragmentsenc.txt"));
+        Buffer censoredWords = new Buffer(jagexArchive.getFile("badenc.txt"));
+        Buffer censoredDomains = new Buffer(jagexArchive.getFile("domainenc.txt"));
+        Buffer topLevelDomains = new Buffer(jagexArchive.getFile("tldlist.txt"));
+        readValues(characters, censoredWords, censoredDomains, topLevelDomains);
     }
 
-    public static void method488(Buffer buffer, Buffer buffer_1, Buffer class30_sub2_sub2_2, Buffer buffer_3)
+    public static void readValues(Buffer characters, Buffer censoredWords, Buffer censoredDomains, Buffer topLevelDomains)
     {
-        method490(9121, buffer_1);
-        method491(class30_sub2_sub2_2, (byte)-28);
-        method492(buffer, true);
-        method489((byte)2, buffer_3);
+        readCensoredWords(censoredWords);
+        readCensoredDomains(censoredDomains);
+        readCharacters(characters);
+        readTLDs(topLevelDomains);
     }
 
-    public static void method489(byte byte0, Buffer buffer)
+    public static void readTLDs(Buffer topLevelDomains)
     {
-        int i = buffer.method413();
-        aCharArrayArray624 = new char[i][];
-        anIntArray625 = new int[i];
-        if(byte0 != 2)
-            return;
-        for(int j = 0; j < i; j++)
-        {
-            anIntArray625[j] = buffer.method408();
-            char ac[] = new char[buffer.method408()];
-            for(int k = 0; k < ac.length; k++)
-                ac[k] = (char) buffer.method408();
+        int tldLength = topLevelDomains.get4ByteInt();
 
-            aCharArrayArray624[j] = ac;
-        }
+        tldList = new char[tldLength][];
+        tldListArray = new int[tldLength];
 
-    }
-
-    public static void method490(int i, Buffer buffer)
-    {
-        if(i != 9121)
-            aBoolean619 = !aBoolean619;
-        int j = buffer.method413();
-        aCharArrayArray621 = new char[j][];
-        aByteArrayArrayArray622 = new byte[j][][];
-        method493(buffer, aCharArrayArray621, true, aByteArrayArrayArray622);
-    }
-
-    public static void method491(Buffer buffer, byte byte0)
-    {
-        int i = buffer.method413();
-        aCharArrayArray623 = new char[i][];
-        if(byte0 != -28)
-        {
-            return;
-        } else
-        {
-            method494(aCharArrayArray623, buffer, -490);
-            return;
-        }
-    }
-
-    public static void method492(Buffer buffer, boolean flag)
-    {
-        anIntArray620 = new int[buffer.method413()];
-        for(int i = 0; i < anIntArray620.length; i++)
-            anIntArray620[i] = buffer.method410();
-
-        if(!flag)
-            anInt609 = 167;
-    }
-
-    public static void method493(Buffer buffer, char ac[][], boolean flag, byte abyte0[][][])
-    {
-        if(!flag)
-        {
-            for(int i = 1; i > 0; i++);
-        }
-        for(int j = 0; j < ac.length; j++)
-        {
-            char ac1[] = new char[buffer.method408()];
-            for(int k = 0; k < ac1.length; k++)
-                ac1[k] = (char) buffer.method408();
-
-            ac[j] = ac1;
-            byte abyte1[][] = new byte[buffer.method408()][2];
-            for(int l = 0; l < abyte1.length; l++)
-            {
-                abyte1[l][0] = (byte) buffer.method408();
-                abyte1[l][1] = (byte) buffer.method408();
+        for (int j = 0; j < tldLength; j++) {
+            tldListArray[j] = topLevelDomains.get1ByteAsInt();
+            char tld[] = new char[topLevelDomains.get1ByteAsInt()];
+            for (int k = 0; k < tld.length; k++) {
+                tld[k] = (char) topLevelDomains.get1ByteAsInt();
             }
 
-            if(abyte1.length > 0)
-                abyte0[j] = abyte1;
+            tldList[j] = tld;
         }
-
     }
 
-    public static void method494(char ac[][], Buffer buffer, int i)
+    public static void readCensoredWords(Buffer buffer)
     {
-        if(i >= 0)
-            return;
-        for(int j = 0; j < ac.length; j++)
-        {
-            char ac1[] = new char[buffer.method408()];
+        int censoredWordsLength = buffer.get4ByteInt();
+        censoredWords = new char[censoredWordsLength][];
+        censoredWordsBytes = new byte[censoredWordsLength][][];
+        initCensoredWords(buffer, censoredWords, censoredWordsBytes);
+    }
+
+    public static void readCensoredDomains(Buffer censoredDomains)
+    {
+        int censoredDomainsLength = censoredDomains.get4ByteInt();
+        censoredDomainsWords = new char[censoredDomainsLength][];
+        initCensoredDomains(censoredDomainsWords, censoredDomains);
+    }
+
+    public static void readCharacters(Buffer characters)
+    {
+        Censor.characters = new int[characters.get4ByteInt()];
+        for (int i = 0; i < Censor.characters.length; i++) {
+            Censor.characters[i] = characters.get2ByteInt();
+        }
+    }
+
+    public static void initCensoredWords(Buffer buffer, char[][] censoredWords, byte[][][] censoredWordsComplex)
+    {
+        for (int j = 0; j < censoredWords.length; j++) {
+            char character[] = new char[buffer.get1ByteAsInt()];
+            for (int k = 0; k < character.length; k++) {
+                character[k] = (char) buffer.get1ByteAsInt();
+            }
+
+            censoredWords[j] = character;
+            byte characterByte[][] = new byte[buffer.get1ByteAsInt()][2];
+            for (int l = 0; l < characterByte.length; l++) {
+                characterByte[l][0] = (byte) buffer.get1ByteAsInt();
+                characterByte[l][1] = (byte) buffer.get1ByteAsInt();
+            }
+
+            if (characterByte.length > 0) {
+                censoredWordsComplex[j] = characterByte;
+            }
+        }
+    }
+
+    public static void initCensoredDomains(char ac[][], Buffer buffer)
+    {
+        for(int j = 0; j < ac.length; j++) {
+            char ac1[] = new char[buffer.get1ByteAsInt()];
             for(int k = 0; k < ac1.length; k++)
-                ac1[k] = (char) buffer.method408();
+                ac1[k] = (char) buffer.get1ByteAsInt();
 
             ac[j] = ac1;
         }
-
     }
 
-    public static void method495(boolean flag, char ac[])
+    public static void stripIllegalCharacters(char[] characters)
     {
-        int i = 0;
-        for(int j = 0; j < ac.length; j++)
-        {
-            if(method496(ac[j], anInt611))
-                ac[i] = ac[j];
-            else
-                ac[i] = ' ';
-            if(i == 0 || ac[i] != ' ' || ac[i - 1] != ' ')
-                i++;
+        int writePos = 0;
+        for (int readPos = 0; readPos < characters.length; readPos++) {
+            if (characterIsLegal(characters[readPos])) {
+                characters[writePos] = characters[readPos];
+            } else {
+                characters[writePos] = ' ';
+            }
+            if (writePos == 0 || characters[writePos] != ' ' || characters[writePos - 1] != ' ') {
+                writePos++;
+            }
         }
 
-        if(flag)
-            return;
-        for(int k = i; k < ac.length; k++)
-            ac[k] = ' ';
-
+        for (int k = writePos; k < characters.length; k++) {
+            characters[k] = ' ';
+        }
     }
 
-    public static boolean method496(char c, int i)
+    public static boolean characterIsLegal(char c)
     {
-        if(i != 0)
-            throw new NullPointerException();
         return c >= ' ' && c <= '\177' || c == ' ' || c == '\n' || c == '\t' || c == '\243' || c == '\u20AC';
     }
 
-    public static String method497(String s, int i)
+    public static String censorString(String string)
     {
-        long l = System.currentTimeMillis();
-        char ac[] = s.toCharArray();
-        method495(false, ac);
-        String s1 = (new String(ac)).trim();
-        ac = s1.toLowerCase().toCharArray();
-        String s2 = s1.toLowerCase();
-        method505(false, ac);
-        method500(ac, true);
-        if(i != 0)
-            throw new NullPointerException();
-        method501((byte)0, ac);
-        method514(ac, -511);
-        for(int j = 0; j < aStringArray626.length; j++)
-        {
-            for(int k = -1; (k = s2.indexOf(aStringArray626[j], k + 1)) != -1;)
-            {
-                char ac1[] = aStringArray626[j].toCharArray();
-                for(int i1 = 0; i1 < ac1.length; i1++)
-                    ac[i1 + k] = ac1[i1];
+        char characters[] = string.toCharArray();
 
+        stripIllegalCharacters(characters);
+
+        String trimmedString = (new String(characters)).trim();
+        characters = trimmedString.toLowerCase().toCharArray();
+        String lowercaseString = trimmedString.toLowerCase();
+
+        removeTLDs(characters);
+        removeNoNoWords(characters);
+        removeDomains(characters);
+        removeLongNumbers(characters);
+
+        for (int j = 0; j < exceptions.length; j++) {
+            for (int k = -1; (k = lowercaseString.indexOf(exceptions[j], k + 1)) != -1; ) {
+                char ac1[] = exceptions[j].toCharArray();
+                for (int i1 = 0; i1 < ac1.length; i1++) {
+                    characters[i1 + k] = ac1[i1];
+                }
             }
-
         }
 
-        method498(s1.toCharArray(), 2, ac);
-        method499(0, ac);
-        long l1 = System.currentTimeMillis();
-        return (new String(ac)).trim();
+        restoreCasing(trimmedString.toCharArray(), characters);
+        fixCases(characters);
+
+        return (new String(characters)).trim();
     }
 
-    public static void method498(char ac[], int i, char ac1[])
+    public static void restoreCasing(char originalString[], char newString[])
     {
-        for(int j = 0; j < ac.length; j++)
-            if(ac1[j] != '*' && method522(true, ac[j]))
-                ac1[j] = ac[j];
-
-        if(i == 2);
+        for (int j = 0; j < originalString.length; j++) {
+            if (newString[j] != '*' && isUppercaseLetter(originalString[j])) {
+                newString[j] = originalString[j];
+            }
+        }
     }
 
-    public static void method499(int i, char ac[])
+    public static void fixCases(char[] characters)
     {
         boolean flag = true;
-        for(int j = 0; j < ac.length; j++)
-        {
-            char c = ac[j];
-            if(method519(c, -46837))
-            {
-                if(flag)
-                {
-                    if(method521(c, 1))
+        for (int j = 0; j < characters.length; j++) {
+            char c = characters[j];
+            if (isLetter(c)) {
+                if (flag) {
+                    if (isLowercaseLetter(c)) {
                         flag = false;
-                } else
-                if(method522(true, c))
-                    ac[j] = (char)((c + 97) - 65);
-            } else
-            {
+                    }
+                } else if (isUppercaseLetter(c)) {
+                    characters[j] = (char) ((c + 97) - 65);
+                }
+            } else {
                 flag = true;
             }
         }
-
-        if(i == 0);
     }
 
-    public static void method500(char ac[], boolean flag)
+    public static void removeNoNoWords(char characters[])
     {
-        if(!flag)
-            return;
-        for(int i = 0; i < 2; i++)
-        {
-            for(int j = aCharArrayArray621.length - 1; j >= 0; j--)
-                method509(aByteArrayArrayArray622[j], ac, anInt613, aCharArrayArray621[j]);
-
+        for (int i = 0; i < 2; i++) {
+            for (int j = censoredWords.length - 1; j >= 0; j--) {
+                censorSubstring(characters, censoredWords[j]);
+            }
         }
-
     }
 
-    public static void method501(byte byte0, char ac[])
+    public static void removeDomains(char[] ac)
     {
         char ac1[] = (char[])ac.clone();
         char ac2[] = {
             '(', 'a', ')'
         };
-        method509(null, ac1, anInt613, ac2);
+        censorSubstring(ac1, ac2);
         char ac3[] = (char[])ac.clone();
         char ac4[] = {
             'd', 'o', 't'
         };
-        method509(null, ac3, anInt613, ac4);
-        for(int i = aCharArrayArray623.length - 1; i >= 0; i--)
-            method502(29200, ac, aCharArrayArray623[i], ac3, ac1);
-
-        if(byte0 == 0);
+        censorSubstring(ac3, ac4);
+        for (int i = censoredDomainsWords.length - 1; i >= 0; i--) {
+            removeEmail(ac, censoredDomainsWords[i], ac3, ac1);
+        }
     }
 
-    public static void method502(int i, char ac[], char ac1[], char ac2[], char ac3[])
+    public static void removeEmail(char[] text, char[] domain, char[] dotRemovedText, char[] atSignRemovedText)
     {
-        if(i != 29200)
+        if (domain.length > text.length) {
             return;
-        if(ac1.length > ac.length)
-            return;
-        boolean flag = true;
-        int j;
-        for(int k = 0; k <= ac.length - ac1.length; k += j)
-        {
-            int l = k;
-            int i1 = 0;
-            j = 1;
-            while(l < ac.length) 
-            {
+        }
+        int incrementAmount;
+        for (int i = 0; i <= text.length - domain.length; i += incrementAmount) {
+            int l = i;
+            int charsFound = 0;
+            incrementAmount = 1;
+            while (l < text.length) {
                 int j1 = 0;
-                char c = ac[l];
+                char c = text[l];
                 char c1 = '\0';
-                if(l + 1 < ac.length)
-                    c1 = ac[l + 1];
-                if(i1 < ac1.length && (j1 = method511(43, c, ac1[i1], c1)) > 0)
-                {
+                if (l + 1 < text.length) {
+                    c1 = text[l + 1];
+                }
+                if (charsFound < domain.length && (j1 = method511(43, c, domain[charsFound], c1)) > 0) {
                     l += j1;
-                    i1++;
+                    charsFound++;
                     continue;
                 }
-                if(i1 == 0)
+                if (charsFound == 0) {
                     break;
-                if((j1 = method511(43, c, ac1[i1 - 1], c1)) > 0)
-                {
+                }
+                if ((j1 = method511(43, c, domain[charsFound - 1], c1)) > 0) {
                     l += j1;
-                    if(i1 == 1)
-                        j++;
+                    if (charsFound == 1) {
+                        incrementAmount++;
+                    }
                     continue;
                 }
-                if(i1 >= ac1.length || !method517(-12789, c))
+                if (charsFound >= domain.length || !isNonAlphaNumeric(c)) {
                     break;
+                }
                 l++;
             }
-            if(i1 >= ac1.length)
-            {
-                boolean flag1 = false;
-                int k1 = method503(ac, 4, ac3, k);
-                int l1 = method504(aByte612, ac2, l - 1, ac);
-                if(k1 > 2 || l1 > 2)
-                    flag1 = true;
-                if(flag1)
-                {
-                    for(int i2 = k; i2 < l; i2++)
-                        ac[i2] = '*';
-
+            if (charsFound >= domain.length) {
+                boolean isNoNoWord = false;
+                int atBeforeDomain = isAtSignBeforeDomain(text, atSignRemovedText, i);
+                int dotAfterDomain = isDotAfterDomain(dotRemovedText, text, l - 1);
+                if (atBeforeDomain > 2 || dotAfterDomain > 2) {
+                    isNoNoWord = true;
+                }
+                if (isNoNoWord) {
+                    for (int i2 = i; i2 < l; i2++) {
+                        text[i2] = '*';
+                    }
                 }
             }
         }
-
     }
 
-    public static int method503(char ac[], int i, char ac1[], int j)
+    public static int isAtSignBeforeDomain(char[] text, char[] fakeAtRemovedText, int domainStartPosition)
     {
-        if(i < 4 || i > 4)
+        if (domainStartPosition == 0) {
             return 2;
-        if(j == 0)
-            return 2;
-        for(int k = j - 1; k >= 0; k--)
-        {
-            if(!method517(-12789, ac[k]))
+        }
+
+        for (int k = domainStartPosition - 1; k >= 0; k--) {
+            if (!isNonAlphaNumeric(text[k])) {
                 break;
-            if(ac[k] == '@')
+            }
+            if (text[k] == '@') {
                 return 3;
+            }
         }
 
-        int l = 0;
-        for(int i1 = j - 1; i1 >= 0; i1--)
-        {
-            if(!method517(-12789, ac1[i1]))
+        int censoredCharactersCount = 0;
+        for (int i1 = domainStartPosition - 1; i1 >= 0; i1--) {
+            if (!isNonAlphaNumeric(fakeAtRemovedText[i1])) {
                 break;
-            if(ac1[i1] == '*')
-                l++;
+            }
+            if (fakeAtRemovedText[i1] == '*') {
+                censoredCharactersCount++;
+            }
         }
 
-        if(l >= 3)
+        if (censoredCharactersCount >= 3) {
             return 4;
-        return !method517(-12789, ac[j - 1]) ? 0 : 1;
+        }
+        return !isNonAlphaNumeric(text[domainStartPosition - 1]) ? 0 : 1;
     }
 
-    public static int method504(byte byte0, char ac[], int i, char ac1[])
+    public static int isDotAfterDomain(char[] fateAtRemovedText, char[] text, int domainEnd)
     {
-        if(i + 1 == ac1.length)
+        if (domainEnd + 1 == text.length) {
             return 2;
-        for(int j = i + 1; j < ac1.length; j++)
-        {
-            if(!method517(-12789, ac1[j]))
+        }
+        for (int j = domainEnd + 1; j < text.length; j++) {
+            if (!isNonAlphaNumeric(text[j])) {
                 break;
-            if(ac1[j] == '.' || ac1[j] == ',')
+            }
+            if (text[j] == '.' || text[j] == ',') {
                 return 3;
+            }
         }
 
-        if(byte0 != -117)
-            return anInt613;
         int k = 0;
-        for(int l = i + 1; l < ac1.length; l++)
-        {
-            if(!method517(-12789, ac[l]))
+        for (int l = domainEnd + 1; l < text.length; l++) {
+            if (!isNonAlphaNumeric(fateAtRemovedText[l])) {
                 break;
-            if(ac[l] == '*')
+            }
+            if (fateAtRemovedText[l] == '*') {
                 k++;
+            }
         }
 
-        if(k >= 3)
+        if (k >= 3) {
             return 4;
-        return !method517(-12789, ac1[i + 1]) ? 0 : 1;
+        }
+        return !isNonAlphaNumeric(text[domainEnd + 1]) ? 0 : 1;
     }
 
-    public static void method505(boolean flag, char ac[])
+    public static void removeTLDs(char characters[])
     {
-        char ac1[] = (char[])ac.clone();
-        char ac2[] = {
+        char temp[] = (char[])characters.clone();
+        char dotString[] = {
             'd', 'o', 't'
         };
-        if(flag)
-            return;
-        method509(null, ac1, anInt613, ac2);
-        char ac3[] = (char[])ac.clone();
-        char ac4[] = {
+        censorSubstring(temp, dotString);
+
+        char temp2[] = (char[])characters.clone();
+        char slashString[] = {
             's', 'l', 'a', 's', 'h'
         };
-        method509(null, ac3, anInt613, ac4);
-        for(int i = 0; i < aCharArrayArray624.length; i++)
-            method506(ac3, aCharArrayArray624[i], anIntArray625[i], (byte)51, ac1, ac);
+        censorSubstring(temp2, slashString);
 
+        for (int i = 0; i < tldList.length; i++) {
+            method506(temp2, tldList[i], tldListArray[i], (byte) 51, temp, characters);
+        }
     }
 
     public static void method506(char ac[], char ac1[], int i, byte byte0, char ac2[], char ac3[])
@@ -404,7 +368,7 @@ public class Class34
                         j++;
                     continue;
                 }
-                if(i1 >= ac1.length || !method517(-12789, c))
+                if(i1 >= ac1.length || !isNonAlphaNumeric(c))
                     break;
                 l++;
             }
@@ -447,11 +411,11 @@ public class Class34
                         for(int i3 = i2 - 1; i3 >= 0; i3--)
                             if(flag3)
                             {
-                                if(method517(-12789, ac3[i3]))
+                                if(isNonAlphaNumeric(ac3[i3]))
                                     break;
                                 i2 = i3;
                             } else
-                            if(!method517(-12789, ac3[i3]))
+                            if(!isNonAlphaNumeric(ac3[i3]))
                             {
                                 flag3 = true;
                                 i2 = i3;
@@ -481,11 +445,11 @@ public class Class34
                         for(int k3 = j2 + 1; k3 < ac3.length; k3++)
                             if(flag5)
                             {
-                                if(method517(-12789, ac3[k3]))
+                                if(isNonAlphaNumeric(ac3[k3]))
                                     break;
                                 j2 = k3;
                             } else
-                            if(!method517(-12789, ac3[k3]))
+                            if(!isNonAlphaNumeric(ac3[k3]))
                             {
                                 flag5 = true;
                                 j2 = k3;
@@ -509,7 +473,7 @@ public class Class34
             return 2;
         for(int k = j - 1; k >= 0; k--)
         {
-            if(!method517(-12789, ac[k]))
+            if(!isNonAlphaNumeric(ac[k]))
                 break;
             if(ac[k] == ',' || ac[k] == '.')
                 return 3;
@@ -518,7 +482,7 @@ public class Class34
         int l = 0;
         for(int i1 = j - 1; i1 >= 0; i1--)
         {
-            if(!method517(-12789, ac1[i1]))
+            if(!isNonAlphaNumeric(ac1[i1]))
                 break;
             if(ac1[i1] == '*')
                 l++;
@@ -528,7 +492,7 @@ public class Class34
             aBoolean619 = !aBoolean619;
         if(l >= 3)
             return 4;
-        return !method517(-12789, ac[j - 1]) ? 0 : 1;
+        return !isNonAlphaNumeric(ac[j - 1]) ? 0 : 1;
     }
 
     public static int method508(boolean flag, char ac[], char ac1[], int i)
@@ -539,7 +503,7 @@ public class Class34
             return 2;
         for(int j = i + 1; j < ac.length; j++)
         {
-            if(!method517(-12789, ac[j]))
+            if(!isNonAlphaNumeric(ac[j]))
                 break;
             if(ac[j] == '\\' || ac[j] == '/')
                 return 3;
@@ -548,7 +512,7 @@ public class Class34
         int k = 0;
         for(int l = i + 1; l < ac.length; l++)
         {
-            if(!method517(-12789, ac1[l]))
+            if(!isNonAlphaNumeric(ac1[l]))
                 break;
             if(ac1[l] == '*')
                 k++;
@@ -556,19 +520,20 @@ public class Class34
 
         if(k >= 5)
             return 4;
-        return !method517(-12789, ac[i + 1]) ? 0 : 1;
+        return !isNonAlphaNumeric(ac[i + 1]) ? 0 : 1;
     }
 
-    public static void method509(byte abyte0[][], char ac[], int i, char ac1[])
+    public static void censorSubstring(char[] haystack, char[] needle)
     {
-        while(i >= 0) 
+        if (needle.length > haystack.length) {
             return;
-        if(ac1.length > ac.length)
-            return;
+        }
+
         boolean flag = true;
+
         int j;
-        for(int k = 0; k <= ac.length - ac1.length; k += j)
-        {
+
+        for (int k = 0; k <= haystack.length - needle.length; k += j) {
             int l = k;
             int i1 = 0;
             int j1 = 0;
@@ -576,126 +541,132 @@ public class Class34
             boolean flag1 = false;
             boolean flag2 = false;
             boolean flag3 = false;
-            while(l < ac.length && (!flag2 || !flag3)) 
-            {
+            while (l < haystack.length && (!flag2 || !flag3)) {
                 int k1 = 0;
-                char c = ac[l];
+                char c = haystack[l];
                 char c2 = '\0';
-                if(l + 1 < ac.length)
-                    c2 = ac[l + 1];
-                if(i1 < ac1.length && (k1 = method512(c2, c, aBoolean614, ac1[i1])) > 0)
-                {
-                    if(k1 == 1 && method520(c, -976))
+                if (l + 1 < haystack.length) {
+                    c2 = haystack[l + 1];
+                }
+                if (i1 < needle.length && (k1 = method512(c2, c, aBoolean614, needle[i1])) > 0) {
+                    if (k1 == 1 && isNumber(c)) {
                         flag2 = true;
-                    if(k1 == 2 && (method520(c, -976) || method520(c2, -976)))
+                    }
+                    if (k1 == 2 && (isNumber(c) || isNumber(c2))) {
                         flag2 = true;
+                    }
                     l += k1;
                     i1++;
                     continue;
                 }
-                if(i1 == 0)
+                if (i1 == 0) {
                     break;
-                if((k1 = method512(c2, c, aBoolean614, ac1[i1 - 1])) > 0)
-                {
+                }
+                if ((k1 = method512(c2, c, aBoolean614, needle[i1 - 1])) > 0) {
                     l += k1;
-                    if(i1 == 1)
+                    if (i1 == 1) {
                         j++;
+                    }
                     continue;
                 }
-                if(i1 >= ac1.length || !method518(false, c))
+                if (i1 >= needle.length || !characterThatsSpecialSomehow(c)) {
                     break;
-                if(method517(-12789, c) && c != '\'')
+                }
+                if (isNonAlphaNumeric(c) && c != '\'') {
                     flag1 = true;
-                if(method520(c, -976))
+                }
+                if (isNumber(c)) {
                     flag3 = true;
+                }
                 l++;
-                if((++j1 * 100) / (l - k) > 90)
+                if ((++j1 * 100) / (l - k) > 90) {
                     break;
+                }
             }
-            if(i1 >= ac1.length && (!flag2 || !flag3))
-            {
+            if (i1 >= needle.length && (!flag2 || !flag3)) {
                 boolean flag4 = true;
-                if(!flag1)
-                {
+                if (!flag1) {
                     char c1 = ' ';
-                    if(k - 1 >= 0)
-                        c1 = ac[k - 1];
+                    if (k - 1 >= 0) {
+                        c1 = haystack[k - 1];
+                    }
                     char c3 = ' ';
-                    if(l < ac.length)
-                        c3 = ac[l];
+                    if (l < haystack.length) {
+                        c3 = haystack[l];
+                    }
                     byte byte0 = method513(c1, anInt615);
                     byte byte1 = method513(c3, anInt615);
-                    if(abyte0 != null && method510(byte0, (byte)8, abyte0, byte1))
-                        flag4 = false;
-                } else
-                {
+                } else {
                     boolean flag5 = false;
                     boolean flag6 = false;
-                    if(k - 1 < 0 || method517(-12789, ac[k - 1]) && ac[k - 1] != '\'')
+                    if (k - 1 < 0 || isNonAlphaNumeric(haystack[k - 1]) && haystack[k - 1] != '\'') {
                         flag5 = true;
-                    if(l >= ac.length || method517(-12789, ac[l]) && ac[l] != '\'')
+                    }
+                    if (l >= haystack.length || isNonAlphaNumeric(haystack[l]) && haystack[l] != '\'') {
                         flag6 = true;
-                    if(!flag5 || !flag6)
-                    {
+                    }
+                    if (!flag5 || !flag6) {
                         boolean flag7 = false;
                         int k2 = k - 2;
-                        if(flag5)
+                        if (flag5) {
                             k2 = k;
-                        for(; !flag7 && k2 < l; k2++)
-                            if(k2 >= 0 && (!method517(-12789, ac[k2]) || ac[k2] == '\''))
-                            {
+                        }
+                        for (; !flag7 && k2 < l; k2++) {
+                            if (k2 >= 0 && (!isNonAlphaNumeric(haystack[k2]) || haystack[k2] == '\'')) {
                                 char ac2[] = new char[3];
                                 int j3;
-                                for(j3 = 0; j3 < 3; j3++)
-                                {
-                                    if(k2 + j3 >= ac.length || method517(-12789, ac[k2 + j3]) && ac[k2 + j3] != '\'')
+                                for (j3 = 0; j3 < 3; j3++) {
+                                    if (k2 + j3 >= haystack.length || isNonAlphaNumeric(haystack[k2 + j3]) && haystack[k2 + j3] != '\'') {
                                         break;
-                                    ac2[j3] = ac[k2 + j3];
+                                    }
+                                    ac2[j3] = haystack[k2 + j3];
                                 }
 
                                 boolean flag8 = true;
-                                if(j3 == 0)
+                                if (j3 == 0) {
                                     flag8 = false;
-                                if(j3 < 3 && k2 - 1 >= 0 && (!method517(-12789, ac[k2 - 1]) || ac[k2 - 1] == '\''))
+                                }
+                                if (j3 < 3 && k2 - 1 >= 0 && (!isNonAlphaNumeric(haystack[k2 - 1]) || haystack[k2 - 1] == '\'')) {
                                     flag8 = false;
-                                if(flag8 && !method523(ac2, (byte)4))
+                                }
+                                if (flag8 && !method523(ac2, (byte) 4)) {
                                     flag7 = true;
+                                }
                             }
+                        }
 
-                        if(!flag7)
+                        if (!flag7) {
                             flag4 = false;
+                        }
                     }
                 }
-                if(flag4)
-                {
+                if (flag4) {
                     int l1 = 0;
                     int i2 = 0;
                     int j2 = -1;
-                    for(int l2 = k; l2 < l; l2++)
-                        if(method520(ac[l2], -976))
+                    for (int l2 = k; l2 < l; l2++) {
+                        if (isNumber(haystack[l2])) {
                             l1++;
-                        else
-                        if(method519(ac[l2], -46837))
-                        {
+                        } else if (isLetter(haystack[l2])) {
                             i2++;
                             j2 = l2;
                         }
+                    }
 
-                    if(j2 > -1)
+                    if (j2 > -1) {
                         l1 -= l - 1 - j2;
-                    if(l1 <= i2)
-                    {
-                        for(int i3 = k; i3 < l; i3++)
-                            ac[i3] = '*';
+                    }
+                    if (l1 <= i2) {
+                        for (int i3 = k; i3 < l; i3++) {
+                            haystack[i3] = '*';
+                        }
 
-                    } else
-                    {
+                    } else {
                         j = 1;
                     }
                 }
             }
         }
-
     }
 
     public static boolean method510(byte byte0, byte byte1, byte abyte0[][], byte byte2)
@@ -861,112 +832,100 @@ public class Class34
             return 27;
     }
 
-    public static void method514(char ac[], int i)
+    public static void removeLongNumbers(char[] characters)
     {
         int j = 0;
         int k = 0;
         int l = 0;
         int i1 = 0;
-        if(i >= 0)
-            aBoolean607 = !aBoolean607;
-        while((j = method515(ac, k, 319)) != -1) 
-        {
+        while ((j = getPositionOfFirstNumber(characters, k)) != -1) {
             boolean flag = false;
-            for(int j1 = k; j1 >= 0 && j1 < j && !flag; j1++)
-                if(!method517(-12789, ac[j1]) && !method518(false, ac[j1]))
+            for (int j1 = k; j1 >= 0 && j1 < j && !flag; j1++) {
+                if (!isNonAlphaNumeric(characters[j1]) && !characterThatsSpecialSomehow(characters[j1])) {
                     flag = true;
+                }
+            }
 
-            if(flag)
+            if (flag) {
                 l = 0;
-            if(l == 0)
+            }
+            if (l == 0) {
                 i1 = j;
-            k = method516(ac, 0, j);
+            }
+            k = getPositionOfFirstNonNumber(characters, j);
             int k1 = 0;
-            for(int l1 = j; l1 < k; l1++)
-                k1 = (k1 * 10 + ac[l1]) - 48;
+            for (int l1 = j; l1 < k; l1++) {
+                k1 = (k1 * 10 + characters[l1]) - 48;
+            }
 
-            if(k1 > 255 || k - j > 8)
+            if (k1 > 255 || k - j > 8) {
                 l = 0;
-            else
+            } else {
                 l++;
-            if(l == 4)
-            {
-                for(int i2 = i1; i2 < k; i2++)
-                    ac[i2] = '*';
+            }
+            if (l == 4) {
+                for (int i2 = i1; i2 < k; i2++) {
+                    characters[i2] = '*';
+                }
 
                 l = 0;
             }
         }
     }
 
-    public static int method515(char ac[], int i, int j)
+    public static int getPositionOfFirstNumber(char[] characters, int startPos)
     {
-        j = 23 / j;
-        for(int k = i; k < ac.length && k >= 0; k++)
-            if(ac[k] >= '0' && ac[k] <= '9')
-                return k;
+        for (int i = startPos; i < characters.length && i >= 0; i++) {
+            if (characters[i] >= '0' && characters[i] <= '9') {
+                return i;
+            }
+        }
 
         return -1;
     }
 
-    public static int method516(char ac[], int i, int j)
+    public static int getPositionOfFirstNonNumber(char[] text, int startPos)
     {
-        for(int k = j; k < ac.length && k >= 0; k++)
-            if(ac[k] < '0' || ac[k] > '9')
-                return k;
+        for (int i = startPos; i < text.length && i >= 0; i++) {
+            if (text[i] < '0' || text[i] > '9') {
+                return i;
+            }
+        }
 
-        if(i != 0)
-            return 3;
-        else
-            return ac.length;
+        return text.length;
     }
 
-    public static boolean method517(int i, char c)
+    public static boolean isNonAlphaNumeric(char character)
     {
-        if(i != -12789)
-            throw new NullPointerException();
-        return !method519(c, -46837) && !method520(c, -976);
+        return !isLetter(character) && !isNumber(character);
     }
 
-    public static boolean method518(boolean flag, char c)
+    public static boolean characterThatsSpecialSomehow(char c)
     {
-        if(flag)
-            anInt615 = -233;
-        if(c < 'a' || c > 'z')
+        if (c < 'a' || c > 'z') {
             return true;
+        }
         return c == 'v' || c == 'x' || c == 'j' || c == 'q' || c == 'z';
     }
 
-    public static boolean method519(char c, int i)
+    public static boolean isLetter(char c)
     {
-        if(i != -46837)
-        {
-            for(int j = 1; j > 0; j++);
-        }
         return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';
     }
 
-    public static boolean method520(char c, int i)
+    public static boolean isNumber(char c)
     {
-        if(i >= 0)
-            anInt615 = 254;
         return c >= '0' && c <= '9';
     }
 
-    public static boolean method521(char c, int i)
+    public static boolean isLowercaseLetter(char c)
     {
-        if(i != 1)
-        {
-            for(int j = 1; j > 0; j++);
-        }
         return c >= 'a' && c <= 'z';
     }
 
-    public static boolean method522(boolean flag, char c)
+    public static boolean isUppercaseLetter(char character)
     {
-        if(!flag)
-            throw new NullPointerException();
-        return c >= 'A' && c <= 'Z';
+        return character >= 'A' && character <= 'Z';
     }
 
     public static boolean method523(char ac[], byte byte0)
@@ -977,22 +936,22 @@ public class Class34
             throw new NullPointerException();
         boolean flag = true;
         for(int i = 0; i < ac.length; i++)
-            if(!method520(ac[i], -976) && ac[i] != 0)
+            if(!isNumber(ac[i]) && ac[i] != 0)
                 flag = false;
 
         if(flag)
             return true;
         int j = method524(ac, 8801);
         int k = 0;
-        int l = anIntArray620.length - 1;
-        if(j == anIntArray620[k] || j == anIntArray620[l])
+        int l = characters.length - 1;
+        if(j == characters[k] || j == characters[l])
             return true;
         do
         {
             int i1 = (k + l) / 2;
-            if(j == anIntArray620[i1])
+            if(j == characters[i1])
                 return true;
-            if(j < anIntArray620[i1])
+            if(j < characters[i1])
                 l = i1;
             else
                 k = i1;
@@ -1042,13 +1001,13 @@ public class Class34
     public static byte aByte617 = 4;
     public static int anInt618 = 8801;
     public static boolean aBoolean619 = true;
-    public static int anIntArray620[];
-    public static char aCharArrayArray621[][];
-    public static byte aByteArrayArrayArray622[][][];
-    public static char aCharArrayArray623[][];
-    public static char aCharArrayArray624[][];
-    public static int anIntArray625[];
-    public static final String aStringArray626[] = {
+    public static int characters[];
+    public static char censoredWords[][];
+    public static byte censoredWordsBytes[][][];
+    public static char censoredDomainsWords[][];
+    public static char tldList[][];
+    public static int tldListArray[];
+    public static final String exceptions[] = {
         "cook", "cook's", "cooks", "seeks", "sheet", "woop", "woops", "faq", "noob", "noobs"
     };
     public static boolean aBoolean627;

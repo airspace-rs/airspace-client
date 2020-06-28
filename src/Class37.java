@@ -9,8 +9,8 @@ public class Class37
     {
         if(i != 0)
             anInt644 = 91;
-        Buffer buffer = new Buffer(jagexArchive.getFile("varbit.dat", null));
-        anInt645 = buffer.method410();
+        Buffer buffer = new Buffer(jagexArchive.getFile("varbit.dat"));
+        anInt645 = buffer.get2ByteInt();
         if(aClass37Array646 == null)
             aClass37Array646 = new Class37[anInt645];
         for(int j = 0; j < anInt645; j++)
@@ -32,26 +32,26 @@ public class Class37
             return;
         do
         {
-            int j = buffer.method408();
+            int j = buffer.get1ByteAsInt();
             if(j == 0)
                 return;
             if(j == 1)
             {
-                anInt648 = buffer.method410();
-                anInt649 = buffer.method408();
-                anInt650 = buffer.method408();
+                anInt648 = buffer.get2ByteInt();
+                anInt649 = buffer.get1ByteAsInt();
+                anInt650 = buffer.get1ByteAsInt();
             } else
             if(j == 10)
-                aString647 = buffer.method415();
+                aString647 = buffer.readString();
             else
             if(j == 2)
                 aBoolean651 = true;
             else
             if(j == 3)
-                anInt652 = buffer.method413();
+                anInt652 = buffer.get4ByteInt();
             else
             if(j == 4)
-                anInt653 = buffer.method413();
+                anInt653 = buffer.get4ByteInt();
             else
                 System.out.println("Error unrecognised config code: " + j);
         } while(true);

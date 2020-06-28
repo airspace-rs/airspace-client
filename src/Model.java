@@ -51,20 +51,20 @@ public class Model extends Class30_Sub2_Sub4
         buffer.pointer = abyte0.length - 18;
         Class21 class21_1 = aClass21Array1661[j] = new Class21();
         class21_1.aByteArray368 = abyte0;
-        class21_1.anInt369 = buffer.method410();
-        class21_1.anInt370 = buffer.method410();
-        class21_1.anInt371 = buffer.method408();
-        int k = buffer.method408();
-        int l = buffer.method408();
+        class21_1.anInt369 = buffer.get2ByteInt();
+        class21_1.anInt370 = buffer.get2ByteInt();
+        class21_1.anInt371 = buffer.get1ByteAsInt();
+        int k = buffer.get1ByteAsInt();
+        int l = buffer.get1ByteAsInt();
         if(i != -4036)
             return;
-        int i1 = buffer.method408();
-        int j1 = buffer.method408();
-        int k1 = buffer.method408();
-        int l1 = buffer.method410();
-        int i2 = buffer.method410();
-        int j2 = buffer.method410();
-        int k2 = buffer.method410();
+        int i1 = buffer.get1ByteAsInt();
+        int j1 = buffer.get1ByteAsInt();
+        int k1 = buffer.get1ByteAsInt();
+        int l1 = buffer.get2ByteInt();
+        int i2 = buffer.get2ByteInt();
+        int j2 = buffer.get2ByteInt();
+        int k2 = buffer.get2ByteInt();
         int l2 = 0;
         class21_1.anInt372 = l2;
         l2 += class21_1.anInt369;
@@ -116,36 +116,30 @@ public class Model extends Class30_Sub2_Sub4
             anInt1619 = -219;
     }
 
-    public static Model method462(int i, int j)
+    public static Model getModel(int modelId)
     {
-        if(aClass21Array1661 == null)
+        if (aClass21Array1661 == null) {
             return null;
-        Class21 class21 = aClass21Array1661[j];
-        if(i != 9)
-        {
-            for(int k = 1; k > 0; k++);
         }
-        if(class21 == null)
-        {
-            aClass42_1662.method548(j);
+        Class21 class21 = aClass21Array1661[modelId];
+        if (class21 == null) {
+            aClass42_1662.method548(modelId);
             return null;
-        } else
-        {
-            return new Model(j, -870);
+        } else {
+            return new Model(modelId);
         }
     }
 
-    public static boolean method463(int i)
+    public static boolean isCached(int i)
     {
-        if(aClass21Array1661 == null)
+        if (aClass21Array1661 == null) {
             return false;
+        }
         Class21 class21 = aClass21Array1661[i];
-        if(class21 == null)
-        {
+        if (class21 == null) {
             aClass42_1662.method548(i);
             return false;
-        } else
-        {
+        } else {
             return true;
         }
     }
@@ -162,7 +156,7 @@ public class Model extends Class30_Sub2_Sub4
             aBoolean1618 = !aBoolean1618;
     }
 
-    public Model(int i, int j)
+    public Model(int i)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -180,8 +174,6 @@ public class Model extends Class30_Sub2_Sub4
         anIntArray1629 = new int[anInt1626];
         anIntArray1631 = new int[anInt1630];
         anIntArray1632 = new int[anInt1630];
-        while(j >= 0) 
-            aBoolean1618 = !aBoolean1618;
         anIntArray1633 = new int[anInt1630];
         anIntArray1643 = new int[anInt1642];
         anIntArray1644 = new int[anInt1642];
@@ -214,7 +206,7 @@ public class Model extends Class30_Sub2_Sub4
         int i1 = 0;
         for(int j1 = 0; j1 < anInt1626; j1++)
         {
-            int k1 = buffer.method408();
+            int k1 = buffer.get1ByteAsInt();
             int i2 = 0;
             if((k1 & 1) != 0)
                 i2 = buffer_1.method421();
@@ -231,7 +223,7 @@ public class Model extends Class30_Sub2_Sub4
             l = anIntArray1628[j1];
             i1 = anIntArray1629[j1];
             if(anIntArray1655 != null)
-                anIntArray1655[j1] = buffer_4.method408();
+                anIntArray1655[j1] = buffer_4.get1ByteAsInt();
         }
 
         buffer.pointer = class21.anInt379;
@@ -241,15 +233,15 @@ public class Model extends Class30_Sub2_Sub4
         buffer_4.pointer = class21.anInt383;
         for(int l1 = 0; l1 < anInt1630; l1++)
         {
-            anIntArray1640[l1] = buffer.method410();
+            anIntArray1640[l1] = buffer.get2ByteInt();
             if(anIntArray1637 != null)
-                anIntArray1637[l1] = buffer_1.method408();
+                anIntArray1637[l1] = buffer_1.get1ByteAsInt();
             if(anIntArray1638 != null)
-                anIntArray1638[l1] = class30_sub2_sub2_2.method408();
+                anIntArray1638[l1] = class30_sub2_sub2_2.get1ByteAsInt();
             if(anIntArray1639 != null)
-                anIntArray1639[l1] = buffer_3.method408();
+                anIntArray1639[l1] = buffer_3.get1ByteAsInt();
             if(anIntArray1656 != null)
-                anIntArray1656[l1] = buffer_4.method408();
+                anIntArray1656[l1] = buffer_4.get1ByteAsInt();
         }
 
         buffer.pointer = class21.anInt377;
@@ -260,7 +252,7 @@ public class Model extends Class30_Sub2_Sub4
         int k3 = 0;
         for(int l3 = 0; l3 < anInt1630; l3++)
         {
-            int i4 = buffer_1.method408();
+            int i4 = buffer_1.get1ByteAsInt();
             if(i4 == 1)
             {
                 j2 = buffer.method421() + k3;
@@ -309,14 +301,14 @@ public class Model extends Class30_Sub2_Sub4
         buffer.pointer = class21.anInt384;
         for(int j4 = 0; j4 < anInt1642; j4++)
         {
-            anIntArray1643[j4] = buffer.method410();
-            anIntArray1644[j4] = buffer.method410();
-            anIntArray1645[j4] = buffer.method410();
+            anIntArray1643[j4] = buffer.get2ByteInt();
+            anIntArray1644[j4] = buffer.get2ByteInt();
+            anIntArray1645[j4] = buffer.get2ByteInt();
         }
 
     }
 
-    public Model(int i, Model aclass30_sub2_sub4_sub6[], int j)
+    public Model(int i, Model[] additionalModels)
     {
         anInt1614 = 9;
         aBoolean1615 = false;
@@ -335,7 +327,7 @@ public class Model extends Class30_Sub2_Sub4
         anInt1641 = -1;
         for(int k = 0; k < i; k++)
         {
-            Model model = aclass30_sub2_sub4_sub6[k];
+            Model model = additionalModels[k];
             if(model != null)
             {
                 anInt1626 += model.anInt1626;
@@ -379,12 +371,10 @@ public class Model extends Class30_Sub2_Sub4
         anInt1626 = 0;
         anInt1630 = 0;
         anInt1642 = 0;
-        if(j >= 0)
-            anInt1619 = 23;
         int l = 0;
         for(int i1 = 0; i1 < i; i1++)
         {
-            Model model_1 = aclass30_sub2_sub4_sub6[i1];
+            Model model_1 = additionalModels[i1];
             if(model_1 != null)
             {
                 for(int j1 = 0; j1 < model_1.anInt1630; j1++)
@@ -1245,7 +1235,7 @@ public class Model extends Class30_Sub2_Sub4
 
     }
 
-    public void method476(int i, int j)
+    public void recolour(int i, int j)
     {
         for(int k = 0; k < anInt1630; k++)
             if(anIntArray1640[k] == i)

@@ -84,15 +84,15 @@ public class Class46
 
     public static void method576(JagexArchive jagexArchive)
     {
-        aBuffer_753 = new Buffer(jagexArchive.getFile("loc.dat", null));
-        Buffer buffer = new Buffer(jagexArchive.getFile("loc.idx", null));
-        anInt756 = buffer.method410();
+        aBuffer_753 = new Buffer(jagexArchive.getFile("loc.dat"));
+        Buffer buffer = new Buffer(jagexArchive.getFile("loc.idx"));
+        anInt756 = buffer.get2ByteInt();
         anIntArray755 = new int[anInt756];
         int i = 2;
         for(int j = 0; j < anInt756; j++)
         {
             anIntArray755[j] = i;
-            i += buffer.method410();
+            i += buffer.get2ByteInt();
         }
 
         aClass46Array782 = new Class46[20];
@@ -113,13 +113,13 @@ public class Class46
                 return true;
             boolean flag1 = true;
             for(int k = 0; k < anIntArray773.length; k++)
-                flag1 &= Model.method463(anIntArray773[k] & 0xffff);
+                flag1 &= Model.isCached(anIntArray773[k] & 0xffff);
 
             return flag1;
         }
         for(int j = 0; j < anIntArray776.length; j++)
             if(anIntArray776[j] == i)
-                return Model.method463(anIntArray773[j] & 0xffff);
+                return Model.isCached(anIntArray773[j] & 0xffff);
 
         return true;
     }
@@ -155,7 +155,7 @@ public class Class46
             return true;
         boolean flag1 = true;
         for(int i = 0; i < anIntArray773.length; i++)
-            flag1 &= Model.method463(anIntArray773[i] & 0xffff);
+            flag1 &= Model.isCached(anIntArray773[i] & 0xffff);
 
         if(!flag)
             throw new NullPointerException();
@@ -194,7 +194,7 @@ public class Class46
             if(j != 10)
                 return null;
             l1 = (long)((anInt754 << 6) + l) + ((long)(k + 1) << 32);
-            Model model_1 = (Model)aClass12_780.method222(l1);
+            Model model_1 = (Model)aClass12_780.get(l1);
             if(model_1 != null)
                 return model_1;
             if(anIntArray773 == null)
@@ -206,10 +206,10 @@ public class Class46
                 int l2 = anIntArray773[i2];
                 if(flag1)
                     l2 += 0x10000;
-                model = (Model)aClass12_785.method222(l2);
+                model = (Model)aClass12_785.get(l2);
                 if(model == null)
                 {
-                    model = Model.method462(anInt770, l2 & 0xffff);
+                    model = Model.getModel(l2 & 0xffff);
                     if(model == null)
                         return null;
                     if(flag1)
@@ -221,7 +221,7 @@ public class Class46
             }
 
             if(k1 > 1)
-                model = new Model(k1, aModelArray741, -38);
+                model = new Model(k1, aModelArray741);
         } else
         {
             int i1 = -1;
@@ -236,17 +236,17 @@ public class Class46
             if(i1 == -1)
                 return null;
             l1 = (long)((anInt754 << 6) + (i1 << 3) + l) + ((long)(k + 1) << 32);
-            Model class30_sub2_sub4_sub6_2 = (Model)aClass12_780.method222(l1);
+            Model class30_sub2_sub4_sub6_2 = (Model)aClass12_780.get(l1);
             if(class30_sub2_sub4_sub6_2 != null)
                 return class30_sub2_sub4_sub6_2;
             int j2 = anIntArray773[i1];
             boolean flag3 = aBoolean751 ^ (l > 3);
             if(flag3)
                 j2 += 0x10000;
-            model = (Model)aClass12_785.method222(j2);
+            model = (Model)aClass12_785.get(j2);
             if(model == null)
             {
-                model = Model.method462(anInt770, j2 & 0xffff);
+                model = Model.getModel(j2 & 0xffff);
                 if(model == null)
                     return null;
                 if(flag3)
@@ -277,7 +277,7 @@ public class Class46
         if(anIntArray784 != null)
         {
             for(int k2 = 0; k2 < anIntArray784.length; k2++)
-                model_3.method476(anIntArray784[k2], anIntArray747[k2]);
+                model_3.recolour(anIntArray784[k2], anIntArray747[k2]);
 
         }
         if(flag)
@@ -304,12 +304,12 @@ label0:
             int j;
             do
             {
-                j = buffer.method408();
+                j = buffer.get1ByteAsInt();
                 if(j == 0)
                     break label0;
                 if(j == 1)
                 {
-                    int k = buffer.method408();
+                    int k = buffer.get1ByteAsInt();
                     if(k > 0)
                         if(anIntArray773 == null || aBoolean752)
                         {
@@ -317,8 +317,8 @@ label0:
                             anIntArray773 = new int[k];
                             for(int k1 = 0; k1 < k; k1++)
                             {
-                                anIntArray773[k1] = buffer.method410();
-                                anIntArray776[k1] = buffer.method408();
+                                anIntArray773[k1] = buffer.get2ByteInt();
+                                anIntArray776[k1] = buffer.get1ByteAsInt();
                             }
 
                         } else
@@ -327,21 +327,21 @@ label0:
                         }
                 } else
                 if(j == 2)
-                    aString739 = buffer.method415();
+                    aString739 = buffer.readString();
                 else
                 if(j == 3)
-                    aByteArray777 = buffer.method416((byte)30);
+                    aByteArray777 = buffer.readStringBytes();
                 else
                 if(j == 5)
                 {
-                    int l = buffer.method408();
+                    int l = buffer.get1ByteAsInt();
                     if(l > 0)
                         if(anIntArray773 == null || aBoolean752)
                         {
                             anIntArray776 = null;
                             anIntArray773 = new int[l];
                             for(int l1 = 0; l1 < l; l1++)
-                                anIntArray773[l1] = buffer.method410();
+                                anIntArray773[l1] = buffer.get2ByteInt();
 
                         } else
                         {
@@ -349,10 +349,10 @@ label0:
                         }
                 } else
                 if(j == 14)
-                    anInt744 = buffer.method408();
+                    anInt744 = buffer.get1ByteAsInt();
                 else
                 if(j == 15)
-                    anInt761 = buffer.method408();
+                    anInt761 = buffer.get1ByteAsInt();
                 else
                 if(j == 17)
                     aBoolean767 = false;
@@ -362,7 +362,7 @@ label0:
                 else
                 if(j == 19)
                 {
-                    i = buffer.method408();
+                    i = buffer.get1ByteAsInt();
                     if(i == 1)
                         aBoolean778 = true;
                 } else
@@ -377,12 +377,12 @@ label0:
                 else
                 if(j == 24)
                 {
-                    anInt781 = buffer.method410();
+                    anInt781 = buffer.get2ByteInt();
                     if(anInt781 == 65535)
                         anInt781 = -1;
                 } else
                 if(j == 28)
-                    anInt775 = buffer.method408();
+                    anInt775 = buffer.get1ByteAsInt();
                 else
                 if(j == 29)
                     aByte737 = buffer.method409();
@@ -394,24 +394,24 @@ label0:
                 {
                     if(aStringArray786 == null)
                         aStringArray786 = new String[5];
-                    aStringArray786[j - 30] = buffer.method415();
+                    aStringArray786[j - 30] = buffer.readString();
                     if(aStringArray786[j - 30].equalsIgnoreCase("hidden"))
                         aStringArray786[j - 30] = null;
                 } else
                 if(j == 40)
                 {
-                    int i1 = buffer.method408();
+                    int i1 = buffer.get1ByteAsInt();
                     anIntArray784 = new int[i1];
                     anIntArray747 = new int[i1];
                     for(int i2 = 0; i2 < i1; i2++)
                     {
-                        anIntArray784[i2] = buffer.method410();
-                        anIntArray747[i2] = buffer.method410();
+                        anIntArray784[i2] = buffer.get2ByteInt();
+                        anIntArray747[i2] = buffer.get2ByteInt();
                     }
 
                 } else
                 if(j == 60)
-                    anInt746 = buffer.method410();
+                    anInt746 = buffer.get2ByteInt();
                 else
                 if(j == 62)
                     aBoolean751 = true;
@@ -420,19 +420,19 @@ label0:
                     aBoolean779 = false;
                 else
                 if(j == 65)
-                    anInt748 = buffer.method410();
+                    anInt748 = buffer.get2ByteInt();
                 else
                 if(j == 66)
-                    anInt772 = buffer.method410();
+                    anInt772 = buffer.get2ByteInt();
                 else
                 if(j == 67)
-                    anInt740 = buffer.method410();
+                    anInt740 = buffer.get2ByteInt();
                 else
                 if(j == 68)
-                    anInt758 = buffer.method410();
+                    anInt758 = buffer.get2ByteInt();
                 else
                 if(j == 69)
-                    anInt768 = buffer.method408();
+                    anInt768 = buffer.get1ByteAsInt();
                 else
                 if(j == 70)
                     anInt738 = buffer.method411();
@@ -453,21 +453,21 @@ label0:
                 {
                     if(j != 75)
                         continue;
-                    anInt760 = buffer.method408();
+                    anInt760 = buffer.get1ByteAsInt();
                 }
                 continue label0;
             } while(j != 77);
-            anInt774 = buffer.method410();
+            anInt774 = buffer.get2ByteInt();
             if(anInt774 == 65535)
                 anInt774 = -1;
-            anInt749 = buffer.method410();
+            anInt749 = buffer.get2ByteInt();
             if(anInt749 == 65535)
                 anInt749 = -1;
-            int j1 = buffer.method408();
+            int j1 = buffer.get1ByteAsInt();
             anIntArray759 = new int[j1 + 1];
             for(int j2 = 0; j2 <= j1; j2++)
             {
-                anIntArray759[j2] = buffer.method410();
+                anIntArray759[j2] = buffer.get2ByteInt();
                 if(anIntArray759[j2] == 65535)
                     anIntArray759[j2] = -1;
             }

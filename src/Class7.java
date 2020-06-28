@@ -152,11 +152,11 @@ public class Class7
 		      = aByteArrayArrayArray142[i_10_][i_31_][i_30_] & 0xff;
 		    if (i_32_ > 0)
 		      {
-			Class22 class22 = Class22.aClass22Array388[i_32_ - 1];
-			anIntArray124[i_30_] += class22.anInt397;
-			anIntArray125[i_30_] += class22.anInt395;
-			anIntArray126[i_30_] += class22.anInt396;
-			anIntArray127[i_30_] += class22.anInt398;
+			Floor floor = Floor.floors[i_32_ - 1];
+			anIntArray124[i_30_] += floor.weightedHue;
+			anIntArray125[i_30_] += floor.saturation;
+			anIntArray126[i_30_] += floor.luminance;
+			anIntArray127[i_30_] += floor.chroma;
 			anIntArray128[i_30_]++;
 		      }
 		  }
@@ -167,11 +167,11 @@ public class Class7
 		      = aByteArrayArrayArray142[i_10_][i_33_][i_30_] & 0xff;
 		    if (i_34_ > 0)
 		      {
-			Class22 class22 = Class22.aClass22Array388[i_34_ - 1];
-			anIntArray124[i_30_] -= class22.anInt397;
-			anIntArray125[i_30_] -= class22.anInt395;
-			anIntArray126[i_30_] -= class22.anInt396;
-			anIntArray127[i_30_] -= class22.anInt398;
+			Floor floor = Floor.floors[i_34_ - 1];
+			anIntArray124[i_30_] -= floor.weightedHue;
+			anIntArray125[i_30_] -= floor.saturation;
+			anIntArray126[i_30_] -= floor.luminance;
+			anIntArray127[i_30_] -= floor.chroma;
 			anIntArray128[i_30_]--;
 		      }
 		  }
@@ -257,8 +257,8 @@ public class Class7
 				if (i_43_ == 0 && (aByteArrayArrayArray136
 						   [i_10_][i_29_][i_40_]) != 0)
 				  bool = false;
-				if (i_44_ > 0 && ! (Class22.aClass22Array388
-						    [i_44_ - 1].aBoolean393))
+				if (i_44_ > 0 && ! (Floor.floors
+						    [i_44_ - 1].hasShadowing))
 				  bool = false;
 				if (bool && i_45_ == i_46_ && i_45_ == i_47_
 				    && i_45_ == i_48_)
@@ -284,9 +284,9 @@ public class Class7
 					     + 1);
 				byte i_60_ = (aByteArrayArrayArray148[i_10_]
 					      [i_29_][i_40_]);
-				Class22 class22
-				  = Class22.aClass22Array388[i_44_ - 1];
-				int i_61_ = class22.anInt391;
+				Floor floor
+				  = Floor.floors[i_44_ - 1];
+				int i_61_ = floor.textureId;
 				int i_62_;
 				int i_63_;
 				if (i_61_ >= 0)
@@ -295,7 +295,7 @@ public class Class7
 					      .method369 (i_61_, 12660);
 				    i_63_ = -1;
 				  }
-				else if (class22.anInt390 == 16711935)
+				else if (floor.rgb == 16711935)
 				  {
 				    i_62_ = 0;
 				    i_63_ = -2;
@@ -303,12 +303,12 @@ public class Class7
 				  }
 				else
 				  {
-				    i_63_ = method177 (class22.anInt394,
-						       class22.anInt395,
-						       class22.anInt396);
+				    i_63_ = method177 (floor.hue,
+						       floor.saturation,
+						       floor.luminance);
 				    i_62_
 				      = (Class30_Sub2_Sub1_Sub3.anIntArray1482
-					 [method185 (class22.anInt399, 96)]);
+					 [method185 (floor.colour, 96)]);
 				  }
 				class25.method279 (i_10_, i_29_, i_40_, i_59_,
 						   i_60_, i_61_, i_45_, i_46_,
@@ -605,7 +605,7 @@ public class Class7
 	    int i_112_ = buffer.method422 ();
 	    if (i_112_ == 0)
 	      break;
-	    buffer.method408 ();
+	    buffer.get1ByteAsInt();
 	  }
       }
   }
@@ -1264,7 +1264,7 @@ public class Class7
 	aByteArrayArrayArray149[i_187_][i_186_][i] = (byte) 0;
 	for (;;)
 	  {
-	    int i_191_ = buffer.method408 ();
+	    int i_191_ = buffer.get1ByteAsInt();
 	    if (i_191_ == 0)
 	      {
 		if (i_187_ == 0)
@@ -1281,7 +1281,7 @@ public class Class7
 	      }
 	    if (i_191_ == 1)
 	      {
-		int i_192_ = buffer.method408 ();
+		int i_192_ = buffer.get1ByteAsInt();
 		if (i_192_ == 1)
 		  i_192_ = 0;
 		if (i_187_ == 0)
@@ -1316,16 +1316,16 @@ public class Class7
       {
 	for (;;)
 	  {
-	    int i_193_ = buffer.method408 ();
+	    int i_193_ = buffer.get1ByteAsInt();
 	    if (i_193_ == 0)
 	      break;
 	    if (i_193_ == 1)
 	      {
-		buffer.method408 ();
+		buffer.get1ByteAsInt();
 		break;
 	      }
 	    if (i_193_ <= 49)
-	      buffer.method408 ();
+	      buffer.get1ByteAsInt();
 	  }
       }
   }
@@ -1365,7 +1365,7 @@ public class Class7
 	    int i_207_ = i_205_ & 0x3f;
 	    int i_208_ = i_205_ >> 6 & 0x3f;
 	    int i_209_ = i_205_ >> 12;
-	    int i_210_ = buffer.method408 ();
+	    int i_210_ = buffer.get1ByteAsInt();
 	    int i_211_ = i_210_ >> 2;
 	    int i_212_ = i_210_ & 0x3;
 	    if (i_209_ == i && i_208_ >= i_200_ && i_208_ < i_200_ + 8
@@ -1766,7 +1766,7 @@ public class Class7
 		int i_256_ = buffer.method422 ();
 		if (i_256_ == 0)
 		  break;
-		buffer.method408 ();
+		buffer.get1ByteAsInt();
 	      }
 	    else
 	      {
@@ -1776,7 +1776,7 @@ public class Class7
 		i_254_ += i_257_ - 1;
 		int i_258_ = i_254_ & 0x3f;
 		int i_259_ = i_254_ >> 6 & 0x3f;
-		int i_260_ = buffer.method408 () >> 2;
+		int i_260_ = buffer.get1ByteAsInt() >> 2;
 		int i_261_ = i_259_ + i;
 		int i_262_ = i_258_ + i_250_;
 		if (i_261_ > 0 && i_262_ > 0 && i_261_ < 103 && i_262_ < 103)
@@ -1818,7 +1818,7 @@ public class Class7
 		int i_269_ = i_267_ & 0x3f;
 		int i_270_ = i_267_ >> 6 & 0x3f;
 		int i_271_ = i_267_ >> 12;
-		int i_272_ = buffer.method408 ();
+		int i_272_ = buffer.get1ByteAsInt();
 		int i_273_ = i_272_ >> 2;
 		int i_274_ = i_272_ & 0x3;
 		int i_275_ = i_270_ + i;

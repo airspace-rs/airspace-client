@@ -82,22 +82,22 @@ public class Class39
 
     public void method545(Buffer buffer, boolean flag, Class29 class29)
     {
-        int i = buffer.method408();
+        int i = buffer.get1ByteAsInt();
         anIntArray665[0] = i >> 4;
         if(flag)
             return;
         anIntArray665[1] = i & 0xf;
         if(i != 0)
         {
-            anIntArray668[0] = buffer.method410();
-            anIntArray668[1] = buffer.method410();
-            int j = buffer.method408();
+            anIntArray668[0] = buffer.get2ByteInt();
+            anIntArray668[1] = buffer.get2ByteInt();
+            int j = buffer.get1ByteAsInt();
             for(int k = 0; k < 2; k++)
             {
                 for(int l = 0; l < anIntArray665[k]; l++)
                 {
-                    anIntArrayArrayArray666[k][0][l] = buffer.method410();
-                    anIntArrayArrayArray667[k][0][l] = buffer.method410();
+                    anIntArrayArrayArray666[k][0][l] = buffer.get2ByteInt();
+                    anIntArrayArrayArray667[k][0][l] = buffer.get2ByteInt();
                 }
 
             }
@@ -107,8 +107,8 @@ public class Class39
                 for(int j1 = 0; j1 < anIntArray665[i1]; j1++)
                     if((j & 1 << i1 * 4 << j1) != 0)
                     {
-                        anIntArrayArrayArray666[i1][1][j1] = buffer.method410();
-                        anIntArrayArrayArray667[i1][1][j1] = buffer.method410();
+                        anIntArrayArrayArray666[i1][1][j1] = buffer.get2ByteInt();
+                        anIntArrayArrayArray667[i1][1][j1] = buffer.get2ByteInt();
                     } else
                     {
                         anIntArrayArrayArray666[i1][1][j1] = anIntArrayArrayArray666[i1][0][j1];

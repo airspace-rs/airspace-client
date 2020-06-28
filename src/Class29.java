@@ -7,14 +7,14 @@ public class Class29
 
     public void method325(boolean flag, Buffer buffer)
     {
-        anInt540 = buffer.method408();
+        anInt540 = buffer.get1ByteAsInt();
         if(!flag)
         {
             throw new NullPointerException();
         } else
         {
-            anInt538 = buffer.method413();
-            anInt539 = buffer.method413();
+            anInt538 = buffer.get4ByteInt();
+            anInt539 = buffer.get4ByteInt();
             method326((byte)-112, buffer);
             return;
         }
@@ -24,13 +24,13 @@ public class Class29
     {
         if(byte0 != aByte532)
             aBoolean533 = !aBoolean533;
-        anInt535 = buffer.method408();
+        anInt535 = buffer.get1ByteAsInt();
         anIntArray536 = new int[anInt535];
         anIntArray537 = new int[anInt535];
         for(int i = 0; i < anInt535; i++)
         {
-            anIntArray536[i] = buffer.method410();
-            anIntArray537[i] = buffer.method410();
+            anIntArray536[i] = buffer.get2ByteInt();
+            anIntArray537[i] = buffer.get2ByteInt();
         }
 
     }

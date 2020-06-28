@@ -24,21 +24,21 @@ public class JagexFont extends Class30_Sub2_Sub1
         anIntArray1496 = new int[256];
         aRandom1498 = new Random();
         aBoolean1499 = false;
-        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
-        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat"));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat"));
         byte byte0 = -1;
-        buffer_1.pointer = buffer.method410() + 4;
-        int k = buffer_1.method408();
+        buffer_1.pointer = buffer.get2ByteInt() + 4;
+        int k = buffer_1.get1ByteAsInt();
         if(k > 0)
             buffer_1.pointer += 3 * (k - 1);
         for(int l = 0; l < 256; l++)
         {
             int j = l;
-            anIntArray1494[l] = buffer_1.method408();
-            anIntArray1495[l] = buffer_1.method408();
-            int i1 = anIntArray1492[l] = buffer_1.method410();
-            int j1 = anIntArray1493[l] = buffer_1.method410();
-            int k1 = buffer_1.method408();
+            anIntArray1494[l] = buffer_1.get1ByteAsInt();
+            anIntArray1495[l] = buffer_1.get1ByteAsInt();
+            int i1 = anIntArray1492[l] = buffer_1.get2ByteInt();
+            int j1 = anIntArray1493[l] = buffer_1.get2ByteInt();
+            int k1 = buffer_1.get1ByteAsInt();
             int l1 = i1 * j1;
             aByteArrayArray1491[l] = new byte[l1];
             if(k1 == 0)

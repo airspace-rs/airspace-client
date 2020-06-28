@@ -22,7 +22,7 @@ public class Class16
         Class6.method166();
         do
         {
-            int j = buffer.method410();
+            int j = buffer.get2ByteInt();
             if(j == 65535)
                 return;
             aClass16Array325[j] = new Class16(8);
@@ -49,7 +49,7 @@ public class Class16
     {
         for(int i = 0; i < 10; i++)
         {
-            int j = buffer.method408();
+            int j = buffer.get1ByteAsInt();
             if(j != 0)
             {
                 buffer.pointer--;
@@ -60,8 +60,8 @@ public class Class16
 
         if(!flag)
             anInt324 = 58;
-        anInt330 = buffer.method410();
-        anInt331 = buffer.method410();
+        anInt330 = buffer.get2ByteInt();
+        anInt331 = buffer.get2ByteInt();
     }
 
     public int method243(int i)

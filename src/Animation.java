@@ -18,10 +18,10 @@ public class Animation
     {
         Buffer buffer = new Buffer(abyte0);
         buffer.pointer = abyte0.length - 8;
-        int i = buffer.method410();
-        int j = buffer.method410();
-        int k = buffer.method410();
-        int l = buffer.method410();
+        int i = buffer.get2ByteInt();
+        int j = buffer.get2ByteInt();
+        int k = buffer.get2ByteInt();
+        int l = buffer.get2ByteInt();
         int i1 = 0;
         Buffer buffer_1 = new Buffer(abyte0);
         buffer_1.pointer = i1;
@@ -42,23 +42,23 @@ public class Animation
             for(int j1 = 1; j1 > 0; j1++);
         }
         Class18 class18 = new Class18(0, buffer_5);
-        int k1 = buffer_1.method410();
+        int k1 = buffer_1.get2ByteInt();
         int ai[] = new int[500];
         int ai1[] = new int[500];
         int ai2[] = new int[500];
         int ai3[] = new int[500];
         for(int l1 = 0; l1 < k1; l1++)
         {
-            int i2 = buffer_1.method410();
+            int i2 = buffer_1.get2ByteInt();
             Animation animation = aAnimationArray635[i2] = new Animation();
-            animation.anInt636 = buffer_4.method408();
+            animation.anInt636 = buffer_4.get1ByteAsInt();
             animation.aClass18_637 = class18;
-            int j2 = buffer_1.method408();
+            int j2 = buffer_1.get1ByteAsInt();
             int k2 = -1;
             int l2 = 0;
             for(int i3 = 0; i3 < j2; i3++)
             {
-                int j3 = class30_sub2_sub2_2.method408();
+                int j3 = class30_sub2_sub2_2.get1ByteAsInt();
                 if(j3 > 0)
                 {
                     if(class18.anIntArray342[i3] != 0)

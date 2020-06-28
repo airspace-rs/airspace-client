@@ -7,8 +7,8 @@ public class Class38
 
     public static void method535(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.getFile("idk.dat", null));
-        anInt655 = buffer.method410();
+        Buffer buffer = new Buffer(jagexArchive.getFile("idk.dat"));
+        anInt655 = buffer.get2ByteInt();
         if(aClass38Array656 == null)
             aClass38Array656 = new Class38[anInt655];
         for(int j = 0; j < anInt655; j++)
@@ -27,31 +27,31 @@ public class Class38
             throw new NullPointerException();
         do
         {
-            int i = buffer.method408();
+            int i = buffer.get1ByteAsInt();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt657 = buffer.method408();
+                anInt657 = buffer.get1ByteAsInt();
             else
             if(i == 2)
             {
-                int j = buffer.method408();
+                int j = buffer.get1ByteAsInt();
                 anIntArray658 = new int[j];
                 for(int k = 0; k < j; k++)
-                    anIntArray658[k] = buffer.method410();
+                    anIntArray658[k] = buffer.get2ByteInt();
 
             } else
             if(i == 3)
                 aBoolean662 = true;
             else
             if(i >= 40 && i < 50)
-                anIntArray659[i - 40] = buffer.method410();
+                anIntArray659[i - 40] = buffer.get2ByteInt();
             else
             if(i >= 50 && i < 60)
-                anIntArray660[i - 50] = buffer.method410();
+                anIntArray660[i - 50] = buffer.get2ByteInt();
             else
             if(i >= 60 && i < 70)
-                anIntArray661[i - 60] = buffer.method410();
+                anIntArray661[i - 60] = buffer.get2ByteInt();
             else
                 System.out.println("Error unrecognised config code: " + i);
         } while(true);
@@ -70,7 +70,7 @@ public class Class38
             for(int i = 1; i > 0; i++);
         }
         for(int j = 0; j < anIntArray658.length; j++)
-            if(!Model.method463(anIntArray658[j]))
+            if(!Model.isCached(anIntArray658[j]))
                 flag = false;
 
         return flag;
@@ -84,18 +84,18 @@ public class Class38
             return null;
         Model aclass30_sub2_sub4_sub6[] = new Model[anIntArray658.length];
         for(int i = 0; i < anIntArray658.length; i++)
-            aclass30_sub2_sub4_sub6[i] = Model.method462(anInt654, anIntArray658[i]);
+            aclass30_sub2_sub4_sub6[i] = Model.getModel(anIntArray658[i]);
 
         Model model;
         if(aclass30_sub2_sub4_sub6.length == 1)
             model = aclass30_sub2_sub4_sub6[0];
         else
-            model = new Model(aclass30_sub2_sub4_sub6.length, aclass30_sub2_sub4_sub6, -38);
+            model = new Model(aclass30_sub2_sub4_sub6.length, aclass30_sub2_sub4_sub6);
         for(int j = 0; j < 6; j++)
         {
             if(anIntArray659[j] == 0)
                 break;
-            model.method476(anIntArray659[j], anIntArray660[j]);
+            model.recolour(anIntArray659[j], anIntArray660[j]);
         }
 
         return model;
@@ -107,7 +107,7 @@ public class Class38
             throw new NullPointerException();
         boolean flag1 = true;
         for(int i = 0; i < 5; i++)
-            if(anIntArray661[i] != -1 && !Model.method463(anIntArray661[i]))
+            if(anIntArray661[i] != -1 && !Model.isCached(anIntArray661[i]))
                 flag1 = false;
 
         return flag1;
@@ -121,14 +121,14 @@ public class Class38
         int j = 0;
         for(int k = 0; k < 5; k++)
             if(anIntArray661[k] != -1)
-                aclass30_sub2_sub4_sub6[j++] = Model.method462(anInt654, anIntArray661[k]);
+                aclass30_sub2_sub4_sub6[j++] = Model.getModel(anIntArray661[k]);
 
-        Model model = new Model(j, aclass30_sub2_sub4_sub6, -38);
+        Model model = new Model(j, aclass30_sub2_sub4_sub6);
         for(int l = 0; l < 6; l++)
         {
             if(anIntArray659[l] == 0)
                 break;
-            model.method476(anIntArray659[l], anIntArray660[l]);
+            model.recolour(anIntArray659[l], anIntArray660[l]);
         }
 
         return model;

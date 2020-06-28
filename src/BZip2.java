@@ -4,10 +4,10 @@
 
 import java.io.PrintStream;
 
-public class Class13
+public class BZip2
 {
 
-    public static int method225(byte abyte0[], int i, byte abyte1[], int j, int k)
+    public static int decompress(byte abyte0[], int i, byte abyte1[], int j, int k)
     {
         synchronized(aClass32_305)
         {

@@ -73,16 +73,16 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         aBoolean1436 = true;
         aBoolean1437 = true;
         aBoolean1438 = false;
-        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
-        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
-        buffer_1.pointer = buffer.method410();
-        anInt1444 = buffer_1.method410();
-        anInt1445 = buffer_1.method410();
-        int j = buffer_1.method408();
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat"));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat"));
+        buffer_1.pointer = buffer.get2ByteInt();
+        anInt1444 = buffer_1.get2ByteInt();
+        anInt1445 = buffer_1.get2ByteInt();
+        int j = buffer_1.get1ByteAsInt();
         int ai[] = new int[j];
         for(int k = 0; k < j - 1; k++)
         {
-            ai[k + 1] = buffer_1.method412();
+            ai[k + 1] = buffer_1.get3ByteInt();
             if(ai[k + 1] == 0)
                 ai[k + 1] = 1;
         }
@@ -90,21 +90,21 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
         for(int l = 0; l < i; l++)
         {
             buffer_1.pointer += 2;
-            buffer.pointer += buffer_1.method410() * buffer_1.method410();
+            buffer.pointer += buffer_1.get2ByteInt() * buffer_1.get2ByteInt();
             buffer_1.pointer++;
         }
 
-        anInt1442 = buffer_1.method408();
-        anInt1443 = buffer_1.method408();
-        anInt1440 = buffer_1.method410();
-        anInt1441 = buffer_1.method410();
-        int i1 = buffer_1.method408();
+        anInt1442 = buffer_1.get1ByteAsInt();
+        anInt1443 = buffer_1.get1ByteAsInt();
+        anInt1440 = buffer_1.get2ByteInt();
+        anInt1441 = buffer_1.get2ByteInt();
+        int i1 = buffer_1.get1ByteAsInt();
         int j1 = anInt1440 * anInt1441;
         anIntArray1439 = new int[j1];
         if(i1 == 0)
         {
             for(int k1 = 0; k1 < j1; k1++)
-                anIntArray1439[k1] = ai[buffer.method408()];
+                anIntArray1439[k1] = ai[buffer.get1ByteAsInt()];
 
             return;
         }
@@ -113,7 +113,7 @@ public class Class30_Sub2_Sub1_Sub1 extends Class30_Sub2_Sub1
             for(int l1 = 0; l1 < anInt1440; l1++)
             {
                 for(int i2 = 0; i2 < anInt1441; i2++)
-                    anIntArray1439[l1 + i2 * anInt1440] = ai[buffer.method408()];
+                    anIntArray1439[l1 + i2 * anInt1440] = ai[buffer.get1ByteAsInt()];
 
             }
 

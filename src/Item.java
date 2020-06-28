@@ -2,89 +2,153 @@
 // Jad home page: http://www.kpdus.com/jad.html
 // Decompiler options: packimports(3) 
 
-public class Class8
+public class Item
 {
+    public static Item itemCache[];
+    public static Class12 imageCache = new Class12(false, 100);
+    public static Class12 modelCache = new Class12(false, 50);
+    public static boolean aBoolean182 = true;
+    public static Buffer itemData;
+    public static int anInt180;
+    public static int itemCount;
+    public static int itemIndices[];
+    public static boolean aBoolean187;
 
-    public static void method191(int i)
+    public static void initItems(JagexArchive jagexArchive)
     {
-        aClass12_159 = null;
-        aClass12_158 = null;
-        anIntArray195 = null;
-        if(i >= 0)
-            aBoolean187 = !aBoolean187;
-        aClass8Array172 = null;
-        aBuffer_183 = null;
-    }
+        itemData = new Buffer(jagexArchive.getFile("obj.dat"));
+        Buffer buffer = new Buffer(jagexArchive.getFile("obj.idx"));
+        itemCount = buffer.get2ByteInt();
+        itemIndices = new int[itemCount];
 
-    public boolean method192(int i, int j)
-    {
-        if(i != -2836)
-            aBoolean186 = !aBoolean186;
-        int k = anInt175;
-        int l = anInt166;
-        if(j == 1)
-        {
-            k = anInt197;
-            l = anInt173;
-        }
-        if(k == -1)
-            return true;
-        boolean flag = true;
-        if(!Model.method463(k))
-            flag = false;
-        if(l != -1 && !Model.method463(l))
-            flag = false;
-        return flag;
-    }
-
-    public static void method193(JagexArchive jagexArchive)
-    {
-        aBuffer_183 = new Buffer(jagexArchive.getFile("obj.dat", null));
-        Buffer buffer = new Buffer(jagexArchive.getFile("obj.idx", null));
-        anInt203 = buffer.method410();
-        anIntArray195 = new int[anInt203];
         int i = 2;
-        for(int j = 0; j < anInt203; j++)
-        {
-            anIntArray195[j] = i;
-            i += buffer.method410();
+        for (int j = 0; j < itemCount; j++) {
+            itemIndices[j] = i;
+            i += buffer.get2ByteInt();
         }
 
-        aClass8Array172 = new Class8[10];
-        for(int k = 0; k < 10; k++)
-            aClass8Array172[k] = new Class8();
-
+        itemCache = new Item[10];
+        for (int k = 0; k < 10; k++) {
+            itemCache[k] = new Item();
+        }
     }
 
-    public Model method194(int i, int j)
+    public byte aByte154;
+    public int anInt155;
+    public int modelRecolourOriginal[];
+    public int anInt157;
+    public int modelRecolourNew[];
+    public boolean aBoolean161;
+    public int anInt162;
+    public int anInt163;
+    public int anInt164;
+    public int anInt165;
+    public int equippedModelMale2;
+    public int anInt167;
+    public String aStringArray168[];
+    public int anInt169;
+    public String aString170;
+    public int anInt171;
+    public int equippedModelFemale2;
+    public int anInt174;
+    public int equippedModelMale1;
+    public boolean aBoolean176;
+    public int anInt177;
+    public byte aByteArray178[];
+    public int anInt179;
+    public int anInt181;
+    public int anInt184;
+    public int anInt185;
+    public boolean aBoolean186;
+    public int anInt188;
+    public String aStringArray189[];
+    public int anInt190;
+    public int anInt191;
+    public int anInt192;
+    public int anIntArray193[];
+    public int anInt194;
+    public int anInt196;
+    public int equippedModelFemale1;
+    public int anInt198;
+    public int anInt199;
+    public int anInt200;
+    public int anIntArray201[];
+    public int anInt202;
+    public int anInt204;
+    public byte aByte205;
+    public boolean aBoolean206;
+
+    public Item()
     {
-        while(i >= 0) 
-            aBoolean186 = !aBoolean186;
-        int k = anInt175;
-        int l = anInt166;
-        if(j == 1)
-        {
-            k = anInt197;
-            l = anInt173;
+        anInt157 = -1;
+        anInt171 = 9;
+        anInt177 = 9;
+        aBoolean186 = false;
+        aBoolean206 = false;
+    }
+
+    public Model method194(int gender)
+    {
+        int dialogueModelId = equippedModelMale1;
+        int dialogHatModelId = equippedModelMale2;
+        if (gender == 1) {
+            dialogueModelId = equippedModelFemale1;
+            dialogHatModelId = equippedModelFemale2;
         }
-        if(k == -1)
+
+        if (dialogueModelId == -1) {
             return null;
-        Model model = Model.method462(anInt171, k);
-        if(l != -1)
-        {
-            Model model_1 = Model.method462(anInt171, l);
-            Model aclass30_sub2_sub4_sub6[] = {
-                    model, model_1
-            };
-            model = new Model(2, aclass30_sub2_sub4_sub6, -38);
         }
-        if(anIntArray156 != null)
-        {
-            for(int i1 = 0; i1 < anIntArray156.length; i1++)
-                model.method476(anIntArray156[i1], anIntArray160[i1]);
+
+        Model dialogueModel = Model.getModel(dialogueModelId);
+
+        if (dialogHatModelId != -1) {
+            Model hatModel = Model.getModel(dialogHatModelId);
+            Model models[] = {
+                dialogueModel,
+                hatModel
+            };
+            dialogueModel = new Model(2, models);
+        }
+
+        if (modelRecolourOriginal != null) {
+            for (int i = 0; i < modelRecolourOriginal.length; i++) {
+                dialogueModel.recolour(modelRecolourOriginal[i], modelRecolourNew[i]);
+            }
 
         }
-        return model;
+
+        return dialogueModel;
+    }
+
+    public static void method191()
+    {
+        modelCache = null;
+        imageCache = null;
+        itemIndices = null;
+        itemCache = null;
+        itemData = null;
+    }
+
+    public boolean isEquippedModelCached(int gender)
+    {
+        int primaryModel = equippedModelMale1;
+        int secondaryModel = equippedModelMale2;
+        if (gender == 1) {
+            primaryModel = equippedModelFemale1;
+            secondaryModel = equippedModelFemale2;
+        }
+        if (primaryModel == -1) {
+            return true;
+        }
+        boolean flag = true;
+        if (!Model.isCached(primaryModel)) {
+            flag = false;
+        }
+        if (secondaryModel != -1 && !Model.isCached(secondaryModel)) {
+            flag = false;
+        }
+        return flag;
     }
 
     public boolean method195(int i, int j)
@@ -103,56 +167,55 @@ public class Class8
         if(k == -1)
             return true;
         boolean flag = true;
-        if(!Model.method463(k))
+        if(!Model.isCached(k))
             flag = false;
-        if(l != -1 && !Model.method463(l))
+        if(l != -1 && !Model.isCached(l))
             flag = false;
-        if(i1 != -1 && !Model.method463(i1))
+        if(i1 != -1 && !Model.isCached(i1))
             flag = false;
         return flag;
     }
 
-    public Model method196(boolean flag, int i)
+    public Model method196(int gender)
     {
-        if(flag)
-            throw new NullPointerException();
         int j = anInt165;
         int k = anInt188;
         int l = anInt185;
-        if(i == 1)
-        {
+        if (gender == 1) {
             j = anInt200;
             k = anInt164;
             l = anInt162;
         }
-        if(j == -1)
+        if (j == -1) {
             return null;
-        Model model = Model.method462(anInt171, j);
-        if(k != -1)
-            if(l != -1)
-            {
-                Model model_1 = Model.method462(anInt171, k);
-                Model model_3 = Model.method462(anInt171, l);
-                Model aclass30_sub2_sub4_sub6_1[] = {
+        }
+        Model model = Model.getModel(j);
+        if (k != -1) {
+            if (l != -1) {
+                Model model_1 = Model.getModel(k);
+                Model model_3 = Model.getModel(l);
+                Model models[] = {
                         model, model_1, model_3
                 };
-                model = new Model(3, aclass30_sub2_sub4_sub6_1, -38);
-            } else
-            {
-                Model class30_sub2_sub4_sub6_2 = Model.method462(anInt171, k);
+                model = new Model(3, models);
+            } else {
+                Model class30_sub2_sub4_sub6_2 = Model.getModel(k);
                 Model aclass30_sub2_sub4_sub6[] = {
                         model, class30_sub2_sub4_sub6_2
                 };
-                model = new Model(2, aclass30_sub2_sub4_sub6, -38);
+                model = new Model(2, aclass30_sub2_sub4_sub6);
             }
-        if(i == 0 && aByte205 != 0)
+        }
+        if (gender == 0 && aByte205 != 0) {
             model.method475(0, aByte205, 16384, 0);
-        if(i == 1 && aByte154 != 0)
+        }
+        if (gender == 1 && aByte154 != 0) {
             model.method475(0, aByte154, 16384, 0);
-        if(anIntArray156 != null)
-        {
-            for(int i1 = 0; i1 < anIntArray156.length; i1++)
-                model.method476(anIntArray156[i1], anIntArray160[i1]);
+        }
+        if (modelRecolourOriginal != null) {
+            for (int i1 = 0; i1 < modelRecolourOriginal.length; i1++) {
+                model.recolour(modelRecolourOriginal[i1], modelRecolourNew[i1]);
+            }
 
         }
         return model;
@@ -163,8 +226,8 @@ public class Class8
         anInt174 = 0;
         aString170 = null;
         aByteArray178 = null;
-        anIntArray156 = null;
-        anIntArray160 = null;
+        modelRecolourOriginal = null;
+        modelRecolourNew = null;
         anInt181 = 2000;
         anInt190 = 0;
         anInt198 = 0;
@@ -185,10 +248,10 @@ public class Class8
         aByte154 = 0;
         anInt185 = -1;
         anInt162 = -1;
-        anInt175 = -1;
-        anInt166 = -1;
-        anInt197 = -1;
-        anInt173 = -1;
+        equippedModelMale1 = -1;
+        equippedModelMale2 = -1;
+        equippedModelFemale1 = -1;
+        equippedModelFemale2 = -1;
         anIntArray193 = null;
         anIntArray201 = null;
         anInt179 = -1;
@@ -201,54 +264,54 @@ public class Class8
         anInt202 = 0;
     }
 
-    public static Class8 method198(int i)
+    public static Item method198(int i)
     {
         for(int j = 0; j < 10; j++)
-            if(aClass8Array172[j].anInt157 == i)
-                return aClass8Array172[j];
+            if(itemCache[j].anInt157 == i)
+                return itemCache[j];
 
         anInt180 = (anInt180 + 1) % 10;
-        Class8 class8 = aClass8Array172[anInt180];
-        aBuffer_183.pointer = anIntArray195[i];
-        class8.anInt157 = i;
-        class8.method197();
-        class8.method203(true, aBuffer_183);
-        if(class8.anInt163 != -1)
-            class8.method199((byte)61);
-        if(!aBoolean182 && class8.aBoolean161)
+        Item item = itemCache[anInt180];
+        itemData.pointer = itemIndices[i];
+        item.anInt157 = i;
+        item.method197();
+        item.method203(true, itemData);
+        if(item.anInt163 != -1)
+            item.method199((byte)61);
+        if(!aBoolean182 && item.aBoolean161)
         {
-            class8.aString170 = "Members Object";
-            class8.aByteArray178 = "Login to a members' server to use this object.".getBytes();
-            class8.aStringArray168 = null;
-            class8.aStringArray189 = null;
-            class8.anInt202 = 0;
+            item.aString170 = "Members Object";
+            item.aByteArray178 = "Login to a members' server to use this object.".getBytes();
+            item.aStringArray168 = null;
+            item.aStringArray189 = null;
+            item.anInt202 = 0;
         }
-        return class8;
+        return item;
     }
 
     public void method199(byte byte0)
     {
-        Class8 class8 = method198(anInt163);
-        anInt174 = class8.anInt174;
-        anInt181 = class8.anInt181;
-        anInt190 = class8.anInt190;
-        anInt198 = class8.anInt198;
-        anInt204 = class8.anInt204;
-        anInt169 = class8.anInt169;
-        anInt194 = class8.anInt194;
+        Item item = method198(anInt163);
+        anInt174 = item.anInt174;
+        anInt181 = item.anInt181;
+        anInt190 = item.anInt190;
+        anInt198 = item.anInt198;
+        anInt204 = item.anInt204;
+        anInt169 = item.anInt169;
+        anInt194 = item.anInt194;
         if(byte0 != 61)
             aBoolean186 = !aBoolean186;
-        anIntArray156 = class8.anIntArray156;
-        anIntArray160 = class8.anIntArray160;
-        Class8 class8_1 = method198(anInt179);
-        aString170 = class8_1.aString170;
-        aBoolean161 = class8_1.aBoolean161;
-        anInt155 = class8_1.anInt155;
+        modelRecolourOriginal = item.modelRecolourOriginal;
+        modelRecolourNew = item.modelRecolourNew;
+        Item item_1 = method198(anInt179);
+        aString170 = item_1.aString170;
+        aBoolean161 = item_1.aBoolean161;
+        anInt155 = item_1.anInt155;
         String s = "a";
-        char c = class8_1.aString170.charAt(0);
+        char c = item_1.aString170.charAt(0);
         if(c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U')
             s = "an";
-        aByteArray178 = ("Swap this note at any bank for " + s + " " + class8_1.aString170 + ".").getBytes();
+        aByteArray178 = ("Swap this note at any bank for " + s + " " + item_1.aString170 + ".").getBytes();
         aBoolean176 = true;
     }
 
@@ -256,7 +319,7 @@ public class Class8
     {
         if(k == 0)
         {
-            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = (Class30_Sub2_Sub1_Sub1)aClass12_158.method222(i);
+            Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1 = (Class30_Sub2_Sub1_Sub1) imageCache.get(i);
             if(class30_sub2_sub1_sub1 != null && class30_sub2_sub1_sub1.anInt1445 != j && class30_sub2_sub1_sub1.anInt1445 != -1)
             {
                 class30_sub2_sub1_sub1.method329();
@@ -265,26 +328,26 @@ public class Class8
             if(class30_sub2_sub1_sub1 != null)
                 return class30_sub2_sub1_sub1;
         }
-        Class8 class8 = method198(i);
-        if(class8.anIntArray193 == null)
+        Item item = method198(i);
+        if(item.anIntArray193 == null)
             j = -1;
         if(j > 1)
         {
             int i1 = -1;
             for(int j1 = 0; j1 < 10; j1++)
-                if(j >= class8.anIntArray201[j1] && class8.anIntArray201[j1] != 0)
-                    i1 = class8.anIntArray193[j1];
+                if(j >= item.anIntArray201[j1] && item.anIntArray201[j1] != 0)
+                    i1 = item.anIntArray193[j1];
 
             if(i1 != -1)
-                class8 = method198(i1);
+                item = method198(i1);
         }
-        Model model = class8.method201(1);
+        Model model = item.method201(1);
         if(model == null)
             return null;
         Class30_Sub2_Sub1_Sub1 class30_sub2_sub1_sub1_2 = null;
-        if(class8.anInt163 != -1)
+        if(item.anInt163 != -1)
         {
-            class30_sub2_sub1_sub1_2 = method200(class8.anInt179, 10, -1, 9);
+            class30_sub2_sub1_sub1_2 = method200(item.anInt179, 10, -1, 9);
             if(class30_sub2_sub1_sub1_2 == null)
                 return null;
         }
@@ -303,14 +366,14 @@ public class Class8
         Class30_Sub2_Sub1.method331(32, 32, class30_sub2_sub1_sub1_1.anIntArray1439);
         Class30_Sub2_Sub1.method336(32, 0, 0, 0, 32, 0);
         Class30_Sub2_Sub1_Sub3.method364((byte)6);
-        int k3 = class8.anInt181;
+        int k3 = item.anInt181;
         if(k == -1)
             k3 = (int)((double)k3 * 1.5D);
         if(k > 0)
             k3 = (int)((double)k3 * 1.04D);
-        int l3 = Class30_Sub2_Sub1_Sub3.anIntArray1470[class8.anInt190] * k3 >> 16;
-        int i4 = Class30_Sub2_Sub1_Sub3.anIntArray1471[class8.anInt190] * k3 >> 16;
-        model.method482(0, class8.anInt198, class8.anInt204, class8.anInt190, class8.anInt169, l3 + ((Class30_Sub2_Sub4) (model)).anInt1426 / 2 + class8.anInt194, i4 + class8.anInt194);
+        int l3 = Class30_Sub2_Sub1_Sub3.anIntArray1470[item.anInt190] * k3 >> 16;
+        int i4 = Class30_Sub2_Sub1_Sub3.anIntArray1471[item.anInt190] * k3 >> 16;
+        model.method482(0, item.anInt198, item.anInt204, item.anInt190, item.anInt169, l3 + ((Class30_Sub2_Sub4) (model)).anInt1426 / 2 + item.anInt194, i4 + item.anInt194);
         for(int i5 = 31; i5 >= 0; i5--)
         {
             for(int j4 = 31; j4 >= 0; j4--)
@@ -361,7 +424,7 @@ public class Class8
             }
 
         }
-        if(class8.anInt163 != -1)
+        if(item.anInt163 != -1)
         {
             int l5 = class30_sub2_sub1_sub1_2.anInt1444;
             int j6 = class30_sub2_sub1_sub1_2.anInt1445;
@@ -372,7 +435,7 @@ public class Class8
             class30_sub2_sub1_sub1_2.anInt1445 = j6;
         }
         if(k == 0)
-            aClass12_158.method223(class30_sub2_sub1_sub1_1, i, (byte)2);
+            imageCache.method223(class30_sub2_sub1_sub1_1, i, (byte)2);
         Class30_Sub2_Sub1.method331(j2, i2, ai1);
         Class30_Sub2_Sub1.method333(j3, k2, false, l2, i3);
         Class30_Sub2_Sub1_Sub3.anInt1466 = k1;
@@ -383,7 +446,7 @@ public class Class8
         {
             for(int i6 = 1; i6 > 0; i6++);
         }
-        if(class8.aBoolean176)
+        if(item.aBoolean176)
             class30_sub2_sub1_sub1_1.anInt1444 = 33;
         else
             class30_sub2_sub1_sub1_1.anInt1444 = 32;
@@ -403,23 +466,23 @@ public class Class8
             if(j != -1)
                 return method198(j).method201(1);
         }
-        Model model = (Model)aClass12_159.method222(anInt157);
+        Model model = (Model) modelCache.get(anInt157);
         if(model != null)
             return model;
-        model = Model.method462(anInt171, anInt174);
+        model = Model.getModel(anInt174);
         if(model == null)
             return null;
         if(anInt167 != 128 || anInt192 != 128 || anInt191 != 128)
             model.method478(anInt167, anInt191, anInt177, anInt192);
-        if(anIntArray156 != null)
+        if(modelRecolourOriginal != null)
         {
-            for(int l = 0; l < anIntArray156.length; l++)
-                model.method476(anIntArray156[l], anIntArray160[l]);
+            for(int l = 0; l < modelRecolourOriginal.length; l++)
+                model.recolour(modelRecolourOriginal[l], modelRecolourNew[l]);
 
         }
         model.method479(64 + anInt196, 768 + anInt184, -50, -10, -50, true);
         model.aBoolean1659 = true;
-        aClass12_159.method223(model, anInt157, (byte)2);
+        modelCache.method223(model, anInt157, (byte)2);
         return model;
     }
 
@@ -435,15 +498,15 @@ public class Class8
             if(j != -1)
                 return method198(j).method202(1, true);
         }
-        Model model = Model.method462(anInt171, anInt174);
+        Model model = Model.getModel(anInt174);
         if(!flag)
             throw new NullPointerException();
         if(model == null)
             return null;
-        if(anIntArray156 != null)
+        if(modelRecolourOriginal != null)
         {
-            for(int l = 0; l < anIntArray156.length; l++)
-                model.method476(anIntArray156[l], anIntArray160[l]);
+            for(int l = 0; l < modelRecolourOriginal.length; l++)
+                model.recolour(modelRecolourOriginal[l], modelRecolourNew[l]);
 
         }
         return model;
@@ -455,72 +518,72 @@ public class Class8
             throw new NullPointerException();
         do
         {
-            int i = buffer.method408();
+            int i = buffer.get1ByteAsInt();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt174 = buffer.method410();
+                anInt174 = buffer.get2ByteInt();
             else
             if(i == 2)
-                aString170 = buffer.method415();
+                aString170 = buffer.readString();
             else
             if(i == 3)
-                aByteArray178 = buffer.method416((byte)30);
+                aByteArray178 = buffer.readStringBytes();
             else
             if(i == 4)
-                anInt181 = buffer.method410();
+                anInt181 = buffer.get2ByteInt();
             else
             if(i == 5)
-                anInt190 = buffer.method410();
+                anInt190 = buffer.get2ByteInt();
             else
             if(i == 6)
-                anInt198 = buffer.method410();
+                anInt198 = buffer.get2ByteInt();
             else
             if(i == 7)
             {
-                anInt169 = buffer.method410();
+                anInt169 = buffer.get2ByteInt();
                 if(anInt169 > 32767)
                     anInt169 -= 0x10000;
             } else
             if(i == 8)
             {
-                anInt194 = buffer.method410();
+                anInt194 = buffer.get2ByteInt();
                 if(anInt194 > 32767)
                     anInt194 -= 0x10000;
             } else
             if(i == 10)
-                anInt199 = buffer.method410();
+                anInt199 = buffer.get2ByteInt();
             else
             if(i == 11)
                 aBoolean176 = true;
             else
             if(i == 12)
-                anInt155 = buffer.method413();
+                anInt155 = buffer.get4ByteInt();
             else
             if(i == 16)
                 aBoolean161 = true;
             else
             if(i == 23)
             {
-                anInt165 = buffer.method410();
+                anInt165 = buffer.get2ByteInt();
                 aByte205 = buffer.method409();
             } else
             if(i == 24)
-                anInt188 = buffer.method410();
+                anInt188 = buffer.get2ByteInt();
             else
             if(i == 25)
             {
-                anInt200 = buffer.method410();
+                anInt200 = buffer.get2ByteInt();
                 aByte154 = buffer.method409();
             } else
             if(i == 26)
-                anInt164 = buffer.method410();
+                anInt164 = buffer.get2ByteInt();
             else
             if(i >= 30 && i < 35)
             {
                 if(aStringArray168 == null)
                     aStringArray168 = new String[5];
-                aStringArray168[i - 30] = buffer.method415();
+                aStringArray168[i - 30] = buffer.readString();
                 if(aStringArray168[i - 30].equalsIgnoreCase("hidden"))
                     aStringArray168[i - 30] = null;
             } else
@@ -528,46 +591,46 @@ public class Class8
             {
                 if(aStringArray189 == null)
                     aStringArray189 = new String[5];
-                aStringArray189[i - 35] = buffer.method415();
+                aStringArray189[i - 35] = buffer.readString();
             } else
             if(i == 40)
             {
-                int j = buffer.method408();
-                anIntArray156 = new int[j];
-                anIntArray160 = new int[j];
+                int j = buffer.get1ByteAsInt();
+                modelRecolourOriginal = new int[j];
+                modelRecolourNew = new int[j];
                 for(int k = 0; k < j; k++)
                 {
-                    anIntArray156[k] = buffer.method410();
-                    anIntArray160[k] = buffer.method410();
+                    modelRecolourOriginal[k] = buffer.get2ByteInt();
+                    modelRecolourNew[k] = buffer.get2ByteInt();
                 }
 
             } else
             if(i == 78)
-                anInt185 = buffer.method410();
+                anInt185 = buffer.get2ByteInt();
             else
             if(i == 79)
-                anInt162 = buffer.method410();
+                anInt162 = buffer.get2ByteInt();
             else
             if(i == 90)
-                anInt175 = buffer.method410();
+                equippedModelMale1 = buffer.get2ByteInt();
             else
             if(i == 91)
-                anInt197 = buffer.method410();
+                equippedModelFemale1 = buffer.get2ByteInt();
             else
             if(i == 92)
-                anInt166 = buffer.method410();
+                equippedModelMale2 = buffer.get2ByteInt();
             else
             if(i == 93)
-                anInt173 = buffer.method410();
+                equippedModelFemale2 = buffer.get2ByteInt();
             else
             if(i == 95)
-                anInt204 = buffer.method410();
+                anInt204 = buffer.get2ByteInt();
             else
             if(i == 97)
-                anInt179 = buffer.method410();
+                anInt179 = buffer.get2ByteInt();
             else
             if(i == 98)
-                anInt163 = buffer.method410();
+                anInt163 = buffer.get2ByteInt();
             else
             if(i >= 100 && i < 110)
             {
@@ -576,17 +639,17 @@ public class Class8
                     anIntArray193 = new int[10];
                     anIntArray201 = new int[10];
                 }
-                anIntArray193[i - 100] = buffer.method410();
-                anIntArray201[i - 100] = buffer.method410();
+                anIntArray193[i - 100] = buffer.get2ByteInt();
+                anIntArray201[i - 100] = buffer.get2ByteInt();
             } else
             if(i == 110)
-                anInt167 = buffer.method410();
+                anInt167 = buffer.get2ByteInt();
             else
             if(i == 111)
-                anInt192 = buffer.method410();
+                anInt192 = buffer.get2ByteInt();
             else
             if(i == 112)
-                anInt191 = buffer.method410();
+                anInt191 = buffer.get2ByteInt();
             else
             if(i == 113)
                 anInt196 = buffer.method409();
@@ -595,71 +658,10 @@ public class Class8
                 anInt184 = buffer.method409() * 5;
             else
             if(i == 115)
-                anInt202 = buffer.method408();
+                anInt202 = buffer.get1ByteAsInt();
         } while(true);
     }
 
-    public Class8()
-    {
-        anInt157 = -1;
-        anInt171 = 9;
-        anInt177 = 9;
-        aBoolean186 = false;
-        aBoolean206 = false;
-    }
 
-    public byte aByte154;
-    public int anInt155;
-    public int anIntArray156[];
-    public int anInt157;
-    public static Class12 aClass12_158 = new Class12(false, 100);
-    public static Class12 aClass12_159 = new Class12(false, 50);
-    public int anIntArray160[];
-    public boolean aBoolean161;
-    public int anInt162;
-    public int anInt163;
-    public int anInt164;
-    public int anInt165;
-    public int anInt166;
-    public int anInt167;
-    public String aStringArray168[];
-    public int anInt169;
-    public String aString170;
-    public int anInt171;
-    public static Class8 aClass8Array172[];
-    public int anInt173;
-    public int anInt174;
-    public int anInt175;
-    public boolean aBoolean176;
-    public int anInt177;
-    public byte aByteArray178[];
-    public int anInt179;
-    public static int anInt180;
-    public int anInt181;
-    public static boolean aBoolean182 = true;
-    public static Buffer aBuffer_183;
-    public int anInt184;
-    public int anInt185;
-    public boolean aBoolean186;
-    public static boolean aBoolean187;
-    public int anInt188;
-    public String aStringArray189[];
-    public int anInt190;
-    public int anInt191;
-    public int anInt192;
-    public int anIntArray193[];
-    public int anInt194;
-    public static int anIntArray195[];
-    public int anInt196;
-    public int anInt197;
-    public int anInt198;
-    public int anInt199;
-    public int anInt200;
-    public int anIntArray201[];
-    public int anInt202;
-    public static int anInt203;
-    public int anInt204;
-    public byte aByte205;
-    public boolean aBoolean206;
 
 }

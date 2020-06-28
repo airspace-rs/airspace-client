@@ -7,8 +7,8 @@ public class Class20
 
     public static void method257(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.getFile("seq.dat", null));
-        anInt350 = buffer.method410();
+        Buffer buffer = new Buffer(jagexArchive.getFile("seq.dat"));
+        anInt350 = buffer.get2ByteInt();
         if(aClass20Array351 == null)
             aClass20Array351 = new Class20[anInt350];
         for(int j = 0; j < anInt350; j++)
@@ -48,34 +48,34 @@ public class Class20
             aBoolean349 = !aBoolean349;
         do
         {
-            int i = buffer.method408();
+            int i = buffer.get1ByteAsInt();
             if(i == 0)
                 break;
             if(i == 1)
             {
-                anInt352 = buffer.method408();
+                anInt352 = buffer.get1ByteAsInt();
                 anIntArray353 = new int[anInt352];
                 anIntArray354 = new int[anInt352];
                 anIntArray355 = new int[anInt352];
                 for(int j = 0; j < anInt352; j++)
                 {
-                    anIntArray353[j] = buffer.method410();
-                    anIntArray354[j] = buffer.method410();
+                    anIntArray353[j] = buffer.get2ByteInt();
+                    anIntArray354[j] = buffer.get2ByteInt();
                     if(anIntArray354[j] == 65535)
                         anIntArray354[j] = -1;
-                    anIntArray355[j] = buffer.method410();
+                    anIntArray355[j] = buffer.get2ByteInt();
                 }
 
             } else
             if(i == 2)
-                anInt356 = buffer.method410();
+                anInt356 = buffer.get2ByteInt();
             else
             if(i == 3)
             {
-                int k = buffer.method408();
+                int k = buffer.get1ByteAsInt();
                 anIntArray357 = new int[k + 1];
                 for(int l = 0; l < k; l++)
-                    anIntArray357[l] = buffer.method408();
+                    anIntArray357[l] = buffer.get1ByteAsInt();
 
                 anIntArray357[k] = 0x98967f;
             } else
@@ -83,28 +83,28 @@ public class Class20
                 aBoolean358 = true;
             else
             if(i == 5)
-                anInt359 = buffer.method408();
+                anInt359 = buffer.get1ByteAsInt();
             else
             if(i == 6)
-                anInt360 = buffer.method410();
+                anInt360 = buffer.get2ByteInt();
             else
             if(i == 7)
-                anInt361 = buffer.method410();
+                anInt361 = buffer.get2ByteInt();
             else
             if(i == 8)
-                anInt362 = buffer.method408();
+                anInt362 = buffer.get1ByteAsInt();
             else
             if(i == 9)
-                anInt363 = buffer.method408();
+                anInt363 = buffer.get1ByteAsInt();
             else
             if(i == 10)
-                anInt364 = buffer.method408();
+                anInt364 = buffer.get1ByteAsInt();
             else
             if(i == 11)
-                anInt365 = buffer.method408();
+                anInt365 = buffer.get1ByteAsInt();
             else
             if(i == 12)
-                anInt366 = buffer.method413();
+                anInt366 = buffer.get4ByteInt();
             else
                 System.out.println("Error unrecognised seq config code: " + i);
         } while(true);

@@ -76,7 +76,7 @@ public class BrowserApplet extends Applet implements Runnable, MouseListener, Mo
         }
 
         drawLoadingScreen(0, "Loading...");
-        method6();
+        startUp();
         int i = 0;
         int j = 256;
         int k = 1;
@@ -457,7 +457,7 @@ public class BrowserApplet extends Applet implements Runnable, MouseListener, Mo
     {
     }
 
-    public void method6()
+    public void startUp()
     {
     }
 

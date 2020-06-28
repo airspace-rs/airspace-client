@@ -7,10 +7,10 @@ public class Class23
 
     public static void method264(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.getFile("spotanim.dat", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile("spotanim.dat"));
         if(i != 0)
             aBoolean401 = !aBoolean401;
-        anInt402 = buffer.method410();
+        anInt402 = buffer.get2ByteInt();
         if(aClass23Array403 == null)
             aClass23Array403 = new Class23[anInt402];
         for(int j = 0; j < anInt402; j++)
@@ -29,38 +29,38 @@ public class Class23
             throw new NullPointerException();
         do
         {
-            int i = buffer.method408();
+            int i = buffer.get1ByteAsInt();
             if(i == 0)
                 return;
             if(i == 1)
-                anInt405 = buffer.method410();
+                anInt405 = buffer.get2ByteInt();
             else
             if(i == 2)
             {
-                anInt406 = buffer.method410();
+                anInt406 = buffer.get2ByteInt();
                 if(Class20.aClass20Array351 != null)
                     aClass20_407 = Class20.aClass20Array351[anInt406];
             } else
             if(i == 4)
-                anInt410 = buffer.method410();
+                anInt410 = buffer.get2ByteInt();
             else
             if(i == 5)
-                anInt411 = buffer.method410();
+                anInt411 = buffer.get2ByteInt();
             else
             if(i == 6)
-                anInt412 = buffer.method410();
+                anInt412 = buffer.get2ByteInt();
             else
             if(i == 7)
-                anInt413 = buffer.method408();
+                anInt413 = buffer.get1ByteAsInt();
             else
             if(i == 8)
-                anInt414 = buffer.method408();
+                anInt414 = buffer.get1ByteAsInt();
             else
             if(i >= 40 && i < 50)
-                anIntArray408[i - 40] = buffer.method410();
+                anIntArray408[i - 40] = buffer.get2ByteInt();
             else
             if(i >= 50 && i < 60)
-                anIntArray409[i - 50] = buffer.method410();
+                anIntArray409[i - 50] = buffer.get2ByteInt();
             else
                 System.out.println("Error unrecognised spotanim config code: " + i);
         } while(true);
@@ -68,15 +68,15 @@ public class Class23
 
     public Model method266()
     {
-        Model model = (Model)aClass12_415.method222(anInt404);
+        Model model = (Model)aClass12_415.get(anInt404);
         if(model != null)
             return model;
-        model = Model.method462(anInt400, anInt405);
+        model = Model.getModel(anInt405);
         if(model == null)
             return null;
         for(int i = 0; i < 6; i++)
             if(anIntArray408[0] != 0)
-                model.method476(anIntArray408[i], anIntArray409[i]);
+                model.recolour(anIntArray408[i], anIntArray409[i]);
 
         aClass12_415.method223(model, anInt404, (byte)2);
         return model;

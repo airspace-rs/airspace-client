@@ -7,9 +7,9 @@ public class Class41
 
     public static void method546(int i, JagexArchive jagexArchive)
     {
-        Buffer buffer = new Buffer(jagexArchive.getFile("varp.dat", null));
+        Buffer buffer = new Buffer(jagexArchive.getFile("varp.dat"));
         anInt702 = 0;
-        anInt700 = buffer.method410();
+        anInt700 = buffer.get2ByteInt();
         if(aClass41Array701 == null)
             aClass41Array701 = new Class41[anInt700];
         if(anIntArray703 == null)
@@ -33,14 +33,14 @@ public class Class41
             anInt699 = -91;
         do
         {
-            int j = buffer.method408();
+            int j = buffer.get1ByteAsInt();
             if(j == 0)
                 return;
             if(j == 1)
-                anInt705 = buffer.method408();
+                anInt705 = buffer.get1ByteAsInt();
             else
             if(j == 2)
-                anInt706 = buffer.method408();
+                anInt706 = buffer.get1ByteAsInt();
             else
             if(j == 3)
             {
@@ -51,13 +51,13 @@ public class Class41
                 aBoolean708 = false;
             else
             if(j == 5)
-                anInt709 = buffer.method410();
+                anInt709 = buffer.get2ByteInt();
             else
             if(j == 6)
                 aBoolean710 = true;
             else
             if(j == 7)
-                anInt711 = buffer.method413();
+                anInt711 = buffer.get4ByteInt();
             else
             if(j == 8)
             {
@@ -65,13 +65,13 @@ public class Class41
                 aBoolean713 = true;
             } else
             if(j == 10)
-                aString704 = buffer.method415();
+                aString704 = buffer.readString();
             else
             if(j == 11)
                 aBoolean713 = true;
             else
             if(j == 12)
-                anInt714 = buffer.method413();
+                anInt714 = buffer.get4ByteInt();
             else
             if(j == 13)
                 anInt712 = 2;

@@ -10,28 +10,28 @@ public class JagexImage extends Class30_Sub2_Sub1
         aBoolean1447 = false;
         anInt1448 = 360;
         aByte1449 = 3;
-        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat", null));
-        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat", null));
-        buffer_1.pointer = buffer.method410();
-        anInt1456 = buffer_1.method410();
-        anInt1457 = buffer_1.method410();
-        int j = buffer_1.method408();
+        Buffer buffer = new Buffer(jagexArchive.getFile(s + ".dat"));
+        Buffer buffer_1 = new Buffer(jagexArchive.getFile("index.dat"));
+        buffer_1.pointer = buffer.get2ByteInt();
+        anInt1456 = buffer_1.get2ByteInt();
+        anInt1457 = buffer_1.get2ByteInt();
+        int j = buffer_1.get1ByteAsInt();
         anIntArray1451 = new int[j];
         for(int k = 0; k < j - 1; k++)
-            anIntArray1451[k + 1] = buffer_1.method412();
+            anIntArray1451[k + 1] = buffer_1.get3ByteInt();
 
         for(int l = 0; l < i; l++)
         {
             buffer_1.pointer += 2;
-            buffer.pointer += buffer_1.method410() * buffer_1.method410();
+            buffer.pointer += buffer_1.get2ByteInt() * buffer_1.get2ByteInt();
             buffer_1.pointer++;
         }
 
-        anInt1454 = buffer_1.method408();
-        anInt1455 = buffer_1.method408();
-        anInt1452 = buffer_1.method410();
-        anInt1453 = buffer_1.method410();
-        int i1 = buffer_1.method408();
+        anInt1454 = buffer_1.get1ByteAsInt();
+        anInt1455 = buffer_1.get1ByteAsInt();
+        anInt1452 = buffer_1.get2ByteInt();
+        anInt1453 = buffer_1.get2ByteInt();
+        int i1 = buffer_1.get1ByteAsInt();
         int j1 = anInt1452 * anInt1453;
         aByteArray1450 = new byte[j1];
         if(i1 == 0)

@@ -17,17 +17,17 @@ public class Class30_Sub2_Sub4_Sub1_Sub1 extends Class30_Sub2_Sub4_Sub1
             int i1 = -1;
             if(super.anInt1517 >= 0 && super.anInt1517 != super.anInt1511)
                 i1 = Class20.aClass20Array351[super.anInt1517].anIntArray353[super.anInt1518];
-            return aClass5_1696.method164(0, i1, k, Class20.aClass20Array351[super.anInt1526].anIntArray357);
+            return aNPC_Def_1696.method164(k, i1, Class20.aClass20Array351[super.anInt1526].anIntArray357);
         }
         int l = -1;
         if(super.anInt1517 >= 0)
             l = Class20.aClass20Array351[super.anInt1517].anIntArray353[super.anInt1518];
-        return aClass5_1696.method164(0, -1, l, null);
+        return aNPC_Def_1696.method164(l, -1, null);
     }
 
     public Model method444(int i)
     {
-        if(aClass5_1696 == null)
+        if(aNPC_Def_1696 == null)
             return null;
         Model model = method450(0);
         if(model == null)
@@ -57,7 +57,7 @@ public class Class30_Sub2_Sub4_Sub1_Sub1 extends Class30_Sub2_Sub4_Sub1
                 model = new Model(2, -819, true, aclass30_sub2_sub4_sub6);
             }
         }
-        if(aClass5_1696.aByte68 == 1)
+        if(aNPC_Def_1696.boundDim == 1)
             model.aBoolean1659 = true;
         return model;
     }
@@ -66,7 +66,7 @@ public class Class30_Sub2_Sub4_Sub1_Sub1 extends Class30_Sub2_Sub4_Sub1
     {
         if(!flag)
             aBoolean1694 = !aBoolean1694;
-        return aClass5_1696 != null;
+        return aNPC_Def_1696 != null;
     }
 
     public Class30_Sub2_Sub4_Sub1_Sub1()
@@ -78,5 +78,5 @@ public class Class30_Sub2_Sub4_Sub1_Sub1 extends Class30_Sub2_Sub4_Sub1
     public int anInt1693;
     public boolean aBoolean1694;
     public int anInt1695;
-    public Class5 aClass5_1696;
+    public NPC aNPC_Def_1696;
 }

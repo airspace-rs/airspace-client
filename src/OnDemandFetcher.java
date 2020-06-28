@@ -160,7 +160,7 @@ public class OnDemandFetcher extends Class42 implements Runnable
                 if(anInt1347 + anInt1346 >= abyte0.length && aClass30_Sub2_Sub3_1369 != null)
                 {
                     if(aClient1343.jagexFileStores[0] != null)
-                        aClient1343.jagexFileStores[aClass30_Sub2_Sub3_1369.anInt1419 + 1].method234(abyte0.length, abyte0, (byte)2, aClass30_Sub2_Sub3_1369.anInt1421);
+                        aClient1343.jagexFileStores[aClass30_Sub2_Sub3_1369.anInt1419 + 1].method234(abyte0.length, abyte0, aClass30_Sub2_Sub3_1369.anInt1421);
                     if(!aClass30_Sub2_Sub3_1369.aBoolean1422 && aClass30_Sub2_Sub3_1369.anInt1419 == 3)
                     {
                         aClass30_Sub2_Sub3_1369.aBoolean1422 = true;
@@ -199,13 +199,13 @@ public class OnDemandFetcher extends Class42 implements Runnable
         };
         for(int i = 0; i < 4; i++)
         {
-            byte abyte0[] = jagexArchive.getFile(as[i], null);
+            byte abyte0[] = jagexArchive.getFile(as[i]);
             int j = abyte0.length / 2;
             Buffer buffer = new Buffer(abyte0);
             fileStoreFiles[i] = new int[j];
             aByteArrayArray1342[i] = new byte[j];
             for(int l = 0; l < j; l++)
-                fileStoreFiles[i][l] = buffer.method410();
+                fileStoreFiles[i][l] = buffer.get2ByteInt();
 
         }
 
@@ -214,16 +214,16 @@ public class OnDemandFetcher extends Class42 implements Runnable
         };
         for(int k = 0; k < 4; k++)
         {
-            byte abyte1[] = jagexArchive.getFile(as1[k], null);
+            byte abyte1[] = jagexArchive.getFile(as1[k]);
             int i1 = abyte1.length / 4;
             Buffer buffer_1 = new Buffer(abyte1);
             anIntArrayArray1365[k] = new int[i1];
             for(int l1 = 0; l1 < i1; l1++)
-                anIntArrayArray1365[k][l1] = buffer_1.method413();
+                anIntArrayArray1365[k][l1] = buffer_1.get4ByteInt();
 
         }
 
-        byte abyte2[] = jagexArchive.getFile("model_index", null);
+        byte abyte2[] = jagexArchive.getFile("model_index");
         int j1 = fileStoreFiles[0].length;
         aByteArray1372 = new byte[j1];
         for(int k1 = 0; k1 < j1; k1++)
@@ -232,7 +232,7 @@ public class OnDemandFetcher extends Class42 implements Runnable
             else
                 aByteArray1372[k1] = 0;
 
-        abyte2 = jagexArchive.getFile("map_index", null);
+        abyte2 = jagexArchive.getFile("map_index");
         Buffer class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 7;
         anIntArray1371 = new int[j1];
@@ -241,25 +241,25 @@ public class OnDemandFetcher extends Class42 implements Runnable
         anIntArray1356 = new int[j1];
         for(int i2 = 0; i2 < j1; i2++)
         {
-            anIntArray1371[i2] = class30_sub2_sub2_2.method410();
-            anIntArray1350[i2] = class30_sub2_sub2_2.method410();
-            anIntArray1337[i2] = class30_sub2_sub2_2.method410();
-            anIntArray1356[i2] = class30_sub2_sub2_2.method408();
+            anIntArray1371[i2] = class30_sub2_sub2_2.get2ByteInt();
+            anIntArray1350[i2] = class30_sub2_sub2_2.get2ByteInt();
+            anIntArray1337[i2] = class30_sub2_sub2_2.get2ByteInt();
+            anIntArray1356[i2] = class30_sub2_sub2_2.get1ByteAsInt();
         }
 
-        abyte2 = jagexArchive.getFile("anim_index", null);
+        abyte2 = jagexArchive.getFile("anim_index");
         class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length / 2;
         animationIndices = new int[j1];
         for(int j2 = 0; j2 < j1; j2++)
-            animationIndices[j2] = class30_sub2_sub2_2.method410();
+            animationIndices[j2] = class30_sub2_sub2_2.get2ByteInt();
 
-        abyte2 = jagexArchive.getFile("midi_index", null);
+        abyte2 = jagexArchive.getFile("midi_index");
         class30_sub2_sub2_2 = new Buffer(abyte2);
         j1 = abyte2.length;
         anIntArray1348 = new int[j1];
         for(int k2 = 0; k2 < j1; k2++)
-            anIntArray1348[k2] = class30_sub2_sub2_2.method408();
+            anIntArray1348[k2] = class30_sub2_sub2_2.get1ByteAsInt();
 
         aClient1343 = client1;
         aBoolean1353 = true;

@@ -88,30 +88,30 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
     public void method451(int i, Buffer buffer)
     {
         buffer.pointer = 0;
-        anInt1702 = buffer.method408();
-        anInt1706 = buffer.method408();
+        gender = buffer.get1ByteAsInt();
+        anInt1706 = buffer.get1ByteAsInt();
         if(i != 0)
             return;
-        aClass5_1698 = null;
+        aNPC_Def_1698 = null;
         anInt1701 = 0;
         for(int j = 0; j < 12; j++)
         {
-            int k = buffer.method408();
+            int k = buffer.get1ByteAsInt();
             if(k == 0)
             {
                 anIntArray1717[j] = 0;
                 continue;
             }
-            int i1 = buffer.method408();
+            int i1 = buffer.get1ByteAsInt();
             anIntArray1717[j] = (k << 8) + i1;
             if(j == 0 && anIntArray1717[0] == 65535)
             {
-                aClass5_1698 = Class5.method159(buffer.method410());
+                aNPC_Def_1698 = NPC.getForId(buffer.get2ByteInt());
                 break;
             }
-            if(anIntArray1717[j] >= 512 && anIntArray1717[j] - 512 < Class8.anInt203)
+            if(anIntArray1717[j] >= 512 && anIntArray1717[j] - 512 < Item.itemCount)
             {
-                int l1 = Class8.method198(anIntArray1717[j] - 512).anInt202;
+                int l1 = Item.method198(anIntArray1717[j] - 512).anInt202;
                 if(l1 != 0)
                     anInt1701 = l1;
             }
@@ -119,36 +119,36 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
 
         for(int l = 0; l < 5; l++)
         {
-            int j1 = buffer.method408();
+            int j1 = buffer.get1ByteAsInt();
             if(j1 < 0 || j1 >= Client.anIntArrayArray1003[l].length)
                 j1 = 0;
             anIntArray1700[l] = j1;
         }
 
-        super.anInt1511 = buffer.method410();
+        super.anInt1511 = buffer.get2ByteInt();
         if(super.anInt1511 == 65535)
             super.anInt1511 = -1;
-        super.anInt1512 = buffer.method410();
+        super.anInt1512 = buffer.get2ByteInt();
         if(super.anInt1512 == 65535)
             super.anInt1512 = -1;
-        super.anInt1554 = buffer.method410();
+        super.anInt1554 = buffer.get2ByteInt();
         if(super.anInt1554 == 65535)
             super.anInt1554 = -1;
-        super.anInt1555 = buffer.method410();
+        super.anInt1555 = buffer.get2ByteInt();
         if(super.anInt1555 == 65535)
             super.anInt1555 = -1;
-        super.anInt1556 = buffer.method410();
+        super.anInt1556 = buffer.get2ByteInt();
         if(super.anInt1556 == 65535)
             super.anInt1556 = -1;
-        super.anInt1557 = buffer.method410();
+        super.anInt1557 = buffer.get2ByteInt();
         if(super.anInt1557 == 65535)
             super.anInt1557 = -1;
-        super.anInt1505 = buffer.method410();
+        super.anInt1505 = buffer.get2ByteInt();
         if(super.anInt1505 == 65535)
             super.anInt1505 = -1;
         aString1703 = Class50.method587(-45804, Class50.method584(buffer.method414(-35089), (byte)-99));
-        anInt1705 = buffer.method408();
-        anInt1723 = buffer.method410();
+        anInt1705 = buffer.get1ByteAsInt();
+        anInt1723 = buffer.get2ByteInt();
         aBoolean1710 = true;
         aLong1718 = 0L;
         for(int k1 = 0; k1 < 12; k1++)
@@ -169,12 +169,12 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         }
 
         aLong1718 <<= 1;
-        aLong1718 += anInt1702;
+        aLong1718 += gender;
     }
 
     public Model method452(int i)
     {
-        if(aClass5_1698 != null)
+        if(aNPC_Def_1698 != null)
         {
             int j = -1;
             if(super.anInt1526 >= 0 && super.anInt1529 == 0)
@@ -182,7 +182,7 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
             else
             if(super.anInt1517 >= 0)
                 j = Class20.aClass20Array351[super.anInt1517].anIntArray353[super.anInt1518];
-            Model model = aClass5_1698.method164(0, -1, j, null);
+            Model model = aNPC_Def_1698.method164(j, -1, null);
             return model;
         }
         long l = aLong1718;
@@ -209,7 +209,7 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
         } else
         if(super.anInt1517 >= 0)
             k = Class20.aClass20Array351[super.anInt1517].anIntArray353[super.anInt1518];
-        Model model_1 = (Model)aClass12_1704.method222(l);
+        Model model_1 = (Model)aClass12_1704.get(l);
         if(i != 0)
         {
             for(int l1 = 1; l1 > 0; l1++);
@@ -226,14 +226,14 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
                     k2 = j1;
                 if(k2 >= 256 && k2 < 512 && !Class38.aClass38Array656[k2 - 256].method537((byte)2))
                     flag = true;
-                if(k2 >= 512 && !Class8.method198(k2 - 512).method195(40903, anInt1702))
+                if(k2 >= 512 && !Item.method198(k2 - 512).method195(40903, gender))
                     flag = true;
             }
 
             if(flag)
             {
                 if(aLong1697 != -1L)
-                    model_1 = (Model)aClass12_1704.method222(aLong1697);
+                    model_1 = (Model)aClass12_1704.get(aLong1697);
                 if(model_1 == null)
                     return null;
             }
@@ -257,19 +257,19 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
                 }
                 if(i3 >= 512)
                 {
-                    Model class30_sub2_sub4_sub6_4 = Class8.method198(i3 - 512).method196(false, anInt1702);
+                    Model class30_sub2_sub4_sub6_4 = Item.method198(i3 - 512).method196(gender);
                     if(class30_sub2_sub4_sub6_4 != null)
                         aclass30_sub2_sub4_sub6[j2++] = class30_sub2_sub4_sub6_4;
                 }
             }
 
-            model_1 = new Model(j2, aclass30_sub2_sub4_sub6, -38);
+            model_1 = new Model(j2, aclass30_sub2_sub4_sub6);
             for(int j3 = 0; j3 < 5; j3++)
                 if(anIntArray1700[j3] != 0)
                 {
-                    model_1.method476(Client.anIntArrayArray1003[j3][0], Client.anIntArrayArray1003[j3][anIntArray1700[j3]]);
+                    model_1.recolour(Client.anIntArrayArray1003[j3][0], Client.anIntArrayArray1003[j3][anIntArray1700[j3]]);
                     if(j3 == 1)
-                        model_1.method476(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j3]]);
+                        model_1.recolour(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j3]]);
                 }
 
             model_1.method469((byte)-71);
@@ -305,15 +305,15 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
             anInt1715 = 132;
         if(!aBoolean1710)
             return null;
-        if(aClass5_1698 != null)
-            return aClass5_1698.method160(true);
+        if(aNPC_Def_1698 != null)
+            return aNPC_Def_1698.getHeadModel();
         boolean flag = false;
         for(int i = 0; i < 12; i++)
         {
             int j = anIntArray1717[i];
             if(j >= 256 && j < 512 && !Class38.aClass38Array656[j - 256].method539(false))
                 flag = true;
-            if(j >= 512 && !Class8.method198(j - 512).method192(-2836, anInt1702))
+            if(j >= 512 && !Item.method198(j - 512).isEquippedModelCached(gender))
                 flag = true;
         }
 
@@ -332,19 +332,19 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
             }
             if(i1 >= 512)
             {
-                Model class30_sub2_sub4_sub6_2 = Class8.method198(i1 - 512).method194(-705, anInt1702);
+                Model class30_sub2_sub4_sub6_2 = Item.method198(i1 - 512).method194(gender);
                 if(class30_sub2_sub4_sub6_2 != null)
                     aclass30_sub2_sub4_sub6[k++] = class30_sub2_sub4_sub6_2;
             }
         }
 
-        Model model = new Model(k, aclass30_sub2_sub4_sub6, -38);
+        Model model = new Model(k, aclass30_sub2_sub4_sub6);
         for(int j1 = 0; j1 < 5; j1++)
             if(anIntArray1700[j1] != 0)
             {
-                model.method476(Client.anIntArrayArray1003[j1][0], Client.anIntArrayArray1003[j1][anIntArray1700[j1]]);
+                model.recolour(Client.anIntArrayArray1003[j1][0], Client.anIntArrayArray1003[j1][anIntArray1700[j1]]);
                 if(j1 == 1)
-                    model.method476(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j1]]);
+                    model.recolour(Client.anIntArray1204[0], Client.anIntArray1204[anIntArray1700[j1]]);
             }
 
         return model;
@@ -362,11 +362,11 @@ public class Class30_Sub2_Sub4_Sub1_Sub2 extends Class30_Sub2_Sub4_Sub1
     }
 
     public long aLong1697;
-    public Class5 aClass5_1698;
+    public NPC aNPC_Def_1698;
     public boolean aBoolean1699;
     public int anIntArray1700[];
     public int anInt1701;
-    public int anInt1702;
+    public int gender;
     public String aString1703;
     public static Class12 aClass12_1704 = new Class12(false, 260);
     public int anInt1705;

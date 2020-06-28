@@ -4,93 +4,74 @@
 
 public class JagexArchive
 {
-
-    public JagexArchive(int i, byte abyte0[])
+    public JagexArchive(byte[] dataIn)
     {
-        aByte723 = 0;
-        anInt724 = 9;
-        anInt725 = -29508;
-        if(i != 44820)
-        {
-            throw new NullPointerException();
-        } else
-        {
-            method570(abyte0, aByte723);
-            return;
+        Buffer buffer = new Buffer(dataIn);
+
+        int i = buffer.get3ByteInt();
+        int j = buffer.get3ByteInt();
+
+        if (j != i) {
+            byte out[] = new byte[i];
+            BZip2.decompress(out, i, dataIn, j, 6);
+            outputData = out;
+            buffer = new Buffer(outputData);
+            isDecompressed = true;
+        } else {
+            outputData = dataIn;
+            isDecompressed = false;
+        }
+        fileCount = buffer.get2ByteInt();
+
+        names = new int[fileCount];
+        fileSizes = new int[fileCount];
+        decompressedFileSizes = new int[fileCount];
+        offsets = new int[fileCount];
+
+        int k = buffer.pointer + fileCount * 10;
+        for (int l = 0; l < fileCount; l++) {
+            names[l] = buffer.get4ByteInt();
+            fileSizes[l] = buffer.get3ByteInt();
+            decompressedFileSizes[l] = buffer.get3ByteInt();
+            offsets[l] = k;
+            k += decompressedFileSizes[l];
         }
     }
 
-    public void method570(byte abyte0[], byte byte0)
-    {
-        Buffer buffer = new Buffer(abyte0);
-        int i = buffer.method412();
-        int j = buffer.method412();
-        if(j != i)
-        {
-            byte abyte1[] = new byte[i];
-            Class13.method225(abyte1, i, abyte0, j, 6);
-            aByteArray726 = abyte1;
-            buffer = new Buffer(aByteArray726);
-            aBoolean732 = true;
-        } else
-        {
-            aByteArray726 = abyte0;
-            aBoolean732 = false;
-        }
-        anInt727 = buffer.method410();
-        if(byte0 != 0)
-            return;
-        anIntArray728 = new int[anInt727];
-        anIntArray729 = new int[anInt727];
-        anIntArray730 = new int[anInt727];
-        anIntArray731 = new int[anInt727];
-        int k = buffer.pointer + anInt727 * 10;
-        for(int l = 0; l < anInt727; l++)
-        {
-            anIntArray728[l] = buffer.method413();
-            anIntArray729[l] = buffer.method412();
-            anIntArray730[l] = buffer.method412();
-            anIntArray731[l] = k;
-            k += anIntArray730[l];
-        }
-
-    }
-
-    public byte[] getFile(String s, byte abyte0[])
+    public byte[] getFile(String fileName)
     {
         int i = 0;
-        s = s.toUpperCase();
-        for(int j = 0; j < s.length(); j++)
-            i = (i * 61 + s.charAt(j)) - 32;
 
-        for(int k = 0; k < anInt727; k++)
-            if(anIntArray728[k] == i)
-            {
-                if(abyte0 == null)
-                    abyte0 = new byte[anIntArray729[k]];
-                if(!aBoolean732)
-                {
-                    Class13.method225(abyte0, anIntArray729[k], aByteArray726, anIntArray730[k], anIntArray731[k]);
-                } else
-                {
-                    for(int l = 0; l < anIntArray729[k]; l++)
-                        abyte0[l] = aByteArray726[anIntArray731[k] + l];
+        fileName = fileName.toUpperCase();
+        for (int j = 0; j < fileName.length(); j++) {
+            i = (i * 61 + fileName.charAt(j)) - 32;
+        }
+
+        byte data[];
+
+        for (int k = 0; k < fileCount; k++) {
+            if (names[k] == i) {
+                data = new byte[fileSizes[k]];
+                if (!isDecompressed) {
+                    BZip2.decompress(data, fileSizes[k], outputData, decompressedFileSizes[k], offsets[k]);
+                } else {
+                    for (int l = 0; l < fileSizes[k]; l++) {
+                        data[l] = outputData[offsets[k] + l];
+                    }
 
                 }
-                return abyte0;
+                return data;
             }
+        }
 
         return null;
     }
 
-    public byte aByte723;
-    public int anInt724;
-    public int anInt725;
-    public byte aByteArray726[];
-    public int anInt727;
-    public int anIntArray728[];
-    public int anIntArray729[];
-    public int anIntArray730[];
-    public int anIntArray731[];
-    public boolean aBoolean732;
+    public byte outputData[];
+    public int fileCount;
+    public int names[];
+    public int fileSizes[];
+    public int decompressedFileSizes[];
+    public int offsets[];
+    public boolean isDecompressed;
 }

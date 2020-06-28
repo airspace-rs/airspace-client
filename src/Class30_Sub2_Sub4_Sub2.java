@@ -7,11 +7,11 @@ public class Class30_Sub2_Sub4_Sub2 extends Class30_Sub2_Sub4
 
     public Model method444(int i)
     {
-        Class8 class8 = Class8.method198(anInt1558);
+        Item item = Item.method198(anInt1558);
         if(i != 4016)
             throw new NullPointerException();
         else
-            return class8.method201(anInt1559);
+            return item.method201(anInt1559);
     }
 
     public Class30_Sub2_Sub4_Sub2()

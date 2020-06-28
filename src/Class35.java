@@ -11,7 +11,7 @@ public class Class35
         int k = -1;
         for(int l = 0; l < i; l++)
         {
-            int i1 = buffer.method408();
+            int i1 = buffer.get1ByteAsInt();
             int j1 = i1 >> 4 & 0xf;
             if(k == -1)
             {

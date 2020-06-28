@@ -7,15 +7,12 @@ import java.io.*;
 public class JagexFileStore
 {
 
-    public JagexFileStore(int i, RandomAccessFile randomAccessFile, RandomAccessFile randomAccessFile2, int j)
+    public JagexFileStore(RandomAccessFile randomAccessFile, RandomAccessFile randomAccessFile2, int j)
     {
         // Not checked yet
-        anInt306 = 923;
-        aBoolean307 = true;
         anInt311 = j;
 
         // Definitely good
-        anInt312 = i;
         this.randomAccessFile = randomAccessFile;
         this.randomAccessFile2 = randomAccessFile2;
     }
@@ -35,8 +32,6 @@ public class JagexFileStore
 
             int i1 = ((aByteArray308[0] & 0xff) << 16) + ((aByteArray308[1] & 0xff) << 8) + (aByteArray308[2] & 0xff);
             int j1 = ((aByteArray308[3] & 0xff) << 16) + ((aByteArray308[4] & 0xff) << 8) + (aByteArray308[5] & 0xff);
-            if(i1 < 0 || i1 > anInt312)
-                return null;
             if(j1 <= 0 || (long)j1 > randomAccessFile.length() / 520L)
                 return null;
             byte abyte0[] = new byte[i1];
@@ -80,13 +75,9 @@ public class JagexFileStore
         }
     }
 
-    public synchronized boolean method234(int i, byte abyte0[], byte byte0, int j)
+    public synchronized boolean method234(int i, byte[] abyte0, int j)
     {
         boolean flag = method235(true, 923, j, i, abyte0);
-        if(byte0 == 2)
-            byte0 = 0;
-        else
-            aBoolean307 = !aBoolean307;
         if(!flag)
             flag = method235(false, 923, j, i, abyte0);
         return flag;

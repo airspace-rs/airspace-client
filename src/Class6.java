@@ -228,7 +228,7 @@ public class Class6
         if(!flag)
             throw new NullPointerException();
         aClass29_99.method325(true, buffer);
-        int i = buffer.method408();
+        int i = buffer.get1ByteAsInt();
         if(i != 0)
         {
             buffer.pointer--;
@@ -237,7 +237,7 @@ public class Class6
             aClass29_101 = new Class29();
             aClass29_101.method325(true, buffer);
         }
-        i = buffer.method408();
+        i = buffer.get1ByteAsInt();
         if(i != 0)
         {
             buffer.pointer--;
@@ -246,7 +246,7 @@ public class Class6
             aClass29_103 = new Class29();
             aClass29_103.method325(true, buffer);
         }
-        i = buffer.method408();
+        i = buffer.get1ByteAsInt();
         if(i != 0)
         {
             buffer.pointer--;
@@ -267,8 +267,8 @@ public class Class6
 
         anInt109 = buffer.method422();
         anInt110 = buffer.method422();
-        anInt113 = buffer.method410();
-        anInt114 = buffer.method410();
+        anInt113 = buffer.get2ByteInt();
+        anInt114 = buffer.get2ByteInt();
         aClass39_111 = new Class39();
         aClass29_112 = new Class29();
         aClass39_111.method545(buffer, false, aClass29_112);
